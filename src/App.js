@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import './App.css';
 import kanjiData from './kanjiData.json';
 import HSKPage from './HSKPage';
+import CharacterListPage from './CharacterListPage';
 
 function App() {
-    const [currentPage, setCurrentPage] = useState('kanji'); // 'kanji' or 'hsk'
+    const [currentPage, setCurrentPage] = useState('kanji'); // 'kanji', 'hsk', or 'list'
     const [selectedGrades, setSelectedGrades] = useState([1]);
     const [currentKanji, setCurrentKanji] = useState(null);
     const [showVietnamese, setShowVietnamese] = useState(false);
@@ -76,9 +77,13 @@ function App() {
         setDisabledKanji(new Set());
     };
 
-    // Show HSK page if currentPage is 'hsk'
+    // Show different pages based on currentPage
     if (currentPage === 'hsk') {
         return <HSKPage onNavigate={setCurrentPage} />;
+    }
+
+    if (currentPage === 'list') {
+        return <CharacterListPage onNavigate={setCurrentPage} />;
     }
 
     return (
@@ -96,6 +101,12 @@ function App() {
                         onClick={() => setCurrentPage('hsk')}
                     >
                         HSK Level 1
+                    </button>
+                    <button
+                        className={`nav-btn ${currentPage === 'list' ? 'active' : ''}`}
+                        onClick={() => setCurrentPage('list')}
+                    >
+                        Character List
                     </button>
                 </div>
                 <h1>Kanji Viet Generator</h1>

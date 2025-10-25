@@ -11,18 +11,27 @@ function HSKPage({ onNavigate }) {
     const [showTraditional, setShowTraditional] = useState(false);
     const [showJyutping, setShowJyutping] = useState(false);
     const [disabledWords, setDisabledWords] = useState(new Set());
+    const [characterFilter, setCharacterFilter] = useState('all'); // 'all', 'single', 'multi'
 
     const generateRandomWord = () => {
-        const availableWords = hskData.filter(word =>
+        let filteredWords = hskData.filter(word =>
             selectedLevels.includes(1) && !disabledWords.has(word.id)
         );
-        if (availableWords.length === 0) {
-            alert('No more words available! Enable some words to continue.');
+
+        // Apply character filter
+        if (characterFilter === 'single') {
+            filteredWords = filteredWords.filter(word => word.characterCount === 1);
+        } else if (characterFilter === 'multi') {
+            filteredWords = filteredWords.filter(word => word.characterCount > 1);
+        }
+
+        if (filteredWords.length === 0) {
+            alert('No more words available! Enable some words or change the character filter to continue.');
             return;
         }
 
-        const randomIndex = Math.floor(Math.random() * availableWords.length);
-        const selectedWord = availableWords[randomIndex];
+        const randomIndex = Math.floor(Math.random() * filteredWords.length);
+        const selectedWord = filteredWords[randomIndex];
         setCurrentWord(selectedWord);
         setShowVietnamese(false);
         setShowVietnameseTranslation(false);
@@ -52,9 +61,18 @@ function HSKPage({ onNavigate }) {
     };
 
     const getAvailableWordsCount = () => {
-        return hskData.filter(word =>
+        let filteredWords = hskData.filter(word =>
             selectedLevels.includes(1) && !disabledWords.has(word.id)
-        ).length;
+        );
+
+        // Apply character filter
+        if (characterFilter === 'single') {
+            filteredWords = filteredWords.filter(word => word.characterCount === 1);
+        } else if (characterFilter === 'multi') {
+            filteredWords = filteredWords.filter(word => word.characterCount > 1);
+        }
+
+        return filteredWords.length;
     };
 
     const disableAllWords = () => {
@@ -131,6 +149,37 @@ function HSKPage({ onNavigate }) {
                         >
                             Level 6
                         </button>
+                    </div>
+                </div>
+
+                <div className="character-filter">
+                    <h2>Character Filter:</h2>
+                    <div className="filter-buttons">
+                        <button
+                            className={`filter-btn ${characterFilter === 'all' ? 'selected' : ''}`}
+                            onClick={() => setCharacterFilter('all')}
+                        >
+                            All Words
+                        </button>
+                        <button
+                            className={`filter-btn ${characterFilter === 'single' ? 'selected' : ''}`}
+                            onClick={() => setCharacterFilter('single')}
+                        >
+                            Single Characters Only
+                        </button>
+                        <button
+                            className={`filter-btn ${characterFilter === 'multi' ? 'selected' : ''}`}
+                            onClick={() => setCharacterFilter('multi')}
+                        >
+                            Multi-Character Words
+                        </button>
+                    </div>
+                    <div className="filter-stats">
+                        <span className="filter-info">
+                            Showing: {characterFilter === 'all' ? 'All entries' :
+                                characterFilter === 'single' ? 'Single characters only' :
+                                    'Multi-character words only'}
+                        </span>
                     </div>
                 </div>
 

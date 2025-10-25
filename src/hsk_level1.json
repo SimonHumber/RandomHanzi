@@ -6,7 +6,8 @@
     "pinyin": "ài",
     "jyutping": "oi3",
     "english": "love",
-    "vietnamese": "Yêu"
+    "vietnamese": "giống",
+    "characterCount": 1
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "pinyin": "ài hào",
     "jyutping": "oi3 hou3",
     "english": "hobby",
-    "vietnamese": "sở thích"
+    "vietnamese": "Sở thích",
+    "characterCount": 2
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "pinyin": "bā",
     "jyutping": "baat3",
     "english": "eight",
-    "vietnamese": "Tám"
+    "vietnamese": "tám",
+    "characterCount": 1
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "pinyin": "bàba ｜ bà",
     "jyutping": "baa1 baa1 ｜ baa1",
     "english": "dad",
-    "vietnamese": "Thầy"
+    "vietnamese": "Bố",
+    "characterCount": 3
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "pinyin": "ba",
     "jyutping": "baa1",
     "english": "(interjection particle)",
-    "vietnamese": "Đi thôi"
+    "vietnamese": "Thanh",
+    "characterCount": 1
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "pinyin": "bái",
     "jyutping": "baak6 （ jing4 ）",
     "english": "white",
-    "vietnamese": "Trắng (hình dạng)"
+    "vietnamese": "Trắng (hình dạng)",
+    "characterCount": 2
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "pinyin": "bái tiān",
     "jyutping": "baak6 tin1",
     "english": "day",
-    "vietnamese": "ban ngày"
+    "vietnamese": "ban ngày",
+    "characterCount": 2
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "pinyin": "bǎi",
     "jyutping": "baak3",
     "english": "hundred",
-    "vietnamese": "Trăm"
+    "vietnamese": "Trăm",
+    "characterCount": 1
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "pinyin": "bān",
     "jyutping": "baan1",
     "english": "class",
-    "vietnamese": "lớp"
+    "vietnamese": "lớp học",
+    "characterCount": 1
   },
   {
     "id": 10,
@@ -87,7 +96,8 @@
     "pinyin": "bàn",
     "jyutping": "bun3",
     "english": "half",
-    "vietnamese": "nửa"
+    "vietnamese": "Một nửa",
+    "characterCount": 1
   },
   {
     "id": 11,
@@ -96,7 +106,8 @@
     "pinyin": "bàn nián",
     "jyutping": "bun3 nin4",
     "english": "half a year",
-    "vietnamese": "Nửa"
+    "vietnamese": "Nửa năm",
+    "characterCount": 2
   },
   {
     "id": 12,
@@ -105,7 +116,8 @@
     "pinyin": "bàn tiān",
     "jyutping": "bun3 tin1",
     "english": "half day",
-    "vietnamese": "khá lâu"
+    "vietnamese": "thời gian dài",
+    "characterCount": 2
   },
   {
     "id": 13,
@@ -114,7 +126,8 @@
     "pinyin": "bāng",
     "jyutping": "bong1",
     "english": "help",
-    "vietnamese": "Trợ giúp"
+    "vietnamese": "giúp đỡ",
+    "characterCount": 1
   },
   {
     "id": 14,
@@ -123,7 +136,8 @@
     "pinyin": "bāng máng",
     "jyutping": "bong1 mong4",
     "english": "help",
-    "vietnamese": "Trợ giúp"
+    "vietnamese": "giúp đỡ",
+    "characterCount": 2
   },
   {
     "id": 15,
@@ -132,7 +146,8 @@
     "pinyin": "bāo",
     "jyutping": "baau1",
     "english": "package",
-    "vietnamese": "gói"
+    "vietnamese": "Cái túi",
+    "characterCount": 1
   },
   {
     "id": 16,
@@ -141,7 +156,8 @@
     "pinyin": "bāo zi",
     "jyutping": "baau1 zi2",
     "english": "bun",
-    "vietnamese": "Bánh bao"
+    "vietnamese": "bánh bao hấp",
+    "characterCount": 2
   },
   {
     "id": 17,
@@ -150,7 +166,8 @@
     "pinyin": "bēi",
     "jyutping": "bui1",
     "english": "cup",
-    "vietnamese": "ly"
+    "vietnamese": "tách",
+    "characterCount": 1
   },
   {
     "id": 18,
@@ -159,7 +176,8 @@
     "pinyin": "bēi zi",
     "jyutping": "bui1 zi2",
     "english": "cup",
-    "vietnamese": "ly"
+    "vietnamese": "tách",
+    "characterCount": 2
   },
   {
     "id": 19,
@@ -168,7 +186,8 @@
     "pinyin": "běi",
     "jyutping": "bak1",
     "english": "north",
-    "vietnamese": "Hướng bắc"
+    "vietnamese": "phía bắc",
+    "characterCount": 1
   },
   {
     "id": 20,
@@ -177,7 +196,8 @@
     "pinyin": "běi biān",
     "jyutping": "bak1 bin1",
     "english": "North side",
-    "vietnamese": "Hướng bắc"
+    "vietnamese": "Phía bắc",
+    "characterCount": 2
   },
   {
     "id": 21,
@@ -186,7 +206,8 @@
     "pinyin": "běi jīng",
     "jyutping": "bak1 ging1",
     "english": "Beijing",
-    "vietnamese": "Bắc Kinh"
+    "vietnamese": "Bắc Kinh",
+    "characterCount": 2
   },
   {
     "id": 22,
@@ -195,7 +216,8 @@
     "pinyin": "běn",
     "jyutping": "bun2 （ loeng6 ）",
     "english": "(measure word for books or volumes)",
-    "vietnamese": "Sách (tập)"
+    "vietnamese": "Số tiền này",
+    "characterCount": 2
   },
   {
     "id": 23,
@@ -204,7 +226,8 @@
     "pinyin": "běn zi",
     "jyutping": "bun2 zi2",
     "english": "book",
-    "vietnamese": "sách"
+    "vietnamese": "sách",
+    "characterCount": 2
   },
   {
     "id": 24,
@@ -213,7 +236,8 @@
     "pinyin": "bǐ",
     "jyutping": "bei2",
     "english": "particle used for comparison",
-    "vietnamese": "so sánh"
+    "vietnamese": "So sánh",
+    "characterCount": 1
   },
   {
     "id": 25,
@@ -222,7 +246,8 @@
     "pinyin": "bié",
     "jyutping": "bit6 （ fu3 ）",
     "english": "Don’t",
-    "vietnamese": "Không nên (Thứ cấp)"
+    "vietnamese": "Khác (tính từ)",
+    "characterCount": 2
   },
   {
     "id": 26,
@@ -231,7 +256,8 @@
     "pinyin": "bié de",
     "jyutping": "bit6 dik1",
     "english": "other",
-    "vietnamese": "khác"
+    "vietnamese": "Khác",
+    "characterCount": 2
   },
   {
     "id": 27,
@@ -240,7 +266,8 @@
     "pinyin": "bié·rén",
     "jyutping": "bit6 jan4",
     "english": "other people",
-    "vietnamese": "Khác"
+    "vietnamese": "những người khác",
+    "characterCount": 2
   },
   {
     "id": 28,
@@ -249,7 +276,8 @@
     "pinyin": "bìng",
     "jyutping": "beng6",
     "english": "disease",
-    "vietnamese": "bệnh"
+    "vietnamese": "đau ốm",
+    "characterCount": 1
   },
   {
     "id": 29,
@@ -258,7 +286,8 @@
     "pinyin": "bìng rén",
     "jyutping": "beng6 jan4",
     "english": "patient",
-    "vietnamese": "kiên nhẫn"
+    "vietnamese": "kiên nhẫn",
+    "characterCount": 2
   },
   {
     "id": 30,
@@ -267,7 +296,8 @@
     "pinyin": "bú dà",
     "jyutping": "bat1 daai6",
     "english": "not big",
-    "vietnamese": "Không quá"
+    "vietnamese": "Không lớn",
+    "characterCount": 2
   },
   {
     "id": 31,
@@ -276,7 +306,8 @@
     "pinyin": "bú duì",
     "jyutping": "bat1 deoi3",
     "english": "wrong",
-    "vietnamese": "Sai"
+    "vietnamese": "sai",
+    "characterCount": 2
   },
   {
     "id": 32,
@@ -285,7 +316,8 @@
     "pinyin": "bú kè qì",
     "jyutping": "bat1 haak3 hei3",
     "english": "You’re welcome",
-    "vietnamese": "Không có gì"
+    "vietnamese": "Không có gì",
+    "characterCount": 3
   },
   {
     "id": 33,
@@ -294,7 +326,8 @@
     "pinyin": "bú yòng",
     "jyutping": "bat1 jung6",
     "english": "No need to",
-    "vietnamese": "Không"
+    "vietnamese": "Không cần",
+    "characterCount": 2
   },
   {
     "id": 34,
@@ -303,7 +336,8 @@
     "pinyin": "bù",
     "jyutping": "bat1",
     "english": "No",
-    "vietnamese": "Không"
+    "vietnamese": "KHÔNG",
+    "characterCount": 1
   },
   {
     "id": 35,
@@ -312,7 +346,8 @@
     "pinyin": "cài",
     "jyutping": "coi3",
     "english": "dish",
-    "vietnamese": "ẩm thực"
+    "vietnamese": "rau quả",
+    "characterCount": 1
   },
   {
     "id": 36,
@@ -321,7 +356,8 @@
     "pinyin": "chá",
     "jyutping": "caa4",
     "english": "tea",
-    "vietnamese": "Trà"
+    "vietnamese": "Trà",
+    "characterCount": 1
   },
   {
     "id": 37,
@@ -330,7 +366,8 @@
     "pinyin": "chà",
     "jyutping": "caa1",
     "english": "differ from; bad; short of",
-    "vietnamese": "sự khác nhau"
+    "vietnamese": "Sự khác biệt",
+    "characterCount": 1
   },
   {
     "id": 38,
@@ -339,7 +376,8 @@
     "pinyin": "cháng",
     "jyutping": "soeng4",
     "english": "often",
-    "vietnamese": "thường"
+    "vietnamese": "thường",
+    "characterCount": 1
   },
   {
     "id": 39,
@@ -348,7 +386,8 @@
     "pinyin": "cháng cháng",
     "jyutping": "soeng4 soeng4",
     "english": "often",
-    "vietnamese": "thường"
+    "vietnamese": "Thường xuyên",
+    "characterCount": 2
   },
   {
     "id": 40,
@@ -357,7 +396,8 @@
     "pinyin": "chàng",
     "jyutping": "coeng3",
     "english": "sing",
-    "vietnamese": "hát"
+    "vietnamese": "Hát",
+    "characterCount": 1
   },
   {
     "id": 41,
@@ -366,7 +406,8 @@
     "pinyin": "chàng gē",
     "jyutping": "coeng3 go1",
     "english": "sing",
-    "vietnamese": "hát"
+    "vietnamese": "Hát",
+    "characterCount": 2
   },
   {
     "id": 42,
@@ -375,7 +416,8 @@
     "pinyin": "chē",
     "jyutping": "ce1",
     "english": "car",
-    "vietnamese": "xe"
+    "vietnamese": "xe hơi",
+    "characterCount": 1
   },
   {
     "id": 43,
@@ -384,7 +426,8 @@
     "pinyin": "chē piào",
     "jyutping": "ce1 piu3",
     "english": "ticket",
-    "vietnamese": "vé"
+    "vietnamese": "vé",
+    "characterCount": 2
   },
   {
     "id": 44,
@@ -393,7 +436,8 @@
     "pinyin": "chē shàng",
     "jyutping": "ce1 soeng6",
     "english": "in the car",
-    "vietnamese": "Trên xe"
+    "vietnamese": "Trong xe",
+    "characterCount": 2
   },
   {
     "id": 45,
@@ -402,7 +446,8 @@
     "pinyin": "chē zhàn",
     "jyutping": "ce1 zaam6",
     "english": "station",
-    "vietnamese": "Dừng"
+    "vietnamese": "ga tàu",
+    "characterCount": 2
   },
   {
     "id": 46,
@@ -411,7 +456,8 @@
     "pinyin": "chī",
     "jyutping": "hek3",
     "english": "eat",
-    "vietnamese": "ăn"
+    "vietnamese": "ăn",
+    "characterCount": 1
   },
   {
     "id": 47,
@@ -420,7 +466,8 @@
     "pinyin": "chī fàn",
     "jyutping": "hek3 faan6",
     "english": "have meal",
-    "vietnamese": "ăn"
+    "vietnamese": "Ăn một bữa",
+    "characterCount": 2
   },
   {
     "id": 48,
@@ -429,7 +476,8 @@
     "pinyin": "chū",
     "jyutping": "ceot1",
     "english": "out",
-    "vietnamese": "Đi chơi"
+    "vietnamese": "ngoài",
+    "characterCount": 1
   },
   {
     "id": 49,
@@ -438,7 +486,8 @@
     "pinyin": "chū lái",
     "jyutping": "ceot1 loi4",
     "english": "come",
-    "vietnamese": "Lộ"
+    "vietnamese": "đi ra ngoài",
+    "characterCount": 2
   },
   {
     "id": 50,
@@ -447,7 +496,8 @@
     "pinyin": "chū qù",
     "jyutping": "ceot1 heoi3",
     "english": "go out",
-    "vietnamese": "Ra ngoài"
+    "vietnamese": "đi ra ngoài",
+    "characterCount": 2
   },
   {
     "id": 51,
@@ -456,7 +506,8 @@
     "pinyin": "chuān",
     "jyutping": "cyun1",
     "english": "wear",
-    "vietnamese": "mặc"
+    "vietnamese": "mặc",
+    "characterCount": 1
   },
   {
     "id": 52,
@@ -465,7 +516,8 @@
     "pinyin": "chuáng",
     "jyutping": "cong4",
     "english": "bed",
-    "vietnamese": "giường"
+    "vietnamese": "giường",
+    "characterCount": 1
   },
   {
     "id": 53,
@@ -474,7 +526,8 @@
     "pinyin": "cì",
     "jyutping": "ci3 （ loeng6 ）",
     "english": "(measure word for times, frequency)",
-    "vietnamese": "Thời gian (số lượng)"
+    "vietnamese": "lần (số lượng)",
+    "characterCount": 2
   },
   {
     "id": 54,
@@ -483,7 +536,8 @@
     "pinyin": "cóng",
     "jyutping": "cung4",
     "english": "from",
-    "vietnamese": "từ"
+    "vietnamese": "từ",
+    "characterCount": 1
   },
   {
     "id": 55,
@@ -492,7 +546,8 @@
     "pinyin": "cuò",
     "jyutping": "co3",
     "english": "wrong",
-    "vietnamese": "sai"
+    "vietnamese": "sai",
+    "characterCount": 1
   },
   {
     "id": 56,
@@ -501,7 +556,8 @@
     "pinyin": "dǎ",
     "jyutping": "daa2 （ dung6 ）",
     "english": "hit, take",
-    "vietnamese": "Đánh (di chuyển)"
+    "vietnamese": "di chuyển)",
+    "characterCount": 2
   },
   {
     "id": 57,
@@ -510,7 +566,8 @@
     "pinyin": "dǎ chē",
     "jyutping": "daa2 ce1",
     "english": "take a taxi",
-    "vietnamese": "Xe tắc xi"
+    "vietnamese": "Đi taxi",
+    "characterCount": 2
   },
   {
     "id": 58,
@@ -519,7 +576,8 @@
     "pinyin": "dǎ diàn huà",
     "jyutping": "daa2 din6 waa2",
     "english": "make a phonecall",
-    "vietnamese": "Gọi"
+    "vietnamese": "Gọi lên",
+    "characterCount": 3
   },
   {
     "id": 59,
@@ -528,7 +586,8 @@
     "pinyin": "dǎ kāi",
     "jyutping": "daa2 hoi1",
     "english": "turn on",
-    "vietnamese": "Mở nó"
+    "vietnamese": "Mở",
+    "characterCount": 2
   },
   {
     "id": 60,
@@ -537,7 +596,8 @@
     "pinyin": "dǎ qiú",
     "jyutping": "daa2 kau4",
     "english": "play ball",
-    "vietnamese": "Chơi"
+    "vietnamese": "Chơi bóng",
+    "characterCount": 2
   },
   {
     "id": 61,
@@ -546,7 +606,8 @@
     "pinyin": "dà",
     "jyutping": "daai6",
     "english": "large, big",
-    "vietnamese": "lớn"
+    "vietnamese": "to lớn",
+    "characterCount": 1
   },
   {
     "id": 62,
@@ -555,7 +616,8 @@
     "pinyin": "dà xué",
     "jyutping": "daai6 hok6",
     "english": "university",
-    "vietnamese": "đại học"
+    "vietnamese": "Trường đại học",
+    "characterCount": 2
   },
   {
     "id": 63,
@@ -564,7 +626,8 @@
     "pinyin": "dà xué shēng",
     "jyutping": "daai6 hok6 saang1",
     "english": "university student",
-    "vietnamese": "Sinh viên đại học"
+    "vietnamese": "sinh viên đại học",
+    "characterCount": 3
   },
   {
     "id": 64,
@@ -573,7 +636,8 @@
     "pinyin": "dào",
     "jyutping": "dou3",
     "english": "reach",
-    "vietnamese": "đến"
+    "vietnamese": "đến",
+    "characterCount": 1
   },
   {
     "id": 65,
@@ -582,7 +646,8 @@
     "pinyin": "dé dào",
     "jyutping": "dak1 dou3",
     "english": "get",
-    "vietnamese": "được"
+    "vietnamese": "lấy",
+    "characterCount": 2
   },
   {
     "id": 66,
@@ -591,7 +656,8 @@
     "pinyin": "de",
     "jyutping": "dei6",
     "english": "auxiliary word",
-    "vietnamese": "đất"
+    "vietnamese": "đất",
+    "characterCount": 1
   },
   {
     "id": 67,
@@ -600,7 +666,8 @@
     "pinyin": "de",
     "jyutping": "dik1",
     "english": "(aux.)",
-    "vietnamese": "mục tiêu"
+    "vietnamese": "của",
+    "characterCount": 1
   },
   {
     "id": 68,
@@ -609,7 +676,8 @@
     "pinyin": "děng",
     "jyutping": "dang2 （ dung6 ）",
     "english": "wait",
-    "vietnamese": "v.v. (phong trào)"
+    "vietnamese": "Chờ (chuyển động)",
+    "characterCount": 2
   },
   {
     "id": 69,
@@ -618,7 +686,8 @@
     "pinyin": "dì",
     "jyutping": "dei6",
     "english": "ground",
-    "vietnamese": "đất"
+    "vietnamese": "đất",
+    "characterCount": 1
   },
   {
     "id": 70,
@@ -627,7 +696,8 @@
     "pinyin": "dìdiǎn",
     "jyutping": "dei6 dim2",
     "english": "location",
-    "vietnamese": "nơi"
+    "vietnamese": "Địa điểm",
+    "characterCount": 2
   },
   {
     "id": 71,
@@ -636,7 +706,8 @@
     "pinyin": "dìfang",
     "jyutping": "dei6 fong1",
     "english": "local",
-    "vietnamese": "nơi"
+    "vietnamese": "địa điểm",
+    "characterCount": 2
   },
   {
     "id": 72,
@@ -645,7 +716,8 @@
     "pinyin": "dì shàng",
     "jyutping": "dei6 soeng6",
     "english": "on the ground",
-    "vietnamese": "Mặt đất"
+    "vietnamese": "trên mặt đất",
+    "characterCount": 2
   },
   {
     "id": 73,
@@ -654,7 +726,8 @@
     "pinyin": "dìtú",
     "jyutping": "dei6 tou4",
     "english": "Map",
-    "vietnamese": "bản đồ"
+    "vietnamese": "bản đồ",
+    "characterCount": 2
   },
   {
     "id": 74,
@@ -663,7 +736,8 @@
     "pinyin": "dì di ｜ dì",
     "jyutping": "dai6 dai6 ｜ dai6",
     "english": "younger brother",
-    "vietnamese": "Anh trai |"
+    "vietnamese": "em trai｜em trai",
+    "characterCount": 3
   },
   {
     "id": 75,
@@ -672,7 +746,8 @@
     "pinyin": "dì （ dì èr ）",
     "jyutping": "dai6 （ dai6 ji6 ）",
     "english": "auxiliary word for ordinal numbers (second )",
-    "vietnamese": "Thứ hai"
+    "vietnamese": "Không. (Thứ hai)",
+    "characterCount": 3
   },
   {
     "id": 76,
@@ -681,7 +756,8 @@
     "pinyin": "diǎn",
     "jyutping": "dim2",
     "english": "spot",
-    "vietnamese": "chấm"
+    "vietnamese": "điểm",
+    "characterCount": 1
   },
   {
     "id": 77,
@@ -690,7 +766,8 @@
     "pinyin": "diàn",
     "jyutping": "din6",
     "english": "electricity",
-    "vietnamese": "điện"
+    "vietnamese": "điện",
+    "characterCount": 1
   },
   {
     "id": 78,
@@ -699,7 +776,8 @@
     "pinyin": "diàn huà",
     "jyutping": "din6 waa2",
     "english": "phone",
-    "vietnamese": "Điện thoại"
+    "vietnamese": "Điện thoại",
+    "characterCount": 2
   },
   {
     "id": 79,
@@ -708,7 +786,8 @@
     "pinyin": "diànnǎo",
     "jyutping": "din6 nou5",
     "english": "Computer",
-    "vietnamese": "Máy tính"
+    "vietnamese": "máy tính",
+    "characterCount": 2
   },
   {
     "id": 80,
@@ -717,7 +796,8 @@
     "pinyin": "diànshì",
     "jyutping": "din6 si6",
     "english": "television",
-    "vietnamese": "TV"
+    "vietnamese": "tivi",
+    "characterCount": 2
   },
   {
     "id": 81,
@@ -726,7 +806,8 @@
     "pinyin": "diàn shì jī",
     "jyutping": "din6 si6 gei1",
     "english": "television",
-    "vietnamese": "tivi"
+    "vietnamese": "Tivi",
+    "characterCount": 3
   },
   {
     "id": 82,
@@ -735,7 +816,8 @@
     "pinyin": "diànyǐng",
     "jyutping": "din6 jing2",
     "english": "Film",
-    "vietnamese": "Phim"
+    "vietnamese": "Bộ phim",
+    "characterCount": 2
   },
   {
     "id": 83,
@@ -744,7 +826,8 @@
     "pinyin": "diàn yǐng yuàn",
     "jyutping": "din6 jing2 jyun2",
     "english": "cinema; movie theater",
-    "vietnamese": "rạp chiếu phim"
+    "vietnamese": "Rạp chiếu phim",
+    "characterCount": 3
   },
   {
     "id": 84,
@@ -753,7 +836,8 @@
     "pinyin": "dōng",
     "jyutping": "dung1",
     "english": "east",
-    "vietnamese": "Hướng đông"
+    "vietnamese": "Phía đông",
+    "characterCount": 1
   },
   {
     "id": 85,
@@ -762,7 +846,8 @@
     "pinyin": "dōng biān",
     "jyutping": "dung1 bin1",
     "english": "east side",
-    "vietnamese": "Hướng đông"
+    "vietnamese": "Phía đông",
+    "characterCount": 2
   },
   {
     "id": 86,
@@ -771,7 +856,8 @@
     "pinyin": "dōngxi",
     "jyutping": "dung1 sai1",
     "english": "thing",
-    "vietnamese": "nhét"
+    "vietnamese": "điều",
+    "characterCount": 2
   },
   {
     "id": 87,
@@ -780,7 +866,8 @@
     "pinyin": "dòng",
     "jyutping": "dung6",
     "english": "move",
-    "vietnamese": "chuyển"
+    "vietnamese": "di chuyển",
+    "characterCount": 1
   },
   {
     "id": 88,
@@ -789,7 +876,8 @@
     "pinyin": "dòngzuò",
     "jyutping": "dung6 zok3",
     "english": "action",
-    "vietnamese": "hành động"
+    "vietnamese": "hoạt động",
+    "characterCount": 2
   },
   {
     "id": 89,
@@ -798,7 +886,8 @@
     "pinyin": "dōu",
     "jyutping": "dou1",
     "english": "all",
-    "vietnamese": "tất cả"
+    "vietnamese": "Tất cả",
+    "characterCount": 1
   },
   {
     "id": 90,
@@ -807,7 +896,8 @@
     "pinyin": "dú",
     "jyutping": "duk6",
     "english": "read",
-    "vietnamese": "đọc"
+    "vietnamese": "đọc",
+    "characterCount": 1
   },
   {
     "id": 91,
@@ -816,7 +906,8 @@
     "pinyin": "dú shū",
     "jyutping": "duk6 syu1",
     "english": "reading; study",
-    "vietnamese": "học"
+    "vietnamese": "đọc",
+    "characterCount": 2
   },
   {
     "id": 92,
@@ -825,7 +916,8 @@
     "pinyin": "duì",
     "jyutping": "deoi3 （ jing4 ）",
     "english": "right",
-    "vietnamese": "Cặp (hình dạng)"
+    "vietnamese": "Cặp (hình dạng)",
+    "characterCount": 2
   },
   {
     "id": 93,
@@ -834,7 +926,8 @@
     "pinyin": "duìbuqǐ",
     "jyutping": "deoi3 bat1 hei2",
     "english": "I’m sorry.",
-    "vietnamese": "Tôi xin lỗi"
+    "vietnamese": "Xin lỗi",
+    "characterCount": 3
   },
   {
     "id": 94,
@@ -843,7 +936,8 @@
     "pinyin": "duō",
     "jyutping": "do1 （ jing4 、 doi6 ）",
     "english": "many; much; more",
-    "vietnamese": "Nhiều (hình thức, thế hệ)"
+    "vietnamese": "Nhiều (hình thức, thế hệ)",
+    "characterCount": 3
   },
   {
     "id": 95,
@@ -852,7 +946,8 @@
     "pinyin": "duōshao",
     "jyutping": "do1 siu2",
     "english": "how much",
-    "vietnamese": "Bao nhiêu"
+    "vietnamese": "Bao nhiêu",
+    "characterCount": 2
   },
   {
     "id": 96,
@@ -861,7 +956,8 @@
     "pinyin": "è",
     "jyutping": "ngo6",
     "english": "hungry",
-    "vietnamese": "đói"
+    "vietnamese": "Đói bụng",
+    "characterCount": 1
   },
   {
     "id": 97,
@@ -870,7 +966,8 @@
     "pinyin": "érzi",
     "jyutping": "ji4 zi2",
     "english": "Son",
-    "vietnamese": "Con trai"
+    "vietnamese": "con trai",
+    "characterCount": 2
   },
   {
     "id": 98,
@@ -879,7 +976,8 @@
     "pinyin": "èr",
     "jyutping": "ji6",
     "english": "Two",
-    "vietnamese": "Hai"
+    "vietnamese": "hai",
+    "characterCount": 1
   },
   {
     "id": 99,
@@ -888,7 +986,8 @@
     "pinyin": "fàn",
     "jyutping": "faan6",
     "english": "rice; meal",
-    "vietnamese": "lúa"
+    "vietnamese": "bữa ăn",
+    "characterCount": 1
   },
   {
     "id": 100,
@@ -897,7 +996,8 @@
     "pinyin": "fàndiàn",
     "jyutping": "faan6 dim3",
     "english": "restaurant",
-    "vietnamese": "Tiệm ăn"
+    "vietnamese": "Nhà hàng",
+    "characterCount": 2
   },
   {
     "id": 101,
@@ -906,7 +1006,8 @@
     "pinyin": "fángjiān",
     "jyutping": "fong4 gaan1",
     "english": "Room",
-    "vietnamese": "phòng"
+    "vietnamese": "Phòng",
+    "characterCount": 2
   },
   {
     "id": 102,
@@ -915,7 +1016,8 @@
     "pinyin": "fáng zi",
     "jyutping": "fong4 zi2",
     "english": "house; building",
-    "vietnamese": "nhà"
+    "vietnamese": "căn nhà",
+    "characterCount": 2
   },
   {
     "id": 103,
@@ -924,7 +1026,8 @@
     "pinyin": "fàng",
     "jyutping": "fong3",
     "english": "discharge",
-    "vietnamese": "để"
+    "vietnamese": "đặt",
+    "characterCount": 1
   },
   {
     "id": 104,
@@ -933,7 +1036,8 @@
     "pinyin": "fàng jià",
     "jyutping": "fong3 gaa3",
     "english": "holiday; have a holiday",
-    "vietnamese": "ngày lễ"
+    "vietnamese": "Có một kỳ nghỉ",
+    "characterCount": 2
   },
   {
     "id": 105,
@@ -942,7 +1046,8 @@
     "pinyin": "fàng xué",
     "jyutping": "fong3 hok6",
     "english": "off school",
-    "vietnamese": "Trường học"
+    "vietnamese": "Sau giờ học",
+    "characterCount": 2
   },
   {
     "id": 106,
@@ -951,7 +1056,8 @@
     "pinyin": "fēi",
     "jyutping": "fei1",
     "english": "fly",
-    "vietnamese": "bay"
+    "vietnamese": "bay",
+    "characterCount": 1
   },
   {
     "id": 107,
@@ -960,7 +1066,8 @@
     "pinyin": "fēijī",
     "jyutping": "fei1 gei1",
     "english": "aircraft",
-    "vietnamese": "máy bay"
+    "vietnamese": "máy bay",
+    "characterCount": 2
   },
   {
     "id": 108,
@@ -969,7 +1076,8 @@
     "pinyin": "fēicháng",
     "jyutping": "fei1 soeng4",
     "english": "very",
-    "vietnamese": "Rất"
+    "vietnamese": "Rất",
+    "characterCount": 2
   },
   {
     "id": 109,
@@ -978,7 +1086,8 @@
     "pinyin": "fēn",
     "jyutping": "fan1 （ ming4 、 loeng6 ）",
     "english": "minute; point; part; (measure word)",
-    "vietnamese": "Biên bản (tên, số lượng)"
+    "vietnamese": "Fen (danh từ, số lượng)",
+    "characterCount": 3
   },
   {
     "id": 110,
@@ -987,7 +1096,8 @@
     "pinyin": "fēng",
     "jyutping": "fung1",
     "english": "wind",
-    "vietnamese": "gió"
+    "vietnamese": "gió",
+    "characterCount": 1
   },
   {
     "id": 111,
@@ -996,7 +1106,8 @@
     "pinyin": "gān",
     "jyutping": "gon1",
     "english": "dry",
-    "vietnamese": "khô"
+    "vietnamese": "Khô",
+    "characterCount": 1
   },
   {
     "id": 112,
@@ -1005,7 +1116,8 @@
     "pinyin": "gānjìng",
     "jyutping": "gon1 zeng6",
     "english": "clean",
-    "vietnamese": "sạch"
+    "vietnamese": "lau dọn",
+    "characterCount": 2
   },
   {
     "id": 113,
@@ -1014,7 +1126,8 @@
     "pinyin": "gàn",
     "jyutping": "gon1",
     "english": "do",
-    "vietnamese": "khô"
+    "vietnamese": "Khô",
+    "characterCount": 1
   },
   {
     "id": 114,
@@ -1023,7 +1136,8 @@
     "pinyin": "gàn shén me",
     "jyutping": "gon3 sam6 mo1",
     "english": "What to do",
-    "vietnamese": "Làm"
+    "vietnamese": "Phải làm gì",
+    "characterCount": 3
   },
   {
     "id": 115,
@@ -1032,7 +1146,8 @@
     "pinyin": "gāo",
     "jyutping": "gou1",
     "english": "high",
-    "vietnamese": "cao"
+    "vietnamese": "cao",
+    "characterCount": 1
   },
   {
     "id": 116,
@@ -1041,7 +1156,8 @@
     "pinyin": "gāoxìng",
     "jyutping": "gou1 hing3",
     "english": "happy",
-    "vietnamese": "mừng"
+    "vietnamese": "Vui mừng",
+    "characterCount": 2
   },
   {
     "id": 117,
@@ -1050,7 +1166,8 @@
     "pinyin": "gàosu",
     "jyutping": "gou3 sou3",
     "english": "tell",
-    "vietnamese": "thuật lại"
+    "vietnamese": "Kể",
+    "characterCount": 2
   },
   {
     "id": 118,
@@ -1059,7 +1176,8 @@
     "pinyin": "gē ge ｜ gē",
     "jyutping": "go1 go1 ｜ go1",
     "english": "elder brother",
-    "vietnamese": "Anh trai |"
+    "vietnamese": "Anh｜Anh",
+    "characterCount": 3
   },
   {
     "id": 119,
@@ -1068,7 +1186,8 @@
     "pinyin": "gē",
     "jyutping": "go1",
     "english": "song",
-    "vietnamese": "bài hát"
+    "vietnamese": "Bài hát",
+    "characterCount": 1
   },
   {
     "id": 120,
@@ -1077,7 +1196,8 @@
     "pinyin": "gè",
     "jyutping": "go3",
     "english": "individual",
-    "vietnamese": "mảnh"
+    "vietnamese": "cá nhân",
+    "characterCount": 1
   },
   {
     "id": 121,
@@ -1086,7 +1206,8 @@
     "pinyin": "gěi",
     "jyutping": "kap1",
     "english": "give",
-    "vietnamese": "Để đưa cho"
+    "vietnamese": "Đưa cho",
+    "characterCount": 1
   },
   {
     "id": 122,
@@ -1095,7 +1216,8 @@
     "pinyin": "gēn",
     "jyutping": "gan1",
     "english": "with",
-    "vietnamese": "theo"
+    "vietnamese": "Và",
+    "characterCount": 1
   },
   {
     "id": 123,
@@ -1104,7 +1226,8 @@
     "pinyin": "gōngrén",
     "jyutping": "gung1 jan4",
     "english": "Worker",
-    "vietnamese": "công nhân"
+    "vietnamese": "Công nhân",
+    "characterCount": 2
   },
   {
     "id": 124,
@@ -1113,7 +1236,8 @@
     "pinyin": "gōngzuò",
     "jyutping": "gung1 zok3",
     "english": "work",
-    "vietnamese": "Việc"
+    "vietnamese": "Công việc",
+    "characterCount": 2
   },
   {
     "id": 125,
@@ -1122,7 +1246,8 @@
     "pinyin": "guān",
     "jyutping": "gwaan1 （ dung6 ）",
     "english": "shut; close; turn off",
-    "vietnamese": "Tắt (Chuyển động)"
+    "vietnamese": "Tắt (chuyển động)",
+    "characterCount": 2
   },
   {
     "id": 126,
@@ -1131,7 +1256,8 @@
     "pinyin": "guān shàng",
     "jyutping": "gwaan1 soeng5",
     "english": "close;shut to; turn off",
-    "vietnamese": "Khép kín"
+    "vietnamese": "Đóng",
+    "characterCount": 2
   },
   {
     "id": 127,
@@ -1140,7 +1266,8 @@
     "pinyin": "guì",
     "jyutping": "gwai3",
     "english": "noble",
-    "vietnamese": "đắt"
+    "vietnamese": "đắt",
+    "characterCount": 1
   },
   {
     "id": 128,
@@ -1149,7 +1276,8 @@
     "pinyin": "guó",
     "jyutping": "gwok3",
     "english": "country; state; nation",
-    "vietnamese": "quốc gia"
+    "vietnamese": "quốc gia",
+    "characterCount": 1
   },
   {
     "id": 129,
@@ -1158,7 +1286,8 @@
     "pinyin": "guójiā",
     "jyutping": "gwok3 gaa1",
     "english": "Country",
-    "vietnamese": "quốc gia"
+    "vietnamese": "Quốc gia",
+    "characterCount": 2
   },
   {
     "id": 130,
@@ -1167,7 +1296,8 @@
     "pinyin": "guó wài",
     "jyutping": "gwok3 ngoi6",
     "english": "foreign; oversea; abroad",
-    "vietnamese": "Nước ngoài"
+    "vietnamese": "nước ngoài",
+    "characterCount": 2
   },
   {
     "id": 131,
@@ -1176,7 +1306,8 @@
     "pinyin": "guò",
     "jyutping": "gwo3",
     "english": "pass",
-    "vietnamese": "đèo"
+    "vietnamese": "Vượt qua",
+    "characterCount": 1
   },
   {
     "id": 132,
@@ -1185,7 +1316,8 @@
     "pinyin": "hái",
     "jyutping": "waan4",
     "english": "also; still; yet",
-    "vietnamese": "vẫn"
+    "vietnamese": "trở lại",
+    "characterCount": 1
   },
   {
     "id": 133,
@@ -1194,7 +1326,8 @@
     "pinyin": "háishi",
     "jyutping": "waan4 si6",
     "english": "still",
-    "vietnamese": "Vẫn là"
+    "vietnamese": "vẫn",
+    "characterCount": 2
   },
   {
     "id": 134,
@@ -1203,7 +1336,8 @@
     "pinyin": "hái yǒu",
     "jyutping": "waan4 jau5",
     "english": "also; in addition; besides",
-    "vietnamese": "Và cũng"
+    "vietnamese": "bên cạnh đó",
+    "characterCount": 2
   },
   {
     "id": 135,
@@ -1212,7 +1346,8 @@
     "pinyin": "háizi",
     "jyutping": "haai4 zi2",
     "english": "Children",
-    "vietnamese": "con"
+    "vietnamese": "đứa trẻ",
+    "characterCount": 2
   },
   {
     "id": 136,
@@ -1221,7 +1356,8 @@
     "pinyin": "hànyǔ",
     "jyutping": "hon3 jyu5",
     "english": "Chinese",
-    "vietnamese": "Trung quốc"
+    "vietnamese": "Trung Quốc",
+    "characterCount": 2
   },
   {
     "id": 137,
@@ -1230,7 +1366,8 @@
     "pinyin": "hàn zì",
     "jyutping": "hon3 zi6",
     "english": "Chinese character",
-    "vietnamese": "Chữ Hán"
+    "vietnamese": "chữ Hán",
+    "characterCount": 2
   },
   {
     "id": 138,
@@ -1239,7 +1376,8 @@
     "pinyin": "hǎo",
     "jyutping": "hou2 （ jing4 ）",
     "english": "good",
-    "vietnamese": "Tốt (hình dạng)"
+    "vietnamese": "Tốt (hình dạng)",
+    "characterCount": 2
   },
   {
     "id": 139,
@@ -1248,7 +1386,8 @@
     "pinyin": "hǎochī",
     "jyutping": "hou2 hek3",
     "english": "Yummy",
-    "vietnamese": "ngon"
+    "vietnamese": "ngon",
+    "characterCount": 2
   },
   {
     "id": 140,
@@ -1257,7 +1396,8 @@
     "pinyin": "hǎo kàn",
     "jyutping": "hou2 hon3",
     "english": "good looking",
-    "vietnamese": "Xinh đẹp"
+    "vietnamese": "Đẹp",
+    "characterCount": 2
   },
   {
     "id": 141,
@@ -1266,7 +1406,8 @@
     "pinyin": "hǎo tīng",
     "jyutping": "hou2 teng1",
     "english": "pleasant to hear",
-    "vietnamese": "Tốt"
+    "vietnamese": "Đẹp",
+    "characterCount": 2
   },
   {
     "id": 142,
@@ -1275,7 +1416,8 @@
     "pinyin": "hǎo wánr",
     "jyutping": "hou2 wun6 ji4",
     "english": "fun; interesting",
-    "vietnamese": "Thật vui"
+    "vietnamese": "Vui vẻ",
+    "characterCount": 3
   },
   {
     "id": 143,
@@ -1284,7 +1426,8 @@
     "pinyin": "hào",
     "jyutping": "hou6",
     "english": "Number/date",
-    "vietnamese": "số"
+    "vietnamese": "Con số",
+    "characterCount": 1
   },
   {
     "id": 144,
@@ -1293,7 +1436,8 @@
     "pinyin": "hē",
     "jyutping": "hot3",
     "english": "drink",
-    "vietnamese": "uống"
+    "vietnamese": "uống",
+    "characterCount": 1
   },
   {
     "id": 145,
@@ -1302,7 +1446,8 @@
     "pinyin": "hé",
     "jyutping": "wo4",
     "english": "and",
-    "vietnamese": "và"
+    "vietnamese": "Và",
+    "characterCount": 1
   },
   {
     "id": 146,
@@ -1311,7 +1456,8 @@
     "pinyin": "hěn",
     "jyutping": "han2",
     "english": "very",
-    "vietnamese": "rất"
+    "vietnamese": "rất",
+    "characterCount": 1
   },
   {
     "id": 147,
@@ -1320,7 +1466,8 @@
     "pinyin": "hòu",
     "jyutping": "hau6",
     "english": "back; behind; after; later",
-    "vietnamese": "sau"
+    "vietnamese": "mặt sau",
+    "characterCount": 1
   },
   {
     "id": 148,
@@ -1329,7 +1476,8 @@
     "pinyin": "hòu biān",
     "jyutping": "hau6 bin1",
     "english": "behind; back",
-    "vietnamese": "sau"
+    "vietnamese": "phía sau",
+    "characterCount": 2
   },
   {
     "id": 149,
@@ -1338,7 +1486,8 @@
     "pinyin": "hòu tiān",
     "jyutping": "hau6 tin1",
     "english": "day after tomorrow",
-    "vietnamese": "Ngày kia"
+    "vietnamese": "ngày kia",
+    "characterCount": 2
   },
   {
     "id": 150,
@@ -1347,7 +1496,8 @@
     "pinyin": "huā",
     "jyutping": "faa1 （ ming4 ）",
     "english": "flower",
-    "vietnamese": "Hoa (tên)"
+    "vietnamese": "Hoa (tên)",
+    "characterCount": 2
   },
   {
     "id": 151,
@@ -1356,7 +1506,8 @@
     "pinyin": "huà",
     "jyutping": "waa6",
     "english": "word; words",
-    "vietnamese": "thoại"
+    "vietnamese": "nói chuyện",
+    "characterCount": 1
   },
   {
     "id": 152,
@@ -1365,7 +1516,8 @@
     "pinyin": "huài",
     "jyutping": "waai6",
     "english": "bad",
-    "vietnamese": "Tồi"
+    "vietnamese": "xấu",
+    "characterCount": 1
   },
   {
     "id": 153,
@@ -1374,7 +1526,8 @@
     "pinyin": "huán",
     "jyutping": "waan4",
     "english": "return; pay back",
-    "vietnamese": "vẫn"
+    "vietnamese": "trở lại",
+    "characterCount": 1
   },
   {
     "id": 154,
@@ -1383,7 +1536,8 @@
     "pinyin": "huí",
     "jyutping": "wui4 （ dung6 ）",
     "english": "go back; return",
-    "vietnamese": "Trở lại (chuyển động)"
+    "vietnamese": "Quay lại (chuyển động)",
+    "characterCount": 2
   },
   {
     "id": 155,
@@ -1392,7 +1546,8 @@
     "pinyin": "huídá",
     "jyutping": "wui4 daap3",
     "english": "Answer",
-    "vietnamese": "Trả lời"
+    "vietnamese": "trả lời",
+    "characterCount": 2
   },
   {
     "id": 156,
@@ -1401,7 +1556,8 @@
     "pinyin": "huí dào",
     "jyutping": "wui4 dou3",
     "english": "back to",
-    "vietnamese": "Lưng"
+    "vietnamese": "Quay lại",
+    "characterCount": 2
   },
   {
     "id": 157,
@@ -1410,7 +1566,8 @@
     "pinyin": "huí jiā",
     "jyutping": "wui4 gaa1",
     "english": "go home; return home",
-    "vietnamese": "Về nhà"
+    "vietnamese": "về nhà",
+    "characterCount": 2
   },
   {
     "id": 158,
@@ -1419,7 +1576,8 @@
     "pinyin": "huí lái",
     "jyutping": "wui4 loi4",
     "english": "come back; return",
-    "vietnamese": "Quay lại"
+    "vietnamese": "trở lại",
+    "characterCount": 2
   },
   {
     "id": 159,
@@ -1428,7 +1586,8 @@
     "pinyin": "huí qù",
     "jyutping": "wui4 heoi3",
     "english": "go back",
-    "vietnamese": "Trở lại"
+    "vietnamese": "quay lại",
+    "characterCount": 2
   },
   {
     "id": 160,
@@ -1437,7 +1596,8 @@
     "pinyin": "huì",
     "jyutping": "wui2 （ dung6 ）",
     "english": "can; be able to",
-    "vietnamese": "Họp (phong trào)"
+    "vietnamese": "Sẽ (di chuyển)",
+    "characterCount": 2
   },
   {
     "id": 161,
@@ -1446,7 +1606,8 @@
     "pinyin": "huǒ chē",
     "jyutping": "fo2 ce1",
     "english": "train",
-    "vietnamese": "xe lửa"
+    "vietnamese": "xe lửa",
+    "characterCount": 2
   },
   {
     "id": 162,
@@ -1455,7 +1616,8 @@
     "pinyin": "jīchǎng",
     "jyutping": "gei1 coeng4",
     "english": "Airport",
-    "vietnamese": "sân bay"
+    "vietnamese": "Sân bay",
+    "characterCount": 2
   },
   {
     "id": 163,
@@ -1464,7 +1626,8 @@
     "pinyin": "jī piào",
     "jyutping": "gei1 piu3",
     "english": "air ticket",
-    "vietnamese": "vé"
+    "vietnamese": "Vé máy bay",
+    "characterCount": 2
   },
   {
     "id": 164,
@@ -1473,7 +1636,8 @@
     "pinyin": "jīdàn",
     "jyutping": "gai1 daan2",
     "english": "Egg",
-    "vietnamese": "Trứng"
+    "vietnamese": "trứng",
+    "characterCount": 2
   },
   {
     "id": 165,
@@ -1482,7 +1646,8 @@
     "pinyin": "jǐ",
     "jyutping": "gei2",
     "english": "several",
-    "vietnamese": "kỉ"
+    "vietnamese": "Một số",
+    "characterCount": 1
   },
   {
     "id": 166,
@@ -1491,7 +1656,8 @@
     "pinyin": "jì",
     "jyutping": "gei3",
     "english": "remember",
-    "vietnamese": "nhớ"
+    "vietnamese": "nhớ",
+    "characterCount": 1
   },
   {
     "id": 167,
@@ -1500,7 +1666,8 @@
     "pinyin": "jìdé",
     "jyutping": "gei3 dak1",
     "english": "remember",
-    "vietnamese": "nhớ"
+    "vietnamese": "Nhớ",
+    "characterCount": 2
   },
   {
     "id": 168,
@@ -1509,7 +1676,8 @@
     "pinyin": "jì zhù",
     "jyutping": "gei3 zyu6",
     "english": "remember; keep in mind",
-    "vietnamese": "Nhớ"
+    "vietnamese": "nhớ",
+    "characterCount": 2
   },
   {
     "id": 169,
@@ -1518,7 +1686,8 @@
     "pinyin": "jiā",
     "jyutping": "gaa1",
     "english": "home",
-    "vietnamese": "gia đình"
+    "vietnamese": "Nhà",
+    "characterCount": 1
   },
   {
     "id": 170,
@@ -1527,7 +1696,8 @@
     "pinyin": "jiā lǐ",
     "jyutping": "gaa1 leoi5",
     "english": "In the home",
-    "vietnamese": "nhà"
+    "vietnamese": "Trang chủ",
+    "characterCount": 2
   },
   {
     "id": 171,
@@ -1536,7 +1706,8 @@
     "pinyin": "jiā rén",
     "jyutping": "gaa1 jan4",
     "english": "family",
-    "vietnamese": "gia đình"
+    "vietnamese": "gia đình",
+    "characterCount": 2
   },
   {
     "id": 172,
@@ -1545,7 +1716,8 @@
     "pinyin": "jiān",
     "jyutping": "gaan1",
     "english": "between; measure word for rooms",
-    "vietnamese": "không gian"
+    "vietnamese": "giữa",
+    "characterCount": 1
   },
   {
     "id": 173,
@@ -1554,7 +1726,8 @@
     "pinyin": "jiàn",
     "jyutping": "gin3",
     "english": "see; meet",
-    "vietnamese": "xem"
+    "vietnamese": "Nhìn thấy",
+    "characterCount": 1
   },
   {
     "id": 174,
@@ -1563,7 +1736,8 @@
     "pinyin": "jiànmiàn",
     "jyutping": "gin3 min6",
     "english": "meet",
-    "vietnamese": "gặp"
+    "vietnamese": "Gặp",
+    "characterCount": 2
   },
   {
     "id": 175,
@@ -1572,7 +1746,8 @@
     "pinyin": "jiāo",
     "jyutping": "gaau3",
     "english": "teach",
-    "vietnamese": "dạy"
+    "vietnamese": "dạy bảo",
+    "characterCount": 1
   },
   {
     "id": 176,
@@ -1581,7 +1756,8 @@
     "pinyin": "jiào",
     "jyutping": "giu3 （ dung6 ）",
     "english": "call; be called",
-    "vietnamese": "Gọi điện (di chuyển)"
+    "vietnamese": "Gọi (hành động)",
+    "characterCount": 2
   },
   {
     "id": 177,
@@ -1590,7 +1766,8 @@
     "pinyin": "jiào xué lóu",
     "jyutping": "gaau3 hok6 lau4",
     "english": "teaching building",
-    "vietnamese": "Tòa nhà giảng dạy"
+    "vietnamese": "Tòa nhà giảng dạy",
+    "characterCount": 3
   },
   {
     "id": 178,
@@ -1599,7 +1776,8 @@
     "pinyin": "jiě jie ｜ jiě",
     "jyutping": "ze2 ze2 ｜ ze2",
     "english": "elder sister",
-    "vietnamese": "Em gái|Em gái"
+    "vietnamese": "Chị｜Chị",
+    "characterCount": 3
   },
   {
     "id": 179,
@@ -1608,7 +1786,8 @@
     "pinyin": "jièshào",
     "jyutping": "gaai3 siu6",
     "english": "introduce",
-    "vietnamese": "giới thiệu"
+    "vietnamese": "giới thiệu",
+    "characterCount": 2
   },
   {
     "id": 180,
@@ -1617,7 +1796,8 @@
     "pinyin": "jīn nián",
     "jyutping": "gam1 nin4",
     "english": "this year",
-    "vietnamese": "năm nay"
+    "vietnamese": "Năm nay",
+    "characterCount": 2
   },
   {
     "id": 181,
@@ -1626,7 +1806,8 @@
     "pinyin": "jīntiān",
     "jyutping": "gam1 tin1",
     "english": "Today",
-    "vietnamese": "Hôm nay"
+    "vietnamese": "Hôm nay",
+    "characterCount": 2
   },
   {
     "id": 182,
@@ -1635,7 +1816,8 @@
     "pinyin": "jìn",
     "jyutping": "zeon3",
     "english": "enter",
-    "vietnamese": "vào"
+    "vietnamese": "Đi vào",
+    "characterCount": 1
   },
   {
     "id": 183,
@@ -1644,7 +1826,8 @@
     "pinyin": "jìn lái",
     "jyutping": "zeon3 loi4",
     "english": "come in",
-    "vietnamese": "Trong"
+    "vietnamese": "Vào đi",
+    "characterCount": 2
   },
   {
     "id": 184,
@@ -1653,7 +1836,8 @@
     "pinyin": "jìn qù",
     "jyutping": "zeon3 heoi3",
     "english": "go in",
-    "vietnamese": "Tham gia"
+    "vietnamese": "Đi vào",
+    "characterCount": 2
   },
   {
     "id": 185,
@@ -1662,7 +1846,8 @@
     "pinyin": "jiǔ",
     "jyutping": "gau2",
     "english": "Nine",
-    "vietnamese": "Chín"
+    "vietnamese": "Chín",
+    "characterCount": 1
   },
   {
     "id": 186,
@@ -1671,7 +1856,8 @@
     "pinyin": "jiù",
     "jyutping": "zau6",
     "english": "as soon as; right away; then",
-    "vietnamese": "chỉ"
+    "vietnamese": "Ngay lập tức",
+    "characterCount": 1
   },
   {
     "id": 187,
@@ -1680,7 +1866,8 @@
     "pinyin": "juéde",
     "jyutping": "gok3 dak1",
     "english": "Think",
-    "vietnamese": "nỉ"
+    "vietnamese": "cảm thấy",
+    "characterCount": 2
   },
   {
     "id": 188,
@@ -1689,7 +1876,8 @@
     "pinyin": "kāi",
     "jyutping": "hoi1",
     "english": "open",
-    "vietnamese": "mở"
+    "vietnamese": "mở",
+    "characterCount": 1
   },
   {
     "id": 189,
@@ -1698,7 +1886,8 @@
     "pinyin": "kāi chē",
     "jyutping": "hoi1 ce1",
     "english": "drive; drive a car",
-    "vietnamese": "lái"
+    "vietnamese": "lái xe",
+    "characterCount": 2
   },
   {
     "id": 190,
@@ -1707,7 +1896,8 @@
     "pinyin": "kāi huì",
     "jyutping": "hoi1 wui2",
     "english": "have a meeting",
-    "vietnamese": "Hội nghị"
+    "vietnamese": "Cuộc họp",
+    "characterCount": 2
   },
   {
     "id": 191,
@@ -1716,7 +1906,8 @@
     "pinyin": "kāiwánxiào",
     "jyutping": "hoi1 waan4 siu3",
     "english": "Make fun of",
-    "vietnamese": "Đùa"
+    "vietnamese": "câu nói đùa",
+    "characterCount": 3
   },
   {
     "id": 192,
@@ -1725,7 +1916,8 @@
     "pinyin": "kàn",
     "jyutping": "hon3",
     "english": "see",
-    "vietnamese": "xem"
+    "vietnamese": "Nhìn",
+    "characterCount": 1
   },
   {
     "id": 193,
@@ -1734,7 +1926,8 @@
     "pinyin": "kàn bìng",
     "jyutping": "hon3 beng6",
     "english": "see a doctor",
-    "vietnamese": "Gặp bác sĩ"
+    "vietnamese": "đi khám bác sĩ",
+    "characterCount": 2
   },
   {
     "id": 194,
@@ -1743,7 +1936,8 @@
     "pinyin": "kàn dào",
     "jyutping": "hon3 dou3",
     "english": "see",
-    "vietnamese": "xem"
+    "vietnamese": "Nhìn thấy",
+    "characterCount": 2
   },
   {
     "id": 195,
@@ -1752,7 +1946,8 @@
     "pinyin": "kànjiàn",
     "jyutping": "hon3 gin3",
     "english": "seeing",
-    "vietnamese": "xem"
+    "vietnamese": "nhìn thấy",
+    "characterCount": 2
   },
   {
     "id": 196,
@@ -1761,7 +1956,8 @@
     "pinyin": "kǎo",
     "jyutping": "haau2",
     "english": "test; examine",
-    "vietnamese": "kiểm tra"
+    "vietnamese": "Bài kiểm tra",
+    "characterCount": 1
   },
   {
     "id": 197,
@@ -1770,7 +1966,8 @@
     "pinyin": "kǎoshì",
     "jyutping": "haau2 si5",
     "english": "Examination",
-    "vietnamese": "kiểm tra"
+    "vietnamese": "làm bài kiểm tra",
+    "characterCount": 2
   },
   {
     "id": 198,
@@ -1779,7 +1976,8 @@
     "pinyin": "kě",
     "jyutping": "hot3",
     "english": "thirsty",
-    "vietnamese": "khát"
+    "vietnamese": "khát",
+    "characterCount": 1
   },
   {
     "id": 199,
@@ -1788,7 +1986,8 @@
     "pinyin": "kè",
     "jyutping": "fo3",
     "english": "course",
-    "vietnamese": "bài học"
+    "vietnamese": "lớp học",
+    "characterCount": 1
   },
   {
     "id": 200,
@@ -1797,7 +1996,8 @@
     "pinyin": "kè běn",
     "jyutping": "fo3 bun2",
     "english": "textbook",
-    "vietnamese": "sách giáo khoa"
+    "vietnamese": "sách giáo khoa",
+    "characterCount": 2
   },
   {
     "id": 201,
@@ -1806,7 +2006,8 @@
     "pinyin": "kè wén",
     "jyutping": "fo3 man4",
     "english": "text",
-    "vietnamese": "Nhắn tin"
+    "vietnamese": "chữ",
+    "characterCount": 2
   },
   {
     "id": 202,
@@ -1815,7 +2016,8 @@
     "pinyin": "kǒu",
     "jyutping": "hau2",
     "english": "mouth",
-    "vietnamese": "miệng"
+    "vietnamese": "miệng",
+    "characterCount": 1
   },
   {
     "id": 203,
@@ -1824,7 +2026,8 @@
     "pinyin": "kuài",
     "jyutping": "faai3",
     "english": "block",
-    "vietnamese": "khối"
+    "vietnamese": "cái",
+    "characterCount": 1
   },
   {
     "id": 204,
@@ -1833,7 +2036,8 @@
     "pinyin": "kuài",
     "jyutping": "faai3",
     "english": "fast",
-    "vietnamese": "nhanh"
+    "vietnamese": "nhanh",
+    "characterCount": 1
   },
   {
     "id": 205,
@@ -1842,7 +2046,8 @@
     "pinyin": "lái",
     "jyutping": "loi4",
     "english": "come",
-    "vietnamese": "đến"
+    "vietnamese": "Đến",
+    "characterCount": 1
   },
   {
     "id": 206,
@@ -1851,7 +2056,8 @@
     "pinyin": "lái dào",
     "jyutping": "loi4 dou3",
     "english": "come; arrive",
-    "vietnamese": "Đến"
+    "vietnamese": "đến",
+    "characterCount": 2
   },
   {
     "id": 207,
@@ -1860,7 +2066,8 @@
     "pinyin": "lǎo",
     "jyutping": "lou5 （ jing4 ）",
     "english": "old; aged",
-    "vietnamese": "Cũ (hình dạng)"
+    "vietnamese": "Cũ (hình thức)",
+    "characterCount": 2
   },
   {
     "id": 208,
@@ -1869,7 +2076,8 @@
     "pinyin": "lǎo rén",
     "jyutping": "lou5 jan4",
     "english": "old people; the aged",
-    "vietnamese": "ông"
+    "vietnamese": "người lớn tuổi",
+    "characterCount": 2
   },
   {
     "id": 209,
@@ -1878,7 +2086,8 @@
     "pinyin": "lǎoshī",
     "jyutping": "lou5 si1",
     "english": "Teacher",
-    "vietnamese": "giáo viên"
+    "vietnamese": "giáo viên",
+    "characterCount": 2
   },
   {
     "id": 210,
@@ -1887,7 +2096,8 @@
     "pinyin": "le",
     "jyutping": "liu5",
     "english": "past tense marker",
-    "vietnamese": "kết thúc"
+    "vietnamese": "Hiểu rồi",
+    "characterCount": 1
   },
   {
     "id": 211,
@@ -1896,7 +2106,8 @@
     "pinyin": "lèi",
     "jyutping": "leoi6",
     "english": "tired",
-    "vietnamese": "mệt"
+    "vietnamese": "mệt",
+    "characterCount": 1
   },
   {
     "id": 212,
@@ -1905,7 +2116,8 @@
     "pinyin": "lěng",
     "jyutping": "laang5",
     "english": "cold",
-    "vietnamese": "lanh"
+    "vietnamese": "lạnh lẽo",
+    "characterCount": 1
   },
   {
     "id": 213,
@@ -1914,7 +2126,8 @@
     "pinyin": "lǐ",
     "jyutping": "lei5",
     "english": "in",
-    "vietnamese": "làng"
+    "vietnamese": "bên trong",
+    "characterCount": 1
   },
   {
     "id": 214,
@@ -1923,7 +2136,8 @@
     "pinyin": "lǐ biān",
     "jyutping": "lei5 bin6",
     "english": "inside",
-    "vietnamese": "trong"
+    "vietnamese": "bên trong",
+    "characterCount": 2
   },
   {
     "id": 215,
@@ -1932,7 +2146,8 @@
     "pinyin": "liǎng",
     "jyutping": "loeng5 （ sou3 ）",
     "english": "two",
-    "vietnamese": "Hai (số)"
+    "vietnamese": "Hai (số)",
+    "characterCount": 2
   },
   {
     "id": 216,
@@ -1941,7 +2156,8 @@
     "pinyin": "líng ｜ líng",
     "jyutping": "ling4 ｜ ling4",
     "english": "zero",
-    "vietnamese": "Không|〇"
+    "vietnamese": "Số không | 0",
+    "characterCount": 1
   },
   {
     "id": 217,
@@ -1950,7 +2166,8 @@
     "pinyin": "liù",
     "jyutping": "luk6",
     "english": "Six",
-    "vietnamese": "Sáu"
+    "vietnamese": "sáu",
+    "characterCount": 1
   },
   {
     "id": 218,
@@ -1959,7 +2176,8 @@
     "pinyin": "lóu",
     "jyutping": "lau4",
     "english": "floor",
-    "vietnamese": "sàn"
+    "vietnamese": "xây dựng",
+    "characterCount": 1
   },
   {
     "id": 219,
@@ -1968,7 +2186,8 @@
     "pinyin": "lóu shàng",
     "jyutping": "lau4 soeng6",
     "english": "upstairs",
-    "vietnamese": "Trên lầu"
+    "vietnamese": "tầng trên",
+    "characterCount": 2
   },
   {
     "id": 220,
@@ -1977,7 +2196,8 @@
     "pinyin": "lóu xià",
     "jyutping": "lau4 haa6",
     "english": "downstairs",
-    "vietnamese": "Downstairs"
+    "vietnamese": "tầng dưới",
+    "characterCount": 2
   },
   {
     "id": 221,
@@ -1986,7 +2206,8 @@
     "pinyin": "lù",
     "jyutping": "lou6",
     "english": "road",
-    "vietnamese": "dường"
+    "vietnamese": "đường",
+    "characterCount": 1
   },
   {
     "id": 222,
@@ -1995,7 +2216,8 @@
     "pinyin": "lù kǒu",
     "jyutping": "lou6 hau2",
     "english": "intersection; crossing",
-    "vietnamese": "ngã"
+    "vietnamese": "giao lộ",
+    "characterCount": 2
   },
   {
     "id": 223,
@@ -2004,7 +2226,8 @@
     "pinyin": "lù shàng",
     "jyutping": "lou6 soeng6",
     "english": "on the road",
-    "vietnamese": "Trên đường"
+    "vietnamese": "Trên đường",
+    "characterCount": 2
   },
   {
     "id": 224,
@@ -2013,7 +2236,8 @@
     "pinyin": "mā ma ｜ mā",
     "jyutping": "maa1 maa1 ｜ maa1",
     "english": "mom; mother",
-    "vietnamese": "Mẹ |"
+    "vietnamese": "Mẹ | Mẹ",
+    "characterCount": 3
   },
   {
     "id": 225,
@@ -2022,7 +2246,8 @@
     "pinyin": "mǎ lù",
     "jyutping": "maa5 lou6",
     "english": "road; street",
-    "vietnamese": "dường"
+    "vietnamese": "đường",
+    "characterCount": 2
   },
   {
     "id": 226,
@@ -2031,7 +2256,8 @@
     "pinyin": "mǎshàng",
     "jyutping": "maa5 soeng6",
     "english": "Right off",
-    "vietnamese": "Ngay lập tức"
+    "vietnamese": "ngay lập tức",
+    "characterCount": 2
   },
   {
     "id": 227,
@@ -2040,7 +2266,8 @@
     "pinyin": "ma",
     "jyutping": "maa3",
     "english": "auxiliary word",
-    "vietnamese": "Chăng?"
+    "vietnamese": "?",
+    "characterCount": 1
   },
   {
     "id": 228,
@@ -2049,7 +2276,8 @@
     "pinyin": "mǎi",
     "jyutping": "maai5",
     "english": "buy",
-    "vietnamese": "mua"
+    "vietnamese": "mua",
+    "characterCount": 1
   },
   {
     "id": 229,
@@ -2058,7 +2286,8 @@
     "pinyin": "màn",
     "jyutping": "maan6",
     "english": "slow",
-    "vietnamese": "chậm"
+    "vietnamese": "chậm",
+    "characterCount": 1
   },
   {
     "id": 230,
@@ -2067,7 +2296,8 @@
     "pinyin": "máng",
     "jyutping": "mong4",
     "english": "busy",
-    "vietnamese": "Bận rộn"
+    "vietnamese": "bận",
+    "characterCount": 1
   },
   {
     "id": 231,
@@ -2076,7 +2306,8 @@
     "pinyin": "máo",
     "jyutping": "mou4 （ loeng6 ）",
     "english": "a fractional unit of money in China (measure word)",
-    "vietnamese": "Tóc (số lượng)"
+    "vietnamese": "Tổng (số tiền)",
+    "characterCount": 2
   },
   {
     "id": 232,
@@ -2085,7 +2316,8 @@
     "pinyin": "méi",
     "jyutping": "mut6",
     "english": "no",
-    "vietnamese": "không"
+    "vietnamese": "không có",
+    "characterCount": 1
   },
   {
     "id": 233,
@@ -2094,7 +2326,8 @@
     "pinyin": "méiguānxi",
     "jyutping": "mut6 gwaan1 hai6",
     "english": "No problem",
-    "vietnamese": "Đừng bận tâm"
+    "vietnamese": "Nó không quan trọng",
+    "characterCount": 3
   },
   {
     "id": 234,
@@ -2103,7 +2336,8 @@
     "pinyin": "méi shén me",
     "jyutping": "mut6 sam6 mo1",
     "english": "It’s nothing",
-    "vietnamese": "Không có gì"
+    "vietnamese": "Không có gì",
+    "characterCount": 3
   },
   {
     "id": 235,
@@ -2112,7 +2346,8 @@
     "pinyin": "méi shìr",
     "jyutping": "mut6 si6 ji4",
     "english": "It’s okay",
-    "vietnamese": "Được"
+    "vietnamese": "Không sao đâu",
+    "characterCount": 3
   },
   {
     "id": 236,
@@ -2121,7 +2356,8 @@
     "pinyin": "méi yǒu",
     "jyutping": "mut6 jau5",
     "english": "have not; no",
-    "vietnamese": "Không"
+    "vietnamese": "KHÔNG",
+    "characterCount": 2
   },
   {
     "id": 237,
@@ -2130,7 +2366,8 @@
     "pinyin": "mèi mei ｜ mèi",
     "jyutping": "mui6 mui6 ｜ mui1",
     "english": "younger sister",
-    "vietnamese": "Em gái|Em gái"
+    "vietnamese": "em gái",
+    "characterCount": 3
   },
   {
     "id": 238,
@@ -2139,7 +2376,8 @@
     "pinyin": "mén",
     "jyutping": "mun4",
     "english": "door",
-    "vietnamese": "cửa"
+    "vietnamese": "Cửa",
+    "characterCount": 1
   },
   {
     "id": 239,
@@ -2148,7 +2386,8 @@
     "pinyin": "mén kǒu",
     "jyutping": "mun4 hau2",
     "english": "doorway",
-    "vietnamese": "Cửa"
+    "vietnamese": "cửa ra vào",
+    "characterCount": 2
   },
   {
     "id": 240,
@@ -2157,7 +2396,8 @@
     "pinyin": "mén piào",
     "jyutping": "mun4 piu3",
     "english": "tickets",
-    "vietnamese": "Vé"
+    "vietnamese": "Vé",
+    "characterCount": 2
   },
   {
     "id": 241,
@@ -2166,7 +2406,8 @@
     "pinyin": "men （ péng yǒu men ）",
     "jyutping": "mun4 （ pang4 jau5 mun4 ）",
     "english": "plural marker for pronouns and a few animate nouns (friends)",
-    "vietnamese": "Bạn bè"
+    "vietnamese": "bạn",
+    "characterCount": 4
   },
   {
     "id": 242,
@@ -2175,7 +2416,8 @@
     "pinyin": "mǐfàn",
     "jyutping": "mai5 faan6",
     "english": "Steamed Rice",
-    "vietnamese": "cơm"
+    "vietnamese": "cơm",
+    "characterCount": 2
   },
   {
     "id": 243,
@@ -2184,7 +2426,8 @@
     "pinyin": "miànbāo",
     "jyutping": "min6 baau1",
     "english": "Bread",
-    "vietnamese": "Bánh mì"
+    "vietnamese": "bánh mỳ",
+    "characterCount": 2
   },
   {
     "id": 244,
@@ -2193,7 +2436,8 @@
     "pinyin": "miàn tiáor",
     "jyutping": "min6 tiu4 ji4",
     "english": "noodles",
-    "vietnamese": "Mì"
+    "vietnamese": "Mì",
+    "characterCount": 3
   },
   {
     "id": 245,
@@ -2202,7 +2446,8 @@
     "pinyin": "míngzi",
     "jyutping": "ming4 zi6",
     "english": "Name",
-    "vietnamese": "Tên"
+    "vietnamese": "tên",
+    "characterCount": 2
   },
   {
     "id": 246,
@@ -2211,7 +2456,8 @@
     "pinyin": "míngbai",
     "jyutping": "ming4 baak6",
     "english": "clear",
-    "vietnamese": "Đã nhận được"
+    "vietnamese": "thông thoáng",
+    "characterCount": 2
   },
   {
     "id": 247,
@@ -2220,7 +2466,8 @@
     "pinyin": "míng nián",
     "jyutping": "ming4 nin4",
     "english": "next year",
-    "vietnamese": "sang năm"
+    "vietnamese": "năm sau",
+    "characterCount": 2
   },
   {
     "id": 248,
@@ -2229,7 +2476,8 @@
     "pinyin": "míngtiān",
     "jyutping": "ming4 tin1",
     "english": "Tomorrow",
-    "vietnamese": "Mai"
+    "vietnamese": "Ngày mai",
+    "characterCount": 2
   },
   {
     "id": 249,
@@ -2238,7 +2486,8 @@
     "pinyin": "ná",
     "jyutping": "naa4",
     "english": "take",
-    "vietnamese": "lấy"
+    "vietnamese": "lấy",
+    "characterCount": 1
   },
   {
     "id": 250,
@@ -2247,7 +2496,8 @@
     "pinyin": "nǎ",
     "jyutping": "naa5",
     "english": "which",
-    "vietnamese": "nào"
+    "vietnamese": "Ở đâu",
+    "characterCount": 1
   },
   {
     "id": 251,
@@ -2256,7 +2506,8 @@
     "pinyin": "nǎ lǐ",
     "jyutping": "naa5 leoi5",
     "english": "where",
-    "vietnamese": "đâu"
+    "vietnamese": "Ở đâu",
+    "characterCount": 2
   },
   {
     "id": 252,
@@ -2265,7 +2516,8 @@
     "pinyin": "nǎr",
     "jyutping": "naa5 ji4",
     "english": "where",
-    "vietnamese": "Đâu"
+    "vietnamese": "Ở đâu",
+    "characterCount": 2
   },
   {
     "id": 253,
@@ -2274,7 +2526,8 @@
     "pinyin": "nǎ xiē",
     "jyutping": "naa5 se1",
     "english": "which",
-    "vietnamese": "Cái gì"
+    "vietnamese": "Cái mà",
+    "characterCount": 2
   },
   {
     "id": 254,
@@ -2283,7 +2536,8 @@
     "pinyin": "nà",
     "jyutping": "naa5 （ doi6 ）",
     "english": "that",
-    "vietnamese": "Đó (thế hệ)"
+    "vietnamese": "Thế hệ đó",
+    "characterCount": 2
   },
   {
     "id": 255,
@@ -2292,7 +2546,8 @@
     "pinyin": "nà biān",
     "jyutping": "naa5 bin1",
     "english": "there",
-    "vietnamese": "Bên kia"
+    "vietnamese": "ở đó",
+    "characterCount": 2
   },
   {
     "id": 256,
@@ -2301,7 +2556,8 @@
     "pinyin": "nà lǐ",
     "jyutping": "naa5 leoi5",
     "english": "there",
-    "vietnamese": "kia"
+    "vietnamese": "Ở đó",
+    "characterCount": 2
   },
   {
     "id": 257,
@@ -2310,7 +2566,8 @@
     "pinyin": "nàr",
     "jyutping": "naa5 ji4",
     "english": "there",
-    "vietnamese": "kia"
+    "vietnamese": "ở đó",
+    "characterCount": 2
   },
   {
     "id": 258,
@@ -2319,7 +2576,8 @@
     "pinyin": "nà xiē",
     "jyutping": "naa5 se1",
     "english": "those",
-    "vietnamese": "đó"
+    "vietnamese": "Những người đó",
+    "characterCount": 2
   },
   {
     "id": 259,
@@ -2328,7 +2586,8 @@
     "pinyin": "nǎi",
     "jyutping": "naai5",
     "english": "milk",
-    "vietnamese": "sữa"
+    "vietnamese": "Sữa",
+    "characterCount": 1
   },
   {
     "id": 260,
@@ -2337,7 +2596,8 @@
     "pinyin": "nǎinai",
     "jyutping": "naai4 naai2",
     "english": "grandma",
-    "vietnamese": "Bà"
+    "vietnamese": "bà ngoại",
+    "characterCount": 2
   },
   {
     "id": 261,
@@ -2346,7 +2606,8 @@
     "pinyin": "nán",
     "jyutping": "naam4",
     "english": "Man",
-    "vietnamese": "đàn ông"
+    "vietnamese": "nam giới",
+    "characterCount": 1
   },
   {
     "id": 262,
@@ -2355,7 +2616,8 @@
     "pinyin": "nán háir",
     "jyutping": "naam4 haai4 ji4",
     "english": "boy",
-    "vietnamese": "Cậu bé"
+    "vietnamese": "con trai",
+    "characterCount": 3
   },
   {
     "id": 263,
@@ -2364,7 +2626,8 @@
     "pinyin": "nán péng yǒu",
     "jyutping": "naam4 pang4 jau5",
     "english": "boyfriend",
-    "vietnamese": "bạn trai"
+    "vietnamese": "Bạn trai",
+    "characterCount": 3
   },
   {
     "id": 264,
@@ -2373,7 +2636,8 @@
     "pinyin": "nán ren",
     "jyutping": "naam4 jan4",
     "english": "man",
-    "vietnamese": "đàn ông"
+    "vietnamese": "người đàn ông",
+    "characterCount": 2
   },
   {
     "id": 265,
@@ -2382,7 +2646,8 @@
     "pinyin": "nán shēng",
     "jyutping": "naam4 sang1",
     "english": "boy",
-    "vietnamese": "nam sinh"
+    "vietnamese": "Con trai",
+    "characterCount": 2
   },
   {
     "id": 266,
@@ -2391,7 +2656,8 @@
     "pinyin": "nán",
     "jyutping": "naam4",
     "english": "south",
-    "vietnamese": "Hướng nam"
+    "vietnamese": "Phía nam",
+    "characterCount": 1
   },
   {
     "id": 267,
@@ -2400,7 +2666,8 @@
     "pinyin": "nán biān",
     "jyutping": "naam4 bin1",
     "english": "south; south side",
-    "vietnamese": "Hướng nam"
+    "vietnamese": "Phía nam",
+    "characterCount": 2
   },
   {
     "id": 268,
@@ -2409,7 +2676,8 @@
     "pinyin": "nán",
     "jyutping": "naan4",
     "english": "hard, difficult",
-    "vietnamese": "khó khăn"
+    "vietnamese": "Thảm họa",
+    "characterCount": 1
   },
   {
     "id": 269,
@@ -2418,7 +2686,8 @@
     "pinyin": "ne",
     "jyutping": "nei4",
     "english": "auxiliary word",
-    "vietnamese": "này"
+    "vietnamese": "Vải len",
+    "characterCount": 1
   },
   {
     "id": 270,
@@ -2427,7 +2696,8 @@
     "pinyin": "néng",
     "jyutping": "nang4",
     "english": "can",
-    "vietnamese": "Có"
+    "vietnamese": "có thể",
+    "characterCount": 1
   },
   {
     "id": 271,
@@ -2436,7 +2706,8 @@
     "pinyin": "nǐ",
     "jyutping": "nei5",
     "english": "you",
-    "vietnamese": "mày"
+    "vietnamese": "Bạn",
+    "characterCount": 1
   },
   {
     "id": 272,
@@ -2445,7 +2716,8 @@
     "pinyin": "nǐ men",
     "jyutping": "nei5 mun4",
     "english": "you",
-    "vietnamese": "Các bạn"
+    "vietnamese": "Bạn",
+    "characterCount": 2
   },
   {
     "id": 273,
@@ -2454,7 +2726,8 @@
     "pinyin": "nián",
     "jyutping": "nin4",
     "english": "year",
-    "vietnamese": "năm"
+    "vietnamese": "Năm",
+    "characterCount": 1
   },
   {
     "id": 274,
@@ -2463,7 +2736,8 @@
     "pinyin": "nín",
     "jyutping": "nei5",
     "english": "you",
-    "vietnamese": "mày"
+    "vietnamese": "Bạn",
+    "characterCount": 1
   },
   {
     "id": 275,
@@ -2472,7 +2746,8 @@
     "pinyin": "niúnǎi",
     "jyutping": "ngau4 naai5",
     "english": "milk",
-    "vietnamese": "Sữa"
+    "vietnamese": "sữa",
+    "characterCount": 2
   },
   {
     "id": 276,
@@ -2481,7 +2756,8 @@
     "pinyin": "nǚ",
     "jyutping": "neoi5",
     "english": "woman",
-    "vietnamese": "đàn bà"
+    "vietnamese": "nữ giới",
+    "characterCount": 1
   },
   {
     "id": 277,
@@ -2490,7 +2766,8 @@
     "pinyin": "nǚ’ér",
     "jyutping": "neoi5 ji4",
     "english": "daughter",
-    "vietnamese": "Con gái"
+    "vietnamese": "con gái",
+    "characterCount": 2
   },
   {
     "id": 278,
@@ -2499,7 +2776,8 @@
     "pinyin": "nǚ háir",
     "jyutping": "neoi5 haai4 ji4",
     "english": "girl",
-    "vietnamese": "Cô bé"
+    "vietnamese": "Con gái",
+    "characterCount": 3
   },
   {
     "id": 279,
@@ -2508,7 +2786,8 @@
     "pinyin": "nǚ péng yǒu",
     "jyutping": "neoi5 pang4 jau5",
     "english": "girlfriend",
-    "vietnamese": "bạn gái"
+    "vietnamese": "bạn gái",
+    "characterCount": 3
   },
   {
     "id": 280,
@@ -2517,7 +2796,8 @@
     "pinyin": "nǚ ren",
     "jyutping": "neoi5 jan4",
     "english": "woman",
-    "vietnamese": "Đàn bà"
+    "vietnamese": "đàn bà",
+    "characterCount": 2
   },
   {
     "id": 281,
@@ -2526,7 +2806,8 @@
     "pinyin": "nǚ shēng",
     "jyutping": "neoi5 sang1",
     "english": "girl",
-    "vietnamese": "nữ sinh"
+    "vietnamese": "con gái",
+    "characterCount": 2
   },
   {
     "id": 282,
@@ -2535,7 +2816,8 @@
     "pinyin": "pángbiān",
     "jyutping": "pong4 bin1",
     "english": "Side",
-    "vietnamese": "bên cạnh"
+    "vietnamese": "bên cạnh",
+    "characterCount": 2
   },
   {
     "id": 283,
@@ -2544,7 +2826,8 @@
     "pinyin": "pǎo",
     "jyutping": "paau2",
     "english": "run",
-    "vietnamese": "chạy"
+    "vietnamese": "chạy",
+    "characterCount": 1
   },
   {
     "id": 284,
@@ -2553,7 +2836,8 @@
     "pinyin": "péngyou",
     "jyutping": "pang4 jau5",
     "english": "Friend",
-    "vietnamese": "Bạn"
+    "vietnamese": "bạn bè",
+    "characterCount": 2
   },
   {
     "id": 285,
@@ -2562,7 +2846,8 @@
     "pinyin": "piào",
     "jyutping": "piu3",
     "english": "ticket",
-    "vietnamese": "vé"
+    "vietnamese": "vé",
+    "characterCount": 1
   },
   {
     "id": 286,
@@ -2571,7 +2856,8 @@
     "pinyin": "qī",
     "jyutping": "cat1",
     "english": "Seven",
-    "vietnamese": "Bảy"
+    "vietnamese": "bảy",
+    "characterCount": 1
   },
   {
     "id": 287,
@@ -2580,7 +2866,8 @@
     "pinyin": "qǐ",
     "jyutping": "hei2",
     "english": "get up; start; rise",
-    "vietnamese": "lên"
+    "vietnamese": "tăng lên",
+    "characterCount": 1
   },
   {
     "id": 288,
@@ -2589,7 +2876,8 @@
     "pinyin": "qǐchuáng",
     "jyutping": "hei2 cong4",
     "english": "Get up",
-    "vietnamese": "Thức dậy"
+    "vietnamese": "thức dậy",
+    "characterCount": 2
   },
   {
     "id": 289,
@@ -2598,7 +2886,8 @@
     "pinyin": "qǐlái",
     "jyutping": "hei2 loi4",
     "english": "get up",
-    "vietnamese": "Thức dậy"
+    "vietnamese": "đứng lên",
+    "characterCount": 2
   },
   {
     "id": 290,
@@ -2607,7 +2896,8 @@
     "pinyin": "qì chē",
     "jyutping": "hei3 ce1",
     "english": "car",
-    "vietnamese": "Xe hơi"
+    "vietnamese": "xe hơi",
+    "characterCount": 2
   },
   {
     "id": 291,
@@ -2616,7 +2906,8 @@
     "pinyin": "qián",
     "jyutping": "cin4",
     "english": "front",
-    "vietnamese": "cựu"
+    "vietnamese": "phía trước",
+    "characterCount": 1
   },
   {
     "id": 292,
@@ -2625,7 +2916,8 @@
     "pinyin": "qián biān",
     "jyutping": "cin4 bin1",
     "english": "in front",
-    "vietnamese": "Mặt trận"
+    "vietnamese": "đằng trước",
+    "characterCount": 2
   },
   {
     "id": 293,
@@ -2634,7 +2926,8 @@
     "pinyin": "qián tiān",
     "jyutping": "cin4 tin1",
     "english": "the day before yesterday",
-    "vietnamese": "Ngày hôm qua"
+    "vietnamese": "ngày hôm kia",
+    "characterCount": 2
   },
   {
     "id": 294,
@@ -2643,7 +2936,8 @@
     "pinyin": "qián",
     "jyutping": "cin2",
     "english": "money",
-    "vietnamese": "tiền"
+    "vietnamese": "tiền bạc",
+    "characterCount": 1
   },
   {
     "id": 295,
@@ -2652,7 +2946,8 @@
     "pinyin": "qián bāo",
     "jyutping": "cin4 baau1",
     "english": "wallet",
-    "vietnamese": "ví"
+    "vietnamese": "cái ví",
+    "characterCount": 2
   },
   {
     "id": 296,
@@ -2661,7 +2956,8 @@
     "pinyin": "qǐng",
     "jyutping": "cing2",
     "english": "please",
-    "vietnamese": "Vui lòng"
+    "vietnamese": "Xin vui lòng",
+    "characterCount": 1
   },
   {
     "id": 297,
@@ -2670,7 +2966,8 @@
     "pinyin": "qǐngjià",
     "jyutping": "ceng2 gaa3",
     "english": "ask for leave",
-    "vietnamese": "rời khỏi"
+    "vietnamese": "Xin nghỉ phép",
+    "characterCount": 2
   },
   {
     "id": 298,
@@ -2679,7 +2976,8 @@
     "pinyin": "qǐng jìn",
     "jyutping": "cing2 zeon3",
     "english": "please come in",
-    "vietnamese": "Mời vào"
+    "vietnamese": "Vào đi",
+    "characterCount": 2
   },
   {
     "id": 299,
@@ -2688,7 +2986,8 @@
     "pinyin": "qǐng wèn",
     "jyutping": "cing2 man6",
     "english": "excuse me",
-    "vietnamese": "Xin lỗi"
+    "vietnamese": "Xin lỗi",
+    "characterCount": 2
   },
   {
     "id": 300,
@@ -2697,7 +2996,8 @@
     "pinyin": "qǐng zuò",
     "jyutping": "cing2 zo6",
     "english": "please have a seat",
-    "vietnamese": "Có chỗ ngồi"
+    "vietnamese": "Xin mời ngồi",
+    "characterCount": 2
   },
   {
     "id": 301,
@@ -2706,7 +3006,8 @@
     "pinyin": "qiú",
     "jyutping": "kau4",
     "english": "ball",
-    "vietnamese": "bóng"
+    "vietnamese": "quả bóng",
+    "characterCount": 1
   },
   {
     "id": 302,
@@ -2715,7 +3016,8 @@
     "pinyin": "qù",
     "jyutping": "heoi3",
     "english": "go",
-    "vietnamese": "đi"
+    "vietnamese": "đi",
+    "characterCount": 1
   },
   {
     "id": 303,
@@ -2724,7 +3026,8 @@
     "pinyin": "qùnián",
     "jyutping": "heoi3 nin4",
     "english": "Last year",
-    "vietnamese": "Năm ngoái"
+    "vietnamese": "năm ngoái",
+    "characterCount": 2
   },
   {
     "id": 304,
@@ -2733,7 +3036,8 @@
     "pinyin": "rè",
     "jyutping": "jit6",
     "english": "heat",
-    "vietnamese": "nóng"
+    "vietnamese": "nóng",
+    "characterCount": 1
   },
   {
     "id": 305,
@@ -2742,7 +3046,8 @@
     "pinyin": "rén",
     "jyutping": "jan4",
     "english": "people",
-    "vietnamese": "người"
+    "vietnamese": "mọi người",
+    "characterCount": 1
   },
   {
     "id": 306,
@@ -2751,7 +3056,8 @@
     "pinyin": "rènshi",
     "jyutping": "jing6 sik1",
     "english": "know",
-    "vietnamese": "biết"
+    "vietnamese": "biết",
+    "characterCount": 2
   },
   {
     "id": 307,
@@ -2760,7 +3066,8 @@
     "pinyin": "rènzhēn",
     "jyutping": "jing6 zan1",
     "english": "earnest",
-    "vietnamese": "tận tâm"
+    "vietnamese": "nghiêm trọng",
+    "characterCount": 2
   },
   {
     "id": 308,
@@ -2769,7 +3076,8 @@
     "pinyin": "rì",
     "jyutping": "jat6",
     "english": "date",
-    "vietnamese": "ngày"
+    "vietnamese": "ngày",
+    "characterCount": 1
   },
   {
     "id": 309,
@@ -2778,7 +3086,8 @@
     "pinyin": "rìqī",
     "jyutping": "jat6 kei4",
     "english": "Date",
-    "vietnamese": "ngày"
+    "vietnamese": "ngày",
+    "characterCount": 2
   },
   {
     "id": 310,
@@ -2787,7 +3096,8 @@
     "pinyin": "ròu",
     "jyutping": "juk6",
     "english": "meat",
-    "vietnamese": "thịt"
+    "vietnamese": "Thịt",
+    "characterCount": 1
   },
   {
     "id": 311,
@@ -2796,7 +3106,8 @@
     "pinyin": "sān",
     "jyutping": "saam1",
     "english": "Three",
-    "vietnamese": "Ba"
+    "vietnamese": "ba",
+    "characterCount": 1
   },
   {
     "id": 312,
@@ -2805,7 +3116,8 @@
     "pinyin": "shān",
     "jyutping": "saan1",
     "english": "mountain",
-    "vietnamese": "núi"
+    "vietnamese": "Núi",
+    "characterCount": 1
   },
   {
     "id": 313,
@@ -2814,7 +3126,8 @@
     "pinyin": "shāng chǎng",
     "jyutping": "soeng1 coeng4",
     "english": "mall; shopping mall",
-    "vietnamese": "Mall"
+    "vietnamese": "trung tâm mua sắm",
+    "characterCount": 2
   },
   {
     "id": 314,
@@ -2823,7 +3136,8 @@
     "pinyin": "shāngdiàn",
     "jyutping": "soeng1 dim3",
     "english": "Shop",
-    "vietnamese": "cửa hàng"
+    "vietnamese": "cửa hàng",
+    "characterCount": 2
   },
   {
     "id": 315,
@@ -2832,7 +3146,8 @@
     "pinyin": "shàng",
     "jyutping": "soeng6",
     "english": "upper",
-    "vietnamese": "trên"
+    "vietnamese": "thượng đẳng",
+    "characterCount": 1
   },
   {
     "id": 316,
@@ -2841,7 +3156,8 @@
     "pinyin": "shàngbān",
     "jyutping": "soeng5 baan1",
     "english": "go to work",
-    "vietnamese": "Làm"
+    "vietnamese": "công việc",
+    "characterCount": 2
   },
   {
     "id": 317,
@@ -2850,7 +3166,8 @@
     "pinyin": "shàng biān",
     "jyutping": "soeng6 bin1",
     "english": "above; on",
-    "vietnamese": "Đỉnh"
+    "vietnamese": "Đứng đầu",
+    "characterCount": 2
   },
   {
     "id": 318,
@@ -2859,7 +3176,8 @@
     "pinyin": "shàng chē",
     "jyutping": "soeng5 ce1",
     "english": "get on",
-    "vietnamese": "Tham gia"
+    "vietnamese": "Lên xe buýt",
+    "characterCount": 2
   },
   {
     "id": 319,
@@ -2868,7 +3186,8 @@
     "pinyin": "shàng cì",
     "jyutping": "soeng6 ci3",
     "english": "last time",
-    "vietnamese": "Lần trước"
+    "vietnamese": "Lần cuối cùng",
+    "characterCount": 2
   },
   {
     "id": 320,
@@ -2877,7 +3196,8 @@
     "pinyin": "shàng kè",
     "jyutping": "soeng5 fo3",
     "english": "attend class; have a class",
-    "vietnamese": "Lớp"
+    "vietnamese": "Tham dự lớp học",
+    "characterCount": 2
   },
   {
     "id": 321,
@@ -2886,7 +3206,8 @@
     "pinyin": "shàngwǎng",
     "jyutping": "soeng5 mong5",
     "english": "Surf the Internet",
-    "vietnamese": "Internet"
+    "vietnamese": "Truy cập Internet",
+    "characterCount": 2
   },
   {
     "id": 322,
@@ -2895,7 +3216,8 @@
     "pinyin": "shàngwǔ",
     "jyutping": "soeng6 ng5",
     "english": "morning",
-    "vietnamese": "Buổi sáng"
+    "vietnamese": "buổi sáng",
+    "characterCount": 2
   },
   {
     "id": 323,
@@ -2904,7 +3226,8 @@
     "pinyin": "shàng xué",
     "jyutping": "soeng5 hok6",
     "english": "go to school",
-    "vietnamese": "Trường học"
+    "vietnamese": "đi học",
+    "characterCount": 2
   },
   {
     "id": 324,
@@ -2913,7 +3236,8 @@
     "pinyin": "shǎo",
     "jyutping": "siu2",
     "english": "less",
-    "vietnamese": "ít"
+    "vietnamese": "một vài",
+    "characterCount": 1
   },
   {
     "id": 325,
@@ -2922,7 +3246,8 @@
     "pinyin": "shéi",
     "jyutping": "seoi4",
     "english": "who",
-    "vietnamese": "Ai"
+    "vietnamese": "Ai",
+    "characterCount": 1
   },
   {
     "id": 326,
@@ -2931,7 +3256,8 @@
     "pinyin": "shēn shàng",
     "jyutping": "san1 soeng6",
     "english": "body; on one’s body",
-    "vietnamese": "thân thể"
+    "vietnamese": "Trên cơ thể",
+    "characterCount": 2
   },
   {
     "id": 327,
@@ -2940,7 +3266,8 @@
     "pinyin": "shēntǐ",
     "jyutping": "san1 tai2",
     "english": "body",
-    "vietnamese": "thân thể"
+    "vietnamese": "Thân hình",
+    "characterCount": 2
   },
   {
     "id": 328,
@@ -2949,7 +3276,8 @@
     "pinyin": "shénme",
     "jyutping": "sam6 mo1",
     "english": "What",
-    "vietnamese": "Cái gì"
+    "vietnamese": "Cái gì",
+    "characterCount": 2
   },
   {
     "id": 329,
@@ -2958,7 +3286,8 @@
     "pinyin": "shēngbìng",
     "jyutping": "saang1 beng6",
     "english": "Fall ill",
-    "vietnamese": "đau"
+    "vietnamese": "Bị bệnh",
+    "characterCount": 2
   },
   {
     "id": 330,
@@ -2967,7 +3296,8 @@
     "pinyin": "shēngqì",
     "jyutping": "saang1 hei3",
     "english": "get angry",
-    "vietnamese": "giận"
+    "vietnamese": "tức giận",
+    "characterCount": 2
   },
   {
     "id": 331,
@@ -2976,7 +3306,8 @@
     "pinyin": "shēngrì",
     "jyutping": "saang1 jat6",
     "english": "Birthday",
-    "vietnamese": "sinh nhật"
+    "vietnamese": "Sinh nhật",
+    "characterCount": 2
   },
   {
     "id": 332,
@@ -2985,7 +3316,8 @@
     "pinyin": "shí",
     "jyutping": "sap6",
     "english": "Ten",
-    "vietnamese": "Mười"
+    "vietnamese": "mười",
+    "characterCount": 1
   },
   {
     "id": 333,
@@ -2994,7 +3326,8 @@
     "pinyin": "shíhou",
     "jyutping": "si4 hau6",
     "english": "time",
-    "vietnamese": "Thời gian"
+    "vietnamese": "khi",
+    "characterCount": 2
   },
   {
     "id": 334,
@@ -3003,7 +3336,8 @@
     "pinyin": "shíjiān",
     "jyutping": "si4 gaan3",
     "english": "time",
-    "vietnamese": "Thời gian"
+    "vietnamese": "thời gian",
+    "characterCount": 2
   },
   {
     "id": 335,
@@ -3012,7 +3346,8 @@
     "pinyin": "shì",
     "jyutping": "si6",
     "english": "thing",
-    "vietnamese": "vụ"
+    "vietnamese": "điều",
+    "characterCount": 1
   },
   {
     "id": 336,
@@ -3021,7 +3356,8 @@
     "pinyin": "shì",
     "jyutping": "si3",
     "english": "try",
-    "vietnamese": "cố gắng"
+    "vietnamese": "thử",
+    "characterCount": 1
   },
   {
     "id": 337,
@@ -3030,7 +3366,8 @@
     "pinyin": "shì",
     "jyutping": "si6",
     "english": "yes",
-    "vietnamese": "là"
+    "vietnamese": "Đúng",
+    "characterCount": 1
   },
   {
     "id": 338,
@@ -3039,7 +3376,8 @@
     "pinyin": "shì bú shì",
     "jyutping": "si6 bat1 si6",
     "english": "isn’t it?",
-    "vietnamese": "Phải không"
+    "vietnamese": "Có hoặc không",
+    "characterCount": 3
   },
   {
     "id": 339,
@@ -3048,7 +3386,8 @@
     "pinyin": "shǒu",
     "jyutping": "sau2",
     "english": "hand",
-    "vietnamese": "tay"
+    "vietnamese": "tay",
+    "characterCount": 1
   },
   {
     "id": 340,
@@ -3057,7 +3396,8 @@
     "pinyin": "shǒujī",
     "jyutping": "sau2 gei1",
     "english": "Mobile phone",
-    "vietnamese": "điện thoại di động"
+    "vietnamese": "điện thoại di động",
+    "characterCount": 2
   },
   {
     "id": 341,
@@ -3066,7 +3406,8 @@
     "pinyin": "shū",
     "jyutping": "syu1",
     "english": "book",
-    "vietnamese": "sách"
+    "vietnamese": "Sách",
+    "characterCount": 1
   },
   {
     "id": 342,
@@ -3075,7 +3416,8 @@
     "pinyin": "shū bāo",
     "jyutping": "syu1 baau1",
     "english": "school bag",
-    "vietnamese": "Cặp sách"
+    "vietnamese": "cái túi",
+    "characterCount": 2
   },
   {
     "id": 343,
@@ -3084,7 +3426,8 @@
     "pinyin": "shū diàn",
     "jyutping": "syu1 dim3",
     "english": "bookstore",
-    "vietnamese": "hiệu sách"
+    "vietnamese": "hiệu sách",
+    "characterCount": 2
   },
   {
     "id": 344,
@@ -3093,7 +3436,8 @@
     "pinyin": "shù",
     "jyutping": "syu6",
     "english": "tree",
-    "vietnamese": "cây"
+    "vietnamese": "Cây",
+    "characterCount": 1
   },
   {
     "id": 345,
@@ -3102,7 +3446,8 @@
     "pinyin": "shuǐ",
     "jyutping": "seoi2",
     "english": "water",
-    "vietnamese": "Nước"
+    "vietnamese": "Nước",
+    "characterCount": 1
   },
   {
     "id": 346,
@@ -3111,7 +3456,8 @@
     "pinyin": "shuǐguǒ",
     "jyutping": "seoi2 gwo2",
     "english": "Fruits",
-    "vietnamese": "trái"
+    "vietnamese": "hoa quả",
+    "characterCount": 2
   },
   {
     "id": 347,
@@ -3120,7 +3466,8 @@
     "pinyin": "shuì",
     "jyutping": "seoi6",
     "english": "sleep",
-    "vietnamese": "ngủ"
+    "vietnamese": "ngủ",
+    "characterCount": 1
   },
   {
     "id": 348,
@@ -3129,7 +3476,8 @@
     "pinyin": "shuìjiào",
     "jyutping": "seoi6 gaau3",
     "english": "sleep",
-    "vietnamese": "Đi ngủ"
+    "vietnamese": "ngủ",
+    "characterCount": 2
   },
   {
     "id": 349,
@@ -3138,7 +3486,8 @@
     "pinyin": "shuō",
     "jyutping": "syut3",
     "english": "speak",
-    "vietnamese": "nói"
+    "vietnamese": "giải thích",
+    "characterCount": 1
   },
   {
     "id": 350,
@@ -3147,7 +3496,8 @@
     "pinyin": "shuōhuà",
     "jyutping": "syut3 waa6",
     "english": "talk",
-    "vietnamese": "Nói"
+    "vietnamese": "nói",
+    "characterCount": 2
   },
   {
     "id": 351,
@@ -3156,7 +3506,8 @@
     "pinyin": "sì",
     "jyutping": "sei3",
     "english": "Four",
-    "vietnamese": "Bốn"
+    "vietnamese": "Bốn",
+    "characterCount": 1
   },
   {
     "id": 352,
@@ -3165,7 +3516,8 @@
     "pinyin": "sòng",
     "jyutping": "sung3",
     "english": "give",
-    "vietnamese": "cho"
+    "vietnamese": "giao",
+    "characterCount": 1
   },
   {
     "id": 353,
@@ -3174,7 +3526,8 @@
     "pinyin": "suì",
     "jyutping": "seoi3",
     "english": "year, age",
-    "vietnamese": "năm"
+    "vietnamese": "tuổi",
+    "characterCount": 1
   },
   {
     "id": 354,
@@ -3183,7 +3536,8 @@
     "pinyin": "tā",
     "jyutping": "taa1",
     "english": "he",
-    "vietnamese": "nó"
+    "vietnamese": "Anh ta",
+    "characterCount": 1
   },
   {
     "id": 355,
@@ -3192,7 +3546,8 @@
     "pinyin": "tā men",
     "jyutping": "taa1 mun4",
     "english": "they",
-    "vietnamese": "Họ"
+    "vietnamese": "họ",
+    "characterCount": 2
   },
   {
     "id": 356,
@@ -3201,7 +3556,8 @@
     "pinyin": "tā",
     "jyutping": "taa1",
     "english": "she",
-    "vietnamese": "nó"
+    "vietnamese": "cô ấy",
+    "characterCount": 1
   },
   {
     "id": 357,
@@ -3210,7 +3566,8 @@
     "pinyin": "tā men",
     "jyutping": "taa1 mun4",
     "english": "they",
-    "vietnamese": "họ"
+    "vietnamese": "họ",
+    "characterCount": 2
   },
   {
     "id": 358,
@@ -3219,7 +3576,8 @@
     "pinyin": "tài",
     "jyutping": "taai3",
     "english": "too",
-    "vietnamese": "quá"
+    "vietnamese": "cũng vậy",
+    "characterCount": 1
   },
   {
     "id": 359,
@@ -3228,7 +3586,8 @@
     "pinyin": "tiān",
     "jyutping": "tin1",
     "english": "day",
-    "vietnamese": "trời"
+    "vietnamese": "bầu trời",
+    "characterCount": 1
   },
   {
     "id": 360,
@@ -3237,7 +3596,8 @@
     "pinyin": "tiānqì",
     "jyutping": "tin1 hei3",
     "english": "weather",
-    "vietnamese": "Thời tiết"
+    "vietnamese": "thời tiết",
+    "characterCount": 2
   },
   {
     "id": 361,
@@ -3246,7 +3606,8 @@
     "pinyin": "tīng",
     "jyutping": "ting1",
     "english": "hear",
-    "vietnamese": "nghe"
+    "vietnamese": "Nghe",
+    "characterCount": 1
   },
   {
     "id": 362,
@@ -3255,7 +3616,8 @@
     "pinyin": "tīng dào",
     "jyutping": "teng1 dou3",
     "english": "hear",
-    "vietnamese": "thính giác"
+    "vietnamese": "Nghe",
+    "characterCount": 2
   },
   {
     "id": 363,
@@ -3264,7 +3626,8 @@
     "pinyin": "tīng jiàn",
     "jyutping": "teng1 gin3",
     "english": "hear",
-    "vietnamese": "nghe"
+    "vietnamese": "nghe",
+    "characterCount": 2
   },
   {
     "id": 364,
@@ -3273,7 +3636,8 @@
     "pinyin": "tīng xiě",
     "jyutping": "ting1 se2",
     "english": "dictation; dictate",
-    "vietnamese": "chính tả"
+    "vietnamese": "đọc chính tả",
+    "characterCount": 2
   },
   {
     "id": 365,
@@ -3282,7 +3646,8 @@
     "pinyin": "tóngxué",
     "jyutping": "tung4 hok6",
     "english": "Classmate",
-    "vietnamese": "bạn học"
+    "vietnamese": "bạn cùng lớp",
+    "characterCount": 2
   },
   {
     "id": 366,
@@ -3291,7 +3656,8 @@
     "pinyin": "túshūguǎn",
     "jyutping": "tou4 syu1 gun2",
     "english": "Library",
-    "vietnamese": "thư viện"
+    "vietnamese": "thư viện",
+    "characterCount": 3
   },
   {
     "id": 367,
@@ -3300,7 +3666,8 @@
     "pinyin": "wài",
     "jyutping": "ngoi6",
     "english": "abroad, outside",
-    "vietnamese": "ngoài"
+    "vietnamese": "ngoài",
+    "characterCount": 1
   },
   {
     "id": 368,
@@ -3309,7 +3676,8 @@
     "pinyin": "wài biān",
     "jyutping": "ngoi6 bin1",
     "english": "outside",
-    "vietnamese": "ngoài"
+    "vietnamese": "ngoài",
+    "characterCount": 2
   },
   {
     "id": 369,
@@ -3318,7 +3686,8 @@
     "pinyin": "wài guó",
     "jyutping": "ngoi6 gwok3",
     "english": "foreign country",
-    "vietnamese": "ngoại"
+    "vietnamese": "nước ngoài",
+    "characterCount": 2
   },
   {
     "id": 370,
@@ -3327,7 +3696,8 @@
     "pinyin": "wài yǔ",
     "jyutping": "ngoi6 jyu5",
     "english": "foreign language",
-    "vietnamese": "ngoại ngữ"
+    "vietnamese": "ngoại ngữ",
+    "characterCount": 2
   },
   {
     "id": 371,
@@ -3336,7 +3706,8 @@
     "pinyin": "wánr",
     "jyutping": "wun6 ji4",
     "english": "play",
-    "vietnamese": "Chơi"
+    "vietnamese": "chơi",
+    "characterCount": 2
   },
   {
     "id": 372,
@@ -3345,7 +3716,8 @@
     "pinyin": "wǎn",
     "jyutping": "maan5",
     "english": "late",
-    "vietnamese": "muộn"
+    "vietnamese": "Đêm",
+    "characterCount": 1
   },
   {
     "id": 373,
@@ -3354,7 +3726,8 @@
     "pinyin": "wǎn fàn",
     "jyutping": "maan5 faan6",
     "english": "dinner",
-    "vietnamese": "Tiệc"
+    "vietnamese": "bữa tối",
+    "characterCount": 2
   },
   {
     "id": 374,
@@ -3363,7 +3736,8 @@
     "pinyin": "wǎnshang",
     "jyutping": "maan5 soeng6",
     "english": "Night",
-    "vietnamese": "Vào ban đêm"
+    "vietnamese": "đêm",
+    "characterCount": 2
   },
   {
     "id": 375,
@@ -3372,7 +3746,8 @@
     "pinyin": "wǎng shàng",
     "jyutping": "mong5 soeng6",
     "english": "online",
-    "vietnamese": "trực tuyến"
+    "vietnamese": "Trực tuyến",
+    "characterCount": 2
   },
   {
     "id": 376,
@@ -3381,7 +3756,8 @@
     "pinyin": "wǎng yǒu",
     "jyutping": "mong5 jau5",
     "english": "net friend",
-    "vietnamese": "Cư dân mạng"
+    "vietnamese": "Cư dân mạng",
+    "characterCount": 2
   },
   {
     "id": 377,
@@ -3390,7 +3766,8 @@
     "pinyin": "wàng",
     "jyutping": "mong4",
     "english": "forget",
-    "vietnamese": "quên"
+    "vietnamese": "quên",
+    "characterCount": 1
   },
   {
     "id": 378,
@@ -3399,7 +3776,8 @@
     "pinyin": "wàngjì",
     "jyutping": "mong4 gei3",
     "english": "forget",
-    "vietnamese": "quên"
+    "vietnamese": "quên",
+    "characterCount": 2
   },
   {
     "id": 379,
@@ -3408,7 +3786,8 @@
     "pinyin": "wèn",
     "jyutping": "man6",
     "english": "ask",
-    "vietnamese": "hỏi"
+    "vietnamese": "hỏi",
+    "characterCount": 1
   },
   {
     "id": 380,
@@ -3417,7 +3796,8 @@
     "pinyin": "wǒ",
     "jyutping": "ngo5",
     "english": "I",
-    "vietnamese": "Tôi"
+    "vietnamese": "TÔI",
+    "characterCount": 1
   },
   {
     "id": 381,
@@ -3426,7 +3806,8 @@
     "pinyin": "wǒmen",
     "jyutping": "ngo5 mun4",
     "english": "We",
-    "vietnamese": "Chúng ta"
+    "vietnamese": "chúng ta",
+    "characterCount": 2
   },
   {
     "id": 382,
@@ -3435,7 +3816,8 @@
     "pinyin": "wǔ",
     "jyutping": "ng5",
     "english": "Five",
-    "vietnamese": "Năm"
+    "vietnamese": "năm",
+    "characterCount": 1
   },
   {
     "id": 383,
@@ -3444,7 +3826,8 @@
     "pinyin": "wǔ fàn",
     "jyutping": "ng5 faan6",
     "english": "lunch",
-    "vietnamese": "Bữa ăn trưa"
+    "vietnamese": "bữa trưa",
+    "characterCount": 2
   },
   {
     "id": 384,
@@ -3453,7 +3836,8 @@
     "pinyin": "xī",
     "jyutping": "sai1",
     "english": "west",
-    "vietnamese": "Hướng tây"
+    "vietnamese": "Tây",
+    "characterCount": 1
   },
   {
     "id": 385,
@@ -3462,7 +3846,8 @@
     "pinyin": "xī biān",
     "jyutping": "sai1 bin1",
     "english": "west; west side",
-    "vietnamese": "Hướng tây"
+    "vietnamese": "Tây",
+    "characterCount": 2
   },
   {
     "id": 386,
@@ -3471,7 +3856,8 @@
     "pinyin": "xǐ",
     "jyutping": "sai2",
     "english": "wash",
-    "vietnamese": "rửa"
+    "vietnamese": "rửa",
+    "characterCount": 1
   },
   {
     "id": 387,
@@ -3480,7 +3866,8 @@
     "pinyin": "xǐshǒujiān",
     "jyutping": "sai2 sau2 gaan1",
     "english": "Restroom",
-    "vietnamese": "nhà vệ sinh"
+    "vietnamese": "Nhà vệ sinh",
+    "characterCount": 3
   },
   {
     "id": 388,
@@ -3489,7 +3876,8 @@
     "pinyin": "xǐhuan",
     "jyutping": "hei2 fun1",
     "english": "like",
-    "vietnamese": "như"
+    "vietnamese": "giống",
+    "characterCount": 2
   },
   {
     "id": 389,
@@ -3498,7 +3886,8 @@
     "pinyin": "xià",
     "jyutping": "haa6 （ ming4 、 dung6 ）",
     "english": "below; under; next; go down; get off",
-    "vietnamese": "Thấp hơn (tên, hành động)"
+    "vietnamese": "xuống (danh từ, động từ)",
+    "characterCount": 3
   },
   {
     "id": 390,
@@ -3507,7 +3896,8 @@
     "pinyin": "xià bān",
     "jyutping": "haa6 baan1",
     "english": "get off work",
-    "vietnamese": "Làm"
+    "vietnamese": "nghỉ làm",
+    "characterCount": 2
   },
   {
     "id": 391,
@@ -3516,7 +3906,8 @@
     "pinyin": "xià biān",
     "jyutping": "haa6 bin1",
     "english": "below; under",
-    "vietnamese": "Dưới"
+    "vietnamese": "dưới",
+    "characterCount": 2
   },
   {
     "id": 392,
@@ -3525,7 +3916,8 @@
     "pinyin": "xià chē",
     "jyutping": "haa6 ce1",
     "english": "get off",
-    "vietnamese": "Ra ngoài"
+    "vietnamese": "rời đi",
+    "characterCount": 2
   },
   {
     "id": 393,
@@ -3534,7 +3926,8 @@
     "pinyin": "xià cì",
     "jyutping": "haa6 ci3",
     "english": "next time",
-    "vietnamese": "Lần sau"
+    "vietnamese": "lần tới",
+    "characterCount": 2
   },
   {
     "id": 394,
@@ -3543,7 +3936,8 @@
     "pinyin": "xià kè",
     "jyutping": "haa6 fo3",
     "english": "finish class",
-    "vietnamese": "Lớp"
+    "vietnamese": "Kết thúc ra khỏi lớp học",
+    "characterCount": 2
   },
   {
     "id": 395,
@@ -3552,7 +3946,8 @@
     "pinyin": "xiàwǔ",
     "jyutping": "haa6 ng5",
     "english": "Afternoon",
-    "vietnamese": "Buổi chiều"
+    "vietnamese": "buổi chiều",
+    "characterCount": 2
   },
   {
     "id": 396,
@@ -3561,7 +3956,8 @@
     "pinyin": "xiàyǔ",
     "jyutping": "haa6 jyu5",
     "english": "rain",
-    "vietnamese": "Mưa"
+    "vietnamese": "cơn mưa",
+    "characterCount": 2
   },
   {
     "id": 397,
@@ -3570,7 +3966,8 @@
     "pinyin": "xiān",
     "jyutping": "sin1",
     "english": "before",
-    "vietnamese": "đầu tiên"
+    "vietnamese": "Đầu tiên",
+    "characterCount": 1
   },
   {
     "id": 398,
@@ -3579,7 +3976,8 @@
     "pinyin": "xiānsheng",
     "jyutping": "sin1 saang1",
     "english": "Sir",
-    "vietnamese": "Ông"
+    "vietnamese": "các quý ông",
+    "characterCount": 2
   },
   {
     "id": 399,
@@ -3588,7 +3986,8 @@
     "pinyin": "xiànzài",
     "jyutping": "jin6 zoi6",
     "english": "Now",
-    "vietnamese": "Ngay bây giờ"
+    "vietnamese": "Hiện nay",
+    "characterCount": 2
   },
   {
     "id": 400,
@@ -3597,7 +3996,8 @@
     "pinyin": "xiǎng",
     "jyutping": "soeng2",
     "english": "think",
-    "vietnamese": "nghĩ"
+    "vietnamese": "nghĩ",
+    "characterCount": 1
   },
   {
     "id": 401,
@@ -3606,7 +4006,8 @@
     "pinyin": "xiǎo",
     "jyutping": "siu2",
     "english": "Small",
-    "vietnamese": "nhỏ"
+    "vietnamese": "Bé nhỏ",
+    "characterCount": 1
   },
   {
     "id": 402,
@@ -3615,7 +4016,8 @@
     "pinyin": "xiǎo háir",
     "jyutping": "siu2 haai4 ji4",
     "english": "child; kid",
-    "vietnamese": "con"
+    "vietnamese": "những đứa trẻ",
+    "characterCount": 3
   },
   {
     "id": 403,
@@ -3624,7 +4026,8 @@
     "pinyin": "xiǎojiě",
     "jyutping": "siu2 ze2",
     "english": "Miss",
-    "vietnamese": "Lỡ"
+    "vietnamese": "Cô",
+    "characterCount": 2
   },
   {
     "id": 404,
@@ -3633,7 +4036,8 @@
     "pinyin": "xiǎo péng yǒu",
     "jyutping": "siu2 pang4 jau5",
     "english": "child; kid",
-    "vietnamese": "Trẻ em"
+    "vietnamese": "đứa trẻ",
+    "characterCount": 3
   },
   {
     "id": 405,
@@ -3642,7 +4046,8 @@
     "pinyin": "xiǎoshí",
     "jyutping": "siu2 si4",
     "english": "hour",
-    "vietnamese": "giờ"
+    "vietnamese": "Giờ",
+    "characterCount": 2
   },
   {
     "id": 406,
@@ -3651,7 +4056,8 @@
     "pinyin": "xiǎo xué",
     "jyutping": "siu2 hok6",
     "english": "primary school; elementary school",
-    "vietnamese": "trường tiểu học"
+    "vietnamese": "trường tiểu học",
+    "characterCount": 2
   },
   {
     "id": 407,
@@ -3660,7 +4066,8 @@
     "pinyin": "xiǎo xué shēng",
     "jyutping": "siu2 hok6 saang1",
     "english": "elementary school student",
-    "vietnamese": "Học sinh tiểu học"
+    "vietnamese": "Học sinh tiểu học",
+    "characterCount": 3
   },
   {
     "id": 408,
@@ -3669,7 +4076,8 @@
     "pinyin": "xiào",
     "jyutping": "siu3",
     "english": "laugh",
-    "vietnamese": "cười"
+    "vietnamese": "cười",
+    "characterCount": 1
   },
   {
     "id": 409,
@@ -3678,7 +4086,8 @@
     "pinyin": "xiě",
     "jyutping": "se2",
     "english": "write",
-    "vietnamese": "viết"
+    "vietnamese": "Viết",
+    "characterCount": 1
   },
   {
     "id": 410,
@@ -3687,7 +4096,8 @@
     "pinyin": "xièxie",
     "jyutping": "ze6 ze6",
     "english": "Thank you",
-    "vietnamese": "Cảm ơn bạn"
+    "vietnamese": "Cảm ơn",
+    "characterCount": 2
   },
   {
     "id": 411,
@@ -3696,7 +4106,8 @@
     "pinyin": "xīn",
     "jyutping": "san1",
     "english": "new",
-    "vietnamese": "mới"
+    "vietnamese": "mới",
+    "characterCount": 1
   },
   {
     "id": 412,
@@ -3705,7 +4116,8 @@
     "pinyin": "xīn nián",
     "jyutping": "san1 nin4",
     "english": "New Year",
-    "vietnamese": "năm mới"
+    "vietnamese": "năm mới",
+    "characterCount": 2
   },
   {
     "id": 413,
@@ -3714,7 +4126,8 @@
     "pinyin": "xīngqī",
     "jyutping": "sing1 kei4",
     "english": "week",
-    "vietnamese": "tuần"
+    "vietnamese": "Tuần",
+    "characterCount": 2
   },
   {
     "id": 414,
@@ -3723,7 +4136,8 @@
     "pinyin": "xīng qī rì",
     "jyutping": "sing1 kei4 jat6",
     "english": "Sunday",
-    "vietnamese": "Chủ nhật"
+    "vietnamese": "Chủ nhật",
+    "characterCount": 3
   },
   {
     "id": 415,
@@ -3732,7 +4146,8 @@
     "pinyin": "xīng qī tiān",
     "jyutping": "sing1 kei4 tin1",
     "english": "Sunday",
-    "vietnamese": "Chủ nhật"
+    "vietnamese": "Chủ nhật",
+    "characterCount": 3
   },
   {
     "id": 416,
@@ -3741,7 +4156,8 @@
     "pinyin": "xíng",
     "jyutping": "hang4",
     "english": "That’s ok",
-    "vietnamese": "Có"
+    "vietnamese": "ĐƯỢC RỒI",
+    "characterCount": 1
   },
   {
     "id": 417,
@@ -3750,7 +4166,8 @@
     "pinyin": "xiūxi",
     "jyutping": "jau1 sik1",
     "english": "Rest",
-    "vietnamese": "nghỉ ngơi"
+    "vietnamese": "nghỉ ngơi",
+    "characterCount": 2
   },
   {
     "id": 418,
@@ -3759,7 +4176,8 @@
     "pinyin": "xué",
     "jyutping": "hok6",
     "english": "learn; study",
-    "vietnamese": "học"
+    "vietnamese": "học",
+    "characterCount": 1
   },
   {
     "id": 419,
@@ -3768,7 +4186,8 @@
     "pinyin": "xuésheng",
     "jyutping": "hok6 saang1",
     "english": "Student",
-    "vietnamese": "sinh viên"
+    "vietnamese": "học sinh",
+    "characterCount": 2
   },
   {
     "id": 420,
@@ -3777,7 +4196,8 @@
     "pinyin": "xuéxí",
     "jyutping": "hok6 zaap6",
     "english": "Study",
-    "vietnamese": "Học"
+    "vietnamese": "học",
+    "characterCount": 2
   },
   {
     "id": 421,
@@ -3786,7 +4206,8 @@
     "pinyin": "xuéxiào",
     "jyutping": "hok6 haau6",
     "english": "School",
-    "vietnamese": "trường học"
+    "vietnamese": "Trường học",
+    "characterCount": 2
   },
   {
     "id": 422,
@@ -3795,7 +4216,8 @@
     "pinyin": "xué yuàn",
     "jyutping": "hok6 jyun2",
     "english": "college; academy",
-    "vietnamese": "viện hàn lâm"
+    "vietnamese": "Trường cao đẳng",
+    "characterCount": 2
   },
   {
     "id": 423,
@@ -3804,7 +4226,8 @@
     "pinyin": "yào",
     "jyutping": "jiu3 （ dung6 ）",
     "english": "want",
-    "vietnamese": "Để (di chuyển)"
+    "vietnamese": "Để di chuyển",
+    "characterCount": 2
   },
   {
     "id": 424,
@@ -3813,7 +4236,8 @@
     "pinyin": "yéye",
     "jyutping": "je4 je2",
     "english": "grandpa",
-    "vietnamese": "Ông"
+    "vietnamese": "ông nội",
+    "characterCount": 2
   },
   {
     "id": 425,
@@ -3822,7 +4246,8 @@
     "pinyin": "yě",
     "jyutping": "jaa5",
     "english": "also",
-    "vietnamese": "cũng"
+    "vietnamese": "Mà còn",
+    "characterCount": 1
   },
   {
     "id": 426,
@@ -3831,7 +4256,8 @@
     "pinyin": "yè",
     "jyutping": "jip6",
     "english": "page",
-    "vietnamese": "trang"
+    "vietnamese": "Trang",
+    "characterCount": 1
   },
   {
     "id": 427,
@@ -3840,7 +4266,8 @@
     "pinyin": "yī",
     "jyutping": "jat1",
     "english": "One",
-    "vietnamese": "Một"
+    "vietnamese": "một",
+    "characterCount": 1
   },
   {
     "id": 428,
@@ -3849,7 +4276,8 @@
     "pinyin": "yīfu",
     "jyutping": "ji1 fuk6",
     "english": "clothes",
-    "vietnamese": "quần áo"
+    "vietnamese": "quần áo",
+    "characterCount": 2
   },
   {
     "id": 429,
@@ -3858,7 +4286,8 @@
     "pinyin": "yīshēng",
     "jyutping": "ji1 sang1",
     "english": "Doctor",
-    "vietnamese": "bác sĩ"
+    "vietnamese": "bác sĩ",
+    "characterCount": 2
   },
   {
     "id": 430,
@@ -3867,7 +4296,8 @@
     "pinyin": "yīyuàn",
     "jyutping": "ji1 jyun2",
     "english": "Hospital",
-    "vietnamese": "bệnh viện"
+    "vietnamese": "Bệnh viện",
+    "characterCount": 2
   },
   {
     "id": 431,
@@ -3876,7 +4306,8 @@
     "pinyin": "yí bàn",
     "jyutping": "jat1 bun3",
     "english": "half",
-    "vietnamese": "Halfway"
+    "vietnamese": "một nửa",
+    "characterCount": 2
   },
   {
     "id": 432,
@@ -3885,7 +4316,8 @@
     "pinyin": "yíhuìr",
     "jyutping": "jat1 wui6 ji4",
     "english": "A little while",
-    "vietnamese": "Một thời gian"
+    "vietnamese": "một lúc",
+    "characterCount": 3
   },
   {
     "id": 433,
@@ -3894,7 +4326,8 @@
     "pinyin": "yí kuàir",
     "jyutping": "jat1 faai3 ji4",
     "english": "together",
-    "vietnamese": "Một mảnh"
+    "vietnamese": "cùng nhau",
+    "characterCount": 3
   },
   {
     "id": 434,
@@ -3903,7 +4336,8 @@
     "pinyin": "yí xiàr",
     "jyutping": "jat1 haa6 ji4",
     "english": "a little bit",
-    "vietnamese": "Đột nhiên"
+    "vietnamese": "trong một thời gian",
+    "characterCount": 3
   },
   {
     "id": 435,
@@ -3912,7 +4346,8 @@
     "pinyin": "yíyàng",
     "jyutping": "jat1 joeng6",
     "english": "equally",
-    "vietnamese": "Chúc bạn như vậy"
+    "vietnamese": "Như nhau",
+    "characterCount": 2
   },
   {
     "id": 436,
@@ -3921,7 +4356,8 @@
     "pinyin": "yìbiān",
     "jyutping": "jat1 bin1",
     "english": "One side",
-    "vietnamese": "bên"
+    "vietnamese": "Một bên",
+    "characterCount": 2
   },
   {
     "id": 437,
@@ -3930,7 +4366,8 @@
     "pinyin": "yīdiǎnr",
     "jyutping": "jat1 dim2 ji4",
     "english": "a little bit",
-    "vietnamese": "Một chút"
+    "vietnamese": "một chút",
+    "characterCount": 3
   },
   {
     "id": 438,
@@ -3939,7 +4376,8 @@
     "pinyin": "yìqǐ",
     "jyutping": "jat1 hei2",
     "english": "together",
-    "vietnamese": "cùng"
+    "vietnamese": "Cùng nhau",
+    "characterCount": 2
   },
   {
     "id": 439,
@@ -3948,7 +4386,8 @@
     "pinyin": "yì xiē",
     "jyutping": "jat1 se1",
     "english": "some",
-    "vietnamese": "Một vài"
+    "vietnamese": "Một số",
+    "characterCount": 2
   },
   {
     "id": 440,
@@ -3957,7 +4396,8 @@
     "pinyin": "yòng",
     "jyutping": "jung6",
     "english": "use",
-    "vietnamese": "dùng"
+    "vietnamese": "sử dụng",
+    "characterCount": 1
   },
   {
     "id": 441,
@@ -3966,7 +4406,8 @@
     "pinyin": "yǒu",
     "jyutping": "jau5",
     "english": "have",
-    "vietnamese": "Có"
+    "vietnamese": "có",
+    "characterCount": 1
   },
   {
     "id": 442,
@@ -3975,7 +4416,8 @@
     "pinyin": "yǒu de",
     "jyutping": "jau5 dik1",
     "english": "some",
-    "vietnamese": "vài"
+    "vietnamese": "một số",
+    "characterCount": 2
   },
   {
     "id": 443,
@@ -3984,7 +4426,8 @@
     "pinyin": "yǒumíng",
     "jyutping": "jau5 meng2",
     "english": "Famous",
-    "vietnamese": "nổi danh"
+    "vietnamese": "nổi tiếng",
+    "characterCount": 2
   },
   {
     "id": 444,
@@ -3993,7 +4436,8 @@
     "pinyin": "yǒu shí hòu ｜ yǒu shí",
     "jyutping": "jau5 si4 hau6 ｜ jau5 si4",
     "english": "sometimes",
-    "vietnamese": "Đôi khi"
+    "vietnamese": "Đôi khi｜Đôi khi",
+    "characterCount": 5
   },
   {
     "id": 445,
@@ -4002,7 +4446,8 @@
     "pinyin": "yǒu （ yì ） xiē",
     "jyutping": "jau5 （ jat1 ） se1",
     "english": "some",
-    "vietnamese": "Có (1) một số"
+    "vietnamese": "Một số",
+    "characterCount": 3
   },
   {
     "id": 446,
@@ -4011,7 +4456,8 @@
     "pinyin": "yǒu yòng",
     "jyutping": "jau5 jung6",
     "english": "useful",
-    "vietnamese": "có ích"
+    "vietnamese": "nó hoạt động",
+    "characterCount": 2
   },
   {
     "id": 447,
@@ -4020,7 +4466,8 @@
     "pinyin": "yòu",
     "jyutping": "jau6",
     "english": "right",
-    "vietnamese": "Bên phải"
+    "vietnamese": "Phải",
+    "characterCount": 1
   },
   {
     "id": 448,
@@ -4029,7 +4476,8 @@
     "pinyin": "yòubian",
     "jyutping": "jau6 bin1",
     "english": "Right",
-    "vietnamese": "Bên phải"
+    "vietnamese": "Phải",
+    "characterCount": 2
   },
   {
     "id": 449,
@@ -4038,7 +4486,8 @@
     "pinyin": "yǔ",
     "jyutping": "jyu5",
     "english": "rain",
-    "vietnamese": "mưa"
+    "vietnamese": "cơn mưa",
+    "characterCount": 1
   },
   {
     "id": 450,
@@ -4047,7 +4496,8 @@
     "pinyin": "yuán",
     "jyutping": "jyun4",
     "english": "element; Yuan",
-    "vietnamese": "Yuan"
+    "vietnamese": "Nguyên",
+    "characterCount": 1
   },
   {
     "id": 451,
@@ -4056,7 +4506,8 @@
     "pinyin": "yuǎn",
     "jyutping": "jyun5",
     "english": "far",
-    "vietnamese": "xa"
+    "vietnamese": "Xa",
+    "characterCount": 1
   },
   {
     "id": 452,
@@ -4065,7 +4516,8 @@
     "pinyin": "yuè",
     "jyutping": "jyut6",
     "english": "month",
-    "vietnamese": "tháng"
+    "vietnamese": "mặt trăng",
+    "characterCount": 1
   },
   {
     "id": 453,
@@ -4074,7 +4526,8 @@
     "pinyin": "zài",
     "jyutping": "zoi3",
     "english": "again",
-    "vietnamese": "lại"
+    "vietnamese": "Lại",
+    "characterCount": 1
   },
   {
     "id": 454,
@@ -4083,7 +4536,8 @@
     "pinyin": "zàijiàn",
     "jyutping": "zoi3 gin3",
     "english": "Bye",
-    "vietnamese": "Tạm biệt"
+    "vietnamese": "tạm biệt",
+    "characterCount": 2
   },
   {
     "id": 455,
@@ -4092,7 +4546,8 @@
     "pinyin": "zài",
     "jyutping": "zoi6",
     "english": "stay; in process of",
-    "vietnamese": "tại"
+    "vietnamese": "hiện hữu",
+    "characterCount": 1
   },
   {
     "id": 456,
@@ -4101,7 +4556,8 @@
     "pinyin": "zài jiā",
     "jyutping": "zoi6 gaa1",
     "english": "at home",
-    "vietnamese": "Ở nhà"
+    "vietnamese": "ở nhà",
+    "characterCount": 2
   },
   {
     "id": 457,
@@ -4110,7 +4566,8 @@
     "pinyin": "zǎo",
     "jyutping": "zou2",
     "english": "early",
-    "vietnamese": "sớm"
+    "vietnamese": "buổi sáng",
+    "characterCount": 1
   },
   {
     "id": 458,
@@ -4119,7 +4576,8 @@
     "pinyin": "zǎo fàn",
     "jyutping": "zou2 faan6",
     "english": "breakfast",
-    "vietnamese": "bữa ăn sáng"
+    "vietnamese": "bữa sáng",
+    "characterCount": 2
   },
   {
     "id": 459,
@@ -4128,7 +4586,8 @@
     "pinyin": "zǎoshang",
     "jyutping": "zou2 soeng6",
     "english": "Morning",
-    "vietnamese": "Buổi sáng"
+    "vietnamese": "Buổi sáng",
+    "characterCount": 2
   },
   {
     "id": 460,
@@ -4137,7 +4596,8 @@
     "pinyin": "zěnme",
     "jyutping": "zam2 mo1",
     "english": "How",
-    "vietnamese": "Thế nào"
+    "vietnamese": "Làm sao",
+    "characterCount": 2
   },
   {
     "id": 461,
@@ -4146,7 +4606,8 @@
     "pinyin": "zhàn",
     "jyutping": "zaam6 （ ming4 ）",
     "english": "station",
-    "vietnamese": "Trạm (tên)"
+    "vietnamese": "Trạm (tên)",
+    "characterCount": 2
   },
   {
     "id": 462,
@@ -4155,7 +4616,8 @@
     "pinyin": "zhǎo",
     "jyutping": "zaau2",
     "english": "look for",
-    "vietnamese": "Tìm"
+    "vietnamese": "cố gắng tìm kiếm",
+    "characterCount": 1
   },
   {
     "id": 463,
@@ -4164,7 +4626,8 @@
     "pinyin": "zhǎo dào",
     "jyutping": "zaau2 dou3",
     "english": "find",
-    "vietnamese": "Tìm thấy nó"
+    "vietnamese": "xuất hiện",
+    "characterCount": 2
   },
   {
     "id": 464,
@@ -4173,7 +4636,8 @@
     "pinyin": "zhè",
     "jyutping": "ze2",
     "english": "Here (here)",
-    "vietnamese": "này"
+    "vietnamese": "cái này",
+    "characterCount": 1
   },
   {
     "id": 465,
@@ -4182,7 +4646,8 @@
     "pinyin": "zhè biān",
     "jyutping": "ze2 bin1",
     "english": "here",
-    "vietnamese": "Cách này"
+    "vietnamese": "Phía bên này",
+    "characterCount": 2
   },
   {
     "id": 466,
@@ -4191,7 +4656,8 @@
     "pinyin": "zhè lǐ",
     "jyutping": "ze2 leoi5",
     "english": "here",
-    "vietnamese": "Ở đây"
+    "vietnamese": "đây",
+    "characterCount": 2
   },
   {
     "id": 467,
@@ -4200,7 +4666,8 @@
     "pinyin": "zhèr",
     "jyutping": "ze5 ji4",
     "english": "here",
-    "vietnamese": "Ở đây"
+    "vietnamese": "đây",
+    "characterCount": 2
   },
   {
     "id": 468,
@@ -4209,7 +4676,8 @@
     "pinyin": "zhè xiē",
     "jyutping": "ze2 se1",
     "english": "these",
-    "vietnamese": "Những"
+    "vietnamese": "Những cái này",
+    "characterCount": 2
   },
   {
     "id": 469,
@@ -4218,7 +4686,8 @@
     "pinyin": "zhe",
     "jyutping": "zoek6",
     "english": "in process of",
-    "vietnamese": "di chuyển"
+    "vietnamese": "Mặc",
+    "characterCount": 1
   },
   {
     "id": 470,
@@ -4227,7 +4696,8 @@
     "pinyin": "zhēn",
     "jyutping": "zan1",
     "english": "really",
-    "vietnamese": "thật"
+    "vietnamese": "thực tế",
+    "characterCount": 1
   },
   {
     "id": 471,
@@ -4236,7 +4706,8 @@
     "pinyin": "zhēn de",
     "jyutping": "zan1 dik1",
     "english": "really",
-    "vietnamese": "Đó là sự thật"
+    "vietnamese": "thực tế",
+    "characterCount": 2
   },
   {
     "id": 472,
@@ -4245,7 +4716,8 @@
     "pinyin": "zhèng",
     "jyutping": "zing3 （ fu3 ）",
     "english": "just; exactly",
-    "vietnamese": "Chính (Vice)"
+    "vietnamese": "Trưởng phòng (Phó phòng)",
+    "characterCount": 2
   },
   {
     "id": 473,
@@ -4254,7 +4726,8 @@
     "pinyin": "zhèngzài",
     "jyutping": "zing3 zoi6",
     "english": "in process of",
-    "vietnamese": "Ing"
+    "vietnamese": "Hiện nay",
+    "characterCount": 2
   },
   {
     "id": 474,
@@ -4263,7 +4736,8 @@
     "pinyin": "zhīdào",
     "jyutping": "zi1 dou6",
     "english": "know",
-    "vietnamese": "Biết"
+    "vietnamese": "Biết",
+    "characterCount": 2
   },
   {
     "id": 475,
@@ -4272,7 +4746,8 @@
     "pinyin": "zhīshi",
     "jyutping": "zi1 sik1",
     "english": "knowledge",
-    "vietnamese": "kiến thức"
+    "vietnamese": "Kiến thức",
+    "characterCount": 2
   },
   {
     "id": 476,
@@ -4281,7 +4756,8 @@
     "pinyin": "zhōng",
     "jyutping": "zung1",
     "english": "middle; in",
-    "vietnamese": "trung"
+    "vietnamese": "ở giữa",
+    "characterCount": 1
   },
   {
     "id": 477,
@@ -4290,7 +4766,8 @@
     "pinyin": "zhōngguó",
     "jyutping": "zung1 gwok3",
     "english": "China",
-    "vietnamese": "Trung Quốc"
+    "vietnamese": "Trung Quốc",
+    "characterCount": 2
   },
   {
     "id": 478,
@@ -4299,7 +4776,8 @@
     "pinyin": "zhōngjiān",
     "jyutping": "zung1 gaan1",
     "english": "Middle",
-    "vietnamese": "trung"
+    "vietnamese": "ở giữa",
+    "characterCount": 2
   },
   {
     "id": 479,
@@ -4308,7 +4786,8 @@
     "pinyin": "zhōngwén",
     "jyutping": "zung1 man4",
     "english": "Chinese",
-    "vietnamese": "Trung quốc"
+    "vietnamese": "Trung Quốc",
+    "characterCount": 2
   },
   {
     "id": 480,
@@ -4317,7 +4796,8 @@
     "pinyin": "zhōngwǔ",
     "jyutping": "zung1 ng5",
     "english": "Noon",
-    "vietnamese": "trưa"
+    "vietnamese": "buổi trưa",
+    "characterCount": 2
   },
   {
     "id": 481,
@@ -4326,7 +4806,8 @@
     "pinyin": "zhōng xué",
     "jyutping": "zung1 hok6",
     "english": "middle school",
-    "vietnamese": "Trung học cơ sở"
+    "vietnamese": "Trường trung học cơ sở",
+    "characterCount": 2
   },
   {
     "id": 482,
@@ -4335,7 +4816,8 @@
     "pinyin": "zhōng xué shēng",
     "jyutping": "zung1 hok6 saang1",
     "english": "middle School student",
-    "vietnamese": "học sinh trung học cơ sở"
+    "vietnamese": "học sinh trung học cơ sở",
+    "characterCount": 3
   },
   {
     "id": 483,
@@ -4344,7 +4826,8 @@
     "pinyin": "zhòng",
     "jyutping": "cung5",
     "english": "heavy",
-    "vietnamese": "nặng"
+    "vietnamese": "Nặng",
+    "characterCount": 1
   },
   {
     "id": 484,
@@ -4353,7 +4836,8 @@
     "pinyin": "zhòngyào",
     "jyutping": "zung6 jiu3",
     "english": "important",
-    "vietnamese": "đáng kể"
+    "vietnamese": "quan trọng",
+    "characterCount": 2
   },
   {
     "id": 485,
@@ -4362,7 +4846,8 @@
     "pinyin": "zhù",
     "jyutping": "zyu6",
     "english": "live",
-    "vietnamese": "sống"
+    "vietnamese": "sống",
+    "characterCount": 1
   },
   {
     "id": 486,
@@ -4371,7 +4856,8 @@
     "pinyin": "zhǔnbèi",
     "jyutping": "zeon2 bei6",
     "english": "Get ready",
-    "vietnamese": "Sẵn sàng"
+    "vietnamese": "Chuẩn bị",
+    "characterCount": 2
   },
   {
     "id": 487,
@@ -4380,7 +4866,8 @@
     "pinyin": "zhuōzi",
     "jyutping": "coek3 zi2",
     "english": "Table",
-    "vietnamese": "bàn"
+    "vietnamese": "bàn",
+    "characterCount": 2
   },
   {
     "id": 488,
@@ -4389,7 +4876,8 @@
     "pinyin": "zì",
     "jyutping": "zi6",
     "english": "word, character",
-    "vietnamese": "từ"
+    "vietnamese": "Tính cách",
+    "characterCount": 1
   },
   {
     "id": 489,
@@ -4398,7 +4886,8 @@
     "pinyin": "zi （ zhuō zi ）",
     "jyutping": "zi2 （ coek3 zi2 ）",
     "english": "noun suffix (table)",
-    "vietnamese": "Phụ (bảng)"
+    "vietnamese": "Bàn",
+    "characterCount": 3
   },
   {
     "id": 490,
@@ -4407,7 +4896,8 @@
     "pinyin": "zǒu",
     "jyutping": "zau2",
     "english": "go, walk",
-    "vietnamese": "đi"
+    "vietnamese": "Đi bộ",
+    "characterCount": 1
   },
   {
     "id": 491,
@@ -4416,7 +4906,8 @@
     "pinyin": "zǒu lù",
     "jyutping": "zau2 lou6",
     "english": "walk",
-    "vietnamese": "đi"
+    "vietnamese": "đi bộ",
+    "characterCount": 2
   },
   {
     "id": 492,
@@ -4425,7 +4916,8 @@
     "pinyin": "zuì",
     "jyutping": "zeoi3",
     "english": "most",
-    "vietnamese": "hầu hết"
+    "vietnamese": "hầu hết",
+    "characterCount": 1
   },
   {
     "id": 493,
@@ -4434,7 +4926,8 @@
     "pinyin": "zuìhǎo",
     "jyutping": "zeoi3 hou2",
     "english": "Best",
-    "vietnamese": "tốt nhất"
+    "vietnamese": "hầu hết",
+    "characterCount": 2
   },
   {
     "id": 494,
@@ -4443,7 +4936,8 @@
     "pinyin": "zuìhòu",
     "jyutping": "zeoi3 hau6",
     "english": "Last",
-    "vietnamese": "Cuối cùng"
+    "vietnamese": "cuối cùng",
+    "characterCount": 2
   },
   {
     "id": 495,
@@ -4452,7 +4946,8 @@
     "pinyin": "zuótiān",
     "jyutping": "zok6 tin1",
     "english": "Yesterday",
-    "vietnamese": "Hôm qua"
+    "vietnamese": "Hôm qua",
+    "characterCount": 2
   },
   {
     "id": 496,
@@ -4461,7 +4956,8 @@
     "pinyin": "zuǒ",
     "jyutping": "zo2",
     "english": "left",
-    "vietnamese": "Bên trái"
+    "vietnamese": "Bên trái",
+    "characterCount": 1
   },
   {
     "id": 497,
@@ -4470,7 +4966,8 @@
     "pinyin": "zuǒbian",
     "jyutping": "zo2 bin1",
     "english": "left",
-    "vietnamese": "Bên trái"
+    "vietnamese": "bên trái",
+    "characterCount": 2
   },
   {
     "id": 498,
@@ -4479,7 +4976,8 @@
     "pinyin": "zuò",
     "jyutping": "zo6",
     "english": "sit",
-    "vietnamese": "ngồi"
+    "vietnamese": "ngồi",
+    "characterCount": 1
   },
   {
     "id": 499,
@@ -4488,7 +4986,8 @@
     "pinyin": "zuò xià",
     "jyutping": "co5 haa6",
     "english": "sit down",
-    "vietnamese": "Ngồi xuống"
+    "vietnamese": "ngồi xuống",
+    "characterCount": 2
   },
   {
     "id": 500,
@@ -4497,6 +4996,7 @@
     "pinyin": "zuò",
     "jyutping": "zou6",
     "english": "do",
-    "vietnamese": "làm"
+    "vietnamese": "LÀM",
+    "characterCount": 1
   }
 ]
