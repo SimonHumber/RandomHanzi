@@ -12,17 +12,6 @@ export default function HomeScreen({ navigation }) {
       <View style={styles.content}>
         <TouchableOpacity
           style={styles.menuButton}
-          onPress={() => navigation.navigate('Kanji')}
-        >
-          <Text style={styles.menuButtonIcon}>日</Text>
-          <Text style={styles.menuButtonText}>Kanji Practice</Text>
-          <Text style={styles.menuButtonDescription}>
-            Practice Japanese kanji with Vietnamese readings
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.menuButton}
           onPress={() => navigation.navigate('HSK')}
         >
           <Text style={styles.menuButtonIcon}>中</Text>
@@ -40,6 +29,28 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.menuButtonText}>TOCFL Vocabulary</Text>
           <Text style={styles.menuButtonDescription}>
             Practice TOCFL Chinese vocabulary
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.menuButton}
+          onPress={() => navigation.navigate('Kanji')}
+        >
+          <Text style={styles.menuButtonIcon}>日</Text>
+          <Text style={styles.menuButtonText}>Kanji Practice</Text>
+          <Text style={styles.menuButtonDescription}>
+            Practice Japanese kanji with Vietnamese readings
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.menuButton}
+          onPress={() => navigation.navigate('Settings')}
+        >
+          <Text style={styles.menuButtonIcon}>設定</Text>
+          <Text style={styles.menuButtonText}>Settings</Text>
+          <Text style={styles.menuButtonDescription}>
+            Configure translation preferences
           </Text>
         </TouchableOpacity>
       </View>

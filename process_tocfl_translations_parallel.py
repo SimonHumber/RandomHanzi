@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """
-Process TOCFL Level 1 CSV with parallel translations and add Han Viet readings
+Processes TOCFL Level 1 vocabulary CSV file to generate JSON with translations.
+- Reads Simplified Chinese words from CSV
+- Translates to Traditional Chinese and Vietnamese using Google Translate API
+- Adds Jyutping (Cantonese pronunciation) using pinyin-jyutping library
+- Adds Han Viet readings from CSV lookup
+- Processes 5 words simultaneously for faster execution
+- Outputs JSON file with all translations and metadata
 """
 
 import csv
@@ -10,8 +16,24 @@ import asyncio
 import aiohttp
 import os
 import re
+from typing import TypedDict, List, NotRequired
 from dotenv import load_dotenv
 from add_hanviet_from_csv import load_hanviet_csv, find_hanviet_reading_with_multiple
+
+
+class VocabEntry(TypedDict):
+    id: int
+    simplifiedChinese: str
+    traditionalChinese: str
+    pinyin: str
+    jyutping: str
+    english: str
+    vietnamese: str
+    characterCount: int
+    hanviet: str
+    wordType: NotRequired[str]  # Optional
+    domain: NotRequired[str]  # Optional
+
 
 load_dotenv()
 

@@ -6,6 +6,7 @@ import HomeScreen from '../screens/HomeScreen';
 import KanjiScreen from '../screens/KanjiScreen';
 import HSKScreen from '../screens/HSKScreen';
 import TOCFLScreen from '../screens/TOCFLScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +45,11 @@ export default function MainNavigator() {
             name="TOCFL" 
             component={TOCFLScreen}
             options={{ title: 'TOCFL Vocabulary' }}
+          />
+          <Stack.Screen 
+            name="Settings" 
+            component={SettingsScreen}
+            options={{ title: 'Settings' }}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """
-Process HSK Level 1 CSV with TRUE PARALLEL translations:
-- 5 words processed simultaneously
-- Each word's translations (Traditional + Vietnamese) happen in parallel
-- Jyutping done sequentially after translations
+Processes HSK Level 2 vocabulary CSV file to generate JSON with translations.
+- Reads Simplified Chinese words from CSV
+- Translates to Traditional Chinese and Vietnamese using Google Translate API
+- Adds Jyutping (Cantonese pronunciation) using pinyin-jyutping library
+- Adds Han Viet readings from CSV lookup
+- Processes 5 words simultaneously for faster execution
+- Outputs JSON file with all translations and metadata to mobile/data/hsk_level2.json
 """
 
 import csv
@@ -13,8 +16,22 @@ import asyncio
 import aiohttp
 import os
 import re
+from typing import TypedDict, List
 from dotenv import load_dotenv
 from add_hanviet_from_csv import load_hanviet_csv, find_hanviet_reading_with_multiple
+
+
+class VocabEntry(TypedDict):
+    id: int
+    simplifiedChinese: str
+    traditionalChinese: str
+    pinyin: str
+    jyutping: str
+    english: str
+    vietnamese: str
+    characterCount: int
+    hanviet: str
+
 
 # Load environment variables
 load_dotenv()
@@ -174,7 +191,7 @@ async def process_batch_parallel(session, batch_data, batch_num, start_idx):
 async def process_hsk_csv():
     """Process HSK CSV with TRUE PARALLEL translations"""
 
-    print("🔄 Processing HSK Level 1 CSV with Google Translation API...")
+    print("🔄 Processing HSK Level 2 CSV with Google Translation API...")
     print("=" * 60)
 
     # Initialize Jyutping library ONCE at the start
@@ -185,16 +202,12 @@ async def process_hsk_csv():
 
     # Read CSV file
     csv_data = []
-    with open("src/Level 1 HSK - Sheet1.csv", "r", encoding="utf-8") as f:
+    with open("hsk2.csv", "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             csv_data.append(row)
 
     print(f"📊 Found {len(csv_data)} entries in CSV")
-
-    # TEST: Only process first 5 entries
-    csv_data = csv_data[:5]
-    print(f"🧪 TEST MODE: Processing only first {len(csv_data)} entries")
 
     # Process entries
     print(f"🚀 Processing {len(csv_data)} entries")
@@ -238,11 +251,12 @@ async def process_hsk_csv():
     print("✅ Han Viet readings added!")
 
     # Save the complete JSON
-    output_file = "test.json"
+    output_file = "mobile/data/hsk_level2.json"
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(processed_data, f, ensure_ascii=False, indent=2)
 
-    print("✅ Successfully created complete HSK Level 1 JSON!")
+    print("✅ Successfully created complete HSK Level 2 JSON!")
     print(f"📁 Output file: {output_file}")
     print(f"📊 Total entries: {len(processed_data)}")
 
