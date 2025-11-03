@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "simplifiedChinese": "爱",
+    "traditionalChinese": "愛",
+    "pinyin": "ài",
+    "jyutping": "oi3",
+    "english": "love",
+    "vietnamese": "giống",
+    "characterCount": 1,
+    "hanviet": "ái"
+  },
+  {
+    "id": 2,
+    "simplifiedChinese": "爱好",
+    "traditionalChinese": "嗜好",
+    "pinyin": "ài hào",
+    "jyutping": "oi3 hou3",
+    "english": "hobby",
+    "vietnamese": "Sở thích",
+    "characterCount": 2,
+    "hanviet": "thị hảo"
+  },
+  {
+    "id": 3,
+    "simplifiedChinese": "八",
+    "traditionalChinese": "八",
+    "pinyin": "bā",
+    "jyutping": "baat3",
+    "english": "eight",
+    "vietnamese": "tám",
+    "characterCount": 1,
+    "hanviet": "bát"
+  },
+  {
+    "id": 4,
+    "simplifiedChinese": "爸爸｜爸",
+    "traditionalChinese": "爸爸｜爸",
+    "pinyin": "bàba ｜ bà",
+    "jyutping": "baa1 baa1 ｜ baa1",
+    "english": "dad",
+    "vietnamese": "Bố",
+    "characterCount": 2,
+    "hanviet": "ba ba"
+  },
+  {
+    "id": 5,
+    "simplifiedChinese": "吧",
+    "traditionalChinese": "吧",
+    "pinyin": "ba",
+    "jyutping": "baa1",
+    "english": "(interjection particle)",
+    "vietnamese": "Thanh",
+    "characterCount": 1,
+    "hanviet": "ba"
+  }
+]

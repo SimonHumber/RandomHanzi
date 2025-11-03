@@ -1,0 +1,1088 @@
+{
+    "1": [
+        {
+            "kanji": "一",
+            "vietnamese": "nhất",
+            "vietTranslation": "một",
+            "english": "one"
+        },
+        {
+            "kanji": "二",
+            "vietnamese": "nhị",
+            "vietTranslation": "hai",
+            "english": "two"
+        },
+        {
+            "kanji": "三",
+            "vietnamese": "tam",
+            "vietTranslation": "ba",
+            "english": "three"
+        },
+        {
+            "kanji": "四",
+            "vietnamese": "tứ",
+            "vietTranslation": "bốn",
+            "english": "four"
+        },
+        {
+            "kanji": "五",
+            "vietnamese": "ngũ",
+            "vietTranslation": "năm",
+            "english": "five"
+        },
+        {
+            "kanji": "六",
+            "vietnamese": "lục",
+            "vietTranslation": "sáu",
+            "english": "six"
+        },
+        {
+            "kanji": "七",
+            "vietnamese": "thất",
+            "vietTranslation": "bảy",
+            "english": "seven"
+        },
+        {
+            "kanji": "八",
+            "vietnamese": "bát",
+            "vietTranslation": "tám",
+            "english": "eight"
+        },
+        {
+            "kanji": "九",
+            "vietnamese": "cửu",
+            "vietTranslation": "chín",
+            "english": "nine"
+        },
+        {
+            "kanji": "十",
+            "vietnamese": "thập",
+            "vietTranslation": "mười",
+            "english": "ten"
+        },
+        {
+            "kanji": "百",
+            "vietnamese": "bách",
+            "vietTranslation": "trăm",
+            "english": "hundred"
+        },
+        {
+            "kanji": "千",
+            "vietnamese": "thiên",
+            "vietTranslation": "nghìn",
+            "english": "thousand"
+        },
+        {
+            "kanji": "上",
+            "vietnamese": "thượng",
+            "vietTranslation": "trên",
+            "english": "up"
+        },
+        {
+            "kanji": "下",
+            "vietnamese": "hạ",
+            "vietTranslation": "dưới",
+            "english": "down"
+        },
+        {
+            "kanji": "左",
+            "vietnamese": "tả",
+            "vietTranslation": "trái",
+            "english": "left"
+        },
+        {
+            "kanji": "右",
+            "vietnamese": "hữu",
+            "vietTranslation": "phải",
+            "english": "right"
+        },
+        {
+            "kanji": "中",
+            "vietnamese": "trung",
+            "vietTranslation": "giữa",
+            "english": "middle"
+        },
+        {
+            "kanji": "大",
+            "vietnamese": "đại",
+            "vietTranslation": "lớn",
+            "english": "big"
+        },
+        {
+            "kanji": "小",
+            "vietnamese": "tiểu",
+            "vietTranslation": "nhỏ",
+            "english": "small"
+        },
+        {
+            "kanji": "月",
+            "vietnamese": "nguyệt",
+            "vietTranslation": "mặt trăng",
+            "english": "moon/month"
+        },
+        {
+            "kanji": "日",
+            "vietnamese": "nhật",
+            "vietTranslation": "mặt trời/ngày",
+            "english": "sun/day"
+        },
+        {
+            "kanji": "年",
+            "vietnamese": "niên",
+            "vietTranslation": "năm",
+            "english": "year"
+        },
+        {
+            "kanji": "早",
+            "vietnamese": "tảo",
+            "vietTranslation": "sớm",
+            "english": "early"
+        },
+        {
+            "kanji": "木",
+            "vietnamese": "mộc",
+            "vietTranslation": "cây",
+            "english": "tree/wood"
+        },
+        {
+            "kanji": "林",
+            "vietnamese": "lâm",
+            "vietTranslation": "rừng nhỏ",
+            "english": "grove"
+        },
+        {
+            "kanji": "山",
+            "vietnamese": "sơn",
+            "vietTranslation": "núi",
+            "english": "mountain"
+        },
+        {
+            "kanji": "川",
+            "vietnamese": "xuyên",
+            "vietTranslation": "sông",
+            "english": "river"
+        },
+        {
+            "kanji": "土",
+            "vietnamese": "thổ",
+            "vietTranslation": "đất",
+            "english": "earth/soil"
+        },
+        {
+            "kanji": "空",
+            "vietnamese": "không",
+            "vietTranslation": "trời",
+            "english": "sky/empty"
+        },
+        {
+            "kanji": "田",
+            "vietnamese": "điền",
+            "vietTranslation": "ruộng",
+            "english": "rice field"
+        },
+        {
+            "kanji": "天",
+            "vietnamese": "thiên",
+            "vietTranslation": "trời",
+            "english": "heaven/sky"
+        },
+        {
+            "kanji": "生",
+            "vietnamese": "sinh",
+            "vietTranslation": "sống/sinh",
+            "english": "life/birth"
+        },
+        {
+            "kanji": "花",
+            "vietnamese": "hoa",
+            "vietTranslation": "hoa",
+            "english": "flower"
+        },
+        {
+            "kanji": "草",
+            "vietnamese": "thảo",
+            "vietTranslation": "cỏ",
+            "english": "grass"
+        },
+        {
+            "kanji": "虫",
+            "vietnamese": "trùng",
+            "vietTranslation": "côn trùng",
+            "english": "insect"
+        },
+        {
+            "kanji": "犬",
+            "vietnamese": "khuyển",
+            "vietTranslation": "chó",
+            "english": "dog"
+        },
+        {
+            "kanji": "人",
+            "vietnamese": "nhân",
+            "vietTranslation": "người",
+            "english": "person"
+        },
+        {
+            "kanji": "名",
+            "vietnamese": "danh",
+            "vietTranslation": "tên",
+            "english": "name"
+        },
+        {
+            "kanji": "男",
+            "vietnamese": "nam",
+            "vietTranslation": "đàn ông",
+            "english": "man"
+        },
+        {
+            "kanji": "子",
+            "vietnamese": "tử",
+            "vietTranslation": "con",
+            "english": "child"
+        },
+        {
+            "kanji": "目",
+            "vietnamese": "mục",
+            "vietTranslation": "mắt",
+            "english": "eye"
+        },
+        {
+            "kanji": "耳",
+            "vietnamese": "nhĩ",
+            "vietTranslation": "tai",
+            "english": "ear"
+        },
+        {
+            "kanji": "口",
+            "vietnamese": "khẩu",
+            "vietTranslation": "miệng",
+            "english": "mouth"
+        },
+        {
+            "kanji": "手",
+            "vietnamese": "thủ",
+            "vietTranslation": "tay",
+            "english": "hand"
+        },
+        {
+            "kanji": "足",
+            "vietnamese": "túc",
+            "vietTranslation": "chân",
+            "english": "foot/leg"
+        },
+        {
+            "kanji": "見",
+            "vietnamese": "kiến",
+            "vietTranslation": "nhìn thấy",
+            "english": "see"
+        },
+        {
+            "kanji": "音",
+            "vietnamese": "âm",
+            "vietTranslation": "âm thanh",
+            "english": "sound"
+        },
+        {
+            "kanji": "力",
+            "vietnamese": "lực",
+            "vietTranslation": "lực",
+            "english": "power/strength"
+        },
+        {
+            "kanji": "気",
+            "vietnamese": "khí",
+            "vietTranslation": "khí",
+            "english": "spirit/energy"
+        },
+        {
+            "kanji": "円",
+            "vietnamese": "viên",
+            "vietTranslation": "yên (tiền Nhật)",
+            "english": "yen/circle"
+        },
+        {
+            "kanji": "入",
+            "vietnamese": "nhập",
+            "vietTranslation": "vào",
+            "english": "enter"
+        },
+        {
+            "kanji": "出",
+            "vietnamese": "xuất",
+            "vietTranslation": "ra",
+            "english": "exit"
+        },
+        {
+            "kanji": "立",
+            "vietnamese": "lập",
+            "vietTranslation": "đứng",
+            "english": "stand"
+        },
+        {
+            "kanji": "休",
+            "vietnamese": "hưu",
+            "vietTranslation": "nghỉ",
+            "english": "rest"
+        },
+        {
+            "kanji": "先",
+            "vietnamese": "tiên",
+            "vietTranslation": "trước",
+            "english": "previous/first"
+        },
+        {
+            "kanji": "夕",
+            "vietnamese": "tịch",
+            "vietTranslation": "buổi tối",
+            "english": "evening"
+        },
+        {
+            "kanji": "本",
+            "vietnamese": "bản",
+            "vietTranslation": "sách/gốc",
+            "english": "book/origin"
+        },
+        {
+            "kanji": "文",
+            "vietnamese": "văn",
+            "vietTranslation": "văn",
+            "english": "sentence/culture"
+        },
+        {
+            "kanji": "字",
+            "vietnamese": "tự",
+            "vietTranslation": "chữ",
+            "english": "character"
+        },
+        {
+            "kanji": "学",
+            "vietnamese": "học",
+            "vietTranslation": "học",
+            "english": "study/learn"
+        },
+        {
+            "kanji": "校",
+            "vietnamese": "hiệu",
+            "vietTranslation": "trường học",
+            "english": "school"
+        },
+        {
+            "kanji": "村",
+            "vietnamese": "thôn",
+            "vietTranslation": "làng",
+            "english": "village"
+        },
+        {
+            "kanji": "町",
+            "vietnamese": "đinh",
+            "vietTranslation": "thị trấn",
+            "english": "town"
+        },
+        {
+            "kanji": "森",
+            "vietnamese": "sâm",
+            "vietTranslation": "rừng",
+            "english": "forest"
+        },
+        {
+            "kanji": "正",
+            "vietnamese": "chính",
+            "vietTranslation": "đúng",
+            "english": "correct"
+        },
+        {
+            "kanji": "水",
+            "vietnamese": "thủy",
+            "vietTranslation": "nước",
+            "english": "water"
+        },
+        {
+            "kanji": "火",
+            "vietnamese": "hỏa",
+            "vietTranslation": "lửa",
+            "english": "fire"
+        },
+        {
+            "kanji": "玉",
+            "vietnamese": "ngọc",
+            "vietTranslation": "ngọc",
+            "english": "jade/jewel"
+        },
+        {
+            "kanji": "王",
+            "vietnamese": "vương",
+            "vietTranslation": "vua",
+            "english": "king"
+        },
+        {
+            "kanji": "石",
+            "vietnamese": "thạch",
+            "vietTranslation": "đá",
+            "english": "stone"
+        },
+        {
+            "kanji": "竹",
+            "vietnamese": "trúc",
+            "vietTranslation": "tre",
+            "english": "bamboo"
+        },
+        {
+            "kanji": "糸",
+            "vietnamese": "mịch",
+            "vietTranslation": "sợi chỉ",
+            "english": "thread"
+        },
+        {
+            "kanji": "貝",
+            "vietnamese": "bối",
+            "vietTranslation": "vỏ sò",
+            "english": "shell"
+        },
+        {
+            "kanji": "車",
+            "vietnamese": "xa",
+            "vietTranslation": "xe",
+            "english": "car/wheel"
+        },
+        {
+            "kanji": "金",
+            "vietnamese": "kim",
+            "vietTranslation": "vàng",
+            "english": "gold/money"
+        },
+        {
+            "kanji": "雨",
+            "vietnamese": "vũ",
+            "vietTranslation": "mưa",
+            "english": "rain"
+        },
+        {
+            "kanji": "赤",
+            "vietnamese": "xích",
+            "vietTranslation": "đỏ",
+            "english": "red"
+        },
+        {
+            "kanji": "青",
+            "vietnamese": "thanh",
+            "vietTranslation": "xanh",
+            "english": "blue/green"
+        },
+        {
+            "kanji": "白",
+            "vietnamese": "bạch",
+            "vietTranslation": "trắng",
+            "english": "white"
+        }
+    ],
+    "2": [
+        {
+            "kanji": "学",
+            "vietnamese": "học",
+            "vietTranslation": "học tập",
+            "english": "study"
+        },
+        {
+            "kanji": "校",
+            "vietnamese": "hiệu",
+            "vietTranslation": "trường học",
+            "english": "school"
+        },
+        {
+            "kanji": "生",
+            "vietnamese": "sinh",
+            "vietTranslation": "sinh viên",
+            "english": "student"
+        },
+        {
+            "kanji": "先",
+            "vietnamese": "tiên",
+            "vietTranslation": "trước",
+            "english": "before"
+        },
+        {
+            "kanji": "年",
+            "vietnamese": "niên",
+            "vietTranslation": "năm",
+            "english": "year"
+        },
+        {
+            "kanji": "今",
+            "vietnamese": "kim",
+            "vietTranslation": "bây giờ",
+            "english": "now"
+        },
+        {
+            "kanji": "明",
+            "vietnamese": "minh",
+            "vietTranslation": "sáng",
+            "english": "bright"
+        },
+        {
+            "kanji": "友",
+            "vietnamese": "hữu",
+            "vietTranslation": "bạn",
+            "english": "friend"
+        },
+        {
+            "kanji": "父",
+            "vietnamese": "phụ",
+            "vietTranslation": "cha",
+            "english": "father"
+        },
+        {
+            "kanji": "母",
+            "vietnamese": "mẫu",
+            "vietTranslation": "mẹ",
+            "english": "mother"
+        },
+        {
+            "kanji": "子",
+            "vietnamese": "tử",
+            "vietTranslation": "con",
+            "english": "child"
+        },
+        {
+            "kanji": "女",
+            "vietnamese": "nữ",
+            "vietTranslation": "phụ nữ/dân bàn",
+            "english": "woman"
+        },
+        {
+            "kanji": "男",
+            "vietnamese": "nam",
+            "vietTranslation": "đàn ông",
+            "english": "man"
+        },
+        {
+            "kanji": "車",
+            "vietnamese": "xa",
+            "vietTranslation": "xe",
+            "english": "car"
+        },
+        {
+            "kanji": "電",
+            "vietnamese": "điện",
+            "vietTranslation": "điện",
+            "english": "electricity"
+        },
+        {
+            "kanji": "話",
+            "vietnamese": "thoại",
+            "vietTranslation": "nói chuyện",
+            "english": "talk"
+        },
+        {
+            "kanji": "聞",
+            "vietnamese": "văn",
+            "vietTranslation": "nghe",
+            "english": "listen"
+        },
+        {
+            "kanji": "見",
+            "vietnamese": "kiến",
+            "vietTranslation": "nhìn",
+            "english": "see"
+        },
+        {
+            "kanji": "来",
+            "vietnamese": "lai",
+            "vietTranslation": "đến",
+            "english": "come"
+        },
+        {
+            "kanji": "行",
+            "vietnamese": "hành",
+            "vietTranslation": "đi",
+            "english": "go"
+        }
+    ],
+    "3": [
+        {
+            "kanji": "語",
+            "vietnamese": "ngữ",
+            "vietTranslation": "ngôn ngữ",
+            "english": "language"
+        },
+        {
+            "kanji": "読",
+            "vietnamese": "độc",
+            "vietTranslation": "đọc",
+            "english": "read"
+        },
+        {
+            "kanji": "書",
+            "vietnamese": "thư",
+            "vietTranslation": "viết",
+            "english": "write"
+        },
+        {
+            "kanji": "算",
+            "vietnamese": "toán",
+            "vietTranslation": "tính toán",
+            "english": "calculate"
+        },
+        {
+            "kanji": "理",
+            "vietnamese": "lý",
+            "vietTranslation": "lý thuyết",
+            "english": "theory"
+        },
+        {
+            "kanji": "科",
+            "vietnamese": "khoa",
+            "vietTranslation": "khoa học",
+            "english": "science"
+        },
+        {
+            "kanji": "社",
+            "vietnamese": "xã",
+            "vietTranslation": "xã hội",
+            "english": "society"
+        },
+        {
+            "kanji": "会",
+            "vietnamese": "hội",
+            "vietTranslation": "hội",
+            "english": "meeting"
+        },
+        {
+            "kanji": "国",
+            "vietnamese": "quốc",
+            "vietTranslation": "quốc gia",
+            "english": "country"
+        },
+        {
+            "kanji": "都",
+            "vietnamese": "đô",
+            "vietTranslation": "thủ đô",
+            "english": "capital"
+        },
+        {
+            "kanji": "市",
+            "vietnamese": "thị",
+            "vietTranslation": "thành phố",
+            "english": "city"
+        },
+        {
+            "kanji": "町",
+            "vietnamese": "đinh",
+            "vietTranslation": "thị trấn",
+            "english": "town"
+        },
+        {
+            "kanji": "村",
+            "vietnamese": "thôn",
+            "vietTranslation": "làng",
+            "english": "village"
+        },
+        {
+            "kanji": "家",
+            "vietnamese": "gia",
+            "vietTranslation": "nhà",
+            "english": "house"
+        },
+        {
+            "kanji": "店",
+            "vietnamese": "điếm",
+            "vietTranslation": "cửa hàng",
+            "english": "shop"
+        },
+        {
+            "kanji": "病",
+            "vietnamese": "bệnh",
+            "vietTranslation": "bệnh tật",
+            "english": "illness"
+        },
+        {
+            "kanji": "院",
+            "vietnamese": "viện",
+            "vietTranslation": "bệnh viện",
+            "english": "hospital"
+        },
+        {
+            "kanji": "薬",
+            "vietnamese": "dược",
+            "vietTranslation": "thuốc",
+            "english": "medicine"
+        },
+        {
+            "kanji": "食",
+            "vietnamese": "thực",
+            "vietTranslation": "ăn",
+            "english": "eat"
+        },
+        {
+            "kanji": "飲",
+            "vietnamese": "ẩm",
+            "vietTranslation": "uống",
+            "english": "drink"
+        }
+    ],
+    "4": [
+        {
+            "kanji": "教",
+            "vietnamese": "giáo",
+            "vietTranslation": "dạy",
+            "english": "teach"
+        },
+        {
+            "kanji": "育",
+            "vietnamese": "dục",
+            "vietTranslation": "giáo dục",
+            "english": "education"
+        },
+        {
+            "kanji": "文",
+            "vietnamese": "văn",
+            "vietTranslation": "văn học",
+            "english": "literature"
+        },
+        {
+            "kanji": "字",
+            "vietnamese": "tự",
+            "vietTranslation": "chữ",
+            "english": "character"
+        },
+        {
+            "kanji": "数",
+            "vietnamese": "số",
+            "vietTranslation": "số",
+            "english": "number"
+        },
+        {
+            "kanji": "学",
+            "vietnamese": "học",
+            "vietTranslation": "học tập",
+            "english": "study"
+        },
+        {
+            "kanji": "習",
+            "vietnamese": "tập",
+            "vietTranslation": "luyện tập",
+            "english": "practice"
+        },
+        {
+            "kanji": "練",
+            "vietnamese": "luyện",
+            "vietTranslation": "luyện tập",
+            "english": "training"
+        },
+        {
+            "kanji": "研",
+            "vietnamese": "nghiên",
+            "vietTranslation": "nghiên cứu",
+            "english": "research"
+        },
+        {
+            "kanji": "究",
+            "vietnamese": "cứu",
+            "vietTranslation": "nghiên cứu",
+            "english": "investigate"
+        },
+        {
+            "kanji": "発",
+            "vietnamese": "phát",
+            "vietTranslation": "phát triển",
+            "english": "develop"
+        },
+        {
+            "kanji": "展",
+            "vietnamese": "triển",
+            "vietTranslation": "triển lãm",
+            "english": "exhibition"
+        },
+        {
+            "kanji": "開",
+            "vietnamese": "khai",
+            "vietTranslation": "mở",
+            "english": "open"
+        },
+        {
+            "kanji": "始",
+            "vietnamese": "thủy",
+            "vietTranslation": "bắt đầu",
+            "english": "begin"
+        },
+        {
+            "kanji": "終",
+            "vietnamese": "chung",
+            "vietTranslation": "kết thúc",
+            "english": "end"
+        },
+        {
+            "kanji": "続",
+            "vietnamese": "tục",
+            "vietTranslation": "tiếp tục",
+            "english": "continue"
+        },
+        {
+            "kanji": "変",
+            "vietnamese": "biến",
+            "vietTranslation": "thay đổi",
+            "english": "change"
+        },
+        {
+            "kanji": "動",
+            "vietnamese": "động",
+            "vietTranslation": "chuyển động",
+            "english": "move"
+        },
+        {
+            "kanji": "静",
+            "vietnamese": "tĩnh",
+            "vietTranslation": "yên tĩnh",
+            "english": "quiet"
+        },
+        {
+            "kanji": "安",
+            "vietnamese": "an",
+            "vietTranslation": "an toàn",
+            "english": "safe"
+        }
+    ],
+    "5": [
+        {
+            "kanji": "政",
+            "vietnamese": "chính",
+            "vietTranslation": "chính trị",
+            "english": "politics"
+        },
+        {
+            "kanji": "治",
+            "vietnamese": "trị",
+            "vietTranslation": "cai trị",
+            "english": "govern"
+        },
+        {
+            "kanji": "法",
+            "vietnamese": "pháp",
+            "vietTranslation": "luật pháp",
+            "english": "law"
+        },
+        {
+            "kanji": "制",
+            "vietnamese": "chế",
+            "vietTranslation": "chế độ",
+            "english": "system"
+        },
+        {
+            "kanji": "度",
+            "vietnamese": "độ",
+            "vietTranslation": "mức độ",
+            "english": "degree"
+        },
+        {
+            "kanji": "量",
+            "vietnamese": "lượng",
+            "vietTranslation": "lượng",
+            "english": "amount"
+        },
+        {
+            "kanji": "質",
+            "vietnamese": "chất",
+            "vietTranslation": "chất lượng",
+            "english": "quality"
+        },
+        {
+            "kanji": "価",
+            "vietnamese": "giá",
+            "vietTranslation": "giá trị",
+            "english": "value"
+        },
+        {
+            "kanji": "値",
+            "vietnamese": "trị",
+            "vietTranslation": "giá",
+            "english": "price"
+        },
+        {
+            "kanji": "金",
+            "vietnamese": "kim",
+            "vietTranslation": "tiền",
+            "english": "money"
+        },
+        {
+            "kanji": "銀",
+            "vietnamese": "ngân",
+            "vietTranslation": "bạc",
+            "english": "silver"
+        },
+        {
+            "kanji": "銅",
+            "vietnamese": "đồng",
+            "vietTranslation": "đồng",
+            "english": "copper"
+        },
+        {
+            "kanji": "鉄",
+            "vietnamese": "thiết",
+            "vietTranslation": "sắt",
+            "english": "iron"
+        },
+        {
+            "kanji": "鋼",
+            "vietnamese": "cương",
+            "vietTranslation": "thép",
+            "english": "steel"
+        },
+        {
+            "kanji": "石",
+            "vietnamese": "thạch",
+            "vietTranslation": "đá",
+            "english": "stone"
+        },
+        {
+            "kanji": "木",
+            "vietnamese": "mộc",
+            "vietTranslation": "gỗ",
+            "english": "wood"
+        },
+        {
+            "kanji": "森",
+            "vietnamese": "sâm",
+            "vietTranslation": "rừng",
+            "english": "forest"
+        },
+        {
+            "kanji": "林",
+            "vietnamese": "lâm",
+            "vietTranslation": "rừng nhỏ",
+            "english": "grove"
+        },
+        {
+            "kanji": "草",
+            "vietnamese": "thảo",
+            "vietTranslation": "cỏ",
+            "english": "grass"
+        },
+        {
+            "kanji": "花",
+            "vietnamese": "hoa",
+            "vietTranslation": "hoa",
+            "english": "flower"
+        }
+    ],
+    "6": [
+        {
+            "kanji": "歴",
+            "vietnamese": "lịch",
+            "vietTranslation": "lịch sử",
+            "english": "history"
+        },
+        {
+            "kanji": "史",
+            "vietnamese": "sử",
+            "vietTranslation": "lịch sử",
+            "english": "history"
+        },
+        {
+            "kanji": "文",
+            "vietnamese": "văn",
+            "vietTranslation": "văn hóa",
+            "english": "culture"
+        },
+        {
+            "kanji": "化",
+            "vietnamese": "hóa",
+            "vietTranslation": "văn hóa",
+            "english": "culture"
+        },
+        {
+            "kanji": "芸",
+            "vietnamese": "nghệ",
+            "vietTranslation": "nghệ thuật",
+            "english": "art"
+        },
+        {
+            "kanji": "術",
+            "vietnamese": "thuật",
+            "vietTranslation": "kỹ thuật",
+            "english": "technique"
+        },
+        {
+            "kanji": "技",
+            "vietnamese": "kỹ",
+            "vietTranslation": "kỹ năng",
+            "english": "skill"
+        },
+        {
+            "kanji": "能",
+            "vietnamese": "năng",
+            "vietTranslation": "khả năng",
+            "english": "ability"
+        },
+        {
+            "kanji": "力",
+            "vietnamese": "lực",
+            "vietTranslation": "sức mạnh",
+            "english": "power"
+        },
+        {
+            "kanji": "気",
+            "vietnamese": "khí",
+            "vietTranslation": "khí",
+            "english": "spirit"
+        },
+        {
+            "kanji": "心",
+            "vietnamese": "tâm",
+            "vietTranslation": "tâm hồn",
+            "english": "heart"
+        },
+        {
+            "kanji": "情",
+            "vietnamese": "tình",
+            "vietTranslation": "tình cảm",
+            "english": "emotion"
+        },
+        {
+            "kanji": "感",
+            "vietnamese": "cảm",
+            "vietTranslation": "cảm giác",
+            "english": "feeling"
+        },
+        {
+            "kanji": "想",
+            "vietnamese": "tưởng",
+            "vietTranslation": "suy nghĩ",
+            "english": "thought"
+        },
+        {
+            "kanji": "考",
+            "vietnamese": "khảo",
+            "vietTranslation": "suy nghĩ",
+            "english": "consider"
+        },
+        {
+            "kanji": "思",
+            "vietnamese": "tư",
+            "vietTranslation": "suy nghĩ",
+            "english": "think"
+        },
+        {
+            "kanji": "知",
+            "vietnamese": "tri",
+            "vietTranslation": "biết",
+            "english": "know"
+        },
+        {
+            "kanji": "識",
+            "vietnamese": "thức",
+            "vietTranslation": "nhận thức",
+            "english": "recognition"
+        },
+        {
+            "kanji": "覚",
+            "vietnamese": "giác",
+            "vietTranslation": "nhớ",
+            "english": "remember"
+        },
+        {
+            "kanji": "忘",
+            "vietnamese": "vong",
+            "vietTranslation": "quên",
+            "english": "forget"
+        }
+    ]
+}

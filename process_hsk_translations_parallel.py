@@ -12,43 +12,51 @@ import pinyin_jyutping
 import asyncio
 import aiohttp
 import os
+import re
 from dotenv import load_dotenv
+from add_hanviet_from_csv import load_hanviet_csv, find_hanviet_reading_with_multiple
 
 # Load environment variables
 load_dotenv()
 
 # --- VARIABLES ---
-API_KEY = os.getenv("MICROSOFT_TRANSLATOR_API_KEY")
-ENDPOINT = os.getenv(
-    "MICROSOFT_TRANSLATOR_ENDPOINT", "https://api.cognitive.microsofttranslator.com"
-)
-REGION = os.getenv("MICROSOFT_TRANSLATOR_REGION", "canadaeast")
+API_KEY = os.getenv("GOOGLE_API_KEY")
+GOOGLE_TRANSLATE_URL = "https://translation.googleapis.com/language/translate/v2"
 
 # Validate API key
 if not API_KEY:
-    print("❌ Error: MICROSOFT_TRANSLATOR_API_KEY not found in .env file!")
+    print("❌ Error: GOOGLE_API_KEY not found in .env file!")
     print("Please add your API key to .env file:")
-    print("MICROSOFT_TRANSLATOR_API_KEY=your_api_key_here")
+    print("GOOGLE_API_KEY=your_api_key_here")
     exit(1)
 
 
-async def translate_with_microsoft_async(session, text, target_lang):
-    """Translate text using Microsoft Translator API (async)"""
+async def translate_with_google_async(session, text, target_lang):
+    """Translate text using Google Translation API (async)"""
     try:
-        url = f"{ENDPOINT}/translate?api-version=3.0&from=zh-Hans&to={target_lang}&category=generalnn"
+        # Map language codes from internal codes to Google's codes
+        lang_map = {
+            "zh-Hant": "zh-TW",  # Traditional Chinese
+            "vi": "vi",  # Vietnamese
+        }
+        target = lang_map.get(target_lang, target_lang)
 
-        headers = {
-            "Ocp-Apim-Subscription-Key": API_KEY,
-            "Ocp-Apim-Subscription-Region": REGION,
-            "Content-Type": "application/json",
+        params = {
+            "key": API_KEY,
+            "q": text,
+            "source": "zh-CN",  # Source is Simplified Chinese
+            "target": target,
+            "format": "text",
         }
 
-        body = [{"text": text}]
-
-        async with session.post(url, headers=headers, json=body) as response:
+        async with session.get(GOOGLE_TRANSLATE_URL, params=params) as response:
             if response.status == 200:
                 result = await response.json()
-                return result[0]["translations"][0]["text"]
+                if "data" in result and "translations" in result["data"]:
+                    return result["data"]["translations"][0]["translatedText"]
+                else:
+                    print(f"❌ Unexpected response format: {result}")
+                    exit(1)
             else:
                 error_text = await response.text()
                 print(f"❌ Translation API Error: {response.status} - {error_text}")
@@ -83,6 +91,18 @@ async def get_jyutping_async(text):
     return await loop.run_in_executor(None, get_jyutping_romanization, text)
 
 
+def count_chinese_characters(text):
+    """Count Chinese characters (CJK unified ideographs) in text"""
+    # Remove special characters like pipes, parentheses, etc.
+    clean_text = text.split("｜")[0].split("|")[0]
+    clean_text = re.sub(r"[（(].*?[）)]", "", clean_text)
+    clean_text = clean_text.strip()
+
+    # Count Chinese characters (CJK unified ideographs)
+    chinese_chars = re.findall(r"[\u4e00-\u9fff]", clean_text)
+    return len(chinese_chars)
+
+
 async def process_single_word(session, row, word_index):
     """Process a single word: ALL operations in parallel"""
     no = row["No"]
@@ -93,8 +113,8 @@ async def process_single_word(session, row, word_index):
     print(f"{word_index:3d}. Processing: {chinese} ({pinyin})")
 
     # Run ALL operations in parallel: Traditional + Vietnamese + Jyutping
-    traditional_task = translate_with_microsoft_async(session, chinese, "zh-Hant")
-    vietnamese_task = translate_with_microsoft_async(session, chinese, "vi")
+    traditional_task = translate_with_google_async(session, chinese, "zh-Hant")
+    vietnamese_task = translate_with_google_async(session, chinese, "vi")
     jyutping_task = get_jyutping_async(chinese)
 
     # Wait for ALL operations to complete simultaneously
@@ -106,6 +126,10 @@ async def process_single_word(session, row, word_index):
     print(f"     Vietnamese: {vietnamese}")
     print(f"     Jyutping: {jyutping}")
 
+    # Count Chinese characters
+    character_count = count_chinese_characters(chinese)
+    print(f"     Character Count: {character_count}")
+
     # Create entry
     entry = {
         "id": int(no),
@@ -115,6 +139,7 @@ async def process_single_word(session, row, word_index):
         "jyutping": jyutping,
         "english": english,
         "vietnamese": vietnamese,
+        "characterCount": character_count,
     }
 
     print()
@@ -149,7 +174,7 @@ async def process_batch_parallel(session, batch_data, batch_num, start_idx):
 async def process_hsk_csv():
     """Process HSK CSV with TRUE PARALLEL translations"""
 
-    print("🔄 Processing HSK Level 1 CSV with generalnn model...")
+    print("🔄 Processing HSK Level 1 CSV with Google Translation API...")
     print("=" * 60)
 
     # Initialize Jyutping library ONCE at the start
@@ -167,8 +192,12 @@ async def process_hsk_csv():
 
     print(f"📊 Found {len(csv_data)} entries in CSV")
 
-    # Process ALL entries
-    print(f"🚀 Processing ALL {len(csv_data)} entries")
+    # TEST: Only process first 5 entries
+    csv_data = csv_data[:5]
+    print(f"🧪 TEST MODE: Processing only first {len(csv_data)} entries")
+
+    # Process entries
+    print(f"🚀 Processing {len(csv_data)} entries")
 
     # Process entries in batches of 5 (TRUE PARALLEL)
     processed_data = []
@@ -198,8 +227,18 @@ async def process_hsk_csv():
                 await asyncio.sleep(2)
                 print()
 
+    # Add Han Viet readings to all entries
+    print("📖 Adding Han Viet readings...")
+    hanviet_data = load_hanviet_csv("hanviet.csv")
+
+    for entry in processed_data:
+        hanviet_reading = find_hanviet_reading_with_multiple(entry, hanviet_data)
+        entry["hanviet"] = hanviet_reading if hanviet_reading else ""
+
+    print("✅ Han Viet readings added!")
+
     # Save the complete JSON
-    output_file = "src/hsk_level1_generalnn.json"
+    output_file = "test.json"
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(processed_data, f, ensure_ascii=False, indent=2)
 
