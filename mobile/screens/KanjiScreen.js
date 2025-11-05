@@ -67,18 +67,6 @@ export default function KanjiScreen() {
     saveDisabledKanji();
   }, [disabledKanji]);
 
-  // Auto-generate a kanji when data is available and no kanji is currently shown
-  useEffect(() => {
-    if (allKanji.length > 0 && !currentKanji && selectedGrades.length > 0) {
-      // Use setTimeout to ensure disabledKanji is loaded from AsyncStorage first
-      const timer = setTimeout(() => {
-        generateRandomKanji();
-      }, 200);
-      return () => clearTimeout(timer);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [allKanji.length, selectedGrades.length, disabledKanji.size]);
-
   const generateRandomKanji = () => {
     if (allKanji.length === 0) {
       return;
