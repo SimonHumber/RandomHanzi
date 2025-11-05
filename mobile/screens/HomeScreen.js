@@ -56,6 +56,17 @@ export default function HomeScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.menuButton}
+          onPress={() => navigation.navigate('Tones')}
+        >
+          <Text style={styles.menuButtonIcon}>音</Text>
+          <Text style={styles.menuButtonText}>Tone Guide</Text>
+          <Text style={styles.menuButtonDescription}>
+            Learn about tones in Mandarin, Cantonese, and Vietnamese
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.menuButton}
           onPress={() => navigation.navigate('Settings')}
         >
           <Text style={styles.menuButtonIcon}>設定</Text>

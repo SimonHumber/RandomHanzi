@@ -8,6 +8,7 @@ import HSKScreen from '../screens/HSKScreen';
 import TOCFLScreen from '../screens/TOCFLScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import CharacterListScreen from '../screens/CharacterListScreen';
+import TonesScreen from '../screens/TonesScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -56,6 +57,11 @@ export default function MainNavigator() {
             name="CharacterList"
             component={CharacterListScreen}
             options={{ title: 'Character List' }}
+          />
+          <Stack.Screen
+            name="Tones"
+            component={TonesScreen}
+            options={{ title: 'Tone Guide' }}
           />
         </Stack.Navigator>
       </NavigationContainer>
