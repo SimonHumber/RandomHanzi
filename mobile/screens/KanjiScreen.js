@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Alert, TextInput } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import kanjiData from '../data/kanjiData.json';
+import kanjiGrade1Data from '../data/kanji_grade1.json';
 import { useSettings } from '../context/SettingsContext';
 
 const KANJI_DISABLED_STORAGE_KEY = '@kanji_viet_kanji_disabled';
@@ -11,6 +11,8 @@ export default function KanjiScreen() {
   const { settings } = useSettings();
   const [selectedGrades, setSelectedGrades] = useState([1]);
   const [currentKanji, setCurrentKanji] = useState(null);
+  const [showOnyomi, setShowOnyomi] = useState(false);
+  const [showKunyomi, setShowKunyomi] = useState(false);
   const [showVietnamese, setShowVietnamese] = useState(false);
   const [showVietnameseTranslation, setShowVietnameseTranslation] = useState(false);
   const [showEnglish, setShowEnglish] = useState(false);
@@ -18,12 +20,17 @@ export default function KanjiScreen() {
   const [randomDisableCount, setRandomDisableCount] = useState('10');
   const [showCopyIndicator, setShowCopyIndicator] = useState(false);
 
-  const allKanji = [];
-  for (let grade = 1; grade <= 6; grade++) {
-    if (kanjiData[grade]) {
-      allKanji.push(...kanjiData[grade]);
+  // Combine all kanji data (currently only grade 1)
+  const allKanji = useMemo(() => {
+    const combined = [];
+    // Add grade 1 kanji with level property
+    if (kanjiGrade1Data) {
+      kanjiGrade1Data.forEach(kanji => {
+        combined.push({ ...kanji, level: 1 });
+      });
     }
-  }
+    return combined;
+  }, []);
 
   // Load disabled kanji from AsyncStorage on mount
   useEffect(() => {
@@ -55,7 +62,9 @@ export default function KanjiScreen() {
   }, [disabledKanji]);
 
   const generateRandomKanji = () => {
-    const availableKanji = allKanji.filter(kanji => !disabledKanji.has(kanji.kanji));
+    let availableKanji = allKanji.filter(kanji =>
+      selectedGrades.includes(kanji.level) && !disabledKanji.has(kanji.kanji)
+    );
 
     if (availableKanji.length === 0) {
       Alert.alert('No more kanji', 'Enable some kanji to continue.');
@@ -65,6 +74,8 @@ export default function KanjiScreen() {
     const randomIndex = Math.floor(Math.random() * availableKanji.length);
     const selectedKanji = availableKanji[randomIndex];
     setCurrentKanji(selectedKanji);
+    setShowOnyomi(false);
+    setShowKunyomi(false);
     setShowVietnamese(false);
     setShowVietnameseTranslation(false);
     setShowEnglish(false);
@@ -91,11 +102,14 @@ export default function KanjiScreen() {
   };
 
   const getAvailableKanjiCount = () => {
-    return allKanji.filter(kanji => !disabledKanji.has(kanji.kanji)).length;
+    return allKanji.filter(kanji =>
+      selectedGrades.includes(kanji.level) && !disabledKanji.has(kanji.kanji)
+    ).length;
   };
 
   const disableAllKanji = () => {
-    const allKanjiSet = new Set(allKanji.map(k => k.kanji));
+    const filteredKanji = allKanji.filter(kanji => selectedGrades.includes(kanji.level));
+    const allKanjiSet = new Set(filteredKanji.map(k => k.kanji));
     setDisabledKanji(allKanjiSet);
   };
 
@@ -183,25 +197,61 @@ export default function KanjiScreen() {
                 <Text style={styles.character}>{currentKanji.kanji}</Text>
               </TouchableOpacity>
               <View style={styles.cardInfo}>
-                {settings.showHanViet && (
+                {settings.showOnyomi && (
+                  <>
+                    <TouchableOpacity
+                      style={styles.revealButton}
+                      onPress={() => setShowOnyomi(!showOnyomi)}
+                    >
+                      <Text style={styles.revealButtonText}>
+                        {showOnyomi ? 'Hide' : 'Show'} On'yomi
+                      </Text>
+                    </TouchableOpacity>
+                    {showOnyomi && (
+                      <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.onyomi || '')}>
+                        <Text style={styles.infoText}>{currentKanji.onyomi || ''}</Text>
+                      </TouchableOpacity>
+                    )}
+                  </>
+                )}
+
+                {settings.showKunyomi && (
+                  <>
+                    <TouchableOpacity
+                      style={styles.revealButton}
+                      onPress={() => setShowKunyomi(!showKunyomi)}
+                    >
+                      <Text style={styles.revealButtonText}>
+                        {showKunyomi ? 'Hide' : 'Show'} Kun'yomi
+                      </Text>
+                    </TouchableOpacity>
+                    {showKunyomi && (
+                      <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.kunyomi || '')}>
+                        <Text style={styles.infoText}>{currentKanji.kunyomi || ''}</Text>
+                      </TouchableOpacity>
+                    )}
+                  </>
+                )}
+
+                {settings.showKanjiHanViet && (
                   <>
                     <TouchableOpacity
                       style={styles.revealButton}
                       onPress={() => setShowVietnamese(!showVietnamese)}
                     >
                       <Text style={styles.revealButtonText}>
-                        {showVietnamese ? 'Hide' : 'Show'} Vietnamese Reading
+                        {showVietnamese ? 'Hide' : 'Show'} Han Viet
                       </Text>
                     </TouchableOpacity>
                     {showVietnamese && (
-                      <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.vietnamese)}>
-                        <Text style={styles.infoText}>{currentKanji.vietnamese}</Text>
+                      <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.hanviet || '')}>
+                        <Text style={styles.infoText}>{currentKanji.hanviet || ''}</Text>
                       </TouchableOpacity>
                     )}
                   </>
                 )}
 
-                {settings.showVietnameseTranslation && (
+                {settings.showKanjiVietnameseTranslation && (
                   <>
                     <TouchableOpacity
                       style={styles.revealButton}
@@ -212,14 +262,14 @@ export default function KanjiScreen() {
                       </Text>
                     </TouchableOpacity>
                     {showVietnameseTranslation && (
-                      <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.vietTranslation)}>
-                        <Text style={styles.infoText}>{currentKanji.vietTranslation}</Text>
+                      <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.viet || '')}>
+                        <Text style={styles.infoText}>{currentKanji.viet || ''}</Text>
                       </TouchableOpacity>
                     )}
                   </>
                 )}
 
-                {settings.showEnglish && (
+                {settings.showKanjiEnglish && (
                   <>
                     <TouchableOpacity
                       style={styles.revealButton}

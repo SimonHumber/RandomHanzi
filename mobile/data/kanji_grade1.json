@@ -1,0 +1,642 @@
+[
+  {
+    "kanji": "一",
+    "onyomi": "ichi, itsu",
+    "kunyomi": "hito-tsu",
+    "hanviet": "nhất",
+    "viet": "một",
+    "english": "one"
+  },
+  {
+    "kanji": "二",
+    "onyomi": "ni, ji",
+    "kunyomi": "futa-tsu",
+    "hanviet": "nhị",
+    "viet": "hai",
+    "english": "two"
+  },
+  {
+    "kanji": "三",
+    "onyomi": "san",
+    "kunyomi": "mit-tsu",
+    "hanviet": "tam",
+    "viet": "ba",
+    "english": "three"
+  },
+  {
+    "kanji": "四",
+    "onyomi": "shi",
+    "kunyomi": "yot-tsu, yon",
+    "hanviet": "tứ",
+    "viet": "bốn",
+    "english": "four"
+  },
+  {
+    "kanji": "五",
+    "onyomi": "go",
+    "kunyomi": "itsu-tsu",
+    "hanviet": "ngũ",
+    "viet": "năm",
+    "english": "five"
+  },
+  {
+    "kanji": "六",
+    "onyomi": "roku",
+    "kunyomi": "mut-tsu",
+    "hanviet": "lục",
+    "viet": "sáu",
+    "english": "six"
+  },
+  {
+    "kanji": "七",
+    "onyomi": "shichi",
+    "kunyomi": "nana-tsu, nana",
+    "hanviet": "thất",
+    "viet": "bảy",
+    "english": "seven"
+  },
+  {
+    "kanji": "八",
+    "onyomi": "hachi",
+    "kunyomi": "yat-tsu",
+    "hanviet": "bát",
+    "viet": "tám",
+    "english": "eight"
+  },
+  {
+    "kanji": "九",
+    "onyomi": "ku, kyū",
+    "kunyomi": "kokono-tsu",
+    "hanviet": "cửu",
+    "viet": "chín",
+    "english": "nine"
+  },
+  {
+    "kanji": "十",
+    "onyomi": "jū",
+    "kunyomi": "tō",
+    "hanviet": "thập",
+    "viet": "mười",
+    "english": "ten"
+  },
+  {
+    "kanji": "百",
+    "onyomi": "hyaku",
+    "kunyomi": "momo",
+    "hanviet": "bách",
+    "viet": "trăm",
+    "english": "hundred"
+  },
+  {
+    "kanji": "千",
+    "onyomi": "sen",
+    "kunyomi": "chi",
+    "hanviet": "thiên",
+    "viet": "ngàn",
+    "english": "thousand"
+  },
+  {
+    "kanji": "上",
+    "onyomi": "jō",
+    "kunyomi": "ue",
+    "hanviet": "thướng/thượng",
+    "viet": "trên cùng, phía trên",
+    "english": "top, above"
+  },
+  {
+    "kanji": "下",
+    "onyomi": "ka, ge",
+    "kunyomi": "shita, shimo, moto",
+    "hanviet": "hạ",
+    "viet": "dưới cùng, bên dưới",
+    "english": "bottom, below"
+  },
+  {
+    "kanji": "左",
+    "onyomi": "sa",
+    "kunyomi": "hidari",
+    "hanviet": "tả",
+    "viet": "bên trái",
+    "english": "left"
+  },
+  {
+    "kanji": "右",
+    "onyomi": "u, yū",
+    "kunyomi": "migi",
+    "hanviet": "hữu",
+    "viet": "Phải",
+    "english": "right"
+  },
+  {
+    "kanji": "中",
+    "onyomi": "chū, jū",
+    "kunyomi": "naka",
+    "hanviet": "trung/trúng",
+    "viet": "bên trong, ở giữa",
+    "english": "inside, middle"
+  },
+  {
+    "kanji": "大",
+    "onyomi": "dai, tai",
+    "kunyomi": "ō-kii, ō",
+    "hanviet": "đại",
+    "viet": "lớn",
+    "english": "large"
+  },
+  {
+    "kanji": "小",
+    "onyomi": "shō",
+    "kunyomi": "chii-sai, ko, o",
+    "hanviet": "tiểu",
+    "viet": "bé nhỏ",
+    "english": "small"
+  },
+  {
+    "kanji": "月",
+    "onyomi": "gatsu, getsu",
+    "kunyomi": "tsuki",
+    "hanviet": "nguyệt",
+    "viet": "tháng, mặt trăng",
+    "english": "month, moon"
+  },
+  {
+    "kanji": "日",
+    "onyomi": "nichi, jitsu",
+    "kunyomi": "hi, ka",
+    "hanviet": "nhật",
+    "viet": "ngày, mặt trời",
+    "english": "day, sun"
+  },
+  {
+    "kanji": "年",
+    "onyomi": "nen",
+    "kunyomi": "toshi",
+    "hanviet": "niên",
+    "viet": "năm",
+    "english": "year"
+  },
+  {
+    "kanji": "早",
+    "onyomi": "sō, sa",
+    "kunyomi": "haya-i",
+    "hanviet": "tảo",
+    "viet": "sớm",
+    "english": "early"
+  },
+  {
+    "kanji": "木",
+    "onyomi": "moku, boku",
+    "kunyomi": "ki",
+    "hanviet": "mộc",
+    "viet": "cây",
+    "english": "tree"
+  },
+  {
+    "kanji": "林",
+    "onyomi": "rin",
+    "kunyomi": "hayashi",
+    "hanviet": "lâm",
+    "viet": "rừng",
+    "english": "woods"
+  },
+  {
+    "kanji": "山",
+    "onyomi": "san",
+    "kunyomi": "yama",
+    "hanviet": "sơn",
+    "viet": "núi",
+    "english": "mountain"
+  },
+  {
+    "kanji": "川",
+    "onyomi": "sen",
+    "kunyomi": "kawa",
+    "hanviet": "xuyên",
+    "viet": "dòng sông",
+    "english": "river"
+  },
+  {
+    "kanji": "土",
+    "onyomi": "to, do",
+    "kunyomi": "tsuchi",
+    "hanviet": "thổ",
+    "viet": "đất",
+    "english": "soil"
+  },
+  {
+    "kanji": "空",
+    "onyomi": "kū",
+    "kunyomi": "sora, a-ku, kara",
+    "hanviet": "không/khống",
+    "viet": "bầu trời, trống rỗng",
+    "english": "sky, empty"
+  },
+  {
+    "kanji": "田",
+    "onyomi": "den",
+    "kunyomi": "da, ta",
+    "hanviet": "điền",
+    "viet": "ruộng lúa",
+    "english": "rice field"
+  },
+  {
+    "kanji": "天",
+    "onyomi": "ten",
+    "kunyomi": "ame, ama",
+    "hanviet": "thiên",
+    "viet": "thiên đường, bầu trời",
+    "english": "heaven, sky"
+  },
+  {
+    "kanji": "生",
+    "onyomi": "sei, shō",
+    "kunyomi": "i-kiru, u-mu, nama",
+    "hanviet": "sinh",
+    "viet": "sống, sinh ra, thô sơ",
+    "english": "living, birth, raw"
+  },
+  {
+    "kanji": "花",
+    "onyomi": "ka",
+    "kunyomi": "hana",
+    "hanviet": "hoa",
+    "viet": "hoa",
+    "english": "flower"
+  },
+  {
+    "kanji": "草",
+    "onyomi": "sō",
+    "kunyomi": "kusa",
+    "hanviet": "thảo/tháo",
+    "viet": "cỏ",
+    "english": "grass"
+  },
+  {
+    "kanji": "虫",
+    "onyomi": "chū",
+    "kunyomi": "mushi",
+    "hanviet": "trùng",
+    "viet": "côn trùng",
+    "english": "insect"
+  },
+  {
+    "kanji": "犬",
+    "onyomi": "ken",
+    "kunyomi": "inu",
+    "hanviet": "khuyển",
+    "viet": "chó",
+    "english": "dog"
+  },
+  {
+    "kanji": "人",
+    "onyomi": "jin, nin",
+    "kunyomi": "hito",
+    "hanviet": "nhân",
+    "viet": "người",
+    "english": "person"
+  },
+  {
+    "kanji": "名",
+    "onyomi": "mei, myō",
+    "kunyomi": "na",
+    "hanviet": "danh",
+    "viet": "tên",
+    "english": "name"
+  },
+  {
+    "kanji": "女",
+    "onyomi": "jo, nyo",
+    "kunyomi": "on'na",
+    "hanviet": "nữ/nhữ",
+    "viet": "nữ giới",
+    "english": "female"
+  },
+  {
+    "kanji": "男",
+    "onyomi": "dan, nan",
+    "kunyomi": "otoko",
+    "hanviet": "nam",
+    "viet": "nam giới",
+    "english": "male"
+  },
+  {
+    "kanji": "子",
+    "onyomi": "shi, su",
+    "kunyomi": "ko",
+    "hanviet": "tử, tý/tử",
+    "viet": "đứa trẻ",
+    "english": "child"
+  },
+  {
+    "kanji": "目",
+    "onyomi": "moku",
+    "kunyomi": "me",
+    "hanviet": "mục",
+    "viet": "mắt ",
+    "english": "eye"
+  },
+  {
+    "kanji": "耳",
+    "onyomi": "ji, ni",
+    "kunyomi": "mimi",
+    "hanviet": "nhĩ",
+    "viet": "tai",
+    "english": "ear"
+  },
+  {
+    "kanji": "口",
+    "onyomi": "kō",
+    "kunyomi": "kuchi",
+    "hanviet": "khẩu",
+    "viet": "miệng",
+    "english": "mouth"
+  },
+  {
+    "kanji": "手",
+    "onyomi": "shu",
+    "kunyomi": "te",
+    "hanviet": "thủ",
+    "viet": "tay",
+    "english": "hand"
+  },
+  {
+    "kanji": "足",
+    "onyomi": "soku",
+    "kunyomi": "ashi, ta-riru",
+    "hanviet": "tú/túc",
+    "viet": "chân, đủ",
+    "english": "foot, suffice"
+  },
+  {
+    "kanji": "見",
+    "onyomi": "ken, gen",
+    "kunyomi": "mi-ru",
+    "hanviet": "kiến/hiện",
+    "viet": "nhìn thấy",
+    "english": "see"
+  },
+  {
+    "kanji": "音",
+    "onyomi": "on",
+    "kunyomi": "ne, oto",
+    "hanviet": "âm",
+    "viet": "âm thanh",
+    "english": "sound"
+  },
+  {
+    "kanji": "力",
+    "onyomi": "riki, ryoku",
+    "kunyomi": "chikara",
+    "hanviet": "lực",
+    "viet": "quyền lực",
+    "english": "power"
+  },
+  {
+    "kanji": "気",
+    "onyomi": "ki, ke",
+    "kunyomi": "iki",
+    "hanviet": "khí",
+    "viet": "tinh thần, không khí",
+    "english": "spirit, air"
+  },
+  {
+    "kanji": "円",
+    "onyomi": "en",
+    "kunyomi": "maru",
+    "hanviet": "viên",
+    "viet": "yên, vòng tròn",
+    "english": "yen, circle"
+  },
+  {
+    "kanji": "入",
+    "onyomi": "nyū",
+    "kunyomi": "hai-ru, i-ru",
+    "hanviet": "nhập",
+    "viet": "đi vào",
+    "english": "enter"
+  },
+  {
+    "kanji": "出",
+    "onyomi": "shutsu",
+    "kunyomi": "de-ru",
+    "hanviet": "xuất",
+    "viet": "ra",
+    "english": "exit"
+  },
+  {
+    "kanji": "立",
+    "onyomi": "ritsu",
+    "kunyomi": "ta-tsu",
+    "hanviet": "lập",
+    "viet": "đứng lên",
+    "english": "stand up"
+  },
+  {
+    "kanji": "休",
+    "onyomi": "kyū",
+    "kunyomi": "yasu-mu",
+    "hanviet": "hưu",
+    "viet": "nghỉ ngơi",
+    "english": "rest"
+  },
+  {
+    "kanji": "先",
+    "onyomi": "sen",
+    "kunyomi": "saki",
+    "hanviet": "tiên",
+    "viet": "trước",
+    "english": "previous"
+  },
+  {
+    "kanji": "夕",
+    "onyomi": "seki",
+    "kunyomi": "yū",
+    "hanviet": "tịch",
+    "viet": "buổi tối",
+    "english": "evening"
+  },
+  {
+    "kanji": "本",
+    "onyomi": "hon",
+    "kunyomi": "moto",
+    "hanviet": "bản",
+    "viet": "sách",
+    "english": "book"
+  },
+  {
+    "kanji": "文",
+    "onyomi": "bun, mon",
+    "kunyomi": "fumi",
+    "hanviet": "văn",
+    "viet": "chữ",
+    "english": "text"
+  },
+  {
+    "kanji": "字",
+    "onyomi": "ji",
+    "kunyomi": "aza",
+    "hanviet": "tự",
+    "viet": "tính cách",
+    "english": "character"
+  },
+  {
+    "kanji": "学",
+    "onyomi": "gaku",
+    "kunyomi": "mana-bu",
+    "hanviet": "",
+    "viet": "học",
+    "english": "study"
+  },
+  {
+    "kanji": "校",
+    "onyomi": "kō",
+    "kunyomi": "kase",
+    "hanviet": "hiệu",
+    "viet": "trường học",
+    "english": "school"
+  },
+  {
+    "kanji": "村",
+    "onyomi": "son",
+    "kunyomi": "mura",
+    "hanviet": "thôn",
+    "viet": "làng bản",
+    "english": "village"
+  },
+  {
+    "kanji": "町",
+    "onyomi": "chō",
+    "kunyomi": "machi",
+    "hanviet": "đinh",
+    "viet": "thị trấn",
+    "english": "town"
+  },
+  {
+    "kanji": "森",
+    "onyomi": "shin",
+    "kunyomi": "mori",
+    "hanviet": "sâm",
+    "viet": "rừng",
+    "english": "forest"
+  },
+  {
+    "kanji": "正",
+    "onyomi": "sei, shō",
+    "kunyomi": "tada-shii, masa",
+    "hanviet": "chinh/chính, chánh",
+    "viet": "Chính xác",
+    "english": "correct"
+  },
+  {
+    "kanji": "水",
+    "onyomi": "sui",
+    "kunyomi": "mizu",
+    "hanviet": "thuỷ",
+    "viet": "Nước",
+    "english": "water"
+  },
+  {
+    "kanji": "火",
+    "onyomi": "ka",
+    "kunyomi": "hi",
+    "hanviet": "hoả",
+    "viet": "ngọn lửa",
+    "english": "fire"
+  },
+  {
+    "kanji": "玉",
+    "onyomi": "gyoku",
+    "kunyomi": "tama",
+    "hanviet": "ngọc",
+    "viet": "đồ trang sức, quả bóng",
+    "english": "jewel, ball"
+  },
+  {
+    "kanji": "王",
+    "onyomi": "ō",
+    "kunyomi": "kimi",
+    "hanviet": "vương/vượng",
+    "viet": "nhà vua",
+    "english": "king"
+  },
+  {
+    "kanji": "石",
+    "onyomi": "seki, koku",
+    "kunyomi": "ishi",
+    "hanviet": "thạch/đạn",
+    "viet": "cục đá",
+    "english": "stone"
+  },
+  {
+    "kanji": "竹",
+    "onyomi": "chiku",
+    "kunyomi": "take",
+    "hanviet": "trúc",
+    "viet": "cây tre ",
+    "english": "bamboo"
+  },
+  {
+    "kanji": "糸",
+    "onyomi": "shi",
+    "kunyomi": "ito",
+    "hanviet": "mịch",
+    "viet": "chủ đề",
+    "english": "thread"
+  },
+  {
+    "kanji": "貝",
+    "onyomi": "bai",
+    "kunyomi": "kai",
+    "hanviet": "bối",
+    "viet": "động vật có vỏ",
+    "english": "shellfish"
+  },
+  {
+    "kanji": "車",
+    "onyomi": "sha",
+    "kunyomi": "kuruma",
+    "hanviet": "xa",
+    "viet": "phương tiện giao thông",
+    "english": "vehicle"
+  },
+  {
+    "kanji": "金",
+    "onyomi": "kin",
+    "kunyomi": "kane, kana",
+    "hanviet": "kim",
+    "viet": "vàng, tiền",
+    "english": "gold, money"
+  },
+  {
+    "kanji": "雨",
+    "onyomi": "u",
+    "kunyomi": "ame, ama",
+    "hanviet": "vũ",
+    "viet": "cơn mưa",
+    "english": "rain"
+  },
+  {
+    "kanji": "赤",
+    "onyomi": "seki",
+    "kunyomi": "aka",
+    "hanviet": "xích",
+    "viet": "màu đỏ",
+    "english": "red"
+  },
+  {
+    "kanji": "青",
+    "onyomi": "sei, shō",
+    "kunyomi": "ao",
+    "hanviet": "thanh",
+    "viet": "màu xanh da trời",
+    "english": "blue"
+  },
+  {
+    "kanji": "白",
+    "onyomi": "haku",
+    "kunyomi": "shiro, shira",
+    "hanviet": "bạch",
+    "viet": "trắng",
+    "english": "white"
+  }
+]

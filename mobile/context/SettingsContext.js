@@ -9,6 +9,7 @@ const SettingsContext = createContext();
 // Provider component
 export const SettingsProvider = ({ children }) => {
   const [settings, setSettings] = useState({
+    // Chinese settings
     mainDisplayMode: 'traditional', // 'traditional' or 'simplified'
     showSimplified: true,
     showPinyin: true,
@@ -16,6 +17,12 @@ export const SettingsProvider = ({ children }) => {
     showHanViet: true,
     showVietnameseTranslation: true,
     showEnglish: true,
+    // Japanese settings
+    showOnyomi: true,
+    showKunyomi: true,
+    showKanjiHanViet: true, // Han Viet for Japanese kanji
+    showKanjiVietnameseTranslation: true, // Vietnamese translation for Japanese kanji
+    showKanjiEnglish: true, // English for Japanese kanji
   });
 
   // Load settings from AsyncStorage on mount

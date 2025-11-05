@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import hskLevel1Data from '../data/hsk_level1.json';
 import hskLevel2Data from '../data/hsk_level2.json';
 import tocflData from '../data/tocfl_level1.json';
-import kanjiData from '../data/kanjiData.json';
+import kanjiGrade1Data from '../data/kanji_grade1.json';
 import { useSettings } from '../context/SettingsContext';
 
 const HSK_DISABLED_STORAGE_KEY = '@kanji_viet_hsk_disabled';
@@ -29,15 +29,14 @@ export default function CharacterListScreen() {
         return [...level1, ...level2];
     }, []);
 
-    // Flatten Kanji data by grade
+    // Flatten Kanji data by grade (currently only grade 1)
     const allKanji = useMemo(() => {
         const flattened = [];
-        for (let grade = 1; grade <= 6; grade++) {
-            if (kanjiData[grade]) {
-                kanjiData[grade].forEach(kanji => {
-                    flattened.push({ ...kanji, level: grade });
-                });
-            }
+        // Add grade 1 kanji with level property
+        if (kanjiGrade1Data) {
+            kanjiGrade1Data.forEach(kanji => {
+                flattened.push({ ...kanji, level: 1 });
+            });
         }
         return flattened;
     }, []);
@@ -151,13 +150,17 @@ export default function CharacterListScreen() {
             } else if (selectedType === 'kanji') {
                 data = data.filter(item => {
                     const kanji = (item.kanji || '').toLowerCase();
-                    const vietnamese = (item.vietnamese || '').toLowerCase();
-                    const vietTranslation = (item.vietTranslation || '').toLowerCase();
+                    const onyomi = (item.onyomi || '').toLowerCase();
+                    const kunyomi = (item.kunyomi || '').toLowerCase();
+                    const hanviet = (item.hanviet || '').toLowerCase();
+                    const viet = (item.viet || '').toLowerCase();
                     const english = (item.english || '').toLowerCase();
 
                     return kanji.includes(query) ||
-                        vietnamese.includes(query) ||
-                        vietTranslation.includes(query) ||
+                        onyomi.includes(query) ||
+                        kunyomi.includes(query) ||
+                        hanviet.includes(query) ||
+                        viet.includes(query) ||
                         english.includes(query);
                 });
             }
@@ -293,7 +296,7 @@ export default function CharacterListScreen() {
                         ? item.simplifiedChinese
                         : item.traditionalChinese}
                 </Text>
-                {item.simplifiedChinese && item.traditionalChinese && item.simplifiedChinese !== item.traditionalChinese && (
+                {item.simplifiedChinese && item.traditionalChinese && (
                     <Text selectable style={styles.subText}>
                         <Text selectable style={styles.labelText}>{settings.mainDisplayMode === 'simplified' ? 'Traditional: ' : 'Simplified: '}</Text>
                         {settings.mainDisplayMode === 'simplified' ? item.traditionalChinese : item.simplifiedChinese}
@@ -344,14 +347,24 @@ export default function CharacterListScreen() {
                 <Text selectable style={[styles.character, isDisabled && styles.characterDisabled]}>
                     {item.kanji}
                 </Text>
-                {item.vietnamese && (
+                {item.onyomi && (
                     <Text selectable style={styles.subText}>
-                        <Text selectable style={styles.labelText}>Han Viet: </Text>{item.vietnamese}
+                        <Text selectable style={styles.labelText}>On'yomi: </Text>{item.onyomi}
                     </Text>
                 )}
-                {item.vietTranslation && (
+                {item.kunyomi && (
                     <Text selectable style={styles.subText}>
-                        <Text selectable style={styles.labelText}>Vietnamese: </Text>{item.vietTranslation}
+                        <Text selectable style={styles.labelText}>Kun'yomi: </Text>{item.kunyomi}
+                    </Text>
+                )}
+                {item.hanviet && (
+                    <Text selectable style={styles.subText}>
+                        <Text selectable style={styles.labelText}>Han Viet: </Text>{item.hanviet}
+                    </Text>
+                )}
+                {item.viet && (
+                    <Text selectable style={styles.subText}>
+                        <Text selectable style={styles.labelText}>Vietnamese: </Text>{item.viet}
                     </Text>
                 )}
                 {item.english && (

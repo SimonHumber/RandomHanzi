@@ -8,9 +8,9 @@ export default function SettingsScreen() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Display Settings</Text>
+        <Text style={styles.sectionTitle}>Chinese Translation Settings</Text>
         <Text style={styles.sectionDescription}>
-          Choose how characters are displayed
+          Enable or disable which translations to show during Chinese practice (HSK, TOCFL)
         </Text>
       </View>
 
@@ -29,16 +29,7 @@ export default function SettingsScreen() {
             thumbColor={settings.mainDisplayMode === 'simplified' ? '#282c34' : '#f4f3f4'}
           />
         </View>
-      </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Translation Settings</Text>
-        <Text style={styles.sectionDescription}>
-          Enable or disable which translations to show during practice
-        </Text>
-      </View>
-
-      <View style={styles.section}>
         <View style={styles.settingRow}>
           <View style={styles.settingInfo}>
             <Text style={styles.settingLabel}>Show Alternative Chinese</Text>
@@ -126,6 +117,90 @@ export default function SettingsScreen() {
             onValueChange={(value) => updateSetting('showEnglish', value)}
             trackColor={{ false: '#767577', true: '#81b0ff' }}
             thumbColor={settings.showEnglish ? '#282c34' : '#f4f3f4'}
+          />
+        </View>
+      </View>
+
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Japanese Translation Settings</Text>
+        <Text style={styles.sectionDescription}>
+          Enable or disable which translations to show during Japanese kanji practice
+        </Text>
+      </View>
+
+      <View style={styles.section}>
+        <View style={styles.settingRow}>
+          <View style={styles.settingInfo}>
+            <Text style={styles.settingLabel}>On'yomi</Text>
+            <Text style={styles.settingDescription}>
+              Show On'yomi (Chinese-derived) readings
+            </Text>
+          </View>
+          <Switch
+            value={settings.showOnyomi}
+            onValueChange={(value) => updateSetting('showOnyomi', value)}
+            trackColor={{ false: '#767577', true: '#81b0ff' }}
+            thumbColor={settings.showOnyomi ? '#282c34' : '#f4f3f4'}
+          />
+        </View>
+
+        <View style={styles.settingRow}>
+          <View style={styles.settingInfo}>
+            <Text style={styles.settingLabel}>Kun'yomi</Text>
+            <Text style={styles.settingDescription}>
+              Show Kun'yomi (native Japanese) readings
+            </Text>
+          </View>
+          <Switch
+            value={settings.showKunyomi}
+            onValueChange={(value) => updateSetting('showKunyomi', value)}
+            trackColor={{ false: '#767577', true: '#81b0ff' }}
+            thumbColor={settings.showKunyomi ? '#282c34' : '#f4f3f4'}
+          />
+        </View>
+
+        <View style={styles.settingRow}>
+          <View style={styles.settingInfo}>
+            <Text style={styles.settingLabel}>Han Viet</Text>
+            <Text style={styles.settingDescription}>
+              Show Han Viet readings for kanji
+            </Text>
+          </View>
+          <Switch
+            value={settings.showKanjiHanViet}
+            onValueChange={(value) => updateSetting('showKanjiHanViet', value)}
+            trackColor={{ false: '#767577', true: '#81b0ff' }}
+            thumbColor={settings.showKanjiHanViet ? '#282c34' : '#f4f3f4'}
+          />
+        </View>
+
+        <View style={styles.settingRow}>
+          <View style={styles.settingInfo}>
+            <Text style={styles.settingLabel}>Vietnamese Translation</Text>
+            <Text style={styles.settingDescription}>
+              Show Vietnamese meanings
+            </Text>
+          </View>
+          <Switch
+            value={settings.showKanjiVietnameseTranslation}
+            onValueChange={(value) => updateSetting('showKanjiVietnameseTranslation', value)}
+            trackColor={{ false: '#767577', true: '#81b0ff' }}
+            thumbColor={settings.showKanjiVietnameseTranslation ? '#282c34' : '#f4f3f4'}
+          />
+        </View>
+
+        <View style={styles.settingRow}>
+          <View style={styles.settingInfo}>
+            <Text style={styles.settingLabel}>English Translation</Text>
+            <Text style={styles.settingDescription}>
+              Show English meanings
+            </Text>
+          </View>
+          <Switch
+            value={settings.showKanjiEnglish}
+            onValueChange={(value) => updateSetting('showKanjiEnglish', value)}
+            trackColor={{ false: '#767577', true: '#81b0ff' }}
+            thumbColor={settings.showKanjiEnglish ? '#282c34' : '#f4f3f4'}
           />
         </View>
       </View>
