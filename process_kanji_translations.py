@@ -30,8 +30,8 @@ class KanjiEntry(TypedDict):
 load_dotenv()
 
 # Configuration
-CSV_FILENAME = "Kyoiku Kanji - Grade 1.csv"
-OUTPUT_FILE = "mobile/data/kanji_grade1.json"
+CSV_FILENAME = "Kyoiku Kanji - Grade 2.csv"
+OUTPUT_FILE = "mobile/data/kanji_grade2.json"
 
 API_KEY = os.getenv("GOOGLE_API_KEY")
 GOOGLE_TRANSLATE_URL = "https://translation.googleapis.com/language/translate/v2"
@@ -106,7 +106,7 @@ async def process_batch_parallel(session, batch_data, batch_num, hanviet_data):
 
 async def process_kanji_csv():
     """Process Kanji CSV with parallel translations and add Han Viet readings"""
-    print("🔄 Processing Kyoiku Kanji Grade 1 CSV...")
+    print(f"🔄 Processing {CSV_FILENAME}...")
 
     # Load Han Viet data
     print("📖 Loading Han Viet data...")

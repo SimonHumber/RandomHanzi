@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Alert, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Alert } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import kanjiGrade1Data from '../data/kanji_grade1.json';
+import kanjiGrade2Data from '../data/kanji_grade2.json';
 import { useSettings } from '../context/SettingsContext';
 
 const KANJI_DISABLED_STORAGE_KEY = '@kanji_viet_kanji_disabled';
@@ -17,16 +18,21 @@ export default function KanjiScreen() {
   const [showVietnameseTranslation, setShowVietnameseTranslation] = useState(false);
   const [showEnglish, setShowEnglish] = useState(false);
   const [disabledKanji, setDisabledKanji] = useState(new Set());
-  const [randomDisableCount, setRandomDisableCount] = useState('10');
   const [showCopyIndicator, setShowCopyIndicator] = useState(false);
 
-  // Combine all kanji data (currently only grade 1)
+  // Combine all kanji data (grade 1 and 2)
   const allKanji = useMemo(() => {
     const combined = [];
     // Add grade 1 kanji with level property
     if (kanjiGrade1Data) {
       kanjiGrade1Data.forEach(kanji => {
         combined.push({ ...kanji, level: 1 });
+      });
+    }
+    // Add grade 2 kanji with level property
+    if (kanjiGrade2Data) {
+      kanjiGrade2Data.forEach(kanji => {
+        combined.push({ ...kanji, level: 2 });
       });
     }
     return combined;
@@ -61,7 +67,23 @@ export default function KanjiScreen() {
     saveDisabledKanji();
   }, [disabledKanji]);
 
+  // Auto-generate a kanji when data is available and no kanji is currently shown
+  useEffect(() => {
+    if (allKanji.length > 0 && !currentKanji && selectedGrades.length > 0) {
+      // Use setTimeout to ensure disabledKanji is loaded from AsyncStorage first
+      const timer = setTimeout(() => {
+        generateRandomKanji();
+      }, 200);
+      return () => clearTimeout(timer);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allKanji.length, selectedGrades.length, disabledKanji.size]);
+
   const generateRandomKanji = () => {
+    if (allKanji.length === 0) {
+      return;
+    }
+
     let availableKanji = allKanji.filter(kanji =>
       selectedGrades.includes(kanji.level) && !disabledKanji.has(kanji.kanji)
     );
@@ -125,29 +147,6 @@ export default function KanjiScreen() {
     }, 2000);
   };
 
-  const randomDisableKanji = () => {
-    const availableKanji = allKanji.filter(kanji => !disabledKanji.has(kanji.kanji));
-
-    if (availableKanji.length === 0) {
-      Alert.alert('No kanji available', 'No kanji available to disable.');
-      return;
-    }
-
-    const count = parseInt(randomDisableCount, 10);
-    if (isNaN(count) || count <= 0) {
-      Alert.alert('Invalid input', 'Please enter a valid number.');
-      return;
-    }
-
-    const numToDisable = Math.min(count, availableKanji.length);
-    const shuffled = availableKanji.sort(() => 0.5 - Math.random());
-    const toDisable = shuffled.slice(0, numToDisable).map(k => k.kanji);
-
-    const newDisabled = new Set([...disabledKanji, ...toDisable]);
-    setDisabledKanji(newDisabled);
-
-    Alert.alert('Disabled!', `Disabled ${numToDisable} random kanji.`);
-  };
 
   return (
     <View style={styles.wrapper}>
@@ -303,24 +302,6 @@ export default function KanjiScreen() {
           )}
 
           <View style={styles.section}>
-            {false && (
-              <View style={styles.randomDisableContainer}>
-                <TextInput
-                  style={styles.randomDisableInput}
-                  value={randomDisableCount}
-                  onChangeText={setRandomDisableCount}
-                  keyboardType="numeric"
-                  placeholder="10"
-                />
-                <TouchableOpacity
-                  style={[styles.bulkButton, styles.randomDisableButton]}
-                  onPress={randomDisableKanji}
-                  disabled={getAvailableKanjiCount() === 0}
-                >
-                  <Text style={styles.bulkButtonText}>Random Disable</Text>
-                </TouchableOpacity>
-              </View>
-            )}
             <TouchableOpacity
               style={[styles.bulkButton, styles.enableAllButton]}
               onPress={enableAllKanji}
@@ -389,19 +370,7 @@ const styles = StyleSheet.create({
   bulkButton: { padding: 12, borderRadius: 8, alignItems: 'center', marginBottom: 10 },
   enableAllButton: { backgroundColor: '#51cf66' },
   disableAllButton: { backgroundColor: '#ff6b6b' },
-  randomDisableButton: { backgroundColor: '#ffa94d' },
   bulkButtonText: { color: 'white', fontSize: 14, fontWeight: 'bold' },
-  randomDisableContainer: { flexDirection: 'row', marginBottom: 10 },
-  randomDisableInput: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 8,
-    padding: 12,
-    marginRight: 10,
-    fontSize: 14,
-    backgroundColor: 'white'
-  },
   copyIndicator: {
     position: 'absolute',
     top: 60,

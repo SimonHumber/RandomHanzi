@@ -5,6 +5,7 @@ import hskLevel1Data from '../data/hsk_level1.json';
 import hskLevel2Data from '../data/hsk_level2.json';
 import tocflData from '../data/tocfl_level1.json';
 import kanjiGrade1Data from '../data/kanji_grade1.json';
+import kanjiGrade2Data from '../data/kanji_grade2.json';
 import { useSettings } from '../context/SettingsContext';
 
 const HSK_DISABLED_STORAGE_KEY = '@kanji_viet_hsk_disabled';
@@ -29,13 +30,19 @@ export default function CharacterListScreen() {
         return [...level1, ...level2];
     }, []);
 
-    // Flatten Kanji data by grade (currently only grade 1)
+    // Flatten Kanji data by grade (grade 1 and 2)
     const allKanji = useMemo(() => {
         const flattened = [];
         // Add grade 1 kanji with level property
         if (kanjiGrade1Data) {
             kanjiGrade1Data.forEach(kanji => {
                 flattened.push({ ...kanji, level: 1 });
+            });
+        }
+        // Add grade 2 kanji with level property
+        if (kanjiGrade2Data) {
+            kanjiGrade2Data.forEach(kanji => {
+                flattened.push({ ...kanji, level: 2 });
             });
         }
         return flattened;

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Alert, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Alert } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import hskLevel1Data from '../data/hsk_level1.json';
@@ -20,7 +20,6 @@ export default function HSKScreen() {
   const [showPinyin, setShowPinyin] = useState(false);
   const [disabledWords, setDisabledWords] = useState(new Set());
   const [characterFilter, setCharacterFilter] = useState('all');
-  const [randomDisableCount, setRandomDisableCount] = useState('10');
   const [showCopyIndicator, setShowCopyIndicator] = useState(false);
 
   // Combine level 1 and 2 data, adding level property to each word
@@ -135,38 +134,6 @@ export default function HSKScreen() {
     setTimeout(() => {
       setShowCopyIndicator(false);
     }, 2000);
-  };
-
-  const randomDisableWords = () => {
-    let availableWords = hskData.filter(word =>
-      selectedLevels.includes(word.level) && !disabledWords.has(`${word.level}-${word.id}`)
-    );
-
-    if (characterFilter === 'single') {
-      availableWords = availableWords.filter(word => word.characterCount === 1);
-    } else if (characterFilter === 'multi') {
-      availableWords = availableWords.filter(word => word.characterCount > 1);
-    }
-
-    if (availableWords.length === 0) {
-      Alert.alert('No words available', 'No words available to disable.');
-      return;
-    }
-
-    const count = parseInt(randomDisableCount, 10);
-    if (isNaN(count) || count <= 0) {
-      Alert.alert('Invalid input', 'Please enter a valid number.');
-      return;
-    }
-
-    const numToDisable = Math.min(count, availableWords.length);
-    const shuffled = availableWords.sort(() => 0.5 - Math.random());
-    const toDisable = shuffled.slice(0, numToDisable).map(word => `${word.level}-${word.id}`);
-
-    const newDisabled = new Set([...disabledWords, ...toDisable]);
-    setDisabledWords(newDisabled);
-
-    Alert.alert('Disabled!', `Disabled ${numToDisable} random words.`);
   };
 
   return (
@@ -340,20 +307,6 @@ export default function HSKScreen() {
           )}
 
           <View style={styles.section}>
-            {false && (
-              <View style={styles.randomDisableContainer}>
-                <TextInput
-                  style={styles.randomDisableInput}
-                  value={randomDisableCount}
-                  onChangeText={setRandomDisableCount}
-                  keyboardType="numeric"
-                  placeholder="10"
-                />
-                <TouchableOpacity style={[styles.bulkButton, styles.randomDisableButton]} onPress={randomDisableWords} disabled={getAvailableWordsCount() === 0}>
-                  <Text style={styles.bulkButtonText}>Random Disable</Text>
-                </TouchableOpacity>
-              </View>
-            )}
             <TouchableOpacity style={[styles.bulkButton, styles.enableAllButton]} onPress={enableAllWords} disabled={disabledWords.size === 0}>
               <Text style={styles.bulkButtonText}>Enable All</Text>
             </TouchableOpacity>
@@ -411,19 +364,7 @@ const styles = StyleSheet.create({
   bulkButton: { padding: 12, borderRadius: 8, alignItems: 'center', marginBottom: 10 },
   enableAllButton: { backgroundColor: '#51cf66' },
   disableAllButton: { backgroundColor: '#ff6b6b' },
-  randomDisableButton: { backgroundColor: '#ffa94d' },
   bulkButtonText: { color: 'white', fontSize: 14, fontWeight: 'bold' },
-  randomDisableContainer: { flexDirection: 'row', marginBottom: 10 },
-  randomDisableInput: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 8,
-    padding: 12,
-    marginRight: 10,
-    fontSize: 14,
-    backgroundColor: 'white'
-  },
   copyIndicator: {
     position: 'absolute',
     top: 60,
