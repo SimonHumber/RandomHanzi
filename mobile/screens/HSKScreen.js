@@ -21,6 +21,7 @@ export default function HSKScreen() {
   const [disabledWords, setDisabledWords] = useState(new Set());
   const [characterFilter, setCharacterFilter] = useState('all');
   const [randomDisableCount, setRandomDisableCount] = useState('10');
+  const [showCopyIndicator, setShowCopyIndicator] = useState(false);
 
   // Combine level 1 and 2 data, adding level property to each word
   const hskData = useMemo(() => {
@@ -130,7 +131,10 @@ export default function HSKScreen() {
 
   const copyToClipboard = async (text) => {
     await Clipboard.setStringAsync(text);
-    Alert.alert('Copied!', 'Text copied to clipboard');
+    setShowCopyIndicator(true);
+    setTimeout(() => {
+      setShowCopyIndicator(false);
+    }, 2000);
   };
 
   const randomDisableWords = () => {
@@ -166,197 +170,207 @@ export default function HSKScreen() {
   };
 
   return (
-    <ScrollView style={styles.scrollView}>
-      <View style={styles.container}>
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Select HSK Levels:</Text>
-          <View style={styles.buttonRow}>
-            {[1, 2, 3, 4, 5, 6].map(level => (
-              <TouchableOpacity
-                key={level}
-                style={[styles.levelButton, selectedLevels.includes(level) && styles.levelButtonSelected, level > 2 && styles.levelButtonDisabled]}
-                onPress={() => toggleLevel(level)}
-                disabled={level > 2}
-              >
-                <Text style={[styles.levelButtonText, selectedLevels.includes(level) && styles.levelButtonTextSelected]}>
-                  Level {level}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
+    <View style={styles.wrapper}>
+      {showCopyIndicator && (
+        <View style={styles.copyIndicator}>
+          <Text style={styles.copyIndicatorText}>Copied!</Text>
         </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Character Filter:</Text>
-          <View style={styles.buttonRow}>
-            {['all', 'single', 'multi'].map(filter => (
-              <TouchableOpacity
-                key={filter}
-                style={[styles.filterButton, characterFilter === filter && styles.filterButtonSelected]}
-                onPress={() => setCharacterFilter(filter)}
-              >
-                <Text style={[styles.filterButtonText, characterFilter === filter && styles.filterButtonTextSelected]}>
-                  {filter === 'all' ? 'All' : filter === 'single' ? 'Single' : 'Multi'}
-                </Text>
-              </TouchableOpacity>
-            ))}
+      )}
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.container}>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Select HSK Levels:</Text>
+            <View style={styles.buttonRow}>
+              {[1, 2, 3, 4, 5, 6].map(level => (
+                <TouchableOpacity
+                  key={level}
+                  style={[styles.levelButton, selectedLevels.includes(level) && styles.levelButtonSelected, level > 2 && styles.levelButtonDisabled]}
+                  onPress={() => toggleLevel(level)}
+                  disabled={level > 2}
+                >
+                  <Text style={[styles.levelButtonText, selectedLevels.includes(level) && styles.levelButtonTextSelected]}>
+                    Level {level}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
-        </View>
 
-        <View style={styles.section}>
-          <TouchableOpacity style={styles.generateButton} onPress={generateRandomWord}>
-            <Text style={styles.generateButtonText}>Generate Random Word</Text>
-          </TouchableOpacity>
-          <View style={styles.statsRow}>
-            <Text style={styles.statsText}>Available: {getAvailableWordsCount()}</Text>
-            <Text style={styles.statsText}>Disabled: {disabledWords.size}</Text>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Character Filter:</Text>
+            <View style={styles.buttonRow}>
+              {['all', 'single', 'multi'].map(filter => (
+                <TouchableOpacity
+                  key={filter}
+                  style={[styles.filterButton, characterFilter === filter && styles.filterButtonSelected]}
+                  onPress={() => setCharacterFilter(filter)}
+                >
+                  <Text style={[styles.filterButtonText, characterFilter === filter && styles.filterButtonTextSelected]}>
+                    {filter === 'all' ? 'All' : filter === 'single' ? 'Single' : 'Multi'}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
-        </View>
 
-        {currentWord && (
-          <View style={styles.card}>
-            <TouchableOpacity
-              onLongPress={() => copyToClipboard(
-                settings.mainDisplayMode === 'simplified'
-                  ? currentWord.simplifiedChinese
-                  : currentWord.traditionalChinese
-              )}
-            >
-              <Text style={styles.character}>
-                {settings.mainDisplayMode === 'simplified'
-                  ? currentWord.simplifiedChinese
-                  : currentWord.traditionalChinese}
-              </Text>
+          <View style={styles.section}>
+            <TouchableOpacity style={styles.generateButton} onPress={generateRandomWord}>
+              <Text style={styles.generateButtonText}>Generate Random Word</Text>
             </TouchableOpacity>
-            <View style={styles.cardInfo}>
-              {settings.showSimplified && (
-                <>
-                  <TouchableOpacity style={styles.revealButton} onPress={() => setShowTraditional(!showTraditional)}>
-                    <Text style={styles.revealButtonText}>
-                      {showTraditional ? 'Hide' : 'Show'} {settings.mainDisplayMode === 'simplified' ? 'Traditional' : 'Simplified'}
-                    </Text>
-                  </TouchableOpacity>
-                  {showTraditional && (
-                    <TouchableOpacity onLongPress={() => copyToClipboard(
-                      settings.mainDisplayMode === 'simplified'
-                        ? currentWord.traditionalChinese
-                        : currentWord.simplifiedChinese
-                    )}>
-                      <Text style={styles.infoText}>
-                        {settings.mainDisplayMode === 'simplified'
-                          ? currentWord.traditionalChinese
-                          : currentWord.simplifiedChinese}
+            <View style={styles.statsRow}>
+              <Text style={styles.statsText}>Available: {getAvailableWordsCount()}</Text>
+              <Text style={styles.statsText}>Disabled: {disabledWords.size}</Text>
+            </View>
+          </View>
+
+          {currentWord && (
+            <View style={styles.card}>
+              <TouchableOpacity
+                onLongPress={() => copyToClipboard(
+                  settings.mainDisplayMode === 'simplified'
+                    ? currentWord.simplifiedChinese
+                    : currentWord.traditionalChinese
+                )}
+              >
+                <Text style={styles.character}>
+                  {settings.mainDisplayMode === 'simplified'
+                    ? currentWord.simplifiedChinese
+                    : currentWord.traditionalChinese}
+                </Text>
+              </TouchableOpacity>
+              <View style={styles.cardInfo}>
+                {settings.showSimplified && (
+                  <>
+                    <TouchableOpacity style={styles.revealButton} onPress={() => setShowTraditional(!showTraditional)}>
+                      <Text style={styles.revealButtonText}>
+                        {showTraditional ? 'Hide' : 'Show'} {settings.mainDisplayMode === 'simplified' ? 'Traditional' : 'Simplified'}
                       </Text>
                     </TouchableOpacity>
-                  )}
-                </>
-              )}
+                    {showTraditional && (
+                      <TouchableOpacity onLongPress={() => copyToClipboard(
+                        settings.mainDisplayMode === 'simplified'
+                          ? currentWord.traditionalChinese
+                          : currentWord.simplifiedChinese
+                      )}>
+                        <Text style={styles.infoText}>
+                          {settings.mainDisplayMode === 'simplified'
+                            ? currentWord.traditionalChinese
+                            : currentWord.simplifiedChinese}
+                        </Text>
+                      </TouchableOpacity>
+                    )}
+                  </>
+                )}
 
-              {settings.showPinyin && (
-                <>
-                  <TouchableOpacity style={styles.revealButton} onPress={() => setShowPinyin(!showPinyin)}>
-                    <Text style={styles.revealButtonText}>{showPinyin ? 'Hide' : 'Show'} Pinyin</Text>
-                  </TouchableOpacity>
-                  {showPinyin && (
-                    <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.pinyin)}>
-                      <Text style={styles.infoText}>{currentWord.pinyin}</Text>
+                {settings.showPinyin && (
+                  <>
+                    <TouchableOpacity style={styles.revealButton} onPress={() => setShowPinyin(!showPinyin)}>
+                      <Text style={styles.revealButtonText}>{showPinyin ? 'Hide' : 'Show'} Pinyin</Text>
                     </TouchableOpacity>
-                  )}
-                </>
-              )}
+                    {showPinyin && (
+                      <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.pinyin)}>
+                        <Text style={styles.infoText}>{currentWord.pinyin}</Text>
+                      </TouchableOpacity>
+                    )}
+                  </>
+                )}
 
-              {settings.showJyutping && (
-                <>
-                  <TouchableOpacity style={styles.revealButton} onPress={() => setShowJyutping(!showJyutping)}>
-                    <Text style={styles.revealButtonText}>{showJyutping ? 'Hide' : 'Show'} Jyutping</Text>
-                  </TouchableOpacity>
-                  {showJyutping && (
-                    <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.jyutping)}>
-                      <Text style={styles.infoText}>{currentWord.jyutping}</Text>
+                {settings.showJyutping && (
+                  <>
+                    <TouchableOpacity style={styles.revealButton} onPress={() => setShowJyutping(!showJyutping)}>
+                      <Text style={styles.revealButtonText}>{showJyutping ? 'Hide' : 'Show'} Jyutping</Text>
                     </TouchableOpacity>
-                  )}
-                </>
-              )}
+                    {showJyutping && (
+                      <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.jyutping)}>
+                        <Text style={styles.infoText}>{currentWord.jyutping}</Text>
+                      </TouchableOpacity>
+                    )}
+                  </>
+                )}
 
-              {settings.showHanViet && (
-                <>
-                  <TouchableOpacity style={styles.revealButton} onPress={() => setShowHanViet(!showHanViet)}>
-                    <Text style={styles.revealButtonText}>{showHanViet ? 'Hide' : 'Show'} Han Viet Reading</Text>
-                  </TouchableOpacity>
-                  {showHanViet && (
-                    <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.hanviet)}>
-                      <Text style={styles.infoText}>{currentWord.hanviet}</Text>
+                {settings.showHanViet && (
+                  <>
+                    <TouchableOpacity style={styles.revealButton} onPress={() => setShowHanViet(!showHanViet)}>
+                      <Text style={styles.revealButtonText}>{showHanViet ? 'Hide' : 'Show'} Han Viet Reading</Text>
                     </TouchableOpacity>
-                  )}
-                </>
-              )}
+                    {showHanViet && (
+                      <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.hanviet)}>
+                        <Text style={styles.infoText}>{currentWord.hanviet}</Text>
+                      </TouchableOpacity>
+                    )}
+                  </>
+                )}
 
-              {settings.showVietnameseTranslation && (
-                <>
-                  <TouchableOpacity style={styles.revealButton} onPress={() => setShowVietnameseTranslation(!showVietnameseTranslation)}>
-                    <Text style={styles.revealButtonText}>{showVietnameseTranslation ? 'Hide' : 'Show'} Vietnamese Translation</Text>
-                  </TouchableOpacity>
-                  {showVietnameseTranslation && (
-                    <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.vietnamese)}>
-                      <Text style={styles.infoText}>{currentWord.vietnamese}</Text>
+                {settings.showVietnameseTranslation && (
+                  <>
+                    <TouchableOpacity style={styles.revealButton} onPress={() => setShowVietnameseTranslation(!showVietnameseTranslation)}>
+                      <Text style={styles.revealButtonText}>{showVietnameseTranslation ? 'Hide' : 'Show'} Vietnamese Translation</Text>
                     </TouchableOpacity>
-                  )}
-                </>
-              )}
+                    {showVietnameseTranslation && (
+                      <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.vietnamese)}>
+                        <Text style={styles.infoText}>{currentWord.vietnamese}</Text>
+                      </TouchableOpacity>
+                    )}
+                  </>
+                )}
 
-              {settings.showEnglish && (
-                <>
-                  <TouchableOpacity style={styles.revealButton} onPress={() => setShowEnglish(!showEnglish)}>
-                    <Text style={styles.revealButtonText}>{showEnglish ? 'Hide' : 'Show'} English Translation</Text>
-                  </TouchableOpacity>
-                  {showEnglish && (
-                    <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.english)}>
-                      <Text style={styles.infoText}>{currentWord.english}</Text>
+                {settings.showEnglish && (
+                  <>
+                    <TouchableOpacity style={styles.revealButton} onPress={() => setShowEnglish(!showEnglish)}>
+                      <Text style={styles.revealButtonText}>{showEnglish ? 'Hide' : 'Show'} English Translation</Text>
                     </TouchableOpacity>
-                  )}
-                </>
-              )}
+                    {showEnglish && (
+                      <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.english)}>
+                        <Text style={styles.infoText}>{currentWord.english}</Text>
+                      </TouchableOpacity>
+                    )}
+                  </>
+                )}
 
-              <TouchableOpacity
-                style={[styles.disableButton, disabledWords.has(`${currentWord.level}-${currentWord.id}`) && styles.enableButton]}
-                onPress={() => toggleWordDisabled(`${currentWord.level}-${currentWord.id}`)}
-              >
-                <Text style={styles.disableButtonText}>
-                  {disabledWords.has(`${currentWord.level}-${currentWord.id}`) ? 'Enable' : 'Disable'} This Word
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        )}
-
-        <View style={styles.section}>
-          {false && (
-            <View style={styles.randomDisableContainer}>
-              <TextInput
-                style={styles.randomDisableInput}
-                value={randomDisableCount}
-                onChangeText={setRandomDisableCount}
-                keyboardType="numeric"
-                placeholder="10"
-              />
-              <TouchableOpacity style={[styles.bulkButton, styles.randomDisableButton]} onPress={randomDisableWords} disabled={getAvailableWordsCount() === 0}>
-                <Text style={styles.bulkButtonText}>Random Disable</Text>
-              </TouchableOpacity>
+                <TouchableOpacity
+                  style={[styles.disableButton, disabledWords.has(`${currentWord.level}-${currentWord.id}`) && styles.enableButton]}
+                  onPress={() => toggleWordDisabled(`${currentWord.level}-${currentWord.id}`)}
+                >
+                  <Text style={styles.disableButtonText}>
+                    {disabledWords.has(`${currentWord.level}-${currentWord.id}`) ? 'Enable' : 'Disable'} This Word
+                  </Text>
+                </TouchableOpacity>
+              </View>
             </View>
           )}
-          <TouchableOpacity style={[styles.bulkButton, styles.enableAllButton]} onPress={enableAllWords} disabled={disabledWords.size === 0}>
-            <Text style={styles.bulkButtonText}>Enable All</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.bulkButton, styles.disableAllButton]} onPress={disableAllWords} disabled={getAvailableWordsCount() === 0}>
-            <Text style={styles.bulkButtonText}>Disable All</Text>
-          </TouchableOpacity>
+
+          <View style={styles.section}>
+            {false && (
+              <View style={styles.randomDisableContainer}>
+                <TextInput
+                  style={styles.randomDisableInput}
+                  value={randomDisableCount}
+                  onChangeText={setRandomDisableCount}
+                  keyboardType="numeric"
+                  placeholder="10"
+                />
+                <TouchableOpacity style={[styles.bulkButton, styles.randomDisableButton]} onPress={randomDisableWords} disabled={getAvailableWordsCount() === 0}>
+                  <Text style={styles.bulkButtonText}>Random Disable</Text>
+                </TouchableOpacity>
+              </View>
+            )}
+            <TouchableOpacity style={[styles.bulkButton, styles.enableAllButton]} onPress={enableAllWords} disabled={disabledWords.size === 0}>
+              <Text style={styles.bulkButtonText}>Enable All</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.bulkButton, styles.disableAllButton]} onPress={disableAllWords} disabled={getAvailableWordsCount() === 0}>
+              <Text style={styles.bulkButtonText}>Disable All</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+  },
   scrollView: { flex: 1, backgroundColor: '#f5f5f5' },
   container: { padding: 15 },
   section: {
@@ -409,6 +423,26 @@ const styles = StyleSheet.create({
     marginRight: 10,
     fontSize: 14,
     backgroundColor: 'white'
+  },
+  copyIndicator: {
+    position: 'absolute',
+    top: 60,
+    alignSelf: 'center',
+    backgroundColor: '#282c34',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 20,
+    zIndex: 1000,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  copyIndicatorText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: '600',
   },
 });
 

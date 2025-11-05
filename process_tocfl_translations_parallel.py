@@ -16,7 +16,7 @@ import asyncio
 import aiohttp
 import os
 import re
-from typing import TypedDict, List, NotRequired
+from typing import TypedDict, List
 from dotenv import load_dotenv
 from add_hanviet_from_csv import load_hanviet_csv, find_hanviet_reading_with_multiple
 
@@ -31,11 +31,13 @@ class VocabEntry(TypedDict):
     vietnamese: str
     characterCount: int
     hanviet: str
-    wordType: NotRequired[str]  # Optional
-    domain: NotRequired[str]  # Optional
 
 
 load_dotenv()
+
+# Configuration
+CSV_FILENAME = "TOCFL - 入門級.csv"
+OUTPUT_FILE = "mobile/data/tocfl_level1.json"
 
 API_KEY = os.getenv("GOOGLE_API_KEY")
 GOOGLE_TRANSLATE_URL = "https://translation.googleapis.com/language/translate/v2"
@@ -135,8 +137,6 @@ async def process_single_word(session, row, word_index):
         "english": english,  # Translated from Traditional Chinese
         "vietnamese": vietnamese,
         "characterCount": count_chinese_characters(chinese),
-        "wordType": row["詞類"].strip(),
-        "domain": row["任務領域"].strip(),
     }
 
 
@@ -164,13 +164,11 @@ async def process_tocfl_csv():
 
     # Read CSV file
     csv_data = []
-    with open("TOCFL1.csv", "r", encoding="utf-8") as f:
+    with open(CSV_FILENAME, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         csv_data = list(reader)
 
-    # TEST: Only process first 10 entries
-    csv_data = csv_data[:10]
-    print(f"🧪 TEST MODE: Processing {len(csv_data)} entries")
+    print(f"📝 Processing {len(csv_data)} entries from {CSV_FILENAME}")
 
     # Process entries in batches
     processed_data = []
@@ -199,12 +197,12 @@ async def process_tocfl_csv():
         hanviet_reading = find_hanviet_reading_with_multiple(entry, hanviet_data)
         entry["hanviet"] = hanviet_reading if hanviet_reading else ""
 
-    # Save JSON
-    output_file = "tocfl_test.json"
-    with open(output_file, "w", encoding="utf-8") as f:
+    # Save JSON to mobile project
+    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(processed_data, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ Complete! Output: {output_file} ({len(processed_data)} entries)")
+    print(f"✅ Complete! Output: {OUTPUT_FILE} ({len(processed_data)} entries)")
 
 
 if __name__ == "__main__":

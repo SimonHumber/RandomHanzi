@@ -7,6 +7,7 @@ import KanjiScreen from '../screens/KanjiScreen';
 import HSKScreen from '../screens/HSKScreen';
 import TOCFLScreen from '../screens/TOCFLScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import CharacterListScreen from '../screens/CharacterListScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,30 +27,35 @@ export default function MainNavigator() {
             },
           }}
         >
-          <Stack.Screen 
-            name="Home" 
+          <Stack.Screen
+            name="Home"
             component={HomeScreen}
             options={{ title: 'Kanji Viet Mobile' }}
           />
-          <Stack.Screen 
-            name="Kanji" 
+          <Stack.Screen
+            name="Kanji"
             component={KanjiScreen}
             options={{ title: 'Kanji Practice' }}
           />
-          <Stack.Screen 
-            name="HSK" 
+          <Stack.Screen
+            name="HSK"
             component={HSKScreen}
             options={{ title: 'HSK Vocabulary' }}
           />
-          <Stack.Screen 
-            name="TOCFL" 
+          <Stack.Screen
+            name="TOCFL"
             component={TOCFLScreen}
             options={{ title: 'TOCFL Vocabulary' }}
           />
-          <Stack.Screen 
-            name="Settings" 
+          <Stack.Screen
+            name="Settings"
             component={SettingsScreen}
             options={{ title: 'Settings' }}
+          />
+          <Stack.Screen
+            name="CharacterList"
+            component={CharacterListScreen}
+            options={{ title: 'Character List' }}
           />
         </Stack.Navigator>
       </NavigationContainer>

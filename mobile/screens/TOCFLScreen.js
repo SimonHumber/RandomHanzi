@@ -20,6 +20,7 @@ export default function TOCFLScreen() {
   const [disabledWords, setDisabledWords] = useState(new Set());
   const [characterFilter, setCharacterFilter] = useState('all');
   const [randomDisableCount, setRandomDisableCount] = useState('10');
+  const [showCopyIndicator, setShowCopyIndicator] = useState(false);
 
   // Load disabled words from AsyncStorage on mount
   useEffect(() => {
@@ -122,7 +123,10 @@ export default function TOCFLScreen() {
 
   const copyToClipboard = async (text) => {
     await Clipboard.setStringAsync(text);
-    Alert.alert('Copied!', 'Text copied to clipboard');
+    setShowCopyIndicator(true);
+    setTimeout(() => {
+      setShowCopyIndicator(false);
+    }, 2000);
   };
 
   const randomDisableWords = () => {
@@ -158,7 +162,13 @@ export default function TOCFLScreen() {
   };
 
   return (
-    <ScrollView style={styles.scrollView}>
+    <View style={styles.wrapper}>
+      {showCopyIndicator && (
+        <View style={styles.copyIndicator}>
+          <Text style={styles.copyIndicatorText}>Copied!</Text>
+        </View>
+      )}
+      <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Select TOCFL Levels:</Text>
@@ -223,7 +233,7 @@ export default function TOCFLScreen() {
             <View style={styles.cardInfo}>
               {settings.showSimplified && (
                 <>
-                  <TouchableOpacity style={styles.revealButton} onPress={() => setShowTraditional(!showTraditional)}>
+              <TouchableOpacity style={styles.revealButton} onPress={() => setShowTraditional(!showTraditional)}>
                     <Text style={styles.revealButtonText}>
                       {showTraditional ? 'Hide' : 'Show'} {settings.mainDisplayMode === 'simplified' ? 'Traditional' : 'Simplified'}
                     </Text>
@@ -252,16 +262,16 @@ export default function TOCFLScreen() {
                   {showPinyin && (
                     <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.pinyin)}>
                       <Text style={styles.infoText}>{currentWord.pinyin}</Text>
-                    </TouchableOpacity>
+              </TouchableOpacity>
                   )}
                 </>
               )}
 
               {settings.showJyutping && (
                 <>
-                  <TouchableOpacity style={styles.revealButton} onPress={() => setShowJyutping(!showJyutping)}>
-                    <Text style={styles.revealButtonText}>{showJyutping ? 'Hide' : 'Show'} Jyutping</Text>
-                  </TouchableOpacity>
+              <TouchableOpacity style={styles.revealButton} onPress={() => setShowJyutping(!showJyutping)}>
+                <Text style={styles.revealButtonText}>{showJyutping ? 'Hide' : 'Show'} Jyutping</Text>
+              </TouchableOpacity>
                   {showJyutping && (
                     <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.jyutping)}>
                       <Text style={styles.infoText}>{currentWord.jyutping}</Text>
@@ -285,9 +295,9 @@ export default function TOCFLScreen() {
 
               {settings.showVietnameseTranslation && (
                 <>
-                  <TouchableOpacity style={styles.revealButton} onPress={() => setShowVietnameseTranslation(!showVietnameseTranslation)}>
-                    <Text style={styles.revealButtonText}>{showVietnameseTranslation ? 'Hide' : 'Show'} Vietnamese Translation</Text>
-                  </TouchableOpacity>
+              <TouchableOpacity style={styles.revealButton} onPress={() => setShowVietnameseTranslation(!showVietnameseTranslation)}>
+                <Text style={styles.revealButtonText}>{showVietnameseTranslation ? 'Hide' : 'Show'} Vietnamese Translation</Text>
+              </TouchableOpacity>
                   {showVietnameseTranslation && (
                     <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.vietnamese)}>
                       <Text style={styles.infoText}>{currentWord.vietnamese}</Text>
@@ -298,13 +308,13 @@ export default function TOCFLScreen() {
 
               {settings.showEnglish && (
                 <>
-                  <TouchableOpacity style={styles.revealButton} onPress={() => setShowEnglish(!showEnglish)}>
-                    <Text style={styles.revealButtonText}>{showEnglish ? 'Hide' : 'Show'} English Translation</Text>
-                  </TouchableOpacity>
+              <TouchableOpacity style={styles.revealButton} onPress={() => setShowEnglish(!showEnglish)}>
+                <Text style={styles.revealButtonText}>{showEnglish ? 'Hide' : 'Show'} English Translation</Text>
+              </TouchableOpacity>
                   {showEnglish && (
                     <TouchableOpacity onLongPress={() => copyToClipboard(currentWord.english)}>
                       <Text style={styles.infoText}>{currentWord.english}</Text>
-                    </TouchableOpacity>
+              </TouchableOpacity>
                   )}
                 </>
               )}
@@ -342,13 +352,17 @@ export default function TOCFLScreen() {
           <TouchableOpacity style={[styles.bulkButton, styles.disableAllButton]} onPress={disableAllWords} disabled={getAvailableWordsCount() === 0}>
             <Text style={styles.bulkButtonText}>Disable All</Text>
           </TouchableOpacity>
-        </View>
-      </View>
-    </ScrollView>
+            </View>
+          </View>
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+  },
   scrollView: { flex: 1, backgroundColor: '#f5f5f5' },
   container: { padding: 15 },
   section: {
@@ -401,6 +415,26 @@ const styles = StyleSheet.create({
     marginRight: 10, 
     fontSize: 14,
     backgroundColor: 'white'
+  },
+  copyIndicator: {
+    position: 'absolute',
+    top: 60,
+    alignSelf: 'center',
+    backgroundColor: '#282c34',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 20,
+    zIndex: 1000,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  copyIndicatorText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: '600',
   },
 });
 

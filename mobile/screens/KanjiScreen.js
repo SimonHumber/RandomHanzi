@@ -16,6 +16,7 @@ export default function KanjiScreen() {
   const [showEnglish, setShowEnglish] = useState(false);
   const [disabledKanji, setDisabledKanji] = useState(new Set());
   const [randomDisableCount, setRandomDisableCount] = useState('10');
+  const [showCopyIndicator, setShowCopyIndicator] = useState(false);
 
   const allKanji = [];
   for (let grade = 1; grade <= 6; grade++) {
@@ -55,12 +56,12 @@ export default function KanjiScreen() {
 
   const generateRandomKanji = () => {
     const availableKanji = allKanji.filter(kanji => !disabledKanji.has(kanji.kanji));
-    
+
     if (availableKanji.length === 0) {
       Alert.alert('No more kanji', 'Enable some kanji to continue.');
       return;
     }
-    
+
     const randomIndex = Math.floor(Math.random() * availableKanji.length);
     const selectedKanji = availableKanji[randomIndex];
     setCurrentKanji(selectedKanji);
@@ -104,7 +105,10 @@ export default function KanjiScreen() {
 
   const copyToClipboard = async (text) => {
     await Clipboard.setStringAsync(text);
-    Alert.alert('Copied!', 'Text copied to clipboard');
+    setShowCopyIndicator(true);
+    setTimeout(() => {
+      setShowCopyIndicator(false);
+    }, 2000);
   };
 
   const randomDisableKanji = () => {
@@ -124,164 +128,174 @@ export default function KanjiScreen() {
     const numToDisable = Math.min(count, availableKanji.length);
     const shuffled = availableKanji.sort(() => 0.5 - Math.random());
     const toDisable = shuffled.slice(0, numToDisable).map(k => k.kanji);
-    
+
     const newDisabled = new Set([...disabledKanji, ...toDisable]);
     setDisabledKanji(newDisabled);
-    
+
     Alert.alert('Disabled!', `Disabled ${numToDisable} random kanji.`);
   };
 
   return (
-    <ScrollView style={styles.scrollView}>
-      <View style={styles.container}>
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Select Kanji Grades:</Text>
-          <View style={styles.buttonRow}>
-            {[1, 2, 3, 4, 5, 6].map(grade => (
-              <TouchableOpacity
-                key={grade}
-                style={[
-                  styles.gradeButton,
-                  selectedGrades.includes(grade) && styles.gradeButtonSelected
-                ]}
-                onPress={() => toggleGrade(grade)}
-              >
-                <Text style={[
-                  styles.gradeButtonText,
-                  selectedGrades.includes(grade) && styles.gradeButtonTextSelected
-                ]}>
-                  Grade {grade}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
+    <View style={styles.wrapper}>
+      {showCopyIndicator && (
+        <View style={styles.copyIndicator}>
+          <Text style={styles.copyIndicatorText}>Copied!</Text>
         </View>
-
-        <View style={styles.section}>
-          <TouchableOpacity style={styles.generateButton} onPress={generateRandomKanji}>
-            <Text style={styles.generateButtonText}>Generate Random Kanji</Text>
-          </TouchableOpacity>
-          <View style={styles.statsRow}>
-            <Text style={styles.statsText}>Available: {getAvailableKanjiCount()}</Text>
-            <Text style={styles.statsText}>Disabled: {disabledKanji.size}</Text>
-          </View>
-        </View>
-
-        {currentKanji && (
-          <View style={styles.card}>
-            <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.kanji)}>
-              <Text style={styles.character}>{currentKanji.kanji}</Text>
-            </TouchableOpacity>
-            <View style={styles.cardInfo}>
-              {settings.showHanViet && (
-                <>
-                  <TouchableOpacity
-                    style={styles.revealButton}
-                    onPress={() => setShowVietnamese(!showVietnamese)}
-                  >
-                    <Text style={styles.revealButtonText}>
-                      {showVietnamese ? 'Hide' : 'Show'} Vietnamese Reading
-                    </Text>
-                  </TouchableOpacity>
-                  {showVietnamese && (
-                    <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.vietnamese)}>
-                      <Text style={styles.infoText}>{currentKanji.vietnamese}</Text>
-                    </TouchableOpacity>
-                  )}
-                </>
-              )}
-
-              {settings.showVietnameseTranslation && (
-                <>
-                  <TouchableOpacity
-                    style={styles.revealButton}
-                    onPress={() => setShowVietnameseTranslation(!showVietnameseTranslation)}
-                  >
-                    <Text style={styles.revealButtonText}>
-                      {showVietnameseTranslation ? 'Hide' : 'Show'} Vietnamese Translation
-                    </Text>
-                  </TouchableOpacity>
-                  {showVietnameseTranslation && (
-                    <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.vietTranslation)}>
-                      <Text style={styles.infoText}>{currentKanji.vietTranslation}</Text>
-                    </TouchableOpacity>
-                  )}
-                </>
-              )}
-
-              {settings.showEnglish && (
-                <>
-                  <TouchableOpacity
-                    style={styles.revealButton}
-                    onPress={() => setShowEnglish(!showEnglish)}
-                  >
-                    <Text style={styles.revealButtonText}>
-                      {showEnglish ? 'Hide' : 'Show'} English Translation
-                    </Text>
-                  </TouchableOpacity>
-                  {showEnglish && (
-                    <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.english)}>
-                      <Text style={styles.infoText}>{currentKanji.english}</Text>
-                    </TouchableOpacity>
-                  )}
-                </>
-              )}
-
-              <TouchableOpacity
-                style={[
-                  styles.disableButton,
-                  disabledKanji.has(currentKanji.kanji) && styles.enableButton
-                ]}
-                onPress={() => toggleKanjiDisabled(currentKanji.kanji)}
-              >
-                <Text style={styles.disableButtonText}>
-                  {disabledKanji.has(currentKanji.kanji) ? 'Enable' : 'Disable'} This Kanji
-                </Text>
-              </TouchableOpacity>
+      )}
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.container}>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Select Kanji Grades:</Text>
+            <View style={styles.buttonRow}>
+              {[1, 2, 3, 4, 5, 6].map(grade => (
+                <TouchableOpacity
+                  key={grade}
+                  style={[
+                    styles.gradeButton,
+                    selectedGrades.includes(grade) && styles.gradeButtonSelected
+                  ]}
+                  onPress={() => toggleGrade(grade)}
+                >
+                  <Text style={[
+                    styles.gradeButtonText,
+                    selectedGrades.includes(grade) && styles.gradeButtonTextSelected
+                  ]}>
+                    Grade {grade}
+                  </Text>
+                </TouchableOpacity>
+              ))}
             </View>
           </View>
-        )}
 
-        <View style={styles.section}>
-          {false && (
-            <View style={styles.randomDisableContainer}>
-              <TextInput
-                style={styles.randomDisableInput}
-                value={randomDisableCount}
-                onChangeText={setRandomDisableCount}
-                keyboardType="numeric"
-                placeholder="10"
-              />
-              <TouchableOpacity
-                style={[styles.bulkButton, styles.randomDisableButton]}
-                onPress={randomDisableKanji}
-                disabled={getAvailableKanjiCount() === 0}
-              >
-                <Text style={styles.bulkButtonText}>Random Disable</Text>
+          <View style={styles.section}>
+            <TouchableOpacity style={styles.generateButton} onPress={generateRandomKanji}>
+              <Text style={styles.generateButtonText}>Generate Random Kanji</Text>
+            </TouchableOpacity>
+            <View style={styles.statsRow}>
+              <Text style={styles.statsText}>Available: {getAvailableKanjiCount()}</Text>
+              <Text style={styles.statsText}>Disabled: {disabledKanji.size}</Text>
+            </View>
+          </View>
+
+          {currentKanji && (
+            <View style={styles.card}>
+              <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.kanji)}>
+                <Text style={styles.character}>{currentKanji.kanji}</Text>
               </TouchableOpacity>
+              <View style={styles.cardInfo}>
+                {settings.showHanViet && (
+                  <>
+                    <TouchableOpacity
+                      style={styles.revealButton}
+                      onPress={() => setShowVietnamese(!showVietnamese)}
+                    >
+                      <Text style={styles.revealButtonText}>
+                        {showVietnamese ? 'Hide' : 'Show'} Vietnamese Reading
+                      </Text>
+                    </TouchableOpacity>
+                    {showVietnamese && (
+                      <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.vietnamese)}>
+                        <Text style={styles.infoText}>{currentKanji.vietnamese}</Text>
+                      </TouchableOpacity>
+                    )}
+                  </>
+                )}
+
+                {settings.showVietnameseTranslation && (
+                  <>
+                    <TouchableOpacity
+                      style={styles.revealButton}
+                      onPress={() => setShowVietnameseTranslation(!showVietnameseTranslation)}
+                    >
+                      <Text style={styles.revealButtonText}>
+                        {showVietnameseTranslation ? 'Hide' : 'Show'} Vietnamese Translation
+                      </Text>
+                    </TouchableOpacity>
+                    {showVietnameseTranslation && (
+                      <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.vietTranslation)}>
+                        <Text style={styles.infoText}>{currentKanji.vietTranslation}</Text>
+                      </TouchableOpacity>
+                    )}
+                  </>
+                )}
+
+                {settings.showEnglish && (
+                  <>
+                    <TouchableOpacity
+                      style={styles.revealButton}
+                      onPress={() => setShowEnglish(!showEnglish)}
+                    >
+                      <Text style={styles.revealButtonText}>
+                        {showEnglish ? 'Hide' : 'Show'} English Translation
+                      </Text>
+                    </TouchableOpacity>
+                    {showEnglish && (
+                      <TouchableOpacity onLongPress={() => copyToClipboard(currentKanji.english)}>
+                        <Text style={styles.infoText}>{currentKanji.english}</Text>
+                      </TouchableOpacity>
+                    )}
+                  </>
+                )}
+
+                <TouchableOpacity
+                  style={[
+                    styles.disableButton,
+                    disabledKanji.has(currentKanji.kanji) && styles.enableButton
+                  ]}
+                  onPress={() => toggleKanjiDisabled(currentKanji.kanji)}
+                >
+                  <Text style={styles.disableButtonText}>
+                    {disabledKanji.has(currentKanji.kanji) ? 'Enable' : 'Disable'} This Kanji
+                  </Text>
+                </TouchableOpacity>
+              </View>
             </View>
           )}
-          <TouchableOpacity
-            style={[styles.bulkButton, styles.enableAllButton]}
-            onPress={enableAllKanji}
-            disabled={disabledKanji.size === 0}
-          >
-            <Text style={styles.bulkButtonText}>Enable All</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.bulkButton, styles.disableAllButton]}
-            onPress={disableAllKanji}
-            disabled={getAvailableKanjiCount() === 0}
-          >
-            <Text style={styles.bulkButtonText}>Disable All</Text>
-          </TouchableOpacity>
+
+          <View style={styles.section}>
+            {false && (
+              <View style={styles.randomDisableContainer}>
+                <TextInput
+                  style={styles.randomDisableInput}
+                  value={randomDisableCount}
+                  onChangeText={setRandomDisableCount}
+                  keyboardType="numeric"
+                  placeholder="10"
+                />
+                <TouchableOpacity
+                  style={[styles.bulkButton, styles.randomDisableButton]}
+                  onPress={randomDisableKanji}
+                  disabled={getAvailableKanjiCount() === 0}
+                >
+                  <Text style={styles.bulkButtonText}>Random Disable</Text>
+                </TouchableOpacity>
+              </View>
+            )}
+            <TouchableOpacity
+              style={[styles.bulkButton, styles.enableAllButton]}
+              onPress={enableAllKanji}
+              disabled={disabledKanji.size === 0}
+            >
+              <Text style={styles.bulkButtonText}>Enable All</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.bulkButton, styles.disableAllButton]}
+              onPress={disableAllKanji}
+              disabled={getAvailableKanjiCount() === 0}
+            >
+              <Text style={styles.bulkButtonText}>Disable All</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+  },
   scrollView: { flex: 1, backgroundColor: '#f5f5f5' },
   container: { padding: 15 },
   section: {
@@ -328,15 +342,35 @@ const styles = StyleSheet.create({
   randomDisableButton: { backgroundColor: '#ffa94d' },
   bulkButtonText: { color: 'white', fontSize: 14, fontWeight: 'bold' },
   randomDisableContainer: { flexDirection: 'row', marginBottom: 10 },
-  randomDisableInput: { 
-    flex: 1, 
-    borderWidth: 1, 
-    borderColor: '#ddd', 
-    borderRadius: 8, 
-    padding: 12, 
-    marginRight: 10, 
+  randomDisableInput: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 8,
+    padding: 12,
+    marginRight: 10,
     fontSize: 14,
     backgroundColor: 'white'
+  },
+  copyIndicator: {
+    position: 'absolute',
+    top: 60,
+    alignSelf: 'center',
+    backgroundColor: '#282c34',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 20,
+    zIndex: 1000,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  copyIndicatorText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: '600',
   },
 });
 

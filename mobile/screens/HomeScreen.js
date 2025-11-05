@@ -45,6 +45,17 @@ export default function HomeScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.menuButton}
+          onPress={() => navigation.navigate('CharacterList')}
+        >
+          <Text style={styles.menuButtonIcon}>表</Text>
+          <Text style={styles.menuButtonText}>Character List</Text>
+          <Text style={styles.menuButtonDescription}>
+            Browse all characters by type and level
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.menuButton}
           onPress={() => navigation.navigate('Settings')}
         >
           <Text style={styles.menuButtonIcon}>設定</Text>
