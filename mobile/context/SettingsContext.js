@@ -1,4 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const SETTINGS_STORAGE_KEY = '@kanji_viet_settings';
 
 // Create the context
 const SettingsContext = createContext();
@@ -15,16 +18,37 @@ export const SettingsProvider = ({ children }) => {
     showEnglish: true,
   });
 
-  // TODO: Load settings from AsyncStorage when implemented
+  // Load settings from AsyncStorage on mount
   useEffect(() => {
-    // Load saved settings here
+    const loadSettings = async () => {
+      try {
+        const saved = await AsyncStorage.getItem(SETTINGS_STORAGE_KEY);
+        if (saved) {
+          const savedSettings = JSON.parse(saved);
+          setSettings(savedSettings);
+        }
+      } catch (error) {
+        console.error('Error loading settings:', error);
+      }
+    };
+    loadSettings();
   }, []);
 
-  // TODO: Save settings to AsyncStorage when implemented
+  // Save settings to AsyncStorage whenever they change
+  useEffect(() => {
+    const saveSettings = async () => {
+      try {
+        await AsyncStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(settings));
+      } catch (error) {
+        console.error('Error saving settings:', error);
+      }
+    };
+    saveSettings();
+  }, [settings]);
+
   const updateSetting = (key, value) => {
     const newSettings = { ...settings, [key]: value };
     setSettings(newSettings);
-    // Save to AsyncStorage here
   };
 
   return (
