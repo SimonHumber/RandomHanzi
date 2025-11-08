@@ -17,3 +17,4 @@ requests==2.32.5
 urllib3==2.5.0
 yarl==1.22.0
 zhon==2.1.1
+google-cloud-translate==3.15.3

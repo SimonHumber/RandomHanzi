@@ -1,0 +1,902 @@
+[
+  {
+    "simplified": "我们试试看！",
+    "traditional": "我們試試看！",
+    "pinyin": "wǒmen shìshìkàn ！",
+    "english": "We give it a try!",
+    "hanviet": "ngã môn thí thí khán！",
+    "jyutping": "ngo5 mun4 si3 si3 hon3 ！",
+    "viet": "Hãy thử xem nhé!"
+  },
+  {
+    "simplified": "我该去睡觉了。",
+    "traditional": "我該去睡覺瞭。",
+    "pinyin": "wǒ gāi qù shuìjiào le 。",
+    "english": "I go to bed.",
+    "hanviet": "ngã cai khứ, khử thuỵ giáo liễu。",
+    "jyutping": "ngo5 goi1 heoi3 seoi6 gaau3 liu4 。",
+    "viet": "Tôi nên đi ngủ."
+  },
+  {
+    "simplified": "你在干什么啊？",
+    "traditional": "你在乾什麼啊？",
+    "pinyin": "nǐ zài gān shénme a ？",
+    "english": "What are you doing ah?",
+    "hanviet": "nễ tại càn, kiền thậm ma a？",
+    "jyutping": "nei5 zoi6 gon1 sam6 mo1 aa3 ？",
+    "viet": "Bạn đang làm gì thế?"
+  },
+  {
+    "simplified": "这是什么啊？",
+    "traditional": "這是什麼啊？",
+    "pinyin": "zhèshì shénme a ？",
+    "english": "what is this?",
+    "hanviet": "giá thị thậm ma a？",
+    "jyutping": "ze5 si6 sam6 mo1 aa3 ？",
+    "viet": "Đây là cái gì?"
+  },
+  {
+    "simplified": "今天是６月１８号，也是Muiriel的生日！",
+    "traditional": "今天是６月１８號，也是Muiriel的生日！",
+    "pinyin": "jīntiān shì liù yuè １ ８ hào ， yě shì muiriel de shēngrì ！",
+    "english": "Today is June 18, also Muiriel birthday!",
+    "hanviet": "kim thiên thị６nguyệt１８gào, hào，dã thị Muiriel đích sinh nhật！",
+    "jyutping": "gam1 tin1 si6 ６ jyut6 jat1 ８ hou6 ， jaa5 si6 Muiriel dik1 saang1 jat6 ！",
+    "viet": "Hôm nay là ngày 18 tháng 6, cũng là sinh nhật của Muiriel!"
+  },
+  {
+    "simplified": "生日快乐，Muiriel！",
+    "traditional": "生日快樂，Muiriel！",
+    "pinyin": "shēngrìkuàilè ， muiriel ！",
+    "english": "Happy Birthday, Muiriel!",
+    "hanviet": "sinh nhật khoái lạc，Muiriel！",
+    "jyutping": "saang1 jat6 faai3 lok6 ， Muiriel ！",
+    "viet": "Chúc mừng sinh nhật, Muiriel!"
+  },
+  {
+    "simplified": "Muiriel现在20岁了。",
+    "traditional": "Muiriel現在20歲瞭。",
+    "pinyin": "muiriel xiànzài èrlíng suì le 。",
+    "english": "Muiriel now 20 years old.",
+    "hanviet": "Muiriel hiện tại 20 tuế liễu。",
+    "jyutping": "Muiriel jin6 zoi6 20 seoi3 liu4 。",
+    "viet": "Muiriel hiện đã 20 tuổi."
+  },
+  {
+    "simplified": "密码是\"Muiriel\"。",
+    "traditional": "密碼是\"Muiriel\"。",
+    "pinyin": "mìmǎ shì \" muiriel \" 。",
+    "english": "The password is \"Muiriel\".",
+    "hanviet": "mật mã thị\"Muiriel\"。",
+    "jyutping": "mat6 maa5 si6 \" Muiriel \" 。",
+    "viet": "Mật khẩu là \"Muiriel\"."
+  },
+  {
+    "simplified": "我很快就会回来。",
+    "traditional": "我很快就會迴來。",
+    "pinyin": "wǒ hěnkuài jiù huì huílai 。",
+    "english": "I'll be back soon.",
+    "hanviet": "ngã ngận khoái tựu hội hồi lai。",
+    "jyutping": "ngo5 han2 faai3 zau6 wui2 wui4 loi4 。",
+    "viet": "Tôi sẽ sớm quay lại."
+  },
+  {
+    "simplified": "我不知道。",
+    "traditional": "我不知道。",
+    "pinyin": "wǒ bù zhīdào 。",
+    "english": "I do not know.",
+    "hanviet": "ngã bất tri đạo。",
+    "jyutping": "ngo5 bat1 zi1 dou6 。",
+    "viet": "Tôi không biết."
+  },
+  {
+    "simplified": "我不知道应该说什么才好。",
+    "traditional": "我不知道應該說什麼纔好。",
+    "pinyin": "wǒ bù zhīdào yīnggāi shuō shénme cái hào 。",
+    "english": "I do not know what to say.",
+    "hanviet": "ngã bất tri đạo ưng cai thuyết, thuế thậm ma tài hảo。",
+    "jyutping": "ngo5 bat1 zi1 dou6 jing1 goi1 syut3 sam6 mo1 coi4 hou2 。",
+    "viet": "Tôi không biết phải nói gì."
+  },
+  {
+    "simplified": "这个永远完不了了。",
+    "traditional": "這個永遠完不瞭瞭。",
+    "pinyin": "zhège yǒngyuǎn wán buliǎo le 。",
+    "english": "This never going to end.",
+    "hanviet": "giá cá vĩnh viễn hoàn bất liễu liễu。",
+    "jyutping": "ze2 go3 wing5 jyun5 jyun4 bat1 liu4 liu4 。",
+    "viet": "Điều này sẽ không bao giờ kết thúc."
+  },
+  {
+    "simplified": "我只是不知道应该说什么而已……",
+    "traditional": "我隻是不知道應該說什麼而已……",
+    "pinyin": "wǒ zhǐshì bù zhīdào yīnggāi shuō shénme éryǐ",
+    "english": "I just do not know what to say it ......",
+    "hanviet": "ngã chích thị bất tri đạo ưng cai thuyết, thuế thậm ma nhi dĩ……",
+    "jyutping": "ngo5 zek3 si6 bat1 zi1 dou6 jing1 goi1 syut3 sam6 mo1 ji4 ji5 … …",
+    "viet": "Tôi không biết phải nói gì nữa..."
+  },
+  {
+    "simplified": "那是一只有恶意的兔子。",
+    "traditional": "那是一隻有惡意的兔子。",
+    "pinyin": "nà shì yīzhī yǒu èyì de tùzi 。",
+    "english": "It was only a malicious rabbit.",
+    "hanviet": "na thị nhất chích hữu ác ý đích thỏ tử, tý。",
+    "jyutping": "naa5 si6 jat1 zek3 jau5 ok3 ji3 dik1 tou3 zi2 。",
+    "viet": "Đó là một con thỏ độc ác."
+  },
+  {
+    "simplified": "我以前在山里。",
+    "traditional": "我以前在山裏。",
+    "pinyin": "wǒ yǐqián zài shānlǐ 。",
+    "english": "I used to in the mountains.",
+    "hanviet": "ngã dĩ tiền tại sơn lý。",
+    "jyutping": "ngo5 ji5 cin4 zoi6 saan1 leoi5 。",
+    "viet": "Tôi từng sống ở vùng núi."
+  },
+  {
+    "simplified": "那是一张近照吗？",
+    "traditional": "那是一張近照嗎？",
+    "pinyin": "nà shì yīzhāng jìnzhào mǎ ？",
+    "english": "It was a recent photograph of it?",
+    "hanviet": "na thị nhất trương cận chiếu ma？",
+    "jyutping": "naa5 si6 jat1 zoeng1 gan6 ziu3 maa3 ？",
+    "viet": "Đây có phải là ảnh chụp cận cảnh không?"
+  },
+  {
+    "simplified": "我不知道我有没有时间。",
+    "traditional": "我不知道我有沒有時間。",
+    "pinyin": "wǒ bù zhīdào wǒ yǒuméiyǒu shíjiān 。",
+    "english": "I do not know that I have no time.",
+    "hanviet": "ngã bất tri đạo ngã hữu một hữu thời gian。",
+    "jyutping": "ngo5 bat1 zi1 dou6 ngo5 jau5 mut6 jau5 si4 gaan3 。",
+    "viet": "Tôi không biết mình có đủ thời gian không."
+  },
+  {
+    "simplified": "刚才我的麦克风没起作用，不知道为什么。",
+    "traditional": "剛纔我的麥剋風沒起作用，不知道為什麼。",
+    "pinyin": "gāngcái wǒ de màikèfēng mòqǐ zuòyòng ， bù zhīdào wéi shénme 。",
+    "english": "My microphone did not work earlier, I do not know why.",
+    "hanviet": "cương tài ngã đích mạch khắc phong một khởi tác dụng，bất tri đạo vi thậm ma。",
+    "jyutping": "gong1 coi4 ngo5 dik1 mak6 hak1 fung1 mut6 hei2 zok3 jung6 ， bat1 zi1 dou6 wai4 sam6 mo1 。",
+    "viet": "Lúc này micro của tôi không hoạt động, tôi không biết tại sao."
+  },
+  {
+    "simplified": "到了最后，大家一定要靠自己学习。",
+    "traditional": "到瞭最後，大傢一定要靠自己學習。",
+    "pinyin": "dào le zuìhòu ， dàjiā yīdìng yào kào zìjǐ xuéxí 。",
+    "english": "In the end, we must rely on their own learning.",
+    "hanviet": "đáo liễu tối hậu，đại gia nhất định yêu kháo tự kỷ học tập。",
+    "jyutping": "dou3 liu4 zeoi3 hau6 ， daai6 gaa1 jat1 ding6 jiu3 kaau3 zi6 gei2 hok6 zaap6 。",
+    "viet": "Cuối cùng, mọi người đều phải dựa vào khả năng học tập của chính mình."
+  },
+  {
+    "simplified": "世界上的教育都让我失望。",
+    "traditional": "世界上的教育都讓我失望。",
+    "pinyin": "shìjiè shàng de jiàoyù dōu ràng wǒ shīwàng 。",
+    "english": "Education in the world let me down.",
+    "hanviet": "thế giới thướng đích giáo dục đô nhượng ngã thất vọng。",
+    "jyutping": "sai3 gaai3 soeng6 dik1 gaau3 juk6 dou1 joeng6 ngo5 sat1 mong6 。",
+    "viet": "Nền giáo dục trên thế giới làm tôi thất vọng."
+  },
+  {
+    "simplified": "选择什么是“对”或“错”是一项艰难的任务，我们却必须要完成它。",
+    "traditional": "選擇什麼是“對”或“錯”是一項艱難的任務，我們卻必須要完成它。",
+    "pinyin": "xuǎnzé shénme shì “ duì ” huò “ cuò ” shì yīxiàng jiānnán de rènwu ， wǒmen què bìxū yào wánchéng tā 。",
+    "english": "Choose what is \"right\" or \"wrong\" is a difficult task, but we have to finish it.",
+    "hanviet": "tuyển trạch thậm ma thị_đối_hoặc_thác_thị nhất hạng gian nan đích nhâm vụ，ngã môn khước tất tu yêu hoàn thành tha。",
+    "jyutping": "syun2 zaak6 sam6 mo1 si6 “ deoi3 ” waak6 “ co3 ” si6 jat1 hong6 gaan1 naan4 dik1 jam6 mou6 ， ngo5 mun4 koek3 bit1 seoi1 jiu3 jyun4 sing4 taa1 。",
+    "viet": "Việc lựa chọn điều gì là \"đúng\" hay \"sai\" là một nhiệm vụ khó khăn nhưng chúng ta phải thực hiện."
+  },
+  {
+    "simplified": "这样做的话什么都不会改变的。",
+    "traditional": "這樣做的話什麼都不會改變的。",
+    "pinyin": "zhèyàng zuò dehuà shénme dōu bùhuì gǎibiàn de 。",
+    "english": "To do so, then nothing will change.",
+    "hanviet": "giá dạng tố đích thoại thậm ma đô bất hội cải biến đích。",
+    "jyutping": "ze2 joeng6 zou6 dik1 waa6 sam6 mo1 dou1 bat1 wui5 goi2 bin3 dik1 。",
+    "viet": "Làm như vậy sẽ không thay đổi được gì."
+  },
+  {
+    "simplified": "这个要三十欧元。",
+    "traditional": "這個要三十歐元。",
+    "pinyin": "zhège yào sānshí ōuyuán 。",
+    "english": "To this thirty euros.",
+    "hanviet": "giá cá yêu tam thập âu nguyên。",
+    "jyutping": "ze2 go3 jiu3 saam1 sap6 au1 jyun4 。",
+    "viet": "Cái này có giá là ba mươi euro."
+  },
+  {
+    "simplified": "我一天赚一百欧元。",
+    "traditional": "我一天賺一百歐元。",
+    "pinyin": "wǒ yītiān zhuàn yībǎi ōuyuán 。",
+    "english": "One day I earn one hundred euros.",
+    "hanviet": "ngã nhất thiên trám nhất bách âu nguyên。",
+    "jyutping": "ngo5 jat1 tin1 zaan6 jat1 baak3 au1 jyun4 。",
+    "viet": "Tôi kiếm được 100 euro một ngày."
+  },
+  {
+    "simplified": "也许我会马上放弃然后去睡一觉。",
+    "traditional": "也許我會馬上放棄然後去睡一覺。",
+    "pinyin": "yěxǔ wǒhuì mǎshàng fàngqì ránhòu qù shuìyījué 。",
+    "english": "Maybe I'll give up and go to sleep right away.",
+    "hanviet": "dã hứa ngã hội mã thướng phóng khí nhiên hậu khứ, khử thuỵ nhất giáo。",
+    "jyutping": "jaa5 heoi2 ngo5 wui2 maa5 soeng6 fong3 hei3 jin4 hau6 heoi3 seoi6 jat1 gok3 。",
+    "viet": "Có lẽ tôi sẽ bỏ cuộc ngay và đi ngủ."
+  },
+  {
+    "simplified": "那是不会发生的。",
+    "traditional": "那是不會發生的。",
+    "pinyin": "nà shì bùhuì fāshēng de 。",
+    "english": "That it's not going to happen.",
+    "hanviet": "na thị bất hội phát sinh đích。",
+    "jyutping": "naa5 si6 bat1 wui5 faat3 sang1 dik1 。",
+    "viet": "Điều đó sẽ không xảy ra."
+  },
+  {
+    "simplified": "我会尽量不打扰你复习。",
+    "traditional": "我會盡量不打擾你復習。",
+    "pinyin": "wǒhuì jìnliàng bù dǎrǎo nǐ fùxí 。",
+    "english": "I'll try not to bother you review.",
+    "hanviet": "ngã hội tận lượng bất tá nhiễu nễ phục tập。",
+    "jyutping": "ngo5 wui2 zeon6 loeng6 bat1 daa2 jiu5 nei5 fuk6 zaap6 。",
+    "viet": "Tôi sẽ cố gắng hết sức để không làm ảnh hưởng đến việc học của bạn."
+  },
+  {
+    "simplified": "不要担心。",
+    "traditional": "不要擔心。",
+    "pinyin": "bùyào dānxīn 。",
+    "english": "do not worry.",
+    "hanviet": "bất yêu đảm, đam tâm。",
+    "jyutping": "bat1 jiu3 daam1 sam1 。",
+    "viet": "Đừng lo lắng."
+  },
+  {
+    "simplified": "我很想你。",
+    "traditional": "我很想你。",
+    "pinyin": "wǒ hěn xiǎng nǐ 。",
+    "english": "I miss you.",
+    "hanviet": "ngã ngận tưởng nễ。",
+    "jyutping": "ngo5 han2 soeng2 nei5 。",
+    "viet": "Tôi nhớ bạn nhiều lắm."
+  },
+  {
+    "simplified": "我明天回来的时候会跟他们联络。",
+    "traditional": "我明天迴來的時候會跟他們聯絡。",
+    "pinyin": "wǒ míngtiān huílai de shíhou huì gēn tāmen liánluò 。",
+    "english": "Come back tomorrow when I'll call them.",
+    "hanviet": "ngã minh thiên hồi lai đích thời hậu hội cân tha môn liên lạc。",
+    "jyutping": "ngo5 ming4 tin1 wui4 loi4 dik1 si4 hau6 wui2 gan1 taa1 mun4 lyun4 lok3 。",
+    "viet": "Tôi sẽ liên lạc với họ khi tôi quay lại vào ngày mai."
+  },
+  {
+    "simplified": "我一直都比较喜欢神秘一点的人物。",
+    "traditional": "我一直都比較喜歡神秘一點的人物。",
+    "pinyin": "wǒ yīzhí dōu bǐjiào xǐhuan shénmì yīdiǎn de rénwù 。",
+    "english": "I always prefer a little mysterious figure.",
+    "hanviet": "ngã nhất trực đô tỷ, bỉ giảo hỷ hoan thần bí nhất điểm đích nhân vật。",
+    "jyutping": "ngo5 jat1 zik6 dou1 bei2 gaau3 hei2 fun1 san4 bei3 jat1 dim2 dik1 jan4 mat6 。",
+    "viet": "Tôi luôn thích những người có chút bí ẩn."
+  },
+  {
+    "simplified": "你应该去睡觉了吧。",
+    "traditional": "你應該去睡覺瞭吧。",
+    "pinyin": "nǐ yīnggāi qù shuìjiào le ba 。",
+    "english": "You should go to bed now.",
+    "hanviet": "nễ ưng cai khứ, khử thuỵ giáo liễu ba。",
+    "jyutping": "nei5 jing1 goi1 heoi3 seoi6 gaau3 liu4 baa1 。",
+    "viet": "Bây giờ bạn nên đi ngủ."
+  },
+  {
+    "simplified": "我要走了。",
+    "traditional": "我要走瞭。",
+    "pinyin": "wǒyào zǒu le 。",
+    "english": "I'm leaving.",
+    "hanviet": "ngã yêu tẩu liễu。",
+    "jyutping": "ngo5 jiu3 zau2 liu4 。",
+    "viet": "Tôi đi đây."
+  },
+  {
+    "simplified": "我请他们再寄给我一张票。",
+    "traditional": "我請他們再寄給我一張票。",
+    "pinyin": "wǒ qǐng tāmen zàijì gěiwǒ yīzhāng piào 。",
+    "english": "I asked them to send me a ticket again.",
+    "hanviet": "ngã thỉnh tha môn tái ký cấp ngã nhất trương phiếu。",
+    "jyutping": "ngo5 cing2 taa1 mun4 zoi3 gei3 kap1 ngo5 jat1 zoeng1 piu3 。",
+    "viet": "Tôi yêu cầu họ gửi cho tôi một vé khác."
+  },
+  {
+    "simplified": "我不能活那种命。",
+    "traditional": "我不能活那種命。",
+    "pinyin": "wǒ bùnéng huó nàzhǒng mìng 。",
+    "english": "I can not live that kind of life.",
+    "hanviet": "ngã bất năng hoạt na chủng mệnh。",
+    "jyutping": "ngo5 bat1 nang4 wut6 naa5 zung2 ming6 。",
+    "viet": "Tôi không thể sống cuộc sống như thế được."
+  },
+  {
+    "simplified": "我曾经想过当个太空物理学家。",
+    "traditional": "我曾經想過當個太空物理學傢。",
+    "pinyin": "wǒ céngjīng xiǎngguò dāngge tàikōng wùlǐxuéjiā 。",
+    "english": "I have thought about when a space physicist.",
+    "hanviet": "ngã tằng, tăng kinh tưởng quá đương, đang cá thái không vật lý học gia。",
+    "jyutping": "ngo5 cang4 ging1 soeng2 gwo3 dong1 go3 taai3 hung1 mat6 lei5 hok6 gaa1 。",
+    "viet": "Tôi đã từng mơ ước trở thành một nhà vật lý vũ trụ."
+  },
+  {
+    "simplified": "我从来没喜欢过生物学。",
+    "traditional": "我從來沒喜歡過生物學。",
+    "pinyin": "wǒ cóngláiméi xǐhuan guò shēngwùxué 。",
+    "english": "I never liked biology.",
+    "hanviet": "ngã tòng, tùng lai một hỷ hoan quá sinh vật học。",
+    "jyutping": "ngo5 cung4 loi4 mut6 hei2 fun1 gwo3 sang1 mat6 hok6 。",
+    "viet": "Tôi chưa bao giờ thích môn sinh học."
+  },
+  {
+    "simplified": "可惜这是真的。",
+    "traditional": "可惜這是真的。",
+    "pinyin": "kěxī zhèshì zhēnde 。",
+    "english": "Unfortunately, this is true.",
+    "hanviet": "khả tích giá thị chân đích。",
+    "jyutping": "ho2 sik1 ze5 si6 zan1 dik1 。",
+    "viet": "Thật không may, điều này lại đúng."
+  },
+  {
+    "simplified": "大部份的人觉得我疯了。",
+    "traditional": "大部份的人覺得我瘋瞭。",
+    "pinyin": "dàbùfen de rén juéde wǒ fēng le 。",
+    "english": "Most people think I'm crazy.",
+    "hanviet": "đại bộ phần đích nhân giáo đắc ngã phong liễu。",
+    "jyutping": "daai6 bou6 fan6 dik1 jan4 gok3 dak1 ngo5 fung1 liu4 。",
+    "viet": "Hầu hết mọi người đều nghĩ tôi điên."
+  },
+  {
+    "simplified": "不，我不是！你才是！",
+    "traditional": "不，我不是！你纔是！",
+    "pinyin": "bù ， wǒ bùshì ！ nǐ cái shì ！",
+    "english": "No, I am not! You're the one!",
+    "hanviet": "bất，ngã bất thị！nễ tài thị！",
+    "jyutping": "bat1 ， ngo5 bat1 si6 ！ nei5 coi4 si6 ！",
+    "viet": "Không, tôi không! Bạn mới là người đó!"
+  },
+  {
+    "simplified": "那是我该说的话!",
+    "traditional": "那是我該說的話!",
+    "pinyin": "nà shì wǒ gāi shuō dehuà !",
+    "english": "That I say!",
+    "hanviet": "na thị ngã cai thuyết, thuế đích thoại!",
+    "jyutping": "naa5 si6 ngo5 goi1 syut3 dik1 waa6 !",
+    "viet": "Đó chính là điều tôi nên nói!"
+  },
+  {
+    "simplified": "他在踢我！",
+    "traditional": "他在踢我！",
+    "pinyin": "tā zài tī wǒ ！",
+    "english": "He kicked me!",
+    "hanviet": "tha tại thích ngã！",
+    "jyutping": "taa1 zoi6 tek3 ngo5 ！",
+    "viet": "Anh ấy đá tôi!"
+  },
+  {
+    "simplified": "你肯定吗？",
+    "traditional": "你肯定嗎？",
+    "pinyin": "nǐ kěndìng mǎ ？",
+    "english": "Are you sure?",
+    "hanviet": "nễ khẳng định ma？",
+    "jyutping": "nei5 hang2 ding6 maa3 ？",
+    "viet": "Bạn có chắc không?"
+  },
+  {
+    "simplified": "那就表示有问题...",
+    "traditional": "那就錶示有問題...",
+    "pinyin": "nà jiù biǎoshì yǒu wèntí ...",
+    "english": "It means there is a problem ...",
+    "hanviet": "na tựu biểu thị hữu vấn đề...",
+    "jyutping": "naa5 zau6 biu1 si6 jau5 man6 tai4 ...",
+    "viet": "Điều đó có nghĩa là có vấn đề..."
+  },
+  {
+    "simplified": "哦！有一只蝴蝶！",
+    "traditional": "哦！有一隻蝴蝶！",
+    "pinyin": "o ！ yǒu yīzhī húdié ！",
+    "english": "Oh! A butterfly!",
+    "hanviet": "nga！hữu nhất chích hồ điệp！",
+    "jyutping": "ngo4 ！ jau5 jat1 zek3 wu4 dip6 ！",
+    "viet": "Ồ! Có một con bướm kìa!"
+  },
+  {
+    "simplified": "赶快!",
+    "traditional": "趕快!",
+    "pinyin": "gǎnkuài !",
+    "english": "hurry up!",
+    "hanviet": "cản khoái!",
+    "jyutping": "gon2 faai3 !",
+    "viet": "nhanh lên!"
+  },
+  {
+    "simplified": "如果我可以像那样的话...",
+    "traditional": "如果我可以像那樣的話...",
+    "pinyin": "rúguǒ wǒ kěyǐ xiàng nàyàngdehuà ...",
+    "english": "If I could be like that's the case ...",
+    "hanviet": "như quả ngã khả dĩ tượng na dạng đích thoại...",
+    "jyutping": "jyu4 gwo2 ngo5 ho2 ji5 zoeng6 naa5 joeng6 dik1 waa6 ...",
+    "viet": "Nếu tôi có thể được như thế..."
+  },
+  {
+    "simplified": "你是在跟我开玩笑吧？！",
+    "traditional": "你是在跟我開玩笑吧？！",
+    "pinyin": "nǐ shì zài gēn wǒ kāiwánxiào ba ？ ！",
+    "english": "You're kidding me, right? !",
+    "hanviet": "nễ thị tại cân ngã khai ngoạn tiếu ba？！",
+    "jyutping": "nei5 si6 zoi6 gan1 ngo5 hoi1 waan4 siu3 baa1 ？ ！",
+    "viet": "Bạn đang đùa tôi đấy à?!"
+  },
+  {
+    "simplified": "我长大后想当国王。",
+    "traditional": "我長大後想當國王。",
+    "pinyin": "wǒ zhǎngdà hòu xiǎngdāng guówáng 。",
+    "english": "I grew up to be a king.",
+    "hanviet": "ngã trường đại hậu tưởng đương, đang quốc vương。",
+    "jyutping": "ngo5 zoeng2 daai6 hau6 soeng2 dong1 gwok3 wong4 。",
+    "viet": "Khi lớn lên, tôi muốn trở thành một vị vua."
+  },
+  {
+    "simplified": "我好胖哦。",
+    "traditional": "我好胖哦。",
+    "pinyin": "wǒ hào pàng o 。",
+    "english": "Oh, I'm so fat.",
+    "hanviet": "ngã hảo bàn nga。",
+    "jyutping": "ngo5 hou2 bun6 ngo4 。",
+    "viet": "Tôi béo quá."
+  },
+  {
+    "simplified": "那又怎样?",
+    "traditional": "那又怎樣?",
+    "pinyin": "nà yòu zěnyàng ?",
+    "english": "So what?",
+    "hanviet": "na hựu chẩm dạng?",
+    "jyutping": "naa5 jau6 zam2 joeng6 ?",
+    "viet": "Vậy thì sao?"
+  },
+  {
+    "simplified": "我要把他射下来。",
+    "traditional": "我要把他射下來。",
+    "pinyin": "wǒyào bǎ tā shèxiàlái 。",
+    "english": "I'm going to shoot him down.",
+    "hanviet": "ngã yêu bả tha xạ hạ lai。",
+    "jyutping": "ngo5 jiu3 baa2 taa1 se6 haa6 loi4 。",
+    "viet": "Tôi sẽ bắn hạ hắn."
+  },
+  {
+    "simplified": "那是因为妳是女生。",
+    "traditional": "那是因為妳是女生。",
+    "pinyin": "nà shì yīnwèi nǎishì nǚshēng 。",
+    "english": "That's because u are girls.",
+    "hanviet": "na thị nhân vi nhĩ thị nữ sinh。",
+    "jyutping": "naa5 si6 jan1 wai6 妳 si6 neoi5 sang1 。",
+    "viet": "Bởi vì bạn là con gái."
+  },
+  {
+    "simplified": "我会不高兴，但我不会自杀。",
+    "traditional": "我會不高興，但我不會自殺。",
+    "pinyin": "wǒhuì bù gāoxìng ， dàn wǒ bùhuì zìshā 。",
+    "english": "I will not be happy, but I will not commit suicide.",
+    "hanviet": "ngã hội bất cao hưng，đãn ngã bất hội tự sát。",
+    "jyutping": "ngo5 wui2 bat1 gou1 hing3 ， daan6 ngo5 bat1 wui5 zi6 saat3 。",
+    "viet": "Tôi có thể không vui, nhưng tôi sẽ không tự tử."
+  },
+  {
+    "simplified": "以前读高中的时候﹐我每天早上六点起床。",
+    "traditional": "以前讀高中的時候﹐我每天早上六點起床。",
+    "pinyin": "yǐqián dú gāozhòng de shíhou ﹐ wǒ měitiān zǎoshang liùdiǎn qǐchuáng 。",
+    "english": "Time before high school, I get up at six every morning.",
+    "hanviet": "dĩ tiền đậu cao trung đích thời hậu_ngã mỗi thiên tảo thướng lục điểm khởi sàng。",
+    "jyutping": "ji5 cin4 duk6 gou1 zung1 dik1 si4 hau6 ﹐ ngo5 mui5 tin1 zou2 soeng6 luk6 dim2 hei2 cong4 。",
+    "viet": "Khi tôi còn học trung học, tôi thường thức dậy lúc sáu giờ sáng mỗi ngày."
+  },
+  {
+    "simplified": "你问这个干什么?",
+    "traditional": "你問這個幹什麼?",
+    "pinyin": "nǐwèn zhège gànshénme ?",
+    "english": "Why do you ask?",
+    "hanviet": "nễ vấn giá cá cán thậm ma?",
+    "jyutping": "nei5 man6 ze2 go3 gon3 sap6 mo1 ?",
+    "viet": "Tại sao bạn lại hỏi điều này?"
+  },
+  {
+    "simplified": "你待了多久?",
+    "traditional": "你待瞭多久?",
+    "pinyin": "nǐ dài le duōjiǔ ?",
+    "english": "How long have you?",
+    "hanviet": "nễ đãi liễu đa cửu?",
+    "jyutping": "nei5 doi6 liu4 do1 gau2 ?",
+    "viet": "Bạn ở lại bao lâu?"
+  },
+  {
+    "simplified": "我不知道它是从哪里来的。",
+    "traditional": "我不知道它是從哪裏來的。",
+    "pinyin": "wǒ bù zhīdào tā shìcóng nǎlǐ lái de 。",
+    "english": "I do not know where it came from.",
+    "hanviet": "ngã bất tri đạo tha thị tòng, tùng nả, na lý lai đích。",
+    "jyutping": "ngo5 bat1 zi1 dou6 taa1 si6 cung4 naa5 leoi5 loi4 dik1 。",
+    "viet": "Tôi không biết nó đến từ đâu."
+  },
+  {
+    "simplified": "这个不重要。",
+    "traditional": "這個不重要。",
+    "pinyin": "zhège bù zhòngyào 。",
+    "english": "This is not important.",
+    "hanviet": "giá cá bất trùng yêu。",
+    "jyutping": "ze2 go3 bat1 zung6 jiu3 。",
+    "viet": "Điều này không quan trọng."
+  },
+  {
+    "simplified": "哪里有问题?",
+    "traditional": "哪裡有問題?",
+    "pinyin": "nǎlǐ yǒu wèntí ?",
+    "english": "Where there are problems?",
+    "hanviet": "nả, na lý hữu vấn đề?",
+    "jyutping": "naa5 leoi5 jau5 man6 tai4 ?",
+    "viet": "Có chuyện gì vậy?"
+  },
+  {
+    "simplified": "不要再把我当成“正常” 人!",
+    "traditional": "不要再把我當成“正常” 人!",
+    "pinyin": "bùyào zài bǎ wǒ dàngchéng “ zhèngcháng ”   rén !",
+    "english": "Not treat me as \"normal\" people!",
+    "hanviet": "bất yêu tái bả ngã đương, đang thành_chinh thường_ nhân!",
+    "jyutping": "bat1 jiu3 zoi3 baa2 ngo5 dong3 sing4 “ zing3 soeng4 ”   jan4 !",
+    "viet": "Đừng đối xử với tôi như một người \"bình thường\" nữa!"
+  },
+  {
+    "simplified": "所有被发明的都是真的。",
+    "traditional": "所有被發明的都是真的。",
+    "pinyin": "suǒyǒu bèi fāmíng de dōu shì zhēnde 。",
+    "english": "All were invented is true.",
+    "hanviet": "sở hữu bị phát minh đích đô thị chân đích。",
+    "jyutping": "so2 jau5 bei6 faat3 ming4 dik1 dou1 si6 zan1 dik1 。",
+    "viet": "Mọi thứ được phát minh đều là có thật."
+  },
+  {
+    "simplified": "感到惊讶、感到惊奇就是明白的开始。",
+    "traditional": "感到驚訝、感到驚奇就是明白的開始。",
+    "pinyin": "gǎndào jīngyà  gǎndào jīngqí jiùshì míngbai de kāishǐ 。",
+    "english": "Surprise, surprise is beginning to understand.",
+    "hanviet": "cảm đáo kinh ngạc、cảm đáo kinh cơ tựu thị minh bạch đích khai thuỷ。",
+    "jyutping": "gam2 dou3 ging1 ngaa6 、 gam2 dou3 ging1 kei4 zau6 si6 ming4 baak6 dik1 hoi1 ci2 。",
+    "viet": "Ngạc nhiên và kinh ngạc là khởi đầu của sự hiểu biết."
+  },
+  {
+    "simplified": "宇宙毫无疑问是无限的。",
+    "traditional": "宇宙毫無疑問是無限的。",
+    "pinyin": "yǔzhòu háowúyíwèn shì wúxiàn de 。",
+    "english": "There is no doubt the universe is infinite.",
+    "hanviet": "vũ trụ hào vô nghi vấn thị vô hạn đích。",
+    "jyutping": "jyu5 zau6 hou4 mou4 ji4 man6 si6 mou4 haan6 dik1 。",
+    "viet": "Vũ trụ chắc chắn là vô hạn."
+  },
+  {
+    "simplified": "要变得完美，她就是少了一个缺点。",
+    "traditional": "要變得完美，她就是少瞭一個缺點。",
+    "pinyin": "yào biànde wánměi ， tā jiùshì shǎo le yīgè quēdiǎn 。",
+    "english": "To be perfect, she is less of a drawback.",
+    "hanviet": "yêu biến đắc hoàn mỹ，tha tựu thị thiểu liễu nhất cá khuyết điểm。",
+    "jyutping": "jiu3 bin3 dak1 jyun4 mei5 ， taa1 zau6 si6 siu2 liu4 jat1 go3 kyut3 dim2 。",
+    "viet": "Để trở nên hoàn hảo, cô ấy chỉ cần bớt đi một khuyết điểm."
+  },
+  {
+    "simplified": "然而，相反的理论往往也是真的。",
+    "traditional": "然而，相反的理論往往也是真的。",
+    "pinyin": "ránér ， xiāngfǎn de lǐlùn wǎngwǎng yě shì zhēnde 。",
+    "english": "However, the opposite is often true theory.",
+    "hanviet": "nhiên nhi，tương phản đích lý luận vãng vãng dã thị chân đích。",
+    "jyutping": "jin4 ji4 ， soeng1 faan2 dik1 lei5 leon6 wong5 wong5 jaa5 si6 zan1 dik1 。",
+    "viet": "Tuy nhiên, lý thuyết ngược lại cũng thường đúng."
+  },
+  {
+    "simplified": "我们看东西不是看其实质，而是以我们的主观意识看它们的。",
+    "traditional": "我們看東西不是看其實質，而是以我們的主觀意識看它們的。",
+    "pinyin": "wǒmen kàn dōngxi bùshì kàn qíshízhì ， érshì yǐ wǒmen de zhǔguān yìshí kàn tāmen de 。",
+    "english": "We do not see the essence of things, but in our subjective consciousness to see them.",
+    "hanviet": "ngã môn khán đông tây bất thị khán kỳ thực chất，nhi thị dĩ ngã môn đích chủ, chúa quán ý thức khán tha môn đích。",
+    "jyutping": "ngo5 mun4 hon3 dung1 sai1 bat1 si6 hon3 kei4 sat6 zat1 ， ji4 si6 ji5 ngo5 mun4 dik1 zyu2 gun1 ji3 sik1 hon3 taa1 mun4 dik1 。",
+    "viet": "Chúng ta không nhìn nhận sự vật dựa trên bản chất của chúng mà dựa trên nhận thức chủ quan của mình."
+  },
+  {
+    "simplified": "世界就是一个疯子的囚笼。",
+    "traditional": "世界就是一個瘋子的囚籠。",
+    "pinyin": "shìjiè jiùshì yīgè fēngzi de qiúlóng 。",
+    "english": "The world is a crazy cage.",
+    "hanviet": "thế giới tựu thị nhất cá phong tử, tý đích tù lồng。",
+    "jyutping": "sai3 gaai3 zau6 si6 jat1 go3 fung1 zi2 dik1 cau4 lung4 。",
+    "viet": "Thế giới là nhà tù dành cho những kẻ điên."
+  },
+  {
+    "simplified": "我叫Jack。",
+    "traditional": "我叫Jack。",
+    "pinyin": "wǒ jiào jack 。",
+    "english": "My name is Jack.",
+    "hanviet": "ngã khiếu Jack。",
+    "jyutping": "ngo5 giu3 Jack 。",
+    "viet": "Tên tôi là Jack."
+  },
+  {
+    "simplified": "从来就没有徒劳的爱情。",
+    "traditional": "從來就沒有徒勞的愛情。",
+    "pinyin": "cónglái jiù méiyǒu túláo de àiqíng 。",
+    "english": "Never love in vain.",
+    "hanviet": "tòng, tùng lai tựu một hữu đồ lao, lạo đích ái tình。",
+    "jyutping": "cung4 loi4 zau6 mut6 jau5 tou4 lou4 dik1 oi3 cing4 。",
+    "viet": "Không bao giờ có tình yêu vô ích."
+  },
+  {
+    "simplified": "生活就是当你忙着进行你的计划时总有其他的事情发生。",
+    "traditional": "生活就是當你忙著進行你的計劃時總有其他的事情發生。",
+    "pinyin": "shēnghuó jiùshì dāngnǐmáng zhe jìnxíng nǐ de jìhuà shí zǒngyǒu qítā de shìqing fāshēng 。",
+    "english": "Life is when you are busy with your plan there are always other things to happen.",
+    "hanviet": "sinh hoạt tựu thị đương, đang nễ mang trước tiến hàng, hạng nễ đích kế hoạch thời tổng hữu kỳ tha đích sự tình phát sinh。",
+    "jyutping": "sang1 wut6 zau6 si6 dong1 nei5 mong4 zoek6 zeon3 hang4 nei5 dik1 gai3 waak6 si4 zung2 jau5 kei4 taa1 dik1 si6 cing4 faat3 sang1 。",
+    "viet": "Cuộc sống là có những điều khác xảy ra trong lúc bạn bận rộn lập kế hoạch."
+  },
+  {
+    "simplified": "没有欲望就等于拥有。",
+    "traditional": "沒有欲望就等於擁有。",
+    "pinyin": "méiyǒu yùwàng jiù děngyú yōngyǒu 。",
+    "english": "The same as having no desire.",
+    "hanviet": "một hữu dục vọng tựu đẳng ư ủng hữu。",
+    "jyutping": "mut6 jau5 juk6 mong6 zau6 dang2 jyu1 jung2 jau5 。",
+    "viet": "Không có ham muốn cũng giống như có ham muốn."
+  },
+  {
+    "simplified": "圣诞节快乐！",
+    "traditional": "聖誕節快樂！",
+    "pinyin": "shèngdànjié kuàilè ！",
+    "english": "Merry Christmas!",
+    "hanviet": "thánh đản tiết khoái lạc！",
+    "jyutping": "sing3 daan3 zit3 faai3 lok6 ！",
+    "viet": "Chúc mừng Giáng sinh!"
+  },
+  {
+    "simplified": "罗马不是一天建成的。",
+    "traditional": "羅馬不是一天建成的。",
+    "pinyin": "luómǎbushì yītiān jiànchéng de 。",
+    "english": "Rome was not built in a day.",
+    "hanviet": "la mã bất thị nhất thiên kiến thành đích。",
+    "jyutping": "lo4 maa5 bat1 si6 jat1 tin1 gin3 sing4 dik1 。",
+    "viet": "Rome không được xây dựng trong một ngày."
+  },
+  {
+    "simplified": "你是从哪个国家来的？",
+    "traditional": "你是從哪個國傢來的？",
+    "pinyin": "nǐ shìcóng nǎge guójiā lái de ？",
+    "english": "What country you come from?",
+    "hanviet": "nễ thị tòng, tùng nả, na cá quốc gia lai đích？",
+    "jyutping": "nei5 si6 cung4 naa5 go3 gwok3 gaa1 loi4 dik1 ？",
+    "viet": "Bạn đến từ nước nào?"
+  },
+  {
+    "simplified": "我已经看过这部电影了。",
+    "traditional": "我已經看過這部電影瞭。",
+    "pinyin": "wǒ yǐjīng kànguò zhèbù diànyǐng le 。",
+    "english": "I've seen the film.",
+    "hanviet": "ngã dĩ kinh khán quá giá bộ điện ảnh liễu。",
+    "jyutping": "ngo5 ji5 ging1 hon3 gwo3 ze2 bou6 din6 jing2 liu4 。",
+    "viet": "Tôi đã xem bộ phim này rồi."
+  },
+  {
+    "simplified": "在墨西哥，有很多平民窟。",
+    "traditional": "在墨西哥，有很多平民窟。",
+    "pinyin": "zài mòxīgē ， yǒu hěnduō píngmín kū 。",
+    "english": "In Mexico, there are many slums.",
+    "hanviet": "tại mặc tây ca，hữu ngận đa bình dân quật。",
+    "jyutping": "zoi6 mak6 sai1 go1 ， jau5 han2 do1 ping4 man4 fat1 。",
+    "viet": "Có rất nhiều khu ổ chuột ở Mexico."
+  },
+  {
+    "simplified": "这间房间朝向很好。",
+    "traditional": "這間房間朝嚮很好。",
+    "pinyin": "zhè jiān fángjiān cháoxiàng hěn hào 。",
+    "english": "This room toward the good.",
+    "hanviet": "giá gian phòng gian triều hướng ngận hảo。",
+    "jyutping": "ze2 gaan1 fong4 gaan1 ciu4 hoeng3 han2 hou2 。",
+    "viet": "Phòng này có hướng rất đẹp."
+  },
+  {
+    "simplified": "你知不知道他们是谁?",
+    "traditional": "你知不知道他們是誰?",
+    "pinyin": "nǐ zhībuzhīdào tāmen shì shuí ?",
+    "english": "Do you know who they are?",
+    "hanviet": "nễ tri bất tri đạo tha môn thị thuỳ?",
+    "jyutping": "nei5 zi1 bat1 zi1 dou6 taa1 mun4 si6 seoi4 ?",
+    "viet": "Bạn có biết họ là ai không?"
+  },
+  {
+    "simplified": "你骗人！",
+    "traditional": "你騙人！",
+    "pinyin": "nǐ piànrén ！",
+    "english": "you're lying!",
+    "hanviet": "nễ phiến nhân！",
+    "jyutping": "nei5 pin3 jan4 ！",
+    "viet": "Bạn đang nói dối!"
+  },
+  {
+    "simplified": "他也会说法语。",
+    "traditional": "他也會說法語。",
+    "pinyin": "tā yě huì shuō fǎyǔ 。",
+    "english": "He will also speak French.",
+    "hanviet": "tha dã hội thuyết, thuế pháp ngữ。",
+    "jyutping": "taa1 jaa5 wui2 syut3 faat3 jyu5 。",
+    "viet": "Ông ấy cũng nói được tiếng Pháp."
+  },
+  {
+    "simplified": "我会说法语。",
+    "traditional": "我會說法語。",
+    "pinyin": "wǒhuì shuō fǎyǔ 。",
+    "english": "I can speak French.",
+    "hanviet": "ngã hội thuyết, thuế pháp ngữ。",
+    "jyutping": "ngo5 wui2 syut3 faat3 jyu5 。",
+    "viet": "Tôi nói tiếng Pháp."
+  },
+  {
+    "simplified": "我收到了请帖。",
+    "traditional": "我收到瞭請帖。",
+    "pinyin": "wǒ shōudào le qǐngtiě 。",
+    "english": "I received an invitation.",
+    "hanviet": "ngã thu đáo liễu thỉnh thiếp。",
+    "jyutping": "ngo5 sau1 dou3 liu4 ceng2 tip3 。",
+    "viet": "Tôi đã nhận được lời mời."
+  },
+  {
+    "simplified": "你住在哪里？",
+    "traditional": "你住在哪裏？",
+    "pinyin": "nǐ zhù zài nǎlǐ ？",
+    "english": "where do you live?",
+    "hanviet": "nễ trú, trụ tại nả, na lý？",
+    "jyutping": "nei5 zyu6 zoi6 naa5 leoi5 ？",
+    "viet": "Bạn sống ở đâu?"
+  },
+  {
+    "simplified": "你记不记得我们认识的那一天？",
+    "traditional": "你記不記得我們認識的那一天？",
+    "pinyin": "nǐ jì bù jìde wǒmen rènshi de nà yītiān ？",
+    "english": "Do you remember the day we know?",
+    "hanviet": "nễ ký bất ký đắc ngã môn nhận thức đích na nhất thiên？",
+    "jyutping": "nei5 gei3 bat1 gei3 dak1 ngo5 mun4 jing6 sik1 dik1 naa5 jat1 tin1 ？",
+    "viet": "Bạn có nhớ ngày chúng ta gặp nhau không?"
+  },
+  {
+    "simplified": "他住在这里吗？",
+    "traditional": "他住在這裏嗎？",
+    "pinyin": "tā zhù zài zhèlǐ mǎ ？",
+    "english": "He lives here?",
+    "hanviet": "tha trú, trụ tại giá lý ma？",
+    "jyutping": "taa1 zyu6 zoi6 ze2 leoi5 maa3 ？",
+    "viet": "Anh ấy sống ở đây phải không?"
+  },
+  {
+    "simplified": "火车站离这里不远。",
+    "traditional": "火車站離這裏不遠。",
+    "pinyin": "huǒchēzhàn lí zhèlǐ buyuǎn 。",
+    "english": "Train station not far from here.",
+    "hanviet": "hoả xa trạm ly giá lý bất viễn。",
+    "jyutping": "fo2 ce1 zaam6 lei4 ze2 leoi5 bat1 jyun5 。",
+    "viet": "Ga tàu không xa đây."
+  },
+  {
+    "simplified": "火车站在哪里?",
+    "traditional": "火車站在哪裏?",
+    "pinyin": "huǒchēzhàn zài nǎlǐ ?",
+    "english": "Where is the train station?",
+    "hanviet": "hoả xa trạm tại nả, na lý?",
+    "jyutping": "fo2 ce1 zaam6 zoi6 naa5 leoi5 ?",
+    "viet": "Nhà ga xe lửa ở đâu?"
+  },
+  {
+    "simplified": "正在下雹。",
+    "traditional": "正在下雹。",
+    "pinyin": "zhèngzài xiàbáo 。",
+    "english": "It is hail.",
+    "hanviet": "chinh tại hạ bạc。",
+    "jyutping": "zing3 zoi6 haa6 bok6 。",
+    "viet": "Trời đang mưa đá."
+  },
+  {
+    "simplified": "我爱你。",
+    "traditional": "我愛你。",
+    "pinyin": "wǒàinǐ 。",
+    "english": "I love you.",
+    "hanviet": "ngã ái nễ。",
+    "jyutping": "ngo5 oi3 nei5 。",
+    "viet": "Anh Yêu Em."
+  },
+  {
+    "simplified": "我喜欢旅行。",
+    "traditional": "我喜歡旅行。",
+    "pinyin": "wǒ xǐhuan lǚxíng 。",
+    "english": "I like to travel.",
+    "hanviet": "ngã hỷ hoan lữ hàng, hạng。",
+    "jyutping": "ngo5 hei2 fun1 leoi5 hang4 。",
+    "viet": "Tôi thích đi du lịch."
+  },
+  {
+    "simplified": "我很期待去旅游.",
+    "traditional": "我很期待去旅遊.",
+    "pinyin": "wǒ hěn qīdài qù lǚyóu .",
+    "english": "I'm looking forward to travel.",
+    "hanviet": "ngã ngận kỳ đãi khứ, khử lữ du.",
+    "jyutping": "ngo5 han2 kei4 doi6 heoi3 leoi5 jau4 .",
+    "viet": "Tôi thực sự mong chờ được đi du lịch."
+  },
+  {
+    "simplified": "我在旅行社工作.",
+    "traditional": "我在旅行社工作.",
+    "pinyin": "wǒ zài lǚxíngshè gōngzuò .",
+    "english": "I work in a travel agency.",
+    "hanviet": "ngã tại lữ hàng, hạng xã công tác.",
+    "jyutping": "ngo5 zoi6 leoi5 hang4 se5 gung1 zok3 .",
+    "viet": "Tôi làm việc tại một công ty du lịch."
+  },
+  {
+    "simplified": "我跟父母住在一起.",
+    "traditional": "我跟父母住在一起.",
+    "pinyin": "wǒ gēn fùmǔ zhùzàiyīqǐ .",
+    "english": "I live with parents.",
+    "hanviet": "ngã cân phụ mẫu trú, trụ tại nhất khởi.",
+    "jyutping": "ngo5 gan1 fu6 mou5 zyu6 zoi6 jat1 hei2 .",
+    "viet": "Tôi sống với bố mẹ."
+  },
+  {
+    "simplified": "他没有孩子.",
+    "traditional": "他沒有孩子.",
+    "pinyin": "tā méiyǒu háizi .",
+    "english": "He had no children.",
+    "hanviet": "tha một hữu hài tử, tý.",
+    "jyutping": "taa1 mut6 jau5 haai4 zi2 .",
+    "viet": "Ông ấy không có con."
+  },
+  {
+    "simplified": "这是我的妈妈.",
+    "traditional": "這是我的媽媽.",
+    "pinyin": "zhè shì wǒ de māma .",
+    "english": "This is my mother.",
+    "hanviet": "giá thị ngã đích má má.",
+    "jyutping": "ze5 si6 ngo5 dik1 maa1 maa1 .",
+    "viet": "Đây là mẹ tôi."
+  },
+  {
+    "simplified": "以后再讲。",
+    "traditional": "以後再講。",
+    "pinyin": "yǐhòu zài jiǎng 。",
+    "english": "After repeat.",
+    "hanviet": "dĩ hậu tái giảng。",
+    "jyutping": "ji5 hau6 zoi3 gong2 。",
+    "viet": "Chúng ta sẽ nói về điều đó sau."
+  },
+  {
+    "simplified": "我真的不知道。",
+    "traditional": "我真的不知道。",
+    "pinyin": "wǒ zhēnde bù zhīdào 。",
+    "english": "I really do not know.",
+    "hanviet": "ngã chân đích bất tri đạo。",
+    "jyutping": "ngo5 zan1 dik1 bat1 zi1 dou6 。",
+    "viet": "Tôi thực sự không biết."
+  },
+  {
+    "simplified": "人人都愿意相信美梦可以成真。",
+    "traditional": "人人都願意相信美夢可以成真。",
+    "pinyin": "rénrén dōu yuànyì xiāngxìn měimèng kěyǐ chéng zhēn 。",
+    "english": "Everyone willing to believe that dreams can come true.",
+    "hanviet": "nhân nhân đô nguyện ý tương tín mỹ mộng khả dĩ thành chân。",
+    "jyutping": "jan4 jan4 dou1 jyun6 ji3 soeng1 seon3 mei5 mung6 ho2 ji5 sing4 zan1 。",
+    "viet": "Mọi người đều muốn tin rằng giấc mơ có thể trở thành sự thật."
+  },
+  {
+    "simplified": "十分感谢。",
+    "traditional": "十分感謝。",
+    "pinyin": "shífēn gǎnxiè 。",
+    "english": "Very grateful.",
+    "hanviet": "thập phân cảm tạ。",
+    "jyutping": "sap6 fan1 gam2 ze6 。",
+    "viet": "Cảm ơn rất nhiều."
+  }
+]

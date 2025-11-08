@@ -6,15 +6,17 @@ import hskLevel2Data from '../data/hsk_level2.json';
 import tocflData from '../data/tocfl_level1.json';
 import kanjiGrade1Data from '../data/kanji_grade1.json';
 import kanjiGrade2Data from '../data/kanji_grade2.json';
+import sentencesData from '../data/sentances.json';
 import { useSettings } from '../context/SettingsContext';
 
 const HSK_DISABLED_STORAGE_KEY = '@kanji_viet_hsk_disabled';
 const TOCFL_DISABLED_STORAGE_KEY = '@kanji_viet_tocfl_disabled';
 const KANJI_DISABLED_STORAGE_KEY = '@kanji_viet_kanji_disabled';
+const SENTENCES_DISABLED_STORAGE_KEY = '@kanji_viet_sentences_disabled';
 
 export default function CharacterListScreen() {
     const { settings } = useSettings();
-    const [selectedType, setSelectedType] = useState('hsk'); // 'hsk', 'tocfl', 'kanji'
+    const [selectedType, setSelectedType] = useState('hsk'); // 'hsk', 'tocfl', 'kanji', 'sentences'
     const [selectedLevels, setSelectedLevels] = useState([1]);
     const [searchQuery, setSearchQuery] = useState('');
     const [characterFilter, setCharacterFilter] = useState('all'); // 'all', 'single', 'multi'
@@ -22,6 +24,7 @@ export default function CharacterListScreen() {
     const [disabledHSK, setDisabledHSK] = useState(new Set());
     const [disabledTOCFL, setDisabledTOCFL] = useState(new Set());
     const [disabledKanji, setDisabledKanji] = useState(new Set());
+    const [disabledSentences, setDisabledSentences] = useState(new Set());
 
     // Combine HSK level 1 and 2 data
     const hskData = useMemo(() => {
@@ -69,6 +72,12 @@ export default function CharacterListScreen() {
                     const kanjiArray = JSON.parse(kanjiSaved);
                     setDisabledKanji(new Set(kanjiArray));
                 }
+
+                const sentencesSaved = await AsyncStorage.getItem(SENTENCES_DISABLED_STORAGE_KEY);
+                if (sentencesSaved) {
+                    const sentencesArray = JSON.parse(sentencesSaved);
+                    setDisabledSentences(new Set(sentencesArray));
+                }
             } catch (error) {
                 console.error('Error loading disabled items:', error);
             }
@@ -83,12 +92,13 @@ export default function CharacterListScreen() {
                 await AsyncStorage.setItem(HSK_DISABLED_STORAGE_KEY, JSON.stringify(Array.from(disabledHSK)));
                 await AsyncStorage.setItem(TOCFL_DISABLED_STORAGE_KEY, JSON.stringify(Array.from(disabledTOCFL)));
                 await AsyncStorage.setItem(KANJI_DISABLED_STORAGE_KEY, JSON.stringify(Array.from(disabledKanji)));
+                await AsyncStorage.setItem(SENTENCES_DISABLED_STORAGE_KEY, JSON.stringify(Array.from(disabledSentences)));
             } catch (error) {
                 console.error('Error saving disabled items:', error);
             }
         };
         saveDisabledItems();
-    }, [disabledHSK, disabledTOCFL, disabledKanji]);
+    }, [disabledHSK, disabledTOCFL, disabledKanji, disabledSentences]);
 
     // Get available levels for selected type
     const getAvailableLevels = () => {
@@ -98,13 +108,19 @@ export default function CharacterListScreen() {
             return [1];
         } else if (selectedType === 'kanji') {
             return [1, 2, 3, 4, 5, 6];
+        } else if (selectedType === 'sentences') {
+            return []; // Sentences don't have levels
         }
         return [];
     };
 
     // Get filtered data based on selected type, levels, and search query
     const getFilteredData = () => {
-        if (!selectedType || selectedLevels.length === 0) {
+        if (!selectedType) {
+            return [];
+        }
+        // Sentences don't have levels, so don't require selectedLevels
+        if (selectedType !== 'sentences' && selectedLevels.length === 0) {
             return [];
         }
 
@@ -120,6 +136,11 @@ export default function CharacterListScreen() {
             }
         } else if (selectedType === 'kanji') {
             data = allKanji.filter(kanji => selectedLevels.includes(kanji.level));
+        } else if (selectedType === 'sentences') {
+            // Sentences don't have levels, so return all (excluding disabled)
+            data = (sentencesData || []).filter((sentence, index) =>
+                !disabledSentences.has(`sentence-${index}`)
+            );
         } else {
             return [];
         }
@@ -170,6 +191,24 @@ export default function CharacterListScreen() {
                         viet.includes(query) ||
                         english.includes(query);
                 });
+            } else if (selectedType === 'sentences') {
+                data = data.filter(item => {
+                    const simplified = (item.simplified || '').toLowerCase();
+                    const traditional = (item.traditional || '').toLowerCase();
+                    const pinyin = (item.pinyin || '').toLowerCase();
+                    const jyutping = (item.jyutping || '').toLowerCase();
+                    const hanviet = (item.hanviet || '').toLowerCase();
+                    const viet = (item.viet || '').toLowerCase();
+                    const english = (item.english || '').toLowerCase();
+
+                    return simplified.includes(query) ||
+                        traditional.includes(query) ||
+                        pinyin.includes(query) ||
+                        jyutping.includes(query) ||
+                        hanviet.includes(query) ||
+                        viet.includes(query) ||
+                        english.includes(query);
+                });
             }
         }
 
@@ -200,6 +239,10 @@ export default function CharacterListScreen() {
         }
         // Reset character filter when switching types
         setCharacterFilter('all');
+        // Reset selected levels for sentences (they don't have levels)
+        if (type === 'sentences') {
+            setSelectedLevels([]);
+        }
     };
 
     const toggleHSKDisabled = (wordId) => {
@@ -392,19 +435,85 @@ export default function CharacterListScreen() {
         );
     };
 
-    const renderItem = ({ item }) => {
+    const toggleSentenceDisabled = (sentenceIndex) => {
+        const newDisabled = new Set(disabledSentences);
+        const key = `sentence-${sentenceIndex}`;
+        if (newDisabled.has(key)) {
+            newDisabled.delete(key);
+        } else {
+            newDisabled.add(key);
+        }
+        setDisabledSentences(newDisabled);
+    };
+
+    const renderSentenceItem = ({ item, index }) => {
+        const sentenceKey = `sentence-${index}`;
+        const isDisabled = disabledSentences.has(sentenceKey);
+        return (
+            <View style={[styles.itemCard, isDisabled && styles.itemCardDisabled]}>
+                <Text selectable style={[styles.character, isDisabled && styles.characterDisabled, styles.sentenceText]}>
+                    {settings.mainDisplayMode === 'simplified'
+                        ? item.simplified
+                        : item.traditional}
+                </Text>
+                {item.simplified && item.traditional && item.simplified !== item.traditional && (
+                    <Text selectable style={styles.subText}>
+                        <Text selectable style={styles.labelText}>{settings.mainDisplayMode === 'simplified' ? 'Traditional: ' : 'Simplified: '}</Text>
+                        {settings.mainDisplayMode === 'simplified' ? item.traditional : item.simplified}
+                    </Text>
+                )}
+                {item.pinyin && (
+                    <Text selectable style={styles.subText}>
+                        <Text selectable style={styles.labelText}>Pinyin: </Text>{item.pinyin}
+                    </Text>
+                )}
+                {item.jyutping && (
+                    <Text selectable style={styles.subText}>
+                        <Text selectable style={styles.labelText}>Jyutping: </Text>{item.jyutping}
+                    </Text>
+                )}
+                {item.hanviet && (
+                    <Text selectable style={styles.subText}>
+                        <Text selectable style={styles.labelText}>Han Viet: </Text>{item.hanviet}
+                    </Text>
+                )}
+                {item.viet && (
+                    <Text selectable style={styles.subText}>
+                        <Text selectable style={styles.labelText}>Vietnamese: </Text>{item.viet}
+                    </Text>
+                )}
+                {item.english && (
+                    <Text selectable style={styles.subText}>
+                        <Text selectable style={styles.labelText}>English: </Text>{item.english}
+                    </Text>
+                )}
+                <TouchableOpacity
+                    style={[styles.disableButton, isDisabled && styles.enableButton]}
+                    onPress={() => toggleSentenceDisabled(index)}
+                >
+                    <Text style={styles.disableButtonText}>
+                        {isDisabled ? 'Enable' : 'Disable'}
+                    </Text>
+                </TouchableOpacity>
+            </View>
+        );
+    };
+
+    const renderItem = ({ item, index }) => {
         if (selectedType === 'hsk') {
             return renderHSKItem({ item });
         } else if (selectedType === 'tocfl') {
             return renderTOCFLItem({ item });
         } else if (selectedType === 'kanji') {
             return renderKanjiItem({ item });
+        } else if (selectedType === 'sentences') {
+            return renderSentenceItem({ item, index });
         }
         return null;
     };
 
     return (
-        <ScrollView 
+        <ScrollView
             style={styles.container}
             maximumZoomScale={3.0}
             minimumZoomScale={1.0}
@@ -413,154 +522,173 @@ export default function CharacterListScreen() {
             showsVerticalScrollIndicator={true}
         >
             <View style={styles.contentWrapper}>
-            <View style={styles.filterSection}>
-                <View style={styles.filterHeader}>
-                    <Text style={styles.sectionTitle}>Filter by Type</Text>
-                    <TouchableOpacity
-                        style={styles.toggleButton}
-                        onPress={() => setShowFilters(!showFilters)}
-                    >
-                        <Text style={styles.toggleButtonText}>
-                            {showFilters ? '▼' : '▶'} {showFilters ? 'Hide Filters' : 'Show Filters'}
-                        </Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.filterRow}>
-                    <TouchableOpacity
-                        style={[styles.filterButton, selectedType === 'hsk' && styles.filterButtonActive]}
-                        onPress={() => handleTypeSelect('hsk')}
-                    >
-                        <Text style={[styles.filterButtonText, selectedType === 'hsk' && styles.filterButtonTextActive]}>
-                            HSK
-                        </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[styles.filterButton, selectedType === 'tocfl' && styles.filterButtonActive]}
-                        onPress={() => handleTypeSelect('tocfl')}
-                    >
-                        <Text style={[styles.filterButtonText, selectedType === 'tocfl' && styles.filterButtonTextActive]}>
-                            TOCFL
-                        </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[styles.filterButton, selectedType === 'kanji' && styles.filterButtonActive]}
-                        onPress={() => handleTypeSelect('kanji')}
-                    >
-                        <Text style={[styles.filterButtonText, selectedType === 'kanji' && styles.filterButtonTextActive]}>
-                            Kanji
-                        </Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-
-            {showFilters && (
-                <>
-                    {selectedType && (
-                        <View style={styles.filterSection}>
-                            <Text style={styles.sectionTitle}>
-                                {selectedType === 'kanji' ? 'Filter by Grade' : 'Filter by Level'}
+                <View style={styles.filterSection}>
+                    <View style={styles.filterHeader}>
+                        <Text style={styles.sectionTitle}>Filter by Type</Text>
+                        <TouchableOpacity
+                            style={styles.toggleButton}
+                            onPress={() => setShowFilters(!showFilters)}
+                        >
+                            <Text style={styles.toggleButtonText}>
+                                {showFilters ? '▼' : '▶'} {showFilters ? 'Hide Filters' : 'Show Filters'}
                             </Text>
-                            <View style={styles.filterRow}>
-                                {getAvailableLevels().map(level => (
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.filterRow}>
+                        <TouchableOpacity
+                            style={[styles.filterButton, selectedType === 'hsk' && styles.filterButtonActive]}
+                            onPress={() => handleTypeSelect('hsk')}
+                        >
+                            <Text style={[styles.filterButtonText, selectedType === 'hsk' && styles.filterButtonTextActive]}>
+                                HSK
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[styles.filterButton, selectedType === 'tocfl' && styles.filterButtonActive]}
+                            onPress={() => handleTypeSelect('tocfl')}
+                        >
+                            <Text style={[styles.filterButtonText, selectedType === 'tocfl' && styles.filterButtonTextActive]}>
+                                TOCFL
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[styles.filterButton, selectedType === 'kanji' && styles.filterButtonActive]}
+                            onPress={() => handleTypeSelect('kanji')}
+                        >
+                            <Text style={[styles.filterButtonText, selectedType === 'kanji' && styles.filterButtonTextActive]}>
+                                Kanji
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[styles.filterButton, selectedType === 'sentences' && styles.filterButtonActive]}
+                            onPress={() => handleTypeSelect('sentences')}
+                        >
+                            <Text style={[styles.filterButtonText, selectedType === 'sentences' && styles.filterButtonTextActive]}>
+                                Sentences
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
+                {showFilters && (
+                    <>
+                        {selectedType && selectedType !== 'sentences' && (
+                            <View style={styles.filterSection}>
+                                <Text style={styles.sectionTitle}>
+                                    {selectedType === 'kanji' ? 'Filter by Grade' : 'Filter by Level'}
+                                </Text>
+                                <View style={styles.filterRow}>
+                                    {getAvailableLevels().map(level => (
+                                        <TouchableOpacity
+                                            key={level}
+                                            style={[styles.levelButton, selectedLevels.includes(level) && styles.levelButtonActive]}
+                                            onPress={() => toggleLevel(level)}
+                                        >
+                                            <Text style={[styles.levelButtonText, selectedLevels.includes(level) && styles.levelButtonTextActive]}>
+                                                {level}
+                                            </Text>
+                                        </TouchableOpacity>
+                                    ))}
+                                </View>
+                            </View>
+                        )}
+
+                        {(selectedType === 'hsk' || selectedType === 'tocfl') && (
+                            <View style={styles.filterSection}>
+                                <Text style={styles.sectionTitle}>Character Type</Text>
+                                <View style={styles.filterRow}>
                                     <TouchableOpacity
-                                        key={level}
-                                        style={[styles.levelButton, selectedLevels.includes(level) && styles.levelButtonActive]}
-                                        onPress={() => toggleLevel(level)}
+                                        style={[styles.levelButton, characterFilter === 'all' && styles.levelButtonActive]}
+                                        onPress={() => setCharacterFilter('all')}
                                     >
-                                        <Text style={[styles.levelButtonText, selectedLevels.includes(level) && styles.levelButtonTextActive]}>
-                                            {level}
+                                        <Text style={[styles.levelButtonText, characterFilter === 'all' && styles.levelButtonTextActive]}>
+                                            All
                                         </Text>
                                     </TouchableOpacity>
-                                ))}
-                            </View>
-                        </View>
-                    )}
-
-                    {(selectedType === 'hsk' || selectedType === 'tocfl') && (
-                        <View style={styles.filterSection}>
-                            <Text style={styles.sectionTitle}>Character Type</Text>
-                            <View style={styles.filterRow}>
-                                <TouchableOpacity
-                                    style={[styles.levelButton, characterFilter === 'all' && styles.levelButtonActive]}
-                                    onPress={() => setCharacterFilter('all')}
-                                >
-                                    <Text style={[styles.levelButtonText, characterFilter === 'all' && styles.levelButtonTextActive]}>
-                                        All
-                                    </Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity
-                                    style={[styles.levelButton, characterFilter === 'single' && styles.levelButtonActive]}
-                                    onPress={() => setCharacterFilter('single')}
-                                >
-                                    <Text style={[styles.levelButtonText, characterFilter === 'single' && styles.levelButtonTextActive]}>
-                                        Single
-                                    </Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity
-                                    style={[styles.levelButton, characterFilter === 'multi' && styles.levelButtonActive]}
-                                    onPress={() => setCharacterFilter('multi')}
-                                >
-                                    <Text style={[styles.levelButtonText, characterFilter === 'multi' && styles.levelButtonTextActive]}>
-                                        Multi
-                                    </Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    )}
-
-                    <View style={styles.filterSection}>
-                        <Text style={styles.sectionTitle}>Search</Text>
-                        <View style={styles.searchContainer}>
-                            <TextInput
-                                style={styles.searchInput}
-                                placeholder="Search characters, pinyin, translations..."
-                                value={searchQuery}
-                                onChangeText={setSearchQuery}
-                                placeholderTextColor="#999"
-                            />
-                            {searchQuery.length > 0 && (
-                                <TouchableOpacity
-                                    style={styles.clearSearchButton}
-                                    onPress={() => setSearchQuery('')}
-                                >
-                                    <Text style={styles.clearSearchButtonText}>✕</Text>
-                                </TouchableOpacity>
-                            )}
-                        </View>
-                    </View>
-
-
-                </>
-            )}
-
-            <View style={styles.listSection}>
-                <Text style={styles.sectionTitle}>
-                    {filteredData.length > 0
-                        ? `${filteredData.length} ${selectedType === 'kanji' ? 'Kanji' : 'Words'}`
-                        : 'Select type and level to view characters'}
-                </Text>
-                {filteredData.length > 0 && (
-                    <View style={styles.listContent}>
-                        {filteredData.map((item, index) => {
-                            let key;
-                            if (selectedType === 'hsk') {
-                                key = `hsk-${item.level}-${item.id}`;
-                            } else if (selectedType === 'tocfl') {
-                                key = `tocfl-${item.id}`;
-                            } else if (selectedType === 'kanji') {
-                                key = `kanji-${item.level}-${item.kanji}`;
-                            } else {
-                                key = `item-${index}`;
-                            }
-                            return (
-                                <View key={key}>
-                                    {renderItem({ item })}
+                                    <TouchableOpacity
+                                        style={[styles.levelButton, characterFilter === 'single' && styles.levelButtonActive]}
+                                        onPress={() => setCharacterFilter('single')}
+                                    >
+                                        <Text style={[styles.levelButtonText, characterFilter === 'single' && styles.levelButtonTextActive]}>
+                                            Single
+                                        </Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity
+                                        style={[styles.levelButton, characterFilter === 'multi' && styles.levelButtonActive]}
+                                        onPress={() => setCharacterFilter('multi')}
+                                    >
+                                        <Text style={[styles.levelButtonText, characterFilter === 'multi' && styles.levelButtonTextActive]}>
+                                            Multi
+                                        </Text>
+                                    </TouchableOpacity>
                                 </View>
-                            );
-                        })}
-                    </View>
+                            </View>
+                        )}
+
+                        <View style={styles.filterSection}>
+                            <Text style={styles.sectionTitle}>Search</Text>
+                            <View style={styles.searchContainer}>
+                                <TextInput
+                                    style={styles.searchInput}
+                                    placeholder="Search characters, pinyin, translations..."
+                                    value={searchQuery}
+                                    onChangeText={setSearchQuery}
+                                    placeholderTextColor="#999"
+                                />
+                                {searchQuery.length > 0 && (
+                                    <TouchableOpacity
+                                        style={styles.clearSearchButton}
+                                        onPress={() => setSearchQuery('')}
+                                    >
+                                        <Text style={styles.clearSearchButtonText}>✕</Text>
+                                    </TouchableOpacity>
+                                )}
+                            </View>
+                        </View>
+
+
+                    </>
                 )}
-            </View>
+
+                <View style={styles.listSection}>
+                    <Text style={styles.sectionTitle}>
+                        {filteredData.length > 0
+                            ? `${filteredData.length} ${selectedType === 'kanji' ? 'Kanji' : selectedType === 'sentences' ? 'Sentences' : 'Words'}`
+                            : selectedType === 'sentences' ? 'Select sentences type to view' : 'Select type and level to view characters'}
+                    </Text>
+                    {filteredData.length > 0 && (
+                        <View style={styles.listContent}>
+                            {filteredData.map((item, index) => {
+                                let key;
+                                if (selectedType === 'hsk') {
+                                    key = `hsk-${item.level}-${item.id}`;
+                                } else if (selectedType === 'tocfl') {
+                                    key = `tocfl-${item.id}`;
+                                } else if (selectedType === 'kanji') {
+                                    key = `kanji-${item.level}-${item.kanji}`;
+                                } else if (selectedType === 'sentences') {
+                                    // For sentences, use the index in the original array
+                                    const originalIndex = sentencesData.findIndex(
+                                        s => s.simplified === item.simplified && s.traditional === item.traditional
+                                    );
+                                    key = `sentence-${originalIndex}`;
+                                    return (
+                                        <View key={key}>
+                                            {renderItem({ item, index: originalIndex })}
+                                        </View>
+                                    );
+                                } else {
+                                    key = `item-${index}`;
+                                }
+                                return (
+                                    <View key={key}>
+                                        {renderItem({ item })}
+                                    </View>
+                                );
+                            })}
+                        </View>
+                    )}
+                </View>
             </View>
         </ScrollView>
     );
@@ -617,7 +745,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#282c34',
     },
     filterButtonText: {
-        fontSize: 16,
+        fontSize: 12,
         color: '#000',
         fontWeight: '600',
     },
@@ -753,6 +881,10 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 16,
         fontWeight: '600',
+    },
+    sentenceText: {
+        fontSize: 24,
+        lineHeight: 32,
     },
 });
 

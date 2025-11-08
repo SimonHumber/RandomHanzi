@@ -6,6 +6,7 @@ import HomeScreen from '../screens/HomeScreen';
 import KanjiScreen from '../screens/KanjiScreen';
 import HSKScreen from '../screens/HSKScreen';
 import TOCFLScreen from '../screens/TOCFLScreen';
+import SentencesScreen from '../screens/SentencesScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import CharacterListScreen from '../screens/CharacterListScreen';
 import TonesScreen from '../screens/TonesScreen';
@@ -47,6 +48,11 @@ export default function MainNavigator() {
             name="TOCFL"
             component={TOCFLScreen}
             options={{ title: 'TOCFL Vocabulary' }}
+          />
+          <Stack.Screen
+            name="Sentences"
+            component={SentencesScreen}
+            options={{ title: 'Sentence Practice' }}
           />
           <Stack.Screen
             name="Settings"

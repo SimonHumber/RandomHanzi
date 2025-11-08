@@ -137,6 +137,7 @@ export default function HSKScreen() {
       )}
       <ScrollView 
           style={styles.scrollView}
+          contentContainerStyle={styles.scrollContent}
           maximumZoomScale={3.0}
           minimumZoomScale={1.0}
           pinchZoomEnabled={true}
@@ -316,6 +317,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollView: { flex: 1, backgroundColor: '#f5f5f5' },
+  scrollContent: { paddingBottom: 50 },
   container: { padding: 15 },
   section: {
     backgroundColor: 'white',

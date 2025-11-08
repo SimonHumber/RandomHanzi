@@ -45,6 +45,17 @@ export default function HomeScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.menuButton}
+          onPress={() => navigation.navigate('Sentences')}
+        >
+          <Text style={styles.menuButtonIcon}>句</Text>
+          <Text style={styles.menuButtonText}>Sentence Practice</Text>
+          <Text style={styles.menuButtonDescription}>
+            Practice Chinese sentences with translations
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.menuButton}
           onPress={() => navigation.navigate('CharacterList')}
         >
           <Text style={styles.menuButtonIcon}>表</Text>
