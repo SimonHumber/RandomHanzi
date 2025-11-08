@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Process cmn_sen_db_2.csv and add jyutping, hanviet, and Vietnamese translations.
-Outputs JSON with: simplified, traditional, pinyin, english, hanviet, viet
-Only processes first 200 rows.
+Process cmn_sen_db_2.csv and add jyutping, hanviet, Vietnamese, and English translations.
+Outputs JSON with: simplified, traditional, pinyin, english, hanviet, viet, jyutping
+Only processes first 100 rows.
+Note: English translation is generated via Google Translate (ignores CSV English column).
 """
 
 import csv
@@ -18,7 +19,7 @@ from add_hanviet_from_csv import load_hanviet_csv, find_hanviet_reading_with_mul
 # Configuration
 CSV_FILE = "vocabCsv/cmn_sen_db_2.csv"
 HANVIET_CSV = "vocabCsv/hanviet.csv"
-OUTPUT_FILE = "mobile/data/cmn_sen_db_2_processed.json"
+OUTPUT_FILE = "mobile/data/sentances.json"
 SERVICE_ACCOUNT_FILE = "translateKey.json"
 PROJECT_ID = "first-presence-465319-p7"
 LOCATION = "global"
@@ -218,31 +219,59 @@ async def translate_to_vietnamese_async(text, executor):
     return await loop.run_in_executor(executor, translate_to_vietnamese_sync, text)
 
 
+def translate_to_english_sync(text):
+    """Translate Traditional Chinese to English using Google Translate v3 (synchronous)"""
+    try:
+        response = translate_client.translate_text(
+            request={
+                "parent": parent,
+                "contents": [text],
+                "mime_type": "text/plain",
+                "source_language_code": "zh-TW",  # Traditional Chinese
+                "target_language_code": "en",  # English
+            }
+        )
+        return response.translations[0].translated_text
+    except Exception as e:
+        print(f"  ⚠️  English translation error for '{text[:20]}...': {e}")
+        return ""
+
+
+async def translate_to_english_async(text, executor):
+    """Translate Traditional Chinese to English asynchronously"""
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(executor, translate_to_english_sync, text)
+
+
 async def process_batch_async(batch_items, executor, batch_num, total_batches):
-    """Process a batch of items asynchronously - jyutping and translations in parallel"""
+    """Process a batch of items asynchronously - jyutping, Vietnamese, and English translations in parallel"""
     print(
         f"🚀 Batch {batch_num + 1}/{total_batches}: Processing {len(batch_items)} items..."
     )
 
-    # Create tasks for both jyutping and translations
+    # Create tasks for jyutping and translations (Vietnamese and English)
     tasks = []
     for item in batch_items:
         jyutping_task = get_jyutping_async(item["traditional"])
         vietnamese_task = translate_to_vietnamese_async(item["traditional"], executor)
-        tasks.append((item, jyutping_task, vietnamese_task))
+        english_task = translate_to_english_async(item["traditional"], executor)
+        tasks.append((item, jyutping_task, vietnamese_task, english_task))
 
     # Wait for all tasks to complete
     results = []
-    for item, jyutping_task, vietnamese_task in tasks:
-        jyutping, vietnamese = await asyncio.gather(jyutping_task, vietnamese_task)
+    for item, jyutping_task, vietnamese_task, english_task in tasks:
+        jyutping, vietnamese, english = await asyncio.gather(
+            jyutping_task, vietnamese_task, english_task
+        )
 
-        # Store jyutping and vietnamese in output
+        # Store jyutping, vietnamese, and english in output
         item["jyutping"] = jyutping if jyutping else ""
         item["viet"] = vietnamese if vietnamese else ""
+        item["english"] = english if english else ""
 
         results.append(item)
         print(
-            f"  ✅ [{item['index']}/{MAX_ROWS}] {item['simplified'][:20]}... -> {vietnamese[:30] if vietnamese else 'ERROR'}..."
+            f"  ✅ [{item['index']}/{MAX_ROWS}] {item['simplified'][:20]}... -> EN: {english[:30] if english else 'ERROR'}... | VI: {vietnamese[:30] if vietnamese else 'ERROR'}..."
         )
 
     print(f"✅ Batch {batch_num + 1}/{total_batches} completed!\n")
@@ -268,25 +297,27 @@ with open(CSV_FILE, "r", encoding="utf-8") as f:
         simplified = row.get("simplified", "").strip()
         traditional = row.get("traditional", "").strip()
         pinyin = row.get("pinyin", "").strip()
-        english = row.get("english", "").strip()
+        # Note: Ignoring English from CSV - will be generated via Google Translate
 
         # Get Han Viet with preserved punctuation and Latin characters
         hanviet = get_hanviet_with_preserved_chars(traditional, hanviet_data)
 
-        # Store item for async batch processing (jyutping + translation)
+        # Store item for async batch processing (jyutping + translations)
         item_data = {
             "index": row_count,
             "simplified": simplified,
             "traditional": traditional,
             "pinyin": pinyin,
-            "english": english,
             "hanviet": hanviet,
             "jyutping": "",  # Will be filled by async processing
             "viet": "",  # Will be filled by async translation
+            "english": "",  # Will be filled by async translation (ignoring CSV English)
         }
         items_to_process.append(item_data)
 
-print(f"\n🌐 Starting async processing (jyutping + translations) in batches of 5...")
+print(
+    f"\n🌐 Starting async processing (jyutping + Vietnamese + English translations) in batches of 5..."
+)
 print(f"   Total items to process: {len(items_to_process)}\n")
 
 
