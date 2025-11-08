@@ -515,9 +515,6 @@ export default function CharacterListScreen() {
     return (
         <ScrollView
             style={styles.container}
-            maximumZoomScale={3.0}
-            minimumZoomScale={1.0}
-            pinchZoomEnabled={true}
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={true}
         >
