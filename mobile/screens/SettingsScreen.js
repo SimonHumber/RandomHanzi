@@ -6,7 +6,14 @@ export default function SettingsScreen() {
   const { settings, updateSetting } = useSettings();
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView 
+        style={styles.container}
+        maximumZoomScale={3.0}
+        minimumZoomScale={1.0}
+        pinchZoomEnabled={true}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={true}
+    >
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Chinese Translation Settings</Text>
         <Text style={styles.sectionDescription}>

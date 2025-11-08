@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, FlatList, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, TextInput } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import hskLevel1Data from '../data/hsk_level1.json';
 import hskLevel2Data from '../data/hsk_level2.json';
@@ -404,7 +404,15 @@ export default function CharacterListScreen() {
     };
 
     return (
-        <View style={styles.container}>
+        <ScrollView 
+            style={styles.container}
+            maximumZoomScale={3.0}
+            minimumZoomScale={1.0}
+            pinchZoomEnabled={true}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={true}
+        >
+            <View style={styles.contentWrapper}>
             <View style={styles.filterSection}>
                 <View style={styles.filterHeader}>
                     <Text style={styles.sectionTitle}>Filter by Type</Text>
@@ -532,25 +540,29 @@ export default function CharacterListScreen() {
                         : 'Select type and level to view characters'}
                 </Text>
                 {filteredData.length > 0 && (
-                    <FlatList
-                        data={filteredData}
-                        renderItem={renderItem}
-                        keyExtractor={(item, index) => {
+                    <View style={styles.listContent}>
+                        {filteredData.map((item, index) => {
+                            let key;
                             if (selectedType === 'hsk') {
-                                return `hsk-${item.level}-${item.id}`;
+                                key = `hsk-${item.level}-${item.id}`;
                             } else if (selectedType === 'tocfl') {
-                                return `tocfl-${item.id}`;
+                                key = `tocfl-${item.id}`;
                             } else if (selectedType === 'kanji') {
-                                return `kanji-${item.level}-${item.kanji}`;
+                                key = `kanji-${item.level}-${item.kanji}`;
+                            } else {
+                                key = `item-${index}`;
                             }
-                            return `item-${index}`;
-                        }}
-                        contentContainerStyle={styles.listContent}
-                        showsVerticalScrollIndicator={true}
-                    />
+                            return (
+                                <View key={key}>
+                                    {renderItem({ item })}
+                                </View>
+                            );
+                        })}
+                    </View>
                 )}
             </View>
-        </View>
+            </View>
+        </ScrollView>
     );
 }
 
@@ -558,6 +570,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#f5f5f5',
+    },
+    contentWrapper: {
+        flex: 1,
     },
     filterSection: {
         backgroundColor: 'white',

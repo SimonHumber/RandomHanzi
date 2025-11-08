@@ -111,14 +111,6 @@ export default function TOCFLScreen() {
     return filteredWords.length;
   };
 
-  const disableAllWords = () => {
-    const allWordIds = new Set(tocflData.map(word => word.id));
-    setDisabledWords(allWordIds);
-  };
-
-  const enableAllWords = () => {
-    setDisabledWords(new Set());
-  };
 
   const copyToClipboard = async (text) => {
     await Clipboard.setStringAsync(text);
@@ -136,7 +128,14 @@ export default function TOCFLScreen() {
           <Text style={styles.copyIndicatorText}>Copied!</Text>
         </View>
       )}
-      <ScrollView style={styles.scrollView}>
+      <ScrollView 
+          style={styles.scrollView}
+          maximumZoomScale={3.0}
+          minimumZoomScale={1.0}
+          pinchZoomEnabled={true}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={true}
+      >
         <View style={styles.container}>
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Select TOCFL Levels:</Text>
@@ -299,14 +298,6 @@ export default function TOCFLScreen() {
             </View>
           )}
 
-          <View style={styles.section}>
-            <TouchableOpacity style={[styles.bulkButton, styles.enableAllButton]} onPress={enableAllWords} disabled={disabledWords.size === 0}>
-              <Text style={styles.bulkButtonText}>Enable All</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.bulkButton, styles.disableAllButton]} onPress={disableAllWords} disabled={getAvailableWordsCount() === 0}>
-              <Text style={styles.bulkButtonText}>Disable All</Text>
-            </TouchableOpacity>
-          </View>
         </View>
       </ScrollView>
     </View>
@@ -354,10 +345,6 @@ const styles = StyleSheet.create({
   disableButton: { backgroundColor: '#ff6b6b', padding: 12, borderRadius: 8, alignItems: 'center' },
   enableButton: { backgroundColor: '#51cf66' },
   disableButtonText: { color: 'white', fontSize: 14, fontWeight: 'bold' },
-  bulkButton: { padding: 12, borderRadius: 8, alignItems: 'center', marginBottom: 10 },
-  enableAllButton: { backgroundColor: '#51cf66' },
-  disableAllButton: { backgroundColor: '#ff6b6b' },
-  bulkButtonText: { color: 'white', fontSize: 14, fontWeight: 'bold' },
   copyIndicator: {
     position: 'absolute',
     top: 60,
