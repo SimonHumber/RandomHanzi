@@ -4,13 +4,15 @@ import * as Clipboard from 'expo-clipboard';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import tocflData from '../data/tocfl_level1.json';
 import { useSettings } from '../context/SettingsContext';
+import { usePractice } from '../context/PracticeContext';
 
 const TOCFL_DISABLED_STORAGE_KEY = '@kanji_viet_tocfl_disabled';
 
 export default function TOCFLScreen() {
   const { settings } = useSettings();
+  const { currentTOCFLWord, setCurrentTOCFLWord } = usePractice();
   const [selectedLevels, setSelectedLevels] = useState([1]);
-  const [currentWord, setCurrentWord] = useState(null);
+  const currentWord = currentTOCFLWord;
   const [showVietnameseTranslation, setShowVietnameseTranslation] = useState(false);
   const [showEnglish, setShowEnglish] = useState(false);
   const [showTraditional, setShowTraditional] = useState(false);
@@ -68,7 +70,7 @@ export default function TOCFLScreen() {
 
     const randomIndex = Math.floor(Math.random() * filteredWords.length);
     const selectedWord = filteredWords[randomIndex];
-    setCurrentWord(selectedWord);
+    setCurrentTOCFLWord(selectedWord);
     setShowVietnameseTranslation(false);
     setShowEnglish(false);
     setShowTraditional(false);

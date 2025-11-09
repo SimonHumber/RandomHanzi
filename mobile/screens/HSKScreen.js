@@ -5,13 +5,15 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import hskLevel1Data from '../data/hsk_level1.json';
 import hskLevel2Data from '../data/hsk_level2.json';
 import { useSettings } from '../context/SettingsContext';
+import { usePractice } from '../context/PracticeContext';
 
 const HSK_DISABLED_STORAGE_KEY = '@kanji_viet_hsk_disabled';
 
 export default function HSKScreen() {
   const { settings } = useSettings();
+  const { currentHSKWord, setCurrentHSKWord } = usePractice();
   const [selectedLevels, setSelectedLevels] = useState([1]);
-  const [currentWord, setCurrentWord] = useState(null);
+  const currentWord = currentHSKWord;
   const [showVietnameseTranslation, setShowVietnameseTranslation] = useState(false);
   const [showEnglish, setShowEnglish] = useState(false);
   const [showTraditional, setShowTraditional] = useState(false);
@@ -76,7 +78,7 @@ export default function HSKScreen() {
 
     const randomIndex = Math.floor(Math.random() * filteredWords.length);
     const selectedWord = filteredWords[randomIndex];
-    setCurrentWord(selectedWord);
+    setCurrentHSKWord(selectedWord);
     setShowVietnameseTranslation(false);
     setShowEnglish(false);
     setShowTraditional(false);

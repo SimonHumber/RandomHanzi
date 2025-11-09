@@ -4,12 +4,13 @@ import * as Clipboard from 'expo-clipboard';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import sentencesData from '../data/sentances.json';
 import { useSettings } from '../context/SettingsContext';
+import { usePractice } from '../context/PracticeContext';
 
 const SENTENCES_DISABLED_STORAGE_KEY = '@kanji_viet_sentences_disabled';
 
 export default function SentencesScreen() {
   const { settings } = useSettings();
-  const [currentSentence, setCurrentSentence] = useState(null);
+  const { currentSentence, setCurrentSentence } = usePractice();
   const [showVietnameseTranslation, setShowVietnameseTranslation] = useState(false);
   const [showEnglish, setShowEnglish] = useState(false);
   const [showTraditional, setShowTraditional] = useState(false);

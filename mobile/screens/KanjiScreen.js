@@ -5,13 +5,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import kanjiGrade1Data from '../data/kanji_grade1.json';
 import kanjiGrade2Data from '../data/kanji_grade2.json';
 import { useSettings } from '../context/SettingsContext';
+import { usePractice } from '../context/PracticeContext';
 
 const KANJI_DISABLED_STORAGE_KEY = '@kanji_viet_kanji_disabled';
 
 export default function KanjiScreen() {
   const { settings } = useSettings();
+  const { currentKanji, setCurrentKanji } = usePractice();
   const [selectedGrades, setSelectedGrades] = useState([1]);
-  const [currentKanji, setCurrentKanji] = useState(null);
   const [showOnyomi, setShowOnyomi] = useState(false);
   const [showKunyomi, setShowKunyomi] = useState(false);
   const [showVietnamese, setShowVietnamese] = useState(false);
