@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList, TextInput } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import hskLevel1Data from '../data/hsk_level1.json';
@@ -550,7 +550,10 @@ export default function CharacterListScreen() {
         );
     };
 
-    const filteredData = getFilteredData();
+    // Memoize filtered data to prevent recalculation on every render
+    const filteredData = useMemo(() => {
+        return getFilteredData();
+    }, [selectedType, selectedLevels, characterFilter, enabledFilter, searchQuery, disabledHSK, disabledTOCFL, disabledKanji, disabledSentences, hskData, tocflData, allKanji, sentencesData]);
 
     const renderItem = ({ item, index }) => {
         if (selectedType === 'hsk') {
@@ -584,8 +587,19 @@ export default function CharacterListScreen() {
         return `item-${index}`;
     };
 
-    const ListHeaderComponent = () => (
-        <>
+    // Memoize the search input handler to prevent recreation
+    const handleSearchChange = useCallback((text) => {
+        setSearchQuery(text);
+    }, []);
+
+    const handleClearSearch = useCallback(() => {
+        setSearchQuery('');
+    }, []);
+
+
+    return (
+        <View style={styles.container}>
+            {/* Type filter buttons - always visible */}
             <View style={styles.filterSection}>
                 <View style={styles.filterHeader}>
                     <Text style={styles.sectionTitle}>Filter by Type</Text>
@@ -634,6 +648,7 @@ export default function CharacterListScreen() {
                 </View>
             </View>
 
+            {/* Additional filters - collapsible */}
             {showFilters && (
                 <>
                     {selectedType && selectedType !== 'sentences' && (
@@ -719,6 +734,7 @@ export default function CharacterListScreen() {
                         </View>
                     </View>
 
+                    {/* Search input - rendered outside FlatList to prevent focus loss on web */}
                     <View style={styles.filterSection}>
                         <Text style={styles.sectionTitle}>Search</Text>
                         <View style={styles.searchContainer}>
@@ -726,13 +742,13 @@ export default function CharacterListScreen() {
                                 style={styles.searchInput}
                                 placeholder="Search characters, pinyin, translations..."
                                 value={searchQuery}
-                                onChangeText={setSearchQuery}
+                                onChangeText={handleSearchChange}
                                 placeholderTextColor="#999"
                             />
                             {searchQuery.length > 0 && (
                                 <TouchableOpacity
                                     style={styles.clearSearchButton}
-                                    onPress={() => setSearchQuery('')}
+                                    onPress={handleClearSearch}
                                 >
                                     <Text style={styles.clearSearchButtonText}>✕</Text>
                                 </TouchableOpacity>
@@ -742,35 +758,33 @@ export default function CharacterListScreen() {
                 </>
             )}
 
-            <View style={styles.listSection}>
-                <Text style={styles.sectionTitle}>
-                    {filteredData.length > 0
-                        ? `${filteredData.length} ${selectedType === 'kanji' ? 'Kanji' : selectedType === 'sentences' ? 'Sentences' : 'Words'}`
-                        : selectedType === 'sentences' ? 'Select sentences type to view' : 'Select type and level to view characters'}
-                </Text>
-            </View>
-        </>
-    );
-
-    return (
-        <View style={styles.container}>
+            {/* List content */}
             {filteredData.length > 0 ? (
                 <FlatList
                     data={filteredData}
                     renderItem={renderItem}
                     keyExtractor={getItemKey}
-                    ListHeaderComponent={ListHeaderComponent}
+                    ListHeaderComponent={() => (
+                        <View style={styles.listSection}>
+                            <Text style={styles.sectionTitle}>
+                                {filteredData.length} {selectedType === 'kanji' ? 'Kanji' : selectedType === 'sentences' ? 'Sentences' : 'Words'}
+                            </Text>
+                        </View>
+                    )}
                     contentContainerStyle={styles.listContent}
                     showsVerticalScrollIndicator={true}
                     removeClippedSubviews={true}
                     initialNumToRender={10}
                     maxToRenderPerBatch={10}
                     windowSize={10}
+                    style={styles.listContainer}
                 />
             ) : (
-                <>
-                    <ListHeaderComponent />
-                </>
+                <View style={styles.listSection}>
+                    <Text style={styles.sectionTitle}>
+                        {selectedType === 'sentences' ? 'Select sentence type to view' : 'Select type and level to view characters'}
+                    </Text>
+                </View>
             )}
         </View>
     );
@@ -850,8 +864,10 @@ const styles = StyleSheet.create({
     levelButtonTextActive: {
         color: '#fff',
     },
-    listSection: {
+    listContainer: {
         flex: 1,
+    },
+    listSection: {
         padding: 15,
     },
     listContent: {
