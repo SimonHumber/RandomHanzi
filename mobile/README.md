@@ -1,4 +1,4 @@
-# Kanji Viet Mobile App
+# Random Hanzi
 
 A React Native mobile app for practicing Chinese characters (Kanji), HSK, and TOCFL vocabulary with Vietnamese translations.
 

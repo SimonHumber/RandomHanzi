@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Kanji Viet Mobile",
-    "slug": "kanji-viet-mobile",
+    "name": "Random Hanzi",
+    "slug": "random-hanzi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,7 +13,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.simonexpo.kanjivietmobile",
+      "bundleIdentifier": "com.simonexpo.randomhanzi",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
@@ -24,7 +24,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.simonexpo.kanjivietmobile"
+      "package": "com.simonexpo.randomhanzi"
     },
     "web": {
       "favicon": "./assets/favicon.png"

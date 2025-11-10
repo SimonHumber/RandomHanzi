@@ -5,7 +5,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>
       <View style={styles.header}>
-        <Text style={styles.title}>Kanji Viet Mobile</Text>
+        <Text style={styles.title}>Random Hanzi</Text>
         <Text style={styles.subtitle}>Learn Chinese characters and vocabulary</Text>
       </View>
 

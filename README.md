@@ -1,4 +1,4 @@
-# Kanji Viet Learning Platform
+# Random Hanzi
 
 A comprehensive learning platform for Chinese characters, HSK, and TOCFL vocabulary with Vietnamese translations.
 

@@ -32,7 +32,7 @@ export default function MainNavigator() {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{ title: 'Kanji Viet Mobile' }}
+            options={{ title: 'Random Hanzi' }}
           />
           <Stack.Screen
             name="Kanji"
