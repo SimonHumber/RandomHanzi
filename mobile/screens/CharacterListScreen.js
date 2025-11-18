@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, FlatList, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, FlatList, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import hskLevel1Data from '../data/hsk_level1.json';
 import hskLevel2Data from '../data/hsk_level2.json';
@@ -598,7 +598,11 @@ export default function CharacterListScreen() {
 
 
     return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView 
+            style={styles.container}
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
+        >
             {/* Type filter buttons - always visible */}
             <View style={styles.filterSection}>
                 <View style={styles.filterHeader}>
@@ -786,7 +790,7 @@ export default function CharacterListScreen() {
                     </Text>
                 </View>
             )}
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 
