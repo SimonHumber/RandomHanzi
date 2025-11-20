@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-Process cmn_sen_db_2.csv and add jyutping, hanviet, Vietnamese, and English translations.
-Outputs JSON with: simplified, traditional, pinyin, english, hanviet, viet, jyutping
+Process cmn_sen_db_2.csv and add jyutping, hanviet, Vietnamese, English, and Cantonese translations.
+Outputs JSON with: traditionalChinese, simplifiedChinese, writtenCantonese, pinyin, jyutping (standard),
+cantoneseJyutping, hanviet, viet, english
 Only processes first 100 rows.
 Note: English translation is generated via Google Translate (ignores CSV English column).
 """
+
+# TODO rerun this script to add cantonese translations
 
 import csv
 import json
@@ -243,35 +246,81 @@ async def translate_to_english_async(text, executor):
     return await loop.run_in_executor(executor, translate_to_english_sync, text)
 
 
+def translate_to_cantonese_sync(text):
+    """Translate Traditional Chinese to Written Cantonese using Google Translate v3 (synchronous)"""
+    try:
+        response = translate_client.translate_text(
+            request={
+                "parent": parent,
+                "contents": [text],
+                "mime_type": "text/plain",
+                "source_language_code": "zh-TW",  # Traditional Chinese
+                "target_language_code": "yue",  # Cantonese (Written)
+            }
+        )
+        return response.translations[0].translated_text
+    except Exception as e:
+        print(f"  ⚠️  Cantonese translation error for '{text[:20]}...': {e}")
+        return ""
+
+
+async def translate_to_cantonese_async(text, executor):
+    """Translate Traditional Chinese to Written Cantonese asynchronously"""
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(executor, translate_to_cantonese_sync, text)
+
+
 async def process_batch_async(batch_items, executor, batch_num, total_batches):
-    """Process a batch of items asynchronously - jyutping, Vietnamese, and English translations in parallel"""
+    """Process a batch of items asynchronously - jyutping, Vietnamese, English, and Cantonese translations in parallel"""
     print(
         f"🚀 Batch {batch_num + 1}/{total_batches}: Processing {len(batch_items)} items..."
     )
 
-    # Create tasks for jyutping and translations (Vietnamese and English)
+    # Create tasks for jyutping and translations (Vietnamese, English, and Cantonese)
     tasks = []
     for item in batch_items:
-        jyutping_task = get_jyutping_async(item["traditional"])
+        jyutping_task = get_jyutping_async(
+            item["traditional"]
+        )  # Standard jyutping for Traditional Chinese
         vietnamese_task = translate_to_vietnamese_async(item["traditional"], executor)
         english_task = translate_to_english_async(item["traditional"], executor)
-        tasks.append((item, jyutping_task, vietnamese_task, english_task))
+        cantonese_task = translate_to_cantonese_async(item["traditional"], executor)
+        tasks.append(
+            (item, jyutping_task, vietnamese_task, english_task, cantonese_task)
+        )
 
     # Wait for all tasks to complete
     results = []
-    for item, jyutping_task, vietnamese_task, english_task in tasks:
-        jyutping, vietnamese, english = await asyncio.gather(
-            jyutping_task, vietnamese_task, english_task
+    for item, jyutping_task, vietnamese_task, english_task, cantonese_task in tasks:
+        jyutping, vietnamese, english, written_cantonese = await asyncio.gather(
+            jyutping_task, vietnamese_task, english_task, cantonese_task
         )
 
-        # Store jyutping, vietnamese, and english in output
-        item["jyutping"] = jyutping if jyutping else ""
+        # Get Jyutping for written Cantonese if we have it
+        cantonese_jyutping = ""
+        if written_cantonese:
+            cantonese_jyutping_task = get_jyutping_async(written_cantonese)
+            cantonese_jyutping = await cantonese_jyutping_task
+            cantonese_jyutping = cantonese_jyutping if cantonese_jyutping else ""
+
+        # Store all fields in output with new structure
+        item["traditionalChinese"] = item["traditional"]
+        item["simplifiedChinese"] = item["simplified"]
+        item["writtenCantonese"] = written_cantonese if written_cantonese else ""
+        item["jyutping"] = (
+            jyutping if jyutping else ""
+        )  # Standard jyutping for Traditional Chinese
+        item["cantoneseJyutping"] = cantonese_jyutping  # Jyutping for written Cantonese
         item["viet"] = vietnamese if vietnamese else ""
         item["english"] = english if english else ""
 
+        # Remove old field names
+        del item["traditional"]
+        del item["simplified"]
+
         results.append(item)
         print(
-            f"  ✅ [{item['index']}/{MAX_ROWS}] {item['simplified'][:20]}... -> EN: {english[:30] if english else 'ERROR'}... | VI: {vietnamese[:30] if vietnamese else 'ERROR'}..."
+            f"  ✅ [{item['index']}/{MAX_ROWS}] {item['simplifiedChinese'][:20]}... -> EN: {english[:30] if english else 'ERROR'}... | VI: {vietnamese[:30] if vietnamese else 'ERROR'}... | Cantonese: {written_cantonese[:20] if written_cantonese else 'ERROR'}..."
         )
 
     print(f"✅ Batch {batch_num + 1}/{total_batches} completed!\n")
@@ -309,14 +358,16 @@ with open(CSV_FILE, "r", encoding="utf-8") as f:
             "traditional": traditional,
             "pinyin": pinyin,
             "hanviet": hanviet,
-            "jyutping": "",  # Will be filled by async processing
+            "jyutping": "",  # Will be filled by async processing (standard jyutping for Traditional Chinese)
+            "writtenCantonese": "",  # Will be filled by async translation
+            "cantoneseJyutping": "",  # Will be filled by async processing (jyutping for written Cantonese)
             "viet": "",  # Will be filled by async translation
             "english": "",  # Will be filled by async translation (ignoring CSV English)
         }
         items_to_process.append(item_data)
 
 print(
-    f"\n🌐 Starting async processing (jyutping + Vietnamese + English translations) in batches of 5..."
+    f"\n🌐 Starting async processing (jyutping + Vietnamese + English + Cantonese translations) in batches of 5..."
 )
 print(f"   Total items to process: {len(items_to_process)}\n")
 

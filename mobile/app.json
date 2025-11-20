@@ -1,44 +1,18 @@
 {
   "expo": {
-    "name": "Random Hanzi",
-    "slug": "random-hanzi",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+    "extra": {
+      "eas": {
+        "projectId": "f329f0b2-51b0-46d3-b808-faeeaf0b1f3a"
+      }
     },
     "ios": {
-      "supportsTablet": true,
       "bundleIdentifier": "com.simonexpo.randomhanzi",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true,
       "package": "com.simonexpo.randomhanzi"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "d3bb1a04-12f7-4381-8f30-87eb8f85e9cd"
-      }
-    },
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
-    "updates": {
-      "url": "https://u.expo.dev/d3bb1a04-12f7-4381-8f30-87eb8f85e9cd"
     }
   }
 }
