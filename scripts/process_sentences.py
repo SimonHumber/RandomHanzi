@@ -5,16 +5,16 @@ Outputs JSON with: traditionalChinese, simplifiedChinese, writtenCantonese, piny
 cantoneseJyutping, hanviet, viet, english
 Only processes first 100 rows.
 Converts simplified Chinese to traditional Chinese using Google Translate.
+source: https://github.com/Destaq/chinese-sentence-miner
 """
 
 # TODO rerun this script to add cantonese translations
 
 import csv
 import json
-import asyncio
 import re
+import time
 import pinyin_jyutping
-from concurrent.futures import ThreadPoolExecutor
 from google.cloud import translate_v3 as translate
 from google.oauth2 import service_account
 from add_hanviet_from_csv import load_hanviet_csv, find_hanviet_reading_with_multiple
@@ -27,7 +27,11 @@ SERVICE_ACCOUNT_FILE = "translateKey.json"
 PROJECT_ID = "first-presence-465319-p7"
 LOCATION = "global"
 MAX_ROWS = None  # Set to None to process all matching rows
-FILTER_TOCFL_LEVEL = 1  # Only process TOCFL Level 1 sentences
+FILTER_TOCFL_LEVEL = (
+    None  # Set to None to process all rows, or specify a level number to filter
+)
+BATCH_SIZE = 50  # Number of sentences to process per batch
+BATCH_GAP = 0.5  # Delay in seconds between batches
 
 print("🔧 Initializing components...")
 
@@ -184,8 +188,8 @@ def get_hanviet_with_preserved_chars(traditional, hanviet_data):
     return "".join(final_parts)
 
 
-def get_jyutping_sync(text):
-    """Get Jyutping romanization (synchronous)"""
+def get_jyutping(text):
+    """Get Jyutping romanization"""
     try:
         return jyutping_instance.jyutping(text, tone_numbers=True, spaces=True)
     except Exception as e:
@@ -193,179 +197,124 @@ def get_jyutping_sync(text):
         return ""
 
 
-async def get_jyutping_async(text):
-    """Get Jyutping romanization asynchronously"""
-    loop = asyncio.get_event_loop()
-    return await loop.run_in_executor(None, get_jyutping_sync, text)
-
-
-def translate_to_vietnamese_sync(text):
-    """Translate Traditional Chinese to Vietnamese using Google Translate v3 (synchronous)"""
+def translate_to_vietnamese_batch(texts):
+    """Translate multiple Traditional Chinese texts to Vietnamese using Google Translate v3 (batch)"""
     try:
         response = translate_client.translate_text(
             request={
                 "parent": parent,
-                "contents": [text],
+                "contents": texts,
                 "mime_type": "text/plain",
                 "source_language_code": "zh-TW",  # Traditional Chinese
                 "target_language_code": "vi",  # Vietnamese
             }
         )
-        return response.translations[0].translated_text
+        return [trans.translated_text for trans in response.translations]
     except Exception as e:
-        print(f"  ⚠️  Translation error for '{text[:20]}...': {e}")
-        return ""
+        print(f"  ⚠️  Vietnamese batch translation error: {e}")
+        return [""] * len(texts)
 
 
-async def translate_to_vietnamese_async(text, executor):
-    """Translate Traditional Chinese to Vietnamese asynchronously"""
-    loop = asyncio.get_event_loop()
-    return await loop.run_in_executor(executor, translate_to_vietnamese_sync, text)
-
-
-def translate_simplified_to_traditional_sync(text):
-    """Convert Simplified Chinese to Traditional Chinese using Google Translate v3 (synchronous)"""
+def translate_simplified_to_traditional_batch(texts):
+    """Convert multiple Simplified Chinese texts to Traditional Chinese using Google Translate v3 (batch)"""
     try:
         response = translate_client.translate_text(
             request={
                 "parent": parent,
-                "contents": [text],
+                "contents": texts,
                 "mime_type": "text/plain",
                 "source_language_code": "zh-CN",  # Simplified Chinese
                 "target_language_code": "zh-TW",  # Traditional Chinese
             }
         )
-        return response.translations[0].translated_text
+        return [trans.translated_text for trans in response.translations]
     except Exception as e:
-        print(
-            f"  ⚠️  Simplified->Traditional conversion error for '{text[:20]}...': {e}"
-        )
-        return ""
+        print(f"  ⚠️  Simplified->Traditional batch conversion error: {e}")
+        return [""] * len(texts)
 
 
-async def translate_simplified_to_traditional_async(text, executor):
-    """Convert Simplified Chinese to Traditional Chinese asynchronously"""
-    loop = asyncio.get_event_loop()
-    return await loop.run_in_executor(
-        executor, translate_simplified_to_traditional_sync, text
-    )
-
-
-def translate_to_english_sync(text):
-    """Translate Traditional Chinese to English using Google Translate v3 (synchronous)"""
+def translate_to_english_batch(texts):
+    """Translate multiple Traditional Chinese texts to English using Google Translate v3 (batch)"""
     try:
         response = translate_client.translate_text(
             request={
                 "parent": parent,
-                "contents": [text],
+                "contents": texts,
                 "mime_type": "text/plain",
                 "source_language_code": "zh-TW",  # Traditional Chinese
                 "target_language_code": "en",  # English
             }
         )
-        return response.translations[0].translated_text
+        return [trans.translated_text for trans in response.translations]
     except Exception as e:
-        print(f"  ⚠️  English translation error for '{text[:20]}...': {e}")
-        return ""
+        print(f"  ⚠️  English batch translation error: {e}")
+        return [""] * len(texts)
 
 
-async def translate_to_english_async(text, executor):
-    """Translate Traditional Chinese to English asynchronously"""
-    loop = asyncio.get_event_loop()
-    return await loop.run_in_executor(executor, translate_to_english_sync, text)
-
-
-def translate_to_cantonese_sync(text):
-    """Translate Traditional Chinese to Written Cantonese using Google Translate v3 (synchronous)"""
+def translate_to_cantonese_batch(texts):
+    """Translate multiple Traditional Chinese texts to Written Cantonese using Google Translate v3 (batch)"""
     try:
         response = translate_client.translate_text(
             request={
                 "parent": parent,
-                "contents": [text],
+                "contents": texts,
                 "mime_type": "text/plain",
                 "source_language_code": "zh-TW",  # Traditional Chinese
                 "target_language_code": "yue",  # Cantonese (Written)
             }
         )
-        return response.translations[0].translated_text
+        return [trans.translated_text for trans in response.translations]
     except Exception as e:
-        print(f"  ⚠️  Cantonese translation error for '{text[:20]}...': {e}")
-        return ""
+        print(f"  ⚠️  Cantonese batch translation error: {e}")
+        return [""] * len(texts)
 
 
-async def translate_to_cantonese_async(text, executor):
-    """Translate Traditional Chinese to Written Cantonese asynchronously"""
-    loop = asyncio.get_event_loop()
-    return await loop.run_in_executor(executor, translate_to_cantonese_sync, text)
-
-
-async def process_batch_async(batch_items, executor, batch_num, total_batches):
-    """Process a batch of items asynchronously - convert to traditional, jyutping, Vietnamese, English, and Cantonese translations in parallel"""
+def process_batch(batch_items, batch_num, total_batches):
+    """Process a batch of items - convert to traditional, jyutping, Vietnamese, English, and Cantonese translations using batch API calls"""
     print(
         f"🚀 Batch {batch_num + 1}/{total_batches}: Processing {len(batch_items)} items..."
     )
 
-    # Create tasks for conversion and translations
-    tasks = []
-    for item in batch_items:
-        # Convert simplified to traditional first
-        traditional_task = translate_simplified_to_traditional_async(
-            item["simplified"], executor
-        )
-        tasks.append((item, traditional_task))
+    # Step 1: Batch convert simplified to traditional (1 API call for all)
+    simplified_texts = [item["simplified"] for item in batch_items]
+    traditional_texts = translate_simplified_to_traditional_batch(simplified_texts)
 
-    # Wait for traditional conversion
-    traditional_results = []
-    for item, traditional_task in tasks:
-        traditional = await traditional_task
-        item["traditional"] = traditional
-        # Generate hanviet now that we have traditional
-        item["hanviet"] = get_hanviet_with_preserved_chars(traditional, hanviet_data)
-        traditional_results.append(item)
-
-    # Now process jyutping and translations with traditional text
-    translation_tasks = []
-    for item in traditional_results:
-        jyutping_task = get_jyutping_async(
-            item["traditional"]
-        )  # Standard jyutping for Traditional Chinese
-        vietnamese_task = translate_to_vietnamese_async(item["traditional"], executor)
-        english_task = translate_to_english_async(item["traditional"], executor)
-        cantonese_task = translate_to_cantonese_async(item["traditional"], executor)
-        translation_tasks.append(
-            (item, jyutping_task, vietnamese_task, english_task, cantonese_task)
+    # Step 2: Process hanviet for all traditional texts
+    for i, item in enumerate(batch_items):
+        item["traditional"] = traditional_texts[i]
+        item["hanviet"] = get_hanviet_with_preserved_chars(
+            traditional_texts[i], hanviet_data
         )
 
-    # Wait for all tasks to complete
+    # Step 3: Batch translate to Vietnamese, English, and Cantonese (3 API calls total)
+    vietnamese_texts = translate_to_vietnamese_batch(traditional_texts)
+    english_texts = translate_to_english_batch(traditional_texts)
+    written_cantonese_texts = translate_to_cantonese_batch(traditional_texts)
+
+    # Step 4: Process jyutping for traditional texts (local)
+    jyutping_results = [get_jyutping(item["traditional"]) for item in batch_items]
+
+    # Step 5: Process jyutping for written Cantonese texts (local)
+    cantonese_jyutping_results = [
+        get_jyutping(written_cantonese) if written_cantonese else ""
+        for written_cantonese in written_cantonese_texts
+    ]
+
+    # Step 6: Combine all results
     results = []
-    for (
-        item,
-        jyutping_task,
-        vietnamese_task,
-        english_task,
-        cantonese_task,
-    ) in translation_tasks:
-        jyutping, vietnamese, english, written_cantonese = await asyncio.gather(
-            jyutping_task, vietnamese_task, english_task, cantonese_task
-        )
-
-        # Get Jyutping for written Cantonese if we have it
-        cantonese_jyutping = ""
-        if written_cantonese:
-            cantonese_jyutping_task = get_jyutping_async(written_cantonese)
-            cantonese_jyutping = await cantonese_jyutping_task
-            cantonese_jyutping = cantonese_jyutping if cantonese_jyutping else ""
-
+    for i, item in enumerate(batch_items):
         # Store all fields in output with new structure
         item["traditionalChinese"] = item["traditional"]
         item["simplifiedChinese"] = item["simplified"]
-        item["writtenCantonese"] = written_cantonese if written_cantonese else ""
-        item["jyutping"] = (
-            jyutping if jyutping else ""
-        )  # Standard jyutping for Traditional Chinese
-        item["cantoneseJyutping"] = cantonese_jyutping  # Jyutping for written Cantonese
-        item["viet"] = vietnamese if vietnamese else ""
-        item["english"] = english if english else ""
+        item["writtenCantonese"] = (
+            written_cantonese_texts[i] if written_cantonese_texts[i] else ""
+        )
+        item["jyutping"] = jyutping_results[i] if jyutping_results[i] else ""
+        item["cantoneseJyutping"] = (
+            cantonese_jyutping_results[i] if cantonese_jyutping_results[i] else ""
+        )
+        item["viet"] = vietnamese_texts[i] if vietnamese_texts[i] else ""
+        item["english"] = english_texts[i] if english_texts[i] else ""
 
         # Remove old field names
         del item["traditional"]
@@ -373,7 +322,7 @@ async def process_batch_async(batch_items, executor, batch_num, total_batches):
 
         results.append(item)
         print(
-            f"  ✅ [{item['index']}/{MAX_ROWS}] {item['simplifiedChinese'][:20]}... -> EN: {english[:30] if english else 'ERROR'}... | VI: {vietnamese[:30] if vietnamese else 'ERROR'}... | Cantonese: {written_cantonese[:20] if written_cantonese else 'ERROR'}..."
+            f"  ✅ [{item['index']}] {item['simplifiedChinese'][:20]}... -> EN: {english_texts[i][:30] if english_texts[i] else 'ERROR'}... | VI: {vietnamese_texts[i][:30] if vietnamese_texts[i] else 'ERROR'}... | Cantonese: {written_cantonese_texts[i][:20] if written_cantonese_texts[i] else 'ERROR'}..."
         )
 
     print(f"✅ Batch {batch_num + 1}/{total_batches} completed!\n")
@@ -381,7 +330,7 @@ async def process_batch_async(batch_items, executor, batch_num, total_batches):
 
 
 print(f"\n📖 Reading CSV file: {CSV_FILE}...")
-if FILTER_TOCFL_LEVEL:
+if FILTER_TOCFL_LEVEL is not None:
     print(f"🔍 Filtering for TOCFL Level {FILTER_TOCFL_LEVEL} sentences only...\n")
 elif MAX_ROWS:
     print(f"🔄 Processing first {MAX_ROWS} rows...\n")
@@ -407,7 +356,7 @@ with open(CSV_FILE, "r", encoding="utf-8") as f:
         tocfl_level = row.get("TOCFL Level", "").strip()
 
         # Filter by TOCFL level if specified
-        if FILTER_TOCFL_LEVEL and tocfl_level != str(FILTER_TOCFL_LEVEL):
+        if FILTER_TOCFL_LEVEL is not None and tocfl_level != str(FILTER_TOCFL_LEVEL):
             continue
 
         row_count += 1
@@ -417,58 +366,54 @@ with open(CSV_FILE, "r", encoding="utf-8") as f:
             break
 
         # Traditional will be generated via Google Translate
-        # Store item for async batch processing (traditional conversion + jyutping + translations)
+        # Store item for batch processing (traditional conversion + jyutping + translations)
         item_data = {
             "index": total_rows,
             "simplified": simplified,
-            "traditional": "",  # Will be filled by async conversion
+            "traditional": "",  # Will be filled by conversion
             "pinyin": pinyin,
             "hanviet": "",  # Will be filled after we have traditional
-            "jyutping": "",  # Will be filled by async processing (standard jyutping for Traditional Chinese)
-            "writtenCantonese": "",  # Will be filled by async translation
-            "cantoneseJyutping": "",  # Will be filled by async processing (jyutping for written Cantonese)
-            "viet": "",  # Will be filled by async translation
+            "jyutping": "",  # Will be filled by processing (standard jyutping for Traditional Chinese)
+            "writtenCantonese": "",  # Will be filled by translation
+            "cantoneseJyutping": "",  # Will be filled by processing (jyutping for written Cantonese)
+            "viet": "",  # Will be filled by translation
             "english": meaning,  # Use existing meaning from CSV
             "hsk_level": hsk_level,
             "tocfl_level": tocfl_level,
         }
         items_to_process.append(item_data)
 
-print(
-    f"✅ Found {row_count} TOCFL Level {FILTER_TOCFL_LEVEL} sentences out of {total_rows} total sentences"
-)
+if FILTER_TOCFL_LEVEL is not None:
+    print(
+        f"✅ Found {row_count} TOCFL Level {FILTER_TOCFL_LEVEL} sentences out of {total_rows} total sentences"
+    )
+else:
+    print(
+        f"✅ Found {row_count} sentences to process out of {total_rows} total sentences"
+    )
 
 print(
-    f"\n🌐 Starting async processing (jyutping + Vietnamese + English + Cantonese translations) in batches of 5..."
+    f"\n🌐 Starting processing (jyutping + Vietnamese + English + Cantonese translations) in batches of {BATCH_SIZE}..."
 )
 print(f"   Total items to process: {len(items_to_process)}\n")
 
 
-# Step 2: Process jyutping and translations in batches of 5 asynchronously
-async def process_all_items():
-    """Process all items in batches - jyutping and translations in parallel"""
-    # Create thread pool executor for synchronous translate calls
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        batch_size = 5
-        total_batches = (len(items_to_process) + batch_size - 1) // batch_size
+# Step 2: Process jyutping and translations in batches
+total_batches = (len(items_to_process) + BATCH_SIZE - 1) // BATCH_SIZE
 
-        # Process batches
-        all_results = []
-        for batch_num in range(total_batches):
-            start_idx = batch_num * batch_size
-            end_idx = min(start_idx + batch_size, len(items_to_process))
-            batch = items_to_process[start_idx:end_idx]
+# Process batches
+processed_data = []
+for batch_num in range(total_batches):
+    start_idx = batch_num * BATCH_SIZE
+    end_idx = min(start_idx + BATCH_SIZE, len(items_to_process))
+    batch = items_to_process[start_idx:end_idx]
 
-            batch_results = await process_batch_async(
-                batch, executor, batch_num, total_batches
-            )
-            all_results.extend(batch_results)
+    batch_results = process_batch(batch, batch_num, total_batches)
+    processed_data.extend(batch_results)
 
-        return all_results
-
-
-# Run async processing
-processed_data = asyncio.run(process_all_items())
+    # Add delay between batches (except after the last batch)
+    if batch_num < total_batches - 1:
+        time.sleep(BATCH_GAP)
 
 # Sort by index to maintain original order
 processed_data.sort(key=lambda x: x["index"])

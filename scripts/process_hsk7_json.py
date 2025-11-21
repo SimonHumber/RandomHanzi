@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 """
-Processes HSK vocabulary CSV file to generate JSON with translations.
-- Reads Simplified Chinese words from CSV
-- Translates to Traditional Chinese, Vietnamese, and English using Google Translate V3 API
-- Adds Pinyin and Jyutping (Cantonese pronunciation) using pinyin-jyutping library
+Processes HSK 7 vocabulary JSON file to generate JSON with translations.
+- Reads Simplified Chinese, Traditional Chinese, Pinyin, and English from JSON (REUSES existing data)
+- Translates to Vietnamese using Google Translate V3 API (only new translation)
+- Adds Jyutping (Cantonese pronunciation) using pinyin-jyutping library
 - Adds Han Viet readings from CSV lookup
 - Processes words in configurable batches for faster execution
 - Outputs JSON file with all translations and metadata
 
-CONFIGURATION: Change HSK_LEVEL variable at top of script to process different levels
+CONFIGURATION: Change BATCH_SIZE and BATCH_GAP variables at top of script
 """
 
-import csv
 import json
 import pinyin_jyutping
 import time
@@ -35,9 +34,8 @@ class VocabEntry(TypedDict):
 
 
 # --- CONFIGURATION VARIABLES (CHANGE THESE) ---
-HSK_LEVEL = 6  # Change this to process different levels (1, 2, 3, 4, 5, 6)
-INPUT_CSV = f"vocabCsv/HSK - Level {HSK_LEVEL}.csv"
-OUTPUT_JSON = f"mobile/data/hsk_level{HSK_LEVEL}.json"
+INPUT_JSON = "vocabCsv/hsk7.json"
+OUTPUT_JSON = "mobile/data/hsk_level7.json"
 BATCH_SIZE = 200  # Number of words to process per batch
 BATCH_GAP = 0.5  # Seconds to wait between batches
 
@@ -130,63 +128,122 @@ def count_chinese_characters(text):
     return len(chinese_chars)
 
 
+def translate_batch_from_traditional(texts, target_lang):
+    """Translate multiple Traditional Chinese texts using Google Cloud Translation V3 API (batch)"""
+    try:
+        # Map language codes
+        lang_map = {
+            "vi": "vi",  # Vietnamese
+        }
+        target = lang_map.get(target_lang, target_lang)
+
+        # Prepare the request
+        request = {
+            "parent": PARENT,
+            "contents": texts,
+            "mime_type": "text/plain",
+            "source_language_code": "zh-TW",  # Traditional Chinese
+            "target_language_code": target,
+        }
+
+        # Make the translation request
+        response = translate_client.translate_text(request=request)
+
+        # Return all translations
+        if response.translations:
+            return [trans.translated_text for trans in response.translations]
+        else:
+            print(f"❌ No translations returned for batch")
+            return [""] * len(texts)
+
+    except Exception as e:
+        print(f"❌ Translation API Exception: {str(e)}")
+        print(f"🛑 Stopping script due to error")
+        exit(1)
+
+
 def process_batch(batch_data, batch_num, total_batches):
-    """Process a batch of words using batch API calls"""
+    """Process a batch of words using batch API calls - reuses simplified, traditional, and pinyin from JSON"""
     print(
         f"🚀 Batch {batch_num + 1}/{total_batches}: Processing {len(batch_data)} words..."
     )
 
-    # Extract all Chinese texts from batch
-    chinese_texts = [row["Chinese"] for row in batch_data]
+    # Extract data from JSON (reusing existing simplified, traditional, pinyin, english)
+    simplified_list = []
+    traditional_list = []
+    pinyin_list = []
+    english_list = []
 
-    # Batch translate to Traditional Chinese and Vietnamese (2 API calls total)
-    traditional_texts = translate_batch(chinese_texts, "zh-Hant")
-    vietnamese_texts = translate_batch(chinese_texts, "vi")
+    for item in batch_data:
+        # Reuse simplified Chinese from JSON
+        simplified = item["simplified"]
+        simplified_list.append(simplified)
 
-    # Process jyutping for all texts (local, no API calls)
-    jyutping_results = [get_jyutping_romanization(text) for text in chinese_texts]
+        # Reuse traditional Chinese from JSON
+        traditional = (
+            item["forms"][0]["traditional"]
+            if item["forms"] and item["forms"][0].get("traditional")
+            else simplified
+        )
+        traditional_list.append(traditional)
+
+        # Reuse pinyin from JSON
+        pinyin = (
+            item["forms"][0]["transcriptions"]["pinyin"]
+            if item["forms"]
+            and item["forms"][0].get("transcriptions")
+            and item["forms"][0]["transcriptions"].get("pinyin")
+            else ""
+        )
+        pinyin_list.append(pinyin)
+
+        # Reuse English meanings from JSON (join array)
+        meanings = (
+            item["forms"][0]["meanings"]
+            if item["forms"] and item["forms"][0].get("meanings")
+            else []
+        )
+        english = ", ".join(meanings) if meanings else ""
+        english_list.append(english)
+
+    # Batch translate to Vietnamese (1 API call) - using traditional Chinese as source
+    vietnamese_texts = translate_batch_from_traditional(traditional_list, "vi")
+
+    # Process jyutping for all traditional texts (local, no API calls)
+    jyutping_results = [get_jyutping_romanization(text) for text in traditional_list]
 
     # Create entries for all words in batch
     batch_results = []
-    for i, row in enumerate(batch_data):
-        no = row["No"]
-        chinese = row["Chinese"]
-        pinyin = row["Pinyin"]
-        english = row["English"]
-
-        traditional = traditional_texts[i]
-        vietnamese = vietnamese_texts[i]
-        jyutping = jyutping_results[i]
-
+    for i, item in enumerate(batch_data):
         # Count Chinese characters
-        character_count = count_chinese_characters(chinese)
+        character_count = count_chinese_characters(simplified_list[i])
 
-        # Create entry
+        # Create entry - reusing simplified, traditional, pinyin, english from JSON
         entry = {
-            "id": int(no),
-            "simplifiedChinese": chinese,
-            "traditionalChinese": traditional,
-            "pinyin": pinyin,
-            "jyutping": jyutping,
-            "english": english,
-            "vietnamese": vietnamese,
+            "id": i + 1 + (batch_num * BATCH_SIZE),  # Sequential ID across batches
+            "simplifiedChinese": simplified_list[i],  # Reused from JSON
+            "traditionalChinese": traditional_list[i],  # Reused from JSON
+            "pinyin": pinyin_list[i],  # Reused from JSON
+            "jyutping": jyutping_results[i],  # Generated locally
+            "english": english_list[i],  # Reused from JSON
+            "vietnamese": vietnamese_texts[i],  # Translated via API
             "characterCount": character_count,
         }
 
         batch_results.append(entry)
 
-        print(f"  ✅ [{i+1}/{len(batch_data)}] {chinese} → {traditional}")
+        print(f"  ✅ [{i+1}/{len(batch_data)}] {simplified_list[i]}")
 
     print(f"✅ Batch {batch_num + 1}/{total_batches} completed!\n")
     return batch_results
 
 
-def process_hsk_csv():
-    """Process HSK CSV with batch translations"""
+def process_hsk7_json():
+    """Process HSK 7 JSON with batch translations"""
 
-    print(f"🔄 Processing HSK Level {HSK_LEVEL} CSV with Google Translation V3 API...")
+    print(f"🔄 Processing HSK 7 JSON with Google Translation V3 API...")
     print("=" * 60)
-    print(f"📂 Input:  {INPUT_CSV}")
+    print(f"📂 Input:  {INPUT_JSON}")
     print(f"📂 Output: {OUTPUT_JSON}")
     print("=" * 60)
 
@@ -196,31 +253,26 @@ def process_hsk_csv():
     _jyutping_instance = pinyin_jyutping.PinyinJyutping()
     print("✅ Jyutping/Pinyin library ready!")
 
-    # Read CSV file
-    csv_path = os.path.join(os.path.dirname(__file__), "..", INPUT_CSV)
-    csv_data = []
-    with open(csv_path, "r", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            csv_data.append(row)
+    # Read JSON file
+    json_path = os.path.join(os.path.dirname(__file__), "..", INPUT_JSON)
+    with open(json_path, "r", encoding="utf-8") as f:
+        json_data = json.load(f)
 
-    print(f"📊 Found {len(csv_data)} entries in CSV")
+    print(f"📊 Found {len(json_data)} entries in JSON")
 
     # Process entries in batches
     processed_data = []
-    total_batches = (len(csv_data) + BATCH_SIZE - 1) // BATCH_SIZE
+    total_batches = (len(json_data) + BATCH_SIZE - 1) // BATCH_SIZE
     print(
-        f"🚀 Processing {len(csv_data)} entries in {total_batches} batches of {BATCH_SIZE}"
+        f"🚀 Processing {len(json_data)} entries in {total_batches} batches of {BATCH_SIZE}"
     )
-    print(
-        f"⚡ Each batch: 2 API calls (Traditional + Vietnamese) for {BATCH_SIZE} words!"
-    )
+    print(f"⚡ Each batch: 1 API call (Vietnamese) for {BATCH_SIZE} words!")
     print()
 
     for batch_num in range(total_batches):
         start_idx = batch_num * BATCH_SIZE
-        end_idx = min(start_idx + BATCH_SIZE, len(csv_data))
-        batch_data = csv_data[start_idx:end_idx]
+        end_idx = min(start_idx + BATCH_SIZE, len(json_data))
+        batch_data = json_data[start_idx:end_idx]
 
         # Process entire batch
         batch_results = process_batch(batch_data, batch_num, total_batches)
@@ -249,7 +301,7 @@ def process_hsk_csv():
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(processed_data, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ Successfully created complete HSK Level {HSK_LEVEL} JSON!")
+    print(f"✅ Successfully created complete HSK Level 7 JSON!")
     print(f"📁 Output file: {output_file}")
     print(f"📊 Total entries: {len(processed_data)}")
 
@@ -265,4 +317,4 @@ def process_hsk_csv():
 
 
 if __name__ == "__main__":
-    process_hsk_csv()
+    process_hsk7_json()

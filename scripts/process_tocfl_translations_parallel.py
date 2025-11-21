@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """
+THIS SCRIPT IS REALLY SLOW IF YOU USE IT FIX IT LIKE HSK SCRIPT
 Processes TOCFL vocabulary CSV files to generate JSON with translations using
 Google Cloud Translate v3. Includes:
   - Simplified Chinese conversion
