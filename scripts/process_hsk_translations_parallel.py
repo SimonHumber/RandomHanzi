@@ -1,23 +1,24 @@
 #!/usr/bin/env python3
 """
-Processes HSK Level 2 vocabulary CSV file to generate JSON with translations.
+Processes HSK vocabulary CSV file to generate JSON with translations.
 - Reads Simplified Chinese words from CSV
-- Translates to Traditional Chinese and Vietnamese using Google Translate API
-- Adds Jyutping (Cantonese pronunciation) using pinyin-jyutping library
+- Translates to Traditional Chinese, Vietnamese, and English using Google Translate V3 API
+- Adds Pinyin and Jyutping (Cantonese pronunciation) using pinyin-jyutping library
 - Adds Han Viet readings from CSV lookup
-- Processes 5 words simultaneously for faster execution
-- Outputs JSON file with all translations and metadata to mobile/data/hsk_level2.json
+- Processes words in configurable batches for faster execution
+- Outputs JSON file with all translations and metadata
+
+CONFIGURATION: Change HSK_LEVEL variable at top of script to process different levels
 """
 
 import csv
 import json
 import pinyin_jyutping
 import asyncio
-import aiohttp
 import os
 import re
 from typing import TypedDict, List
-from dotenv import load_dotenv
+from google.cloud import translate_v3 as translate
 from add_hanviet_from_csv import load_hanviet_csv, find_hanviet_reading_with_multiple
 
 
@@ -33,57 +34,78 @@ class VocabEntry(TypedDict):
     hanviet: str
 
 
-# Load environment variables
-load_dotenv()
+# --- CONFIGURATION VARIABLES (CHANGE THESE) ---
+HSK_LEVEL = 3  # Change this to process different levels (1, 2, 3, 4, 5, 6)
+INPUT_CSV = f"vocabCsv/HSK - Level {HSK_LEVEL}.csv"
+OUTPUT_JSON = f"mobile/data/hsk_level{HSK_LEVEL}.json"
+BATCH_SIZE = 5  # Number of words to process in parallel
+BATCH_DELAY = 2  # Seconds to wait between batches
 
-# --- VARIABLES ---
-API_KEY = os.getenv("GOOGLE_API_KEY")
-GOOGLE_TRANSLATE_URL = "https://translation.googleapis.com/language/translate/v2"
+# --- SYSTEM VARIABLES (DO NOT CHANGE) ---
+# Set the service account credentials path
+CREDENTIALS_PATH = os.path.join(os.path.dirname(__file__), "..", "translateKey.json")
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = CREDENTIALS_PATH
 
-# Validate API key
-if not API_KEY:
-    print("❌ Error: GOOGLE_API_KEY not found in .env file!")
-    print("Please add your API key to .env file:")
-    print("GOOGLE_API_KEY=your_api_key_here")
+# Validate credentials file exists
+if not os.path.exists(CREDENTIALS_PATH):
+    print(f"❌ Error: Credentials file not found at {CREDENTIALS_PATH}")
+    print("Please ensure translateKey.json exists in the project root")
+    exit(1)
+
+# Initialize Google Cloud Translation client
+try:
+    with open(CREDENTIALS_PATH, "r") as f:
+        creds_data = json.load(f)
+        PROJECT_ID = creds_data["project_id"]
+    PARENT = f"projects/{PROJECT_ID}/locations/global"
+    translate_client = translate.TranslationServiceClient()
+    print(
+        f"✅ Google Cloud Translation V3 client initialized for project: {PROJECT_ID}"
+    )
+except Exception as e:
+    print(f"❌ Error initializing Google Cloud Translation client: {e}")
     exit(1)
 
 
-async def translate_with_google_async(session, text, target_lang):
-    """Translate text using Google Translation API (async)"""
+def translate_with_google_v3(text, target_lang):
+    """Translate text using Google Cloud Translation V3 API (sync)"""
     try:
-        # Map language codes from internal codes to Google's codes
+        # Map language codes
         lang_map = {
             "zh-Hant": "zh-TW",  # Traditional Chinese
             "vi": "vi",  # Vietnamese
         }
         target = lang_map.get(target_lang, target_lang)
 
-        params = {
-            "key": API_KEY,
-            "q": text,
-            "source": "zh-CN",  # Source is Simplified Chinese
-            "target": target,
-            "format": "text",
+        # Prepare the request
+        request = {
+            "parent": PARENT,
+            "contents": [text],
+            "mime_type": "text/plain",
+            "source_language_code": "zh-CN",  # Simplified Chinese
+            "target_language_code": target,
         }
 
-        async with session.get(GOOGLE_TRANSLATE_URL, params=params) as response:
-            if response.status == 200:
-                result = await response.json()
-                if "data" in result and "translations" in result["data"]:
-                    return result["data"]["translations"][0]["translatedText"]
-                else:
-                    print(f"❌ Unexpected response format: {result}")
-                    exit(1)
-            else:
-                error_text = await response.text()
-                print(f"❌ Translation API Error: {response.status} - {error_text}")
-                print(f"🛑 Stopping script due to API error")
-                exit(1)
+        # Make the translation request
+        response = translate_client.translate_text(request=request)
+
+        # Return the first translation
+        if response.translations:
+            return response.translations[0].translated_text
+        else:
+            print(f"❌ No translation returned for: {text}")
+            exit(1)
 
     except Exception as e:
         print(f"❌ Translation API Exception: {str(e)}")
         print(f"🛑 Stopping script due to error")
         exit(1)
+
+
+async def translate_with_google_async(text, target_lang):
+    """Translate text using Google Cloud Translation V3 API (async wrapper)"""
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, translate_with_google_v3, text, target_lang)
 
 
 # Global Jyutping instance to avoid rebuilding dictionary
@@ -120,7 +142,7 @@ def count_chinese_characters(text):
     return len(chinese_chars)
 
 
-async def process_single_word(session, row, word_index):
+async def process_single_word(row, word_index):
     """Process a single word: ALL operations in parallel"""
     no = row["No"]
     chinese = row["Chinese"]
@@ -130,8 +152,8 @@ async def process_single_word(session, row, word_index):
     print(f"{word_index:3d}. Processing: {chinese} ({pinyin})")
 
     # Run ALL operations in parallel: Traditional + Vietnamese + Jyutping
-    traditional_task = translate_with_google_async(session, chinese, "zh-Hant")
-    vietnamese_task = translate_with_google_async(session, chinese, "vi")
+    traditional_task = translate_with_google_async(chinese, "zh-Hant")
+    vietnamese_task = translate_with_google_async(chinese, "vi")
     jyutping_task = get_jyutping_async(chinese)
 
     # Wait for ALL operations to complete simultaneously
@@ -140,8 +162,8 @@ async def process_single_word(session, row, word_index):
     )
 
     print(f"     Traditional: {traditional}")
-    print(f"     Vietnamese: {vietnamese}")
     print(f"     Jyutping: {jyutping}")
+    print(f"     Vietnamese: {vietnamese}")
 
     # Count Chinese characters
     character_count = count_chinese_characters(chinese)
@@ -163,8 +185,8 @@ async def process_single_word(session, row, word_index):
     return entry
 
 
-async def process_batch_parallel(session, batch_data, batch_num, start_idx):
-    """Process a batch of 5 words: ALL translations happen simultaneously"""
+async def process_batch_parallel(batch_data, batch_num, start_idx):
+    """Process a batch of words: ALL translations happen simultaneously"""
     print(
         f"🚀 Batch {batch_num + 1}: Processing {len(batch_data)} words - ALL TRANSLATIONS IN PARALLEL..."
     )
@@ -172,7 +194,7 @@ async def process_batch_parallel(session, batch_data, batch_num, start_idx):
     # Create tasks for ALL words in the batch
     tasks = []
     for i, row in enumerate(batch_data, start_idx + 1):
-        task = process_single_word(session, row, i)
+        task = process_single_word(row, i)
         tasks.append(task)
 
     # Process ALL words in the batch simultaneously
@@ -191,18 +213,22 @@ async def process_batch_parallel(session, batch_data, batch_num, start_idx):
 async def process_hsk_csv():
     """Process HSK CSV with TRUE PARALLEL translations"""
 
-    print("🔄 Processing HSK Level 2 CSV with Google Translation API...")
+    print(f"🔄 Processing HSK Level {HSK_LEVEL} CSV with Google Translation V3 API...")
+    print("=" * 60)
+    print(f"📂 Input:  {INPUT_CSV}")
+    print(f"📂 Output: {OUTPUT_JSON}")
     print("=" * 60)
 
     # Initialize Jyutping library ONCE at the start
-    print("🔧 Initializing Jyutping library (one-time setup)...")
+    print("🔧 Initializing Jyutping/Pinyin library (one-time setup)...")
     global _jyutping_instance
     _jyutping_instance = pinyin_jyutping.PinyinJyutping()
-    print("✅ Jyutping library ready!")
+    print("✅ Jyutping/Pinyin library ready!")
 
     # Read CSV file
+    csv_path = os.path.join(os.path.dirname(__file__), "..", INPUT_CSV)
     csv_data = []
-    with open("hsk2.csv", "r", encoding="utf-8") as f:
+    with open(csv_path, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             csv_data.append(row)
@@ -212,37 +238,38 @@ async def process_hsk_csv():
     # Process entries
     print(f"🚀 Processing {len(csv_data)} entries")
 
-    # Process entries in batches of 5 (TRUE PARALLEL)
+    # Process entries in batches (TRUE PARALLEL)
     processed_data = []
-    batch_size = 5
-    total_batches = (len(csv_data) + batch_size - 1) // batch_size
+    total_batches = (len(csv_data) + BATCH_SIZE - 1) // BATCH_SIZE
     print(
-        f"🚀 Processing {len(csv_data)} entries in {total_batches} batches of {batch_size}"
+        f"🚀 Processing {len(csv_data)} entries in {total_batches} batches of {BATCH_SIZE}"
     )
-    print(f"⚡ Each batch: 5 words × 2 translations = 10 parallel API calls!")
+    print(
+        f"⚡ Each batch: {BATCH_SIZE} words × 2 translations = {BATCH_SIZE * 2} parallel API calls!"
+    )
     print()
 
-    async with aiohttp.ClientSession() as session:
-        for batch_num in range(total_batches):
-            start_idx = batch_num * batch_size
-            end_idx = min(start_idx + batch_size, len(csv_data))
-            batch_data = csv_data[start_idx:end_idx]
+    for batch_num in range(total_batches):
+        start_idx = batch_num * BATCH_SIZE
+        end_idx = min(start_idx + BATCH_SIZE, len(csv_data))
+        batch_data = csv_data[start_idx:end_idx]
 
-            # Process entire batch in parallel
-            batch_results = await process_batch_parallel(
-                session, batch_data, batch_num, start_idx
-            )
-            processed_data.extend(batch_results)
+        # Process entire batch in parallel
+        batch_results = await process_batch_parallel(batch_data, batch_num, start_idx)
+        processed_data.extend(batch_results)
 
-            # Delay between batches
-            if batch_num < total_batches - 1:
-                print(f"⏳ Waiting 2 seconds before next batch...")
-                await asyncio.sleep(2)
-                print()
+        # Delay between batches
+        if batch_num < total_batches - 1:
+            print(f"⏳ Waiting {BATCH_DELAY} seconds before next batch...")
+            await asyncio.sleep(BATCH_DELAY)
+            print()
 
     # Add Han Viet readings to all entries
     print("📖 Adding Han Viet readings...")
-    hanviet_data = load_hanviet_csv("hanviet.csv")
+    hanviet_path = os.path.join(
+        os.path.dirname(__file__), "..", "vocabCsv", "hanviet.csv"
+    )
+    hanviet_data = load_hanviet_csv(hanviet_path)
 
     for entry in processed_data:
         hanviet_reading = find_hanviet_reading_with_multiple(entry, hanviet_data)
@@ -251,12 +278,12 @@ async def process_hsk_csv():
     print("✅ Han Viet readings added!")
 
     # Save the complete JSON
-    output_file = "mobile/data/hsk_level2.json"
+    output_file = os.path.join(os.path.dirname(__file__), "..", OUTPUT_JSON)
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(processed_data, f, ensure_ascii=False, indent=2)
 
-    print("✅ Successfully created complete HSK Level 2 JSON!")
+    print(f"✅ Successfully created complete HSK Level {HSK_LEVEL} JSON!")
     print(f"📁 Output file: {output_file}")
     print(f"📊 Total entries: {len(processed_data)}")
 

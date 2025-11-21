@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Process cmn_sen_db_2.csv and add jyutping, hanviet, Vietnamese, English, and Cantonese translations.
+Process sentences.csv and add jyutping, hanviet, Vietnamese, English, and Cantonese translations.
 Outputs JSON with: traditionalChinese, simplifiedChinese, writtenCantonese, pinyin, jyutping (standard),
 cantoneseJyutping, hanviet, viet, english
 Only processes first 100 rows.
-Note: English translation is generated via Google Translate (ignores CSV English column).
+Converts simplified Chinese to traditional Chinese using Google Translate.
 """
 
 # TODO rerun this script to add cantonese translations
@@ -20,13 +20,14 @@ from google.oauth2 import service_account
 from add_hanviet_from_csv import load_hanviet_csv, find_hanviet_reading_with_multiple
 
 # Configuration
-CSV_FILE = "vocabCsv/cmn_sen_db_2.csv"
+CSV_FILE = "vocabCsv/sentences.csv"
 HANVIET_CSV = "vocabCsv/hanviet.csv"
 OUTPUT_FILE = "mobile/data/sentances.json"
 SERVICE_ACCOUNT_FILE = "translateKey.json"
 PROJECT_ID = "first-presence-465319-p7"
 LOCATION = "global"
-MAX_ROWS = 100
+MAX_ROWS = None  # Set to None to process all matching rows
+FILTER_TOCFL_LEVEL = 1  # Only process TOCFL Level 1 sentences
 
 print("🔧 Initializing components...")
 
@@ -222,6 +223,34 @@ async def translate_to_vietnamese_async(text, executor):
     return await loop.run_in_executor(executor, translate_to_vietnamese_sync, text)
 
 
+def translate_simplified_to_traditional_sync(text):
+    """Convert Simplified Chinese to Traditional Chinese using Google Translate v3 (synchronous)"""
+    try:
+        response = translate_client.translate_text(
+            request={
+                "parent": parent,
+                "contents": [text],
+                "mime_type": "text/plain",
+                "source_language_code": "zh-CN",  # Simplified Chinese
+                "target_language_code": "zh-TW",  # Traditional Chinese
+            }
+        )
+        return response.translations[0].translated_text
+    except Exception as e:
+        print(
+            f"  ⚠️  Simplified->Traditional conversion error for '{text[:20]}...': {e}"
+        )
+        return ""
+
+
+async def translate_simplified_to_traditional_async(text, executor):
+    """Convert Simplified Chinese to Traditional Chinese asynchronously"""
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(
+        executor, translate_simplified_to_traditional_sync, text
+    )
+
+
 def translate_to_english_sync(text):
     """Translate Traditional Chinese to English using Google Translate v3 (synchronous)"""
     try:
@@ -271,27 +300,51 @@ async def translate_to_cantonese_async(text, executor):
 
 
 async def process_batch_async(batch_items, executor, batch_num, total_batches):
-    """Process a batch of items asynchronously - jyutping, Vietnamese, English, and Cantonese translations in parallel"""
+    """Process a batch of items asynchronously - convert to traditional, jyutping, Vietnamese, English, and Cantonese translations in parallel"""
     print(
         f"🚀 Batch {batch_num + 1}/{total_batches}: Processing {len(batch_items)} items..."
     )
 
-    # Create tasks for jyutping and translations (Vietnamese, English, and Cantonese)
+    # Create tasks for conversion and translations
     tasks = []
     for item in batch_items:
+        # Convert simplified to traditional first
+        traditional_task = translate_simplified_to_traditional_async(
+            item["simplified"], executor
+        )
+        tasks.append((item, traditional_task))
+
+    # Wait for traditional conversion
+    traditional_results = []
+    for item, traditional_task in tasks:
+        traditional = await traditional_task
+        item["traditional"] = traditional
+        # Generate hanviet now that we have traditional
+        item["hanviet"] = get_hanviet_with_preserved_chars(traditional, hanviet_data)
+        traditional_results.append(item)
+
+    # Now process jyutping and translations with traditional text
+    translation_tasks = []
+    for item in traditional_results:
         jyutping_task = get_jyutping_async(
             item["traditional"]
         )  # Standard jyutping for Traditional Chinese
         vietnamese_task = translate_to_vietnamese_async(item["traditional"], executor)
         english_task = translate_to_english_async(item["traditional"], executor)
         cantonese_task = translate_to_cantonese_async(item["traditional"], executor)
-        tasks.append(
+        translation_tasks.append(
             (item, jyutping_task, vietnamese_task, english_task, cantonese_task)
         )
 
     # Wait for all tasks to complete
     results = []
-    for item, jyutping_task, vietnamese_task, english_task, cantonese_task in tasks:
+    for (
+        item,
+        jyutping_task,
+        vietnamese_task,
+        english_task,
+        cantonese_task,
+    ) in translation_tasks:
         jyutping, vietnamese, english, written_cantonese = await asyncio.gather(
             jyutping_task, vietnamese_task, english_task, cantonese_task
         )
@@ -328,43 +381,62 @@ async def process_batch_async(batch_items, executor, batch_num, total_batches):
 
 
 print(f"\n📖 Reading CSV file: {CSV_FILE}...")
-print(f"🔄 Processing first {MAX_ROWS} rows...\n")
+if FILTER_TOCFL_LEVEL:
+    print(f"🔍 Filtering for TOCFL Level {FILTER_TOCFL_LEVEL} sentences only...\n")
+elif MAX_ROWS:
+    print(f"🔄 Processing first {MAX_ROWS} rows...\n")
+else:
+    print(f"🔄 Processing all rows...\n")
 
 # Step 1: Read all rows and process hanviet (fast synchronous lookup)
 items_to_process = []
 row_count = 0
+total_rows = 0
 
 with open(CSV_FILE, "r", encoding="utf-8") as f:
     reader = csv.DictReader(f)
 
     for row in reader:
+        total_rows += 1
+
+        # Read from new CSV structure: Characters, Pinyin, Meaning, HSK Level, TOCFL Level
+        simplified = row.get("Characters", "").strip()
+        pinyin = row.get("Pinyin", "").strip()
+        meaning = row.get("Meaning", "").strip()
+        hsk_level = row.get("HSK Level", "").strip()
+        tocfl_level = row.get("TOCFL Level", "").strip()
+
+        # Filter by TOCFL level if specified
+        if FILTER_TOCFL_LEVEL and tocfl_level != str(FILTER_TOCFL_LEVEL):
+            continue
+
         row_count += 1
 
-        if row_count > MAX_ROWS:
+        # Check MAX_ROWS limit
+        if MAX_ROWS and row_count > MAX_ROWS:
             break
 
-        simplified = row.get("simplified", "").strip()
-        traditional = row.get("traditional", "").strip()
-        pinyin = row.get("pinyin", "").strip()
-        # Note: Ignoring English from CSV - will be generated via Google Translate
-
-        # Get Han Viet with preserved punctuation and Latin characters
-        hanviet = get_hanviet_with_preserved_chars(traditional, hanviet_data)
-
-        # Store item for async batch processing (jyutping + translations)
+        # Traditional will be generated via Google Translate
+        # Store item for async batch processing (traditional conversion + jyutping + translations)
         item_data = {
-            "index": row_count,
+            "index": total_rows,
             "simplified": simplified,
-            "traditional": traditional,
+            "traditional": "",  # Will be filled by async conversion
             "pinyin": pinyin,
-            "hanviet": hanviet,
+            "hanviet": "",  # Will be filled after we have traditional
             "jyutping": "",  # Will be filled by async processing (standard jyutping for Traditional Chinese)
             "writtenCantonese": "",  # Will be filled by async translation
             "cantoneseJyutping": "",  # Will be filled by async processing (jyutping for written Cantonese)
             "viet": "",  # Will be filled by async translation
-            "english": "",  # Will be filled by async translation (ignoring CSV English)
+            "english": meaning,  # Use existing meaning from CSV
+            "hsk_level": hsk_level,
+            "tocfl_level": tocfl_level,
         }
         items_to_process.append(item_data)
+
+print(
+    f"✅ Found {row_count} TOCFL Level {FILTER_TOCFL_LEVEL} sentences out of {total_rows} total sentences"
+)
 
 print(
     f"\n🌐 Starting async processing (jyutping + Vietnamese + English + Cantonese translations) in batches of 5..."
